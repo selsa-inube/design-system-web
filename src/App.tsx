@@ -1,7 +1,12 @@
-import { Text } from "@inube/design-system";
+import { BrowserRouter } from "react-router-dom";
+import { Home } from "./pages/home/home";
 
 function App() {
-  return <Text>design-system-web</Text>;
+  return (
+    <BrowserRouter>
+      <Home />
+    </BrowserRouter>
+  );
 }
 
 export default App;
