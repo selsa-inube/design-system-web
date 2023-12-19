@@ -1,5 +1,7 @@
+import { Text } from "@inube/design-system";
+
 function App() {
-  return <p>design-system-web</p>;
+  return <Text>design-system-web</Text>;
 }
 
 export default App;
