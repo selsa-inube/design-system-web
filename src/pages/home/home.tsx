@@ -1,8 +1,10 @@
-import { Header, Grid, Nav } from "@inube/design-system";
+import { Header, Grid, Nav, useMediaQuery } from "@inube/design-system";
 import { navItems } from "./config/apps.config";
 import { StyledContainerNav } from "./styles";
 
 export const Home = () => {
+  const tablet = useMediaQuery("(max-width: 944px)");
+
   return (
     <Grid
       templateColumns="1fr"
@@ -11,10 +13,12 @@ export const Home = () => {
       width="100%"
       heigth="100%"
     >
-      <Header />
-      <StyledContainerNav>
-        <Nav navigation={navItems} logoutPath="/" />
-      </StyledContainerNav>
+      <Header portalId="portals" navigation={navItems} />
+      {!tablet && (
+        <StyledContainerNav>
+          <Nav navigation={navItems} logoutPath="/" />
+        </StyledContainerNav>
+      )}
     </Grid>
   );
 };
