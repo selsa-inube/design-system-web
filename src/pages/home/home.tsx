@@ -13,7 +13,7 @@ export const Home = () => {
   return (
     <StyledAppPage>
       <Grid templateRows="auto 1fr" height="100vh" justifyContent="unset">
-        <Header portalId="portal" navigation={navItems} />
+        <Header portalId="portals" navigation={navItems} />
         <StyledContainer>
           <Grid
             templateColumns={smallScreen ? "1fr" : "auto 1fr"}
@@ -31,8 +31,9 @@ export const Home = () => {
 
             <StyledMain>
               <Card
+                URLimg="./inube.png"
                 title="Avatar"
-                description="componente Avavtar de prueba para ver como sale"
+                description="An avatar is a visual representation of a user or entity."
               />
             </StyledMain>
           </Grid>
