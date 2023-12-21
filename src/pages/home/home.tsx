@@ -6,7 +6,7 @@ import {
   StyledMain,
   StyledContainerNav,
 } from "./styles";
-import { Card } from "../../components/card";
+import { Card } from "../../components/feedback/card";
 
 export const Home = () => {
   const smallScreen = useMediaQuery("(max-width: 849px)");
