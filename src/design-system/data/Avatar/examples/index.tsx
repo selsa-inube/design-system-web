@@ -6,9 +6,9 @@ import {
   StyledReservedWord,
   StyledStringDeclaration,
 } from "./styles";
-import { DetailsSection } from "../../../components/data/DetailsSection";
+import { DetailsSection } from "../../../../components/data/DetailsSection";
 
-export const TempleteAvatar = () => {
+export const DescriptionTemplete = () => {
   return (
     <>
       <DetailsSection
@@ -24,12 +24,10 @@ export const TempleteAvatar = () => {
             </Text>
           </Stack>
           <Stack direction="column">
-            <Text direction="column">
-              An avatar acts as a proxy for a user or entity (such as a project,
-              repository, or space), in a product. They're often combined with
-              status or presence indicators to give more context. Users
-              generally upload their own image, otherwise, a default image is
-              displayed.
+            <Text appearance="gray" size="medium">
+              When not specified or due to an error the icon does not load, the
+              component will default to the MdPersonOutline icon from
+              react-icon-md.
             </Text>
           </Stack>
           <Stack direction="column" margin="s400 s0 s0 s0">
@@ -65,13 +63,12 @@ export const TempleteAvatar = () => {
         <Stack direction="column" gap="16px">
           <Stack direction="column">
             <Text as="h2" type="title">
-              Props
+              icon
             </Text>
           </Stack>
           <Stack gap="8px">
-            <Text size="medium">icon: ReactNode;</Text>
             <Text appearance="gray" size="medium">
-              icon that will be displayed inside of avatar-component
+              the icon can be updated, it receives the element to render it.
             </Text>
           </Stack>
 

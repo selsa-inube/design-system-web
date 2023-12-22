@@ -6,7 +6,7 @@ import {
   StyledMain,
   StyledContainerNav,
 } from "./styles";
-import { TempleteAvatar } from "../../design-system/data/Avatar";
+import { DescriptionTemplete } from "../../design-system/data/Avatar/examples";
 
 export const Home = () => {
   const smallScreen = useMediaQuery("(max-width: 849px)");
@@ -36,7 +36,7 @@ export const Home = () => {
                 description="An avatar is a visual representation of a user or entity."
               /> */}
               <Stack direction="column">
-                <TempleteAvatar />
+                <DescriptionTemplete />
               </Stack>
             </StyledMain>
           </Grid>
