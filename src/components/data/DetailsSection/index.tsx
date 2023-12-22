@@ -1,4 +1,4 @@
-import { Grid, Stack, Text, useMediaQuery } from "@inube/design-system";
+import { Stack, Text, useMediaQuery } from "@inube/design-system";
 import { StyledContainer } from "./styles";
 
 interface DetailsSectionProps {
@@ -13,12 +13,7 @@ export const DetailsSection = (props: DetailsSectionProps) => {
   const movilScreen = useMediaQuery("(max-width: 849px)");
   return (
     <StyledContainer>
-      <Grid
-        templateColumns={!movilScreen ? "1fr auto" : "1fr"}
-        height="inherit"
-        gap="s400"
-        padding="s200"
-      >
+      <Stack height="100%" padding="s0 s400">
         <Stack direction="column" justifyContent="center">
           <Text as="h1" type="headline">
             {section}
@@ -30,7 +25,7 @@ export const DetailsSection = (props: DetailsSectionProps) => {
             <img src={URLimg} alt="" />
           </Stack>
         )}
-      </Grid>
+      </Stack>
     </StyledContainer>
   );
 };

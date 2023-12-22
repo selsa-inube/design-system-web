@@ -15,7 +15,7 @@ export const TempleteAvatar = () => {
         section="Avatar"
         descriptionSection="An avatar is a visual representation of a user or entity."
       />
-      Ta
+
       <Stack direction="column" gap="64px" margin="s400">
         <Stack direction="column" gap="16px">
           <Stack direction="column">
