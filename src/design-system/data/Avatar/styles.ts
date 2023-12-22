@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const StyledCode = styled.code`
   width: 100%;
+  padding: 16px;
+  border-radius: 10px;
   background-color: #f2f2f2;
   overflow-x: auto;
   white-space: pre;
   line-height: 2.5;
-  font-family: SFMono-Medium, "SF Mono", "Segoe UI Mono", "Roboto Mono",
-    "Ubuntu Mono", Menlo, Consolas, Courier, monospace;
   font-weight: normal;
 `;
 

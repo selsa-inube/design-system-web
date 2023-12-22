@@ -1,5 +1,5 @@
 import { MdOutlineSettings } from "react-icons/md";
-import { Avatar, Stack, Text } from "@inube/design-system";
+import { Avatar, Stack, Text, Tabs } from "@inube/design-system";
 import {
   StyledCode,
   StyledComponentWord,
@@ -8,6 +8,20 @@ import {
 } from "./styles";
 import { DetailsSection } from "../../../components/data/DetailsSection";
 
+const navigationTabs = [
+  {
+    id: "description",
+    disabled: false,
+    label: "Description",
+  },
+
+  {
+    id: "props",
+    disabled: false,
+    label: "Props",
+  },
+];
+
 export const TempleteAvatar = () => {
   return (
     <>
@@ -15,7 +29,9 @@ export const TempleteAvatar = () => {
         section="Avatar"
         descriptionSection="An avatar is a visual representation of a user or entity."
       />
-
+      <Stack margin="s400">
+        <Tabs tabs={navigationTabs} />
+      </Stack>
       <Stack direction="column" gap="64px" margin="s400">
         <Stack direction="column" gap="16px">
           <Stack direction="column">
@@ -32,8 +48,8 @@ export const TempleteAvatar = () => {
               displayed.
             </Text>
           </Stack>
-          <Stack direction="column">
-            <Stack margin="s0 s0 s200 s0">
+          <Stack direction="column" margin="s400 s0 s0 s0">
+            <Stack margin="s0 s0 s200 s200">
               <Avatar />
             </Stack>
             <Stack>
@@ -42,8 +58,9 @@ export const TempleteAvatar = () => {
                 <StyledComponentWord>{"{ Avatar } "}</StyledComponentWord>
                 <StyledReservedWord>from </StyledReservedWord>
                 <StyledStringDeclaration>
-                  "@inube/design-system"{" "}
+                  "@inube/design-system"
                 </StyledStringDeclaration>
+                <StyledReservedWord>;</StyledReservedWord>
 
                 <Stack>
                   <StyledReservedWord>export const </StyledReservedWord>
@@ -74,8 +91,8 @@ export const TempleteAvatar = () => {
             </Text>
           </Stack>
 
-          <Stack direction="column">
-            <Stack margin="s0 s0 s200 s0">
+          <Stack direction="column" margin="s400 s0 s0 s0">
+            <Stack margin="s0 s0 s200 s200">
               <Avatar icon={<MdOutlineSettings />} />
             </Stack>
             <Stack>
@@ -84,8 +101,9 @@ export const TempleteAvatar = () => {
                 <StyledComponentWord>{"{ Avatar } "}</StyledComponentWord>
                 <StyledReservedWord>from </StyledReservedWord>
                 <StyledStringDeclaration>
-                  "@inube/design-system"{" "}
+                  "@inube/design-system"
                 </StyledStringDeclaration>
+                <StyledReservedWord>;</StyledReservedWord>
 
                 <Stack>
                   <StyledReservedWord>export const </StyledReservedWord>
@@ -101,9 +119,8 @@ export const TempleteAvatar = () => {
                       {"<MdOutlineSettings />"}
                     </StyledComponentWord>
                     <StyledReservedWord>{"}"}</StyledReservedWord>
-                    {"/>"}
+                    {" />"}
                   </StyledComponentWord>
-
                   <StyledReservedWord>;</StyledReservedWord>
                 </Stack>
               </StyledCode>
