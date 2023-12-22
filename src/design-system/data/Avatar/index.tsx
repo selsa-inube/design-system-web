@@ -1,5 +1,5 @@
 import { MdOutlineSettings } from "react-icons/md";
-import { Avatar, Stack, Text, Tabs } from "@inube/design-system";
+import { Avatar, Stack, Text } from "@inube/design-system";
 import {
   StyledCode,
   StyledComponentWord,
@@ -8,20 +8,6 @@ import {
 } from "./styles";
 import { DetailsSection } from "../../../components/data/DetailsSection";
 
-const navigationTabs = [
-  {
-    id: "description",
-    disabled: false,
-    label: "Description",
-  },
-
-  {
-    id: "props",
-    disabled: false,
-    label: "Props",
-  },
-];
-
 export const TempleteAvatar = () => {
   return (
     <>
@@ -29,9 +15,7 @@ export const TempleteAvatar = () => {
         section="Avatar"
         descriptionSection="An avatar is a visual representation of a user or entity."
       />
-      <Stack margin="s400">
-        <Tabs tabs={navigationTabs} />
-      </Stack>
+
       <Stack direction="column" gap="64px" margin="s400">
         <Stack direction="column" gap="16px">
           <Stack direction="column">
