@@ -1,4 +1,8 @@
+import { Outlet } from "react-router-dom";
+
 import { Header, Grid, Nav, useMediaQuery, Stack } from "@inube/design-system";
+
+import { DetailsSection } from "../../components/data/DetailsSection";
 import { navItems } from "./config/apps.config";
 import {
   StyledAppPage,
@@ -6,10 +10,10 @@ import {
   StyledMain,
   StyledContainerNav,
 } from "./styles";
-import { TempleteAvatar } from "../../design-system/data/Avatar";
 
 export const Home = () => {
   const smallScreen = useMediaQuery("(max-width: 849px)");
+
   return (
     <StyledAppPage>
       <Grid templateRows="auto 1fr" height="100vh" justifyContent="unset">
@@ -30,13 +34,10 @@ export const Home = () => {
             )}
 
             <StyledMain>
-              {/* <Card
-                URLimg="./inube.png"
-                title="Avatar"
-                description="An avatar is a visual representation of a user or entity."
-              /> */}
-              <Stack direction="column">
-                <TempleteAvatar />
+              <Stack direction="column" margin="s0 s0 s100">
+                <DetailsSection section={location.pathname.split("/").pop()} />
+                <Stack margin="s200 s400"></Stack>
+                <Outlet />
               </Stack>
             </StyledMain>
           </Grid>

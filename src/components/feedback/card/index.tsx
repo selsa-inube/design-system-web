@@ -2,17 +2,18 @@ import { StyledLink } from "./styles";
 import { Stack, Text } from "@inube/design-system";
 
 interface CardProps {
+  path: string;
   URLimg?: string;
   title?: string;
   description?: string;
 }
 
 export const Card = (props: CardProps) => {
-  const { URLimg, title, description } = props;
+  const { path, URLimg, title, description } = props;
 
   return (
     <Stack direction="column" alignItems="center" width="fit-content">
-      <StyledLink to="/avatar">
+      <StyledLink to={path}>
         <Stack direction="column" width="-webkit-fill-available">
           <Stack
             direction="column"
