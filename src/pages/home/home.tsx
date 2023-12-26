@@ -35,7 +35,7 @@ export const Home = () => {
 
             <StyledMain>
               <Stack direction="column" margin="s0 s0 s100">
-                <DetailsSection section={location.pathname.split("/").pop()} />
+                <DetailsSection />
 
                 <Outlet />
               </Stack>
