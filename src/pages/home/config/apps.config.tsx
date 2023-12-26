@@ -9,7 +9,7 @@ export const navItems = {
         Avatar: {
           id: "Avatar",
           label: "Avatar",
-          path: "/avatar",
+          path: "component/avatar",
           icon: <MdAccountBalanceWallet />,
         },
         Icons: {
