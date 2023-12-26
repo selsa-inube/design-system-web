@@ -1,25 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 
-import { CardsComponents } from "../pages/cards-components";
-import { DescriptionTemplete } from "../design-system/data/Avatar/examples";
-/* const tabs = [
-  {
-    id: "Example",
-    label: "Example",
-    isDisabled: false,
-  },
-  {
-    id: "Code",
-    label: "Code",
-    isDisabled: false,
-  },
-];
- */
+import { CardsComponents } from "../components/feedback/cards-components";
+import { PageAvatar } from "../pages/components/avatar";
+
 export const InformationComponentRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<CardsComponents />} />
-      <Route path="avatar" element={<DescriptionTemplete />}></Route>
+      <Route path="avatar" element={<PageAvatar />}></Route>
     </Routes>
   );
 };
