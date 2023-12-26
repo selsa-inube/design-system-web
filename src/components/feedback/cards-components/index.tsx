@@ -1,6 +1,6 @@
 import { Stack } from "@inube/design-system";
 
-import { Card } from "../../components/feedback/card";
+import { Card } from "../card";
 
 const cards = [
   {
