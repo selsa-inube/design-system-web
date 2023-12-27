@@ -3,12 +3,12 @@ import { InformationsProps } from "../../../../components/data/InformationProps"
 export const parameters: InformationsProps[] = [
   {
     nameProps: "label",
-    description: "prompts the user what value to enter",
+    description: "Prompts the user what value to enter",
     type: "string",
   },
   {
     nameProps: "name",
-    description: "name of the input element",
+    description: "Name of the input element",
     type: "string",
   },
   {
@@ -68,25 +68,25 @@ export const parameters: InformationsProps[] = [
   {
     nameProps: "onChange",
     description:
-      "allows you to control what to do when the user changes the value of the component",
+      "Allows you to control what to do when the user changes the value of the component",
     type: "function: (event: React.ChangeEvent<HTMLInputElement>) => void;",
   },
   {
     nameProps: "onClick",
     description:
-      "allows you to control what to do when the user changes the value of the component",
+      "Allows you to control what to do when the user changes the value of the component",
     type: "function: (event: React.ChangeEvent<HTMLInputElement>) => void;",
   },
   {
     nameProps: "onFocus",
     description:
-      "allows you to control what to do when the onfocus event occurs",
+      "Allows you to control what to do when the onfocus event occurs",
     type: "function: (event: FocusEvent) => void;",
   },
   {
     nameProps: "onBlur",
     description:
-      "allows you to control what to do when the onblur event occurs",
+      "Allows you to control what to do when the onblur event occurs",
     type: "function: (event: FocusEvent) => void;",
   },
 ];
