@@ -67,7 +67,7 @@ export const parameters = [
     nameProps: "message",
     description:
       "Isplay a message, provided by the developer implementing the component, which can be either an error notification or a validation prompt",
-    type: "number",
+    type: "string",
   },
   {
     nameProps: "readOnly",
