@@ -55,7 +55,7 @@ export const parameters: InformationsProps[] = [
     type: "boolean",
   },
   {
-    nameProps: "fullwidth",
+    nameProps: "status",
     description: "Status of the component",
     type: "string: 'pending' | 'valid' | 'invalid'",
   },
