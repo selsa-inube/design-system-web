@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { CodeIcon } from "../../../design-system/data/Icon/code";
+import { PageCodeLabel } from "../../../../design-system/inputs/Label/code";
 
 const tabs = [
   {
@@ -16,7 +16,7 @@ const tabs = [
   },
 ];
 
-export const PageIcon = () => {
+export const PageLabel = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const handleTabChange = (id: string) => {
     setActiveTab(id);
@@ -28,7 +28,7 @@ export const PageIcon = () => {
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {/*activeTab === "Example" && < /> */}
-      {activeTab === "Code" && <CodeIcon />}
+      {activeTab === "Code" && <PageCodeLabel />}
     </>
   );
 };

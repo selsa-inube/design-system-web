@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { PageCodeLabel } from "../../../design-system/inputs/Label/code";
+import { PageCodeTextarea } from "../../../../design-system/inputs/Textarea/code";
 
 const tabs = [
   {
@@ -16,7 +16,7 @@ const tabs = [
   },
 ];
 
-export const PageLabel = () => {
+export const PageTextarea = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const handleTabChange = (id: string) => {
     setActiveTab(id);
@@ -28,7 +28,7 @@ export const PageLabel = () => {
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {/*activeTab === "Example" && < /> */}
-      {activeTab === "Code" && <PageCodeLabel />}
+      {activeTab === "Code" && <PageCodeTextarea />}
     </>
   );
 };

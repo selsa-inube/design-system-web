@@ -1,11 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 
 import { CardsComponents } from "../components/feedback/cards-components";
-import { PageAvatar } from "../pages/components/avatar";
-import { PageIcon } from "../pages/components/icon";
-import { PageButton } from "../pages/components/Button";
-import { PageLabel } from "../pages/components/Label";
-import { PageSwitch } from "../pages/components/Switch";
+
+import { PageAvatar } from "../pages/components/data/avatar";
+import { PageIcon } from "../pages/components/data/icon";
+
+import { PageButton } from "../pages/components/inputs/Button";
+import { PageLabel } from "../pages/components/inputs/Label";
+import { PageSwitch } from "../pages/components/inputs/Switch";
+import { PageTextarea } from "../pages/components/inputs/Textarea";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -16,6 +19,7 @@ export const InformationComponentRoutes = () => {
       <Route path="button" element={<PageButton />} />
       <Route path="label" element={<PageLabel />} />
       <Route path="switch" element={<PageSwitch />} />
+      <Route path="text-area" element={<PageTextarea />} />
     </Routes>
   );
 };
