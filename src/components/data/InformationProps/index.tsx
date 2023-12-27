@@ -19,18 +19,6 @@ interface InformationsProps {
   example?: ReactNode;
 }
 
-/* const appearances = [
-  "primary",
-  "error",
-  "warning",
-  "success",
-  "information",
-  "help",
-  "light",
-  "gray",
-  "dark",
-]; */
-
 export const InformationsProps = (props: InformationsProps) => {
   const { nameProps, description, type } = props;
 
