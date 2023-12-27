@@ -8,6 +8,7 @@ import { PageIcon } from "../pages/components/data/icon";
 import { PageButton } from "../pages/components/inputs/Button";
 import { PageLabel } from "../pages/components/inputs/Label";
 import { PageSwitch } from "../pages/components/inputs/Switch";
+import { PageTextarea } from "../pages/components/inputs/Textarea";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const InformationComponentRoutes = () => {
       <Route path="button" element={<PageButton />} />
       <Route path="label" element={<PageLabel />} />
       <Route path="switch" element={<PageSwitch />} />
+      <Route path="text-area" element={<PageTextarea />} />
     </Routes>
   );
 };

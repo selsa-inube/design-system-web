@@ -115,7 +115,7 @@ export const navItems = {
         Textarea: {
           id: "Textarea",
           label: "Textarea",
-          path: "/text-area",
+          path: "component/text-area",
           icon: <MdAccountBalanceWallet />,
         },
         Textfield: {
