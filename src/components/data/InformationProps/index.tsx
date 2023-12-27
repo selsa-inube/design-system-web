@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { Text } from "@inube/design-system";
 
 import {
@@ -16,7 +15,6 @@ interface InformationsProps {
   nameProps: string;
   description?: string;
   type: string;
-  example?: ReactNode;
 }
 
 export const InformationsProps = (props: InformationsProps) => {
