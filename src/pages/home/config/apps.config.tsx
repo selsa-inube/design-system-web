@@ -103,7 +103,7 @@ export const navItems = {
         Select: {
           id: "Select",
           label: "Select",
-          path: "/select",
+          path: "component/select",
           icon: <MdAccountBalanceWallet />,
         },
         Switch: {

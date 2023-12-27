@@ -10,6 +10,7 @@ import { PageLabel } from "../pages/components/inputs/Label";
 import { PageSwitch } from "../pages/components/inputs/Switch";
 import { PageTextarea } from "../pages/components/inputs/Textarea";
 import { PageTextfield } from "../pages/components/inputs/Textfield";
+import { PageSelect } from "../pages/components/inputs/Select";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const InformationComponentRoutes = () => {
       <Route path="switch" element={<PageSwitch />} />
       <Route path="text-area" element={<PageTextarea />} />
       <Route path="text-field" element={<PageTextfield />} />
+      <Route path="select" element={<PageSelect />} />
     </Routes>
   );
 };
