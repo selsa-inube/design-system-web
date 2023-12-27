@@ -109,7 +109,7 @@ export const navItems = {
         Switch: {
           id: "Switch",
           label: "Switch",
-          path: "/switch",
+          path: "component/switch",
           icon: <MdAccountBalanceWallet />,
         },
         Textarea: {
