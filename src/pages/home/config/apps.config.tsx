@@ -97,7 +97,7 @@ export const navItems = {
         Label: {
           id: "Label",
           label: "Label",
-          path: "/label",
+          path: "component/label",
           icon: <MdAccountBalanceWallet />,
         },
         Select: {
