@@ -17,7 +17,7 @@ export const StyledCode = styled.code`
 
 export const StyledCodeTd = styled.code`
   ${StyledGeneralCode}
-
+  display: inline-block;
   font-size: 12px;
   padding: 4px 8px;
 `;

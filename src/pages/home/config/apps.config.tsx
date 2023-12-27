@@ -15,7 +15,7 @@ export const navItems = {
         Icons: {
           id: "Icons",
           label: "Icons",
-          path: "/icons",
+          path: "component/icon",
           icon: <MdAccountBalanceWallet />,
         },
         Table: {
