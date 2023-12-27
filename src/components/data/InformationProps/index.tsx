@@ -13,7 +13,7 @@ import {
 
 interface InformationsProps {
   nameProps: string;
-  description: string;
+  description?: string;
   type: string;
 }
 
