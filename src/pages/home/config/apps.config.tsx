@@ -121,7 +121,7 @@ export const navItems = {
         Textfield: {
           id: "Textfield",
           label: "Textfield",
-          path: "/text-field",
+          path: "component/text-field",
           icon: <MdAccountBalanceWallet />,
         },
       },
