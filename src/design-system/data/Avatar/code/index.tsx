@@ -13,8 +13,8 @@ export const CodeAvatar = () => (
       <Stack>
         <InformationsProps
           nameProps="icon"
-          description="icono a mostrat por el componente"
-          type="string"
+          description="Icon that will be displayed inside of avatar-component"
+          type="React.ReactElement"
         />
       </Stack>
     </Stack>

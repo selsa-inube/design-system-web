@@ -1,4 +1,6 @@
-export const parameters = [
+import { InformationsProps } from "../../../../components/data/InformationProps";
+
+export const parameters: InformationsProps[] = [
   {
     nameProps: "children",
     description: "The text to be displayed",

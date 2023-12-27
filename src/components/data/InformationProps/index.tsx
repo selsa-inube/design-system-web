@@ -11,7 +11,7 @@ import {
   StyledTdTitle,
 } from "./styles";
 
-interface InformationsProps {
+export interface InformationsProps {
   nameProps: string;
   description?: string;
   type: string;
