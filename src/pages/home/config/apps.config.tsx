@@ -12,8 +12,8 @@ export const navItems = {
           path: "component/avatar",
           icon: <MdAccountBalanceWallet />,
         },
-        Icons: {
-          id: "Icons",
+        Icon: {
+          id: "Icon",
           label: "Icon",
           path: "component/icon",
           icon: <MdAccountBalanceWallet />,
@@ -91,7 +91,7 @@ export const navItems = {
         Button: {
           id: "Button",
           label: "Button",
-          path: "/button",
+          path: "component/button",
           icon: <MdAccountBalanceWallet />,
         },
         Label: {
