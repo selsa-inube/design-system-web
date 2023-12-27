@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { DescriptionTemplete } from "../../../design-system/data/Avatar/examples";
-import { CodeAvatar } from "../../../design-system/data/Avatar/code";
+import { PageCodeButton } from "../../../../design-system/inputs/Button/code";
+
 const tabs = [
   {
     id: "Example",
@@ -16,7 +16,7 @@ const tabs = [
   },
 ];
 
-export const PageAvatar = () => {
+export const PageButton = () => {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const handleTabChange = (id: string) => {
     setActiveTab(id);
@@ -27,8 +27,8 @@ export const PageAvatar = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {activeTab === "Example" && <DescriptionTemplete />}
-      {activeTab === "Code" && <CodeAvatar />}
+      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Code" && <PageCodeButton />}
     </>
   );
 };

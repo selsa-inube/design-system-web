@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { CodeIcon } from "../../../design-system/data/Icon/code";
+import { CodeIcon } from "../../../../design-system/data/Icon/code";
 
 const tabs = [
   {
