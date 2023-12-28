@@ -27,7 +27,7 @@ export const navItems = {
         Tag: {
           id: "Tag",
           label: "Tag",
-          path: "/tag",
+          path: "component/tag",
           icon: <MdAccountBalanceWallet />,
         },
         Text: {
