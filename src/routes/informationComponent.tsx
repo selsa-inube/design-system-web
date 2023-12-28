@@ -10,6 +10,7 @@ import { PageSwitch } from "@pages/components/inputs/Switch";
 import { PageTextarea } from "@pages/components/inputs/Textarea";
 import { PageTextfield } from "@pages/components/inputs/Textfield";
 import { PageSelect } from "@pages/components/inputs/Select";
+import { PageTable } from "@pages/components/data/Table";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -17,12 +18,13 @@ export const InformationComponentRoutes = () => {
       <Route path="/" element={<CardsComponents />} />
       <Route path="avatar" element={<PageAvatar />} />
       <Route path="icon" element={<PageIcon />} />
+      <Route path="table" element={<PageTable />} />
       <Route path="button" element={<PageButton />} />
       <Route path="label" element={<PageLabel />} />
+      <Route path="select" element={<PageSelect />} />
       <Route path="switch" element={<PageSwitch />} />
       <Route path="text-area" element={<PageTextarea />} />
       <Route path="text-field" element={<PageTextfield />} />
-      <Route path="select" element={<PageSelect />} />
     </Routes>
   );
 };

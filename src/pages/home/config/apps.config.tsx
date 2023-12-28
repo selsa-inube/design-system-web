@@ -21,7 +21,7 @@ export const navItems = {
         Table: {
           id: "Table",
           label: "Table",
-          path: "/table",
+          path: "component/table",
           icon: <MdAccountBalanceWallet />,
         },
         Tag: {

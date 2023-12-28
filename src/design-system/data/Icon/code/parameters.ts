@@ -34,11 +34,7 @@ export const parameters = [
     description: "variant of the icon",
     type: "string: 'filled', 'outlined', 'none'",
   },
-  {
-    nameProps: "variant",
-    description: "variant of the icon",
-    type: "string: 'filled', 'outlined', 'none'",
-  },
+
   {
     nameProps: "shape",
     description: "shape of the icon",
