@@ -39,7 +39,7 @@ export const navItems = {
         User: {
           id: "User",
           label: "User",
-          path: "/user",
+          path: "component/user",
           icon: <MdAccountBalanceWallet />,
         },
       },
