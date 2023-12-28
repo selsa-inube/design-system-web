@@ -11,6 +11,7 @@ import { PageTextarea } from "@pages/components/inputs/Textarea";
 import { PageTextfield } from "@pages/components/inputs/Textfield";
 import { PageSelect } from "@pages/components/inputs/Select";
 import { PageTable } from "@pages/components/data/Table";
+import { PageTag } from "@pages/components/data/Tag";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const InformationComponentRoutes = () => {
       <Route path="/" element={<CardsComponents />} />
       <Route path="avatar" element={<PageAvatar />} />
       <Route path="icon" element={<PageIcon />} />
+      <Route path="tag" element={<PageTag />} />
       <Route path="table" element={<PageTable />} />
       <Route path="button" element={<PageButton />} />
       <Route path="label" element={<PageLabel />} />
