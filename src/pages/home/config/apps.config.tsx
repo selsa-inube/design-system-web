@@ -56,7 +56,7 @@ export const navItems = {
         CountdownBar: {
           id: "CountdownBar",
           label: "CountdownBar",
-          path: "/countdown-bar",
+          path: "component/countdown-bar",
           icon: <MdAccountBalanceWallet />,
         },
         SectionMessage: {
