@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import { Header, Grid, Nav, useMediaQuery, Stack } from "@inube/design-system";
 
-import { DetailsSection } from "../../components/data/DetailsSection";
+import { DetailsSection } from "@components/data/DetailsSection";
 import { navItems } from "./config/apps.config";
 import {
   StyledAppPage,

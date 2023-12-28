@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { PageCodeTextarea } from "../../../../design-system/inputs/Textarea/code";
+import { PageCodeTextarea } from "@design-system/inputs/Textarea/code";
 
 const tabs = [
   {

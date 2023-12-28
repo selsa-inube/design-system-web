@@ -1,16 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 
-import { CardsComponents } from "../components/feedback/cards-components";
+import { CardsComponents } from "@components/feedback/cards-components";
 
-import { PageAvatar } from "../pages/components/data/avatar";
-import { PageIcon } from "../pages/components/data/icon";
-
-import { PageButton } from "../pages/components/inputs/Button";
-import { PageLabel } from "../pages/components/inputs/Label";
-import { PageSwitch } from "../pages/components/inputs/Switch";
-import { PageTextarea } from "../pages/components/inputs/Textarea";
-import { PageTextfield } from "../pages/components/inputs/Textfield";
-import { PageSelect } from "../pages/components/inputs/Select";
+import { PageAvatar } from "@pages/components/data/avatar";
+import { PageIcon } from "@pages/components/data/icon";
+import { PageButton } from "@pages/components/inputs/Button";
+import { PageLabel } from "@pages/components/inputs/Label";
+import { PageSwitch } from "@pages/components/inputs/Switch";
+import { PageTextarea } from "@pages/components/inputs/Textarea";
+import { PageTextfield } from "@pages/components/inputs/Textfield";
+import { PageSelect } from "@pages/components/inputs/Select";
 
 export const InformationComponentRoutes = () => {
   return (

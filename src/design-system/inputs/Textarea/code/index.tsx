@@ -1,5 +1,5 @@
 import { Stack, Text } from "@inube/design-system";
-import { InformationsProps } from "../../../../components/data/InformationProps";
+import { InformationsProps } from "@components/data/InformationProps";
 import { parameters } from "./parameters";
 
 export const PageCodeTextarea = () => (
