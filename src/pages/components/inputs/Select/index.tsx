@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { PageCodeSelect } from "../../../../design-system/inputs/Select/code";
+import { PageCodeSelect } from "@design-system/inputs/Select/code";
 
 const tabs = [
   {

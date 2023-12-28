@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { PageCodeLabel } from "../../../../design-system/inputs/Label/code";
+import { PageCodeLabel } from "@design-system/inputs/Label/code";
 
 const tabs = [
   {

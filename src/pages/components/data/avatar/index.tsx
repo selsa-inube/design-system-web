@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { DescriptionTemplete } from "../../../../design-system/data/Avatar/examples";
-import { CodeAvatar } from "../../../../design-system/data/Avatar/code";
+import { DescriptionTemplete } from "@design-system/data/Avatar/examples";
+import { CodeAvatar } from "@design-system/data/Avatar/code";
 
 const tabs = [
   {
