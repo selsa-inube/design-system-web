@@ -50,7 +50,7 @@ export const navItems = {
         Assisted: {
           id: "Assisted",
           label: "Assisted",
-          path: "/assisted",
+          path: "component/assisted",
           icon: <MdAccountBalanceWallet />,
         },
         CountdownBar: {
