@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import { Header, Grid, Nav, useMediaQuery, Stack } from "@inube/design-system";
 
@@ -11,9 +11,16 @@ import {
   StyledContainerNav,
 } from "./styles";
 
+const capitalizeFirstLetter = (string?: string) => {
+  if (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+};
+
 export const Home = () => {
   const smallScreen = useMediaQuery("(max-width: 849px)");
-
+  const location = useLocation();
+  const datailsSection = location.pathname.split("/").pop();
   return (
     <StyledAppPage>
       <Grid templateRows="auto 1fr" height="100vh" justifyContent="unset">
@@ -35,7 +42,9 @@ export const Home = () => {
 
             <StyledMain>
               <Stack direction="column" margin="s0 s0 s100">
-                <DetailsSection />
+                <DetailsSection
+                  section={capitalizeFirstLetter(datailsSection)}
+                />
 
                 <Outlet />
               </Stack>
