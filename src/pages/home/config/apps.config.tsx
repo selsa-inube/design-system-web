@@ -80,7 +80,7 @@ export const navItems = {
         Spinner: {
           id: "Spinner",
           label: "Spinner",
-          path: "/spinner",
+          path: "component/spinner",
           icon: <MdAccountBalanceWallet />,
         },
       },
