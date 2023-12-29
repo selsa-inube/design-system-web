@@ -62,7 +62,7 @@ export const navItems = {
         SectionMessage: {
           id: "SectionMessage",
           label: "SectionMessage",
-          path: "/section-message",
+          path: "component/section-message",
           icon: <MdAccountBalanceWallet />,
         },
         SkeletonIcon: {

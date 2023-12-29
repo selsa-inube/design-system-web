@@ -16,6 +16,7 @@ import { PageUser } from "@pages/components/data/User";
 import { PageAssisted } from "@pages/components/feedback/Assisted";
 import { PageCountdownBar } from "@pages/components/feedback/CountdownBar";
 import { PageSpinner } from "@pages/components/feedback/Spinner";
+import { PageSectionMessage } from "@pages/components/feedback/SectionMessage";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -28,6 +29,7 @@ export const InformationComponentRoutes = () => {
       <Route path="user" element={<PageUser />} />
       <Route path="assisted" element={<PageAssisted />} />
       <Route path="countdown-bar" element={<PageCountdownBar />} />
+      <Route path="section-message" element={<PageSectionMessage />} />
       <Route path="spinner" element={<PageSpinner />} />
       <Route path="button" element={<PageButton />} />
       <Route path="label" element={<PageLabel />} />
