@@ -68,7 +68,7 @@ export const navItems = {
         SkeletonIcon: {
           id: "SkeletonIcon",
           label: "SkeletonIcon",
-          path: "/skeleton-icon",
+          path: "component/skeleton-icon",
           icon: <MdAccountBalanceWallet />,
         },
         SkeletonLine: {
