@@ -18,6 +18,7 @@ import { PageCountdownBar } from "@pages/components/feedback/CountdownBar";
 import { PageSpinner } from "@pages/components/feedback/Spinner";
 import { PageSectionMessage } from "@pages/components/feedback/SectionMessage";
 import { PageSkeletonIcon } from "@pages/components/feedback/SkeletonIcon";
+import { PageSkeletonLine } from "@pages/components/feedback/SkeletonLine";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -32,6 +33,7 @@ export const InformationComponentRoutes = () => {
       <Route path="countdown-bar" element={<PageCountdownBar />} />
       <Route path="section-message" element={<PageSectionMessage />} />
       <Route path="skeleton-icon" element={<PageSkeletonIcon />} />
+      <Route path="skeleton-line" element={<PageSkeletonLine />} />
       <Route path="spinner" element={<PageSpinner />} />
       <Route path="button" element={<PageButton />} />
       <Route path="label" element={<PageLabel />} />

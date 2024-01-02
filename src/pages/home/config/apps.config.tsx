@@ -74,7 +74,7 @@ export const navItems = {
         SkeletonLine: {
           id: "SkeletonLine",
           label: "SkeletonLine",
-          path: "/skeleton-line",
+          path: "component/skeleton-line",
           icon: <MdAccountBalanceWallet />,
         },
         Spinner: {
