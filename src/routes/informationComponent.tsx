@@ -20,6 +20,7 @@ import { PageSectionMessage } from "@pages/components/feedback/SectionMessage";
 import { PageSkeletonIcon } from "@pages/components/feedback/SkeletonIcon";
 import { PageSkeletonLine } from "@pages/components/feedback/SkeletonLine";
 import { PageBreadcrumbs } from "@pages/components/navigation/Breadcrumbs";
+import { PageFullscreenNav } from "@pages/components/navigation/FullscreenNav";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -43,6 +44,7 @@ export const InformationComponentRoutes = () => {
       <Route path="text-area" element={<PageTextarea />} />
       <Route path="text-field" element={<PageTextfield />} />
       <Route path="Breadcrumbs" element={<PageBreadcrumbs />} />
+      <Route path="fullscreen-nav" element={<PageFullscreenNav />} />
     </Routes>
   );
 };
