@@ -33,7 +33,7 @@ export const navItems = {
         Text: {
           id: "Text",
           label: "Text",
-          path: "/text",
+          path: "component/text",
           icon: <MdAccountBalanceWallet />,
         },
         User: {

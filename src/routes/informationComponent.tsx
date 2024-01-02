@@ -25,6 +25,7 @@ import { PageHeader } from "@pages/components/navigation/Header";
 import { PageNav } from "@pages/components/navigation/Nav";
 import { PageTabs } from "@pages/components/navigation/Tabs";
 import { PageBlankent } from "@pages/components/utils/Blanket";
+import { PageText } from "@pages/components/data/Text";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -33,6 +34,7 @@ export const InformationComponentRoutes = () => {
       <Route path="avatar" element={<PageAvatar />} />
       <Route path="icon" element={<PageIcon />} />
       <Route path="tag" element={<PageTag />} />
+      <Route path="text" element={<PageText />} />
       <Route path="table" element={<PageTable />} />
       <Route path="user" element={<PageUser />} />
       <Route path="assisted" element={<PageAssisted />} />
