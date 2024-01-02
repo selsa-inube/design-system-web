@@ -184,7 +184,7 @@ export const navItems = {
         Blanket: {
           id: "Blanket",
           label: "Blanket",
-          path: "/blanket",
+          path: "component/blanket",
           icon: <MdAccountBalanceWallet />,
         },
       },

@@ -24,6 +24,7 @@ import { PageFullscreenNav } from "@pages/components/navigation/FullscreenNav";
 import { PageHeader } from "@pages/components/navigation/Header";
 import { PageNav } from "@pages/components/navigation/Nav";
 import { PageTabs } from "@pages/components/navigation/Tabs";
+import { PageBlankent } from "@pages/components/utils/Blanket";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -51,6 +52,7 @@ export const InformationComponentRoutes = () => {
       <Route path="header" element={<PageHeader />} />
       <Route path="nav" element={<PageNav />} />
       <Route path="tabs" element={<PageTabs />} />
+      <Route path="blanket" element={<PageBlankent />} />
     </Routes>
   );
 };
