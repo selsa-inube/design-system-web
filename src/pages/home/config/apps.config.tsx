@@ -149,7 +149,7 @@ export const navItems = {
         Breadcrumbs: {
           id: "Breadcrumbs",
           label: "Breadcrumbs",
-          path: "/breadcrumbs",
+          path: "component/breadcrumbs",
           icon: <MdAccountBalanceWallet />,
         },
         FullscreenNav: {
