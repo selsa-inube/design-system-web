@@ -173,7 +173,7 @@ export const navItems = {
         Tabs: {
           id: "Tabs",
           label: "Tabs",
-          path: "/tabs",
+          path: "component/tabs",
           icon: <MdAccountBalanceWallet />,
         },
       },

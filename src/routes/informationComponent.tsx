@@ -23,6 +23,7 @@ import { PageBreadcrumbs } from "@pages/components/navigation/Breadcrumbs";
 import { PageFullscreenNav } from "@pages/components/navigation/FullscreenNav";
 import { PageHeader } from "@pages/components/navigation/Header";
 import { PageNav } from "@pages/components/navigation/Nav";
+import { PageTabs } from "@pages/components/navigation/Tabs";
 
 export const InformationComponentRoutes = () => {
   return (
@@ -49,6 +50,7 @@ export const InformationComponentRoutes = () => {
       <Route path="fullscreen-nav" element={<PageFullscreenNav />} />
       <Route path="header" element={<PageHeader />} />
       <Route path="nav" element={<PageNav />} />
+      <Route path="tabs" element={<PageTabs />} />
     </Routes>
   );
 };
