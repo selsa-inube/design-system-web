@@ -155,7 +155,7 @@ export const navItems = {
         FullscreenNav: {
           id: "FullscreenNav",
           label: "FullscreenNav",
-          path: "/fullscreen-nav",
+          path: "component/fullscreen-nav",
           icon: <MdAccountBalanceWallet />,
         },
         Header: {
