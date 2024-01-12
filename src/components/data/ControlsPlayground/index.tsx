@@ -1,4 +1,5 @@
-import { Select, Text, Textfield } from "@inube/design-system";
+import { useState } from "react";
+import { Select, Switch, Text, Textfield } from "@inube/design-system";
 
 import {
   StyledTable,
@@ -7,9 +8,8 @@ import {
   StyledTableRow,
   StyledTableCell,
 } from "./styles";
-import { useState } from "react";
 
-const appearanceOptions = [
+const appearanceOptions: readonly string[] = [
   "primary",
   "error",
   "warning",
@@ -21,36 +21,97 @@ const appearanceOptions = [
   "dark",
 ];
 
+const spacingOptions: readonly string[] = ["wide", "compact", "none"];
+
+const variant: readonly string[] = ["filled", "outlined", "none"];
+
+const shape: readonly string[] = ["circle", "rectangle"];
+
 const options = [
   {
     nameProps: "appearance",
     typeControl: "Select",
-    value: "info",
-    options: appearanceOptions.map((appearanceOption) => ({
+    option: appearanceOptions.map((appearanceOption) => ({
       id: appearanceOption,
       label: appearanceOption,
       disabled: false,
     })),
   },
-  /*  {
-    nameProps: "prueba",
+  {
+    nameProps: "spacing",
     typeControl: "Select",
-    value: "dark",
-    options: appearanceOptions.map((appearanceOption) => ({
-      id: appearanceOption,
-      label: appearanceOption,
+    option: spacingOptions.map((spacingOption) => ({
+      id: spacingOption,
+      label: spacingOption,
       disabled: false,
     })),
-  }, */
+  },
+  {
+    nameProps: "variant",
+    typeControl: "Select",
+    option: variant.map((variantOption) => ({
+      id: variantOption,
+      label: variantOption,
+      disabled: false,
+    })),
+  },
+  {
+    nameProps: "shape",
+    typeControl: "Select",
+    option: shape.map((shapeOption) => ({
+      id: shapeOption,
+      label: shapeOption,
+      disabled: false,
+    })),
+  },
+  {
+    nameProps: "size",
+    typeControl: "Textfield",
+  },
+  {
+    nameProps: "fullwidth",
+    typeControl: "Switch",
+  },
+  {
+    nameProps: "cursorHover",
+    typeControl: "Switch",
+  },
 ];
 
 export const ControlsPlayground = () => {
-  const [values, setValues] = useState({ appearance: "dark" });
+  const [selectProps, setSelectProps] = useState<{ [key: string]: string }>({
+    appearance: "information",
+    spacing: "wide",
+    variant: "filled",
+    shape: "circle",
+  });
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.id);
-    setValues({ ...values, [e.target.id]: e.target.outerText });
+  const [textfieldProps, setTextfieldProps] = useState<{
+    [key: string]: string;
+  }>({ size: "" });
+
+  const [switchChecked, setSwitchChecked] = useState<{
+    [key: string]: boolean;
+  }>({
+    fullwidth: false,
+    cursorHover: false,
+  });
+
+  const handleOnchangeSelect = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    name: string,
+  ) => {
+    setSelectProps({ ...selectProps, [name]: event.target.innerText });
   };
+
+  const handleOnchangeTextfield = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTextfieldProps({ ...textfieldProps, [e.target.name]: e.target.value });
+  };
+
+  const handleOnchangeSwitch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSwitchChecked({ ...switchChecked, [e.target.name]: e.target.checked });
+  };
+
   return (
     <StyledTable>
       <StyledTableHead>
@@ -81,9 +142,9 @@ export const ControlsPlayground = () => {
                   id={option.nameProps}
                   name={option.nameProps}
                   fullwidth
-                  options={option.options}
-                  onChange={onChange}
-                  value={values}
+                  options={option.option}
+                  onChange={handleOnchangeSelect}
+                  value={selectProps[option.nameProps]}
                 />
               )}
               {option.typeControl === "Textfield" && (
@@ -91,6 +152,17 @@ export const ControlsPlayground = () => {
                   id={option.nameProps}
                   name={option.nameProps}
                   fullwidth
+                  onChange={handleOnchangeTextfield}
+                  value={textfieldProps[option.nameProps]}
+                />
+              )}
+              {option.typeControl === "Switch" && (
+                <Switch
+                  id={option.nameProps}
+                  name={option.nameProps}
+                  size="large"
+                  checked={switchChecked[option.nameProps]}
+                  onChange={handleOnchangeSwitch}
                 />
               )}
             </StyledTableCell>
