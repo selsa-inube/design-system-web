@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Select, Switch, Text, Textfield } from "@inube/design-system";
 
+import {
+  IOptions,
+  IValuesProps,
+  appearanceOptions,
+  shape,
+  spacingOptions,
+  variant,
+} from "./types";
 import {
   StyledTable,
   StyledTableHead,
@@ -9,25 +17,12 @@ import {
   StyledTableCell,
 } from "./styles";
 
-const appearanceOptions: readonly string[] = [
-  "primary",
-  "error",
-  "warning",
-  "success",
-  "information",
-  "help",
-  "light",
-  "gray",
-  "dark",
-];
+interface IControlsPlayground {
+  sendFatherData: (data: IValuesProps) => void;
+  initialValuesProps: IValuesProps;
+}
 
-const spacingOptions: readonly string[] = ["wide", "compact", "none"];
-
-const variant: readonly string[] = ["filled", "outlined", "none"];
-
-const shape: readonly string[] = ["circle", "rectangle"];
-
-const options = [
+const options: IOptions[] = [
   {
     nameProps: "appearance",
     typeControl: "Select",
@@ -69,48 +64,76 @@ const options = [
     typeControl: "Textfield",
   },
   {
-    nameProps: "fullwidth",
+    nameProps: "cursorHover",
     typeControl: "Switch",
   },
   {
-    nameProps: "cursorHover",
+    nameProps: "disabled",
+    typeControl: "Switch",
+  },
+  {
+    nameProps: "parentHover",
     typeControl: "Switch",
   },
 ];
 
-export const ControlsPlayground = () => {
-  const [selectProps, setSelectProps] = useState<{ [key: string]: string }>({
-    appearance: "information",
-    spacing: "wide",
-    variant: "filled",
-    shape: "circle",
+export const ControlsPlayground = (props: IControlsPlayground) => {
+  const { sendFatherData, initialValuesProps: valuesProps } = props;
+
+  const [controlsData, setControlsData] = useState<IValuesProps>({
+    selectProps: {
+      appearance: valuesProps?.selectProps?.appearance,
+      spacing: valuesProps?.selectProps?.spacing,
+      variant: valuesProps?.selectProps?.variant,
+      shape: valuesProps?.selectProps?.shape,
+    },
+    textfieldProps: { size: valuesProps?.textfieldProps?.size },
+    switchChecked: {
+      fullwidth: valuesProps?.switchChecked?.fullwidth,
+      cursorHover: valuesProps?.switchChecked?.cursorHover,
+      disabled: valuesProps?.switchChecked?.disabled,
+      parentHover: valuesProps?.switchChecked?.parentHover,
+    },
   });
 
-  const [textfieldProps, setTextfieldProps] = useState<{
-    [key: string]: string;
-  }>({ size: "" });
-
-  const [switchChecked, setSwitchChecked] = useState<{
-    [key: string]: boolean;
-  }>({
-    fullwidth: false,
-    cursorHover: false,
-  });
-
-  const handleOnchangeSelect = (
+  const handleOnChangeSelect = (
     event: React.ChangeEvent<HTMLInputElement>,
     name: string,
   ) => {
-    setSelectProps({ ...selectProps, [name]: event.target.innerText });
+    setControlsData((prevState) => ({
+      ...prevState,
+      selectProps: {
+        ...prevState.selectProps,
+        [name]: event.target.innerText,
+      },
+    }));
   };
 
-  const handleOnchangeTextfield = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTextfieldProps({ ...textfieldProps, [e.target.name]: e.target.value });
+  const handleOnChangeTextfield = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setControlsData((prevState) => ({
+      ...prevState,
+      textfieldProps: {
+        ...prevState.textfieldProps,
+        [event.target.name]: event.target.value,
+      },
+    }));
   };
 
-  const handleOnchangeSwitch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSwitchChecked({ ...switchChecked, [e.target.name]: e.target.checked });
+  const handleOnChangeSwitch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setControlsData((prevState) => ({
+      ...prevState,
+      switchChecked: {
+        ...prevState.switchChecked,
+        [event.target.name]: event.target.checked,
+      },
+    }));
   };
+
+  useEffect(() => {
+    sendFatherData(controlsData);
+  }, [controlsData, sendFatherData]);
 
   return (
     <StyledTable>
@@ -143,8 +166,8 @@ export const ControlsPlayground = () => {
                   name={option.nameProps}
                   fullwidth
                   options={option.option}
-                  onChange={handleOnchangeSelect}
-                  value={selectProps[option.nameProps]}
+                  onChange={handleOnChangeSelect}
+                  value={controlsData.selectProps[option.nameProps]}
                 />
               )}
               {option.typeControl === "Textfield" && (
@@ -152,8 +175,8 @@ export const ControlsPlayground = () => {
                   id={option.nameProps}
                   name={option.nameProps}
                   fullwidth
-                  onChange={handleOnchangeTextfield}
-                  value={textfieldProps[option.nameProps]}
+                  onChange={handleOnChangeTextfield}
+                  value={controlsData.textfieldProps[option.nameProps]}
                 />
               )}
               {option.typeControl === "Switch" && (
@@ -161,8 +184,8 @@ export const ControlsPlayground = () => {
                   id={option.nameProps}
                   name={option.nameProps}
                   size="large"
-                  checked={switchChecked[option.nameProps]}
-                  onChange={handleOnchangeSwitch}
+                  checked={controlsData.switchChecked[option.nameProps]}
+                  onChange={handleOnChangeSwitch}
                 />
               )}
             </StyledTableCell>
