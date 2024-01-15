@@ -6,8 +6,8 @@ import { CodeAvatar } from "@design-system/data/Avatar/code";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -28,7 +28,7 @@ export const PageAvatar = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {activeTab === "Example" && <DescriptionTemplete />}
+      {activeTab === "Playground" && <DescriptionTemplete />}
       {activeTab === "Code" && <CodeAvatar />}
     </>
   );
