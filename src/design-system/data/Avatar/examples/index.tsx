@@ -1,11 +1,6 @@
-import { MdOutlineSettings } from "react-icons/md";
 import { Avatar, Stack, Text } from "@inube/design-system";
-import {
-  StyledCode,
-  StyledComponentWord,
-  StyledReservedWord,
-  StyledStringDeclaration,
-} from "./styles";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const DescriptionTemplete = () => {
   return (
@@ -28,76 +23,12 @@ export const DescriptionTemplete = () => {
             <Avatar />
           </Stack>
           <Stack>
-            <StyledCode>
-              <StyledReservedWord>import </StyledReservedWord>
-              <StyledComponentWord>{"{ Avatar } "}</StyledComponentWord>
-              <StyledReservedWord>from </StyledReservedWord>
-              <StyledStringDeclaration>
-                "@inube/design-system"
-              </StyledStringDeclaration>
-              <StyledReservedWord>;</StyledReservedWord>
-
-              <Stack>
-                <StyledReservedWord>export const </StyledReservedWord>
-                <StyledComponentWord>
-                  {"AvatarDefaultExample "}
-                </StyledComponentWord>
-                <StyledReservedWord>{"= () => "}</StyledReservedWord>
-
-                <StyledComponentWord>{"<Avatar />"}</StyledComponentWord>
-
-                <StyledReservedWord>;</StyledReservedWord>
-              </Stack>
-            </StyledCode>
-          </Stack>
-        </Stack>
-      </Stack>
-
-      <Stack direction="column" gap="16px">
-        <Stack direction="column">
-          <Text as="h2" type="title">
-            icon
-          </Text>
-        </Stack>
-        <Stack gap="8px">
-          <Text appearance="gray" size="medium">
-            the icon can be updated, it receives the element to render it.
-          </Text>
-        </Stack>
-
-        <Stack direction="column" margin="s400 s0 s0 s0">
-          <Stack margin="s0 s0 s200 s200">
-            <Avatar icon={<MdOutlineSettings />} />
-          </Stack>
-          <Stack>
-            <StyledCode>
-              <StyledReservedWord>import </StyledReservedWord>
-              <StyledComponentWord>{"{ Avatar } "}</StyledComponentWord>
-              <StyledReservedWord>from </StyledReservedWord>
-              <StyledStringDeclaration>
-                "@inube/design-system"
-              </StyledStringDeclaration>
-              <StyledReservedWord>;</StyledReservedWord>
-
-              <Stack>
-                <StyledReservedWord>export const </StyledReservedWord>
-                <StyledComponentWord>
-                  {"AvatarDefaultExample "}
-                </StyledComponentWord>
-                <StyledReservedWord>{"= () => "}</StyledReservedWord>
-
-                <StyledComponentWord>
-                  {"<Avatar "}
-                  <StyledReservedWord>icon={"{"}</StyledReservedWord>
-                  <StyledComponentWord>
-                    {"<MdOutlineSettings />"}
-                  </StyledComponentWord>
-                  <StyledReservedWord>{"}"}</StyledReservedWord>
-                  {" />"}
-                </StyledComponentWord>
-                <StyledReservedWord>;</StyledReservedWord>
-              </Stack>
-            </StyledCode>
+            <SyntaxHighlighter
+              language="javascript"
+              style={oneDark}
+              children={`import { Avatar } from "@inube/design-system";
+export const AvatarDefaultExample = () => <Avatar />;`}
+            ></SyntaxHighlighter>
           </Stack>
         </Stack>
       </Stack>
