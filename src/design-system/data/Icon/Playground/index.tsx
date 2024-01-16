@@ -4,11 +4,17 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { MdOutlineAccountCircle } from "react-icons/md";
 
 import { Stack, Icon } from "@inube/design-system";
-import { ControlsPlayground } from "@components/data/ControlsPlayground";
-import { IValuesProps } from "@components/data/ControlsPlayground/types";
+
+import { ControlsProps } from "@components/feedback/ControlsPlayground";
+import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
+
+import { IselectProps, ItextfieldProps, IswitchChecked } from "./types";
+import { options } from "./data";
 
 export const PlaygroundIcon = () => {
-  const [dataChildren, setDataChildren] = useState<IValuesProps>({
+  const [dataChildren, setDataChildren] = useState<
+    IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
+  >({
     selectProps: {
       appearance: "primary",
       spacing: "wide",
@@ -23,7 +29,9 @@ export const PlaygroundIcon = () => {
     },
   });
 
-  const handleChildData = (data: IValuesProps) => {
+  const handleChildData = (
+    data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>,
+  ) => {
     setDataChildren(data);
   };
 
@@ -53,7 +61,7 @@ export const PlaygroundIcon = () => {
 
 export const ComponentIcon = () => <Icon appearance="${dataChildren?.selectProps
           ?.appearance}" icon={<MdOutlineAccountCircle />}  ${
-          dataChildren.selectProps.variant &&
+          dataChildren?.selectProps?.variant &&
           `variant="${dataChildren.selectProps.variant}" ${
             dataChildren?.selectProps?.shape &&
             `shape="${dataChildren?.selectProps?.shape}" ${
@@ -73,9 +81,10 @@ export const ComponentIcon = () => <Icon appearance="${dataChildren?.selectProps
         }/>;`}
       </SyntaxHighlighter>
 
-      <ControlsPlayground
+      <ControlsProps
+        options={options}
         sendFatherData={handleChildData}
-        initialValuesProps={dataChildren}
+        valuesProps={dataChildren}
       />
     </Stack>
   );
