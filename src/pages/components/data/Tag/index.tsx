@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Stack, Tabs } from "@inube/design-system";
 
 import { CodeTag } from "@design-system/data/Tag/code";
+import { PlaygroundTag } from "@design-system/data/Tag/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageTag = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundTag />}
       {activeTab === "Code" && <CodeTag />}
     </>
   );
