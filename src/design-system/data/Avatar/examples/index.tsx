@@ -1,6 +1,7 @@
 import { Avatar, Stack, Text } from "@inube/design-system";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { ControlsPlaygroundAvatar } from "@components/data/ControlsPlaygroundAvatar";
 
 export const DescriptionTemplete = () => {
   return (
@@ -25,10 +26,13 @@ export const DescriptionTemplete = () => {
           <Stack>
             <SyntaxHighlighter
               language="javascript"
-              style={oneDark}
+              style={darcula}
               children={`import { Avatar } from "@inube/design-system";
 export const AvatarDefaultExample = () => <Avatar />;`}
             ></SyntaxHighlighter>
+          </Stack>
+          <Stack>
+            <ControlsPlaygroundAvatar />
           </Stack>
         </Stack>
       </Stack>
