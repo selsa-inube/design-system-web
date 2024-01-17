@@ -21,3 +21,17 @@ export interface IOptions {
   typeControl: "Select" | "Textfield" | "Switch";
   option?: IOption[];
 }
+
+export interface ItextfielProps {
+  id: string;
+  label: string;
+  name: string;
+  placeholder: string;
+}
+
+export interface IswitchProps {
+  fullwidth: boolean;
+  disabled: boolean;
+  required: boolean;
+  readonly: boolean;
+}

@@ -9,10 +9,7 @@ export const options: IOptions[] = [
     nameProps: "name",
     typeControl: "Textfield",
   },
-  {
-    nameProps: "label",
-    typeControl: "Textfield",
-  },
+
   {
     nameProps: "placeholder",
     typeControl: "Textfield",
@@ -21,10 +18,7 @@ export const options: IOptions[] = [
     nameProps: "label",
     typeControl: "Textfield",
   },
-  {
-    nameProps: "label",
-    typeControl: "Textfield",
-  },
+
   {
     nameProps: "fullwidth",
     typeControl: "Switch",
@@ -38,7 +32,7 @@ export const options: IOptions[] = [
     typeControl: "Switch",
   },
   {
-    nameProps: "error",
+    nameProps: "readonly",
     typeControl: "Switch",
   },
 ];
