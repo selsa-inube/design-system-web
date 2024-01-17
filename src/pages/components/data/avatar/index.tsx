@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
-import { DescriptionTemplete } from "@design-system/data/Avatar/examples";
+import { PlaygroundAvatar } from "@design-system/data/Avatar/Playground/index";
 import { CodeAvatar } from "@design-system/data/Avatar/code";
 
 const tabs = [
@@ -28,7 +28,7 @@ export const PageAvatar = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {activeTab === "Playground" && <DescriptionTemplete />}
+      {activeTab === "Playground" && <PlaygroundAvatar />}
       {activeTab === "Code" && <CodeAvatar />}
     </>
   );
