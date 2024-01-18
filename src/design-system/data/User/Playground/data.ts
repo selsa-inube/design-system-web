@@ -1,4 +1,5 @@
 import { sizeOption, Ioptions } from "./types";
+
 export const optionsUser: Ioptions[] = [
   {
     nameProps: "userName",

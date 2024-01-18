@@ -1,6 +1,6 @@
 import { Avatar, Stack, Text } from "@inube/design-system";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { optionsAvatar } from "./data";
 import { useState } from "react";

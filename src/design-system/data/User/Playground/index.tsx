@@ -1,5 +1,5 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { User } from "@inube/design-system";
 import { Stack } from "@inube/design-system";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
@@ -41,7 +41,13 @@ export const PlaygroundUser = () => {
       >
         {`import { User } from "@inube/design-system";
 
-export const UserDefaultExample = () => <User userName="${valuesProps?.textfieldProps?.userName} " client="${valuesProps?.textfieldProps?.client} " size="${valuesProps?.selectProps?.size}" />;`}
+export const UserDefaultExample = () => <User ${
+          valuesProps?.textfieldProps?.userName &&
+          `userName="${valuesProps?.textfieldProps?.userName}"`
+        } ${
+          valuesProps?.textfieldProps?.client &&
+          `client="${valuesProps?.textfieldProps?.client}"`
+        } size="${valuesProps?.selectProps?.size}" />;`}
       </SyntaxHighlighter>
       <ControlsProps
         options={optionsUser}

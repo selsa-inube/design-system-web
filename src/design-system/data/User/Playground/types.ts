@@ -10,6 +10,7 @@ interface IOption {
 }
 export const sizeOption: readonly string[] = ["large", "small"];
 export interface ItextfieldProps {
+  id: string;
   userName: string;
   client: string;
   [key: string]: string;
