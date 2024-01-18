@@ -1,5 +1,7 @@
 import { IOptions } from "./types";
 
+const statusOptions: readonly string[] = ["pending", "invalid", "valid"];
+
 export const options: IOptions[] = [
   {
     nameProps: "id",
@@ -16,6 +18,23 @@ export const options: IOptions[] = [
   },
   {
     nameProps: "label",
+    typeControl: "Textfield",
+  },
+  {
+    nameProps: "value",
+    typeControl: "Textfield",
+  },
+  {
+    nameProps: "status",
+    typeControl: "Select",
+    option: statusOptions.map((item) => ({
+      id: item,
+      label: item,
+      disabled: false,
+    })),
+  },
+  {
+    nameProps: "lengthThreshold",
     typeControl: "Textfield",
   },
 

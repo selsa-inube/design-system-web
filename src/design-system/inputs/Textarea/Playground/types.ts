@@ -22,11 +22,17 @@ export interface IOptions {
   option?: IOption[];
 }
 
+export interface IselectProps {
+  status: string;
+}
+
 export interface ItextfielProps {
   id: string;
   label: string;
   name: string;
   placeholder: string;
+  value: string;
+  lengthThreshold: string;
 }
 
 export interface IswitchProps {

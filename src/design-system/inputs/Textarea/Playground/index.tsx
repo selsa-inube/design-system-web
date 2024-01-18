@@ -7,20 +7,25 @@ import { Stack, Textarea } from "@inube/design-system";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
 
-//import { ItextfieldProps, IswitchChecked } from "./types";
-
 import { options } from "./data";
-import { IswitchProps, ItextfielProps } from "./types";
+import { IselectProps, IswitchProps, ItextfielProps } from "./types";
 
 export const PlaygroundTextarea = () => {
   const [dataChildren, setDataChildren] = useState<
-    IvaluesProps<undefined, ItextfielProps, IswitchProps>
+    IvaluesProps<IselectProps, ItextfielProps, IswitchProps>
   >({
+    selectProps: {
+      status: "pending",
+    },
     textfieldProps: {
       id: "id",
       name: "name",
       label: "label",
       placeholder: "placeholder",
+      value: "",
+
+      lengthThreshold: "10",
+      maxLength: "200",
     },
     switchChecked: {
       fullwidth: false,
@@ -31,9 +36,19 @@ export const PlaygroundTextarea = () => {
   });
 
   const handleChildData = (
-    data: IvaluesProps<undefined, ItextfielProps, IswitchProps>,
+    data: IvaluesProps<IselectProps, ItextfielProps, IswitchProps>,
   ) => {
     setDataChildren(data);
+  };
+
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setDataChildren({
+      ...dataChildren,
+      textfieldProps: {
+        ...dataChildren.textfieldProps,
+        value: e.target.value,
+      },
+    });
   };
 
   return (
@@ -48,6 +63,11 @@ export const PlaygroundTextarea = () => {
           disabled={dataChildren?.switchChecked?.disabled}
           required={dataChildren?.switchChecked?.required}
           readonly={dataChildren?.switchChecked?.readonly}
+          value={dataChildren?.textfieldProps?.value}
+          status={dataChildren?.textfieldProps?.status}
+          lengthThreshold={dataChildren?.textfieldProps?.lengthThreshold}
+          maxLength={dataChildren?.textfieldProps?.maxLength}
+          onChange={onChange}
         />
       </Stack>
 
@@ -71,10 +91,20 @@ export const ComponentTextarea = () => <Textarea  ${
         } ${
           dataChildren?.textfieldProps?.placeholder &&
           `placeholder="${dataChildren?.textfieldProps?.placeholder}"`
-        } ${dataChildren?.switchChecked?.fullwidth ? "fullwidh" : ""} ${
+        } ${
+          dataChildren?.selectProps?.status &&
+          `status="${dataChildren?.selectProps?.status}"`
+        } 
+        ${dataChildren?.switchChecked?.fullwidth ? "fullwidh" : ""} ${
           dataChildren?.switchChecked?.disabled ? "disabled" : ""
-        } ${dataChildren?.switchChecked?.required ? "rrequired" : ""} ${
+        } ${dataChildren?.switchChecked?.required ? "required" : ""} ${
           dataChildren?.switchChecked?.readonly ? "readonly" : ""
+        } ${
+          dataChildren?.textfieldProps?.lengthThreshold &&
+          `lengthThreshold="${dataChildren?.textfieldProps?.lengthThreshold}"`
+        }   ${
+          dataChildren?.textfieldProps?.maxLength &&
+          `maxLength="${dataChildren?.textfieldProps?.maxLength}"`
         }/>;`}
       </SyntaxHighlighter>
 

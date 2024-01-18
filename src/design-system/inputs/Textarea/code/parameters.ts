@@ -36,11 +36,7 @@ export const parameters = [
     description: "Indicates wheter the switch is in its disabled state",
     type: "boolean",
   },
-  {
-    nameProps: "placeholder",
-    description: "Text to display in the text field whenever it is empty",
-    type: "string",
-  },
+
   {
     nameProps: "fullwidth",
     description: "Option to fit field width to its parent width",
