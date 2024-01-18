@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Stack, Tabs } from "@inube/design-system";
 import { CodeUser } from "@design-system/data/User/code";
+import { PlaygroundUser } from "@design-system/data/User/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -26,7 +27,7 @@ export const PageUser = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundUser />}
       {activeTab === "Code" && <CodeUser />}
     </>
   );
