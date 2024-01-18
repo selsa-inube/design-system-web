@@ -16,7 +16,7 @@ export const PlaygroundAvatar = () => {
     },
   });
   const handleValuesProps = (
-    data: IvaluesProps<undefined, ItextfieldProps>
+    data: IvaluesProps<undefined, ItextfieldProps>,
   ) => {
     setValuesProps(data);
   };

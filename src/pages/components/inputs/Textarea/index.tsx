@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
 import { PageCodeTextarea } from "@design-system/inputs/Textarea/code";
+import { PlaygroundTextarea } from "@design-system/inputs/Textarea/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageTextarea = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundTextarea />}
       {activeTab === "Code" && <PageCodeTextarea />}
     </>
   );
