@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
 import { PageCodeButton } from "@design-system/inputs/Button/code";
+import { PlaygroundButton } from "@design-system/inputs/Button/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageButton = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundButton />}
       {activeTab === "Code" && <PageCodeButton />}
     </>
   );
