@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { stackoverflowDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 import { Stack, Button } from "@inube/design-system";
 
@@ -58,62 +58,32 @@ export const PlaygroundButton = () => {
 
       <SyntaxHighlighter
         language="tsx"
-        style={stackoverflowDark}
+        style={a11yDark}
         customStyle={{ borderRadius: "10px" }}
         showLineNumbers
+        useInlineStyles
+        wrapLines
+        //codeTagProps={{}}
       >
         {`import { Button } from "@inube/design-system";
 
 export const ComponentButton = () => <Button  ${
           dataChildren?.selectProps?.appearance &&
           `appearance="${dataChildren?.selectProps?.appearance}"`
-        }
-                                              ${
-                                                dataChildren?.selectProps
-                                                  ?.type &&
-                                                `type="${dataChildren?.selectProps?.type}"`
-                                              }
-                                              ${
-                                                dataChildren?.selectProps
-                                                  ?.type &&
-                                                `spacing="${dataChildren?.selectProps?.type}"`
-                                              }
-                                              ${
-                                                dataChildren?.switchChecked
-                                                  ?.fullwidth
-                                                  ? "fullwidth"
-                                                  : ""
-                                              }
-                                              ${
-                                                dataChildren?.switchChecked
-                                                  ?.disabled
-                                                  ? "disabled"
-                                                  : ""
-                                              }
-                                              ${
-                                                dataChildren?.switchChecked
-                                                  ?.loading
-                                                  ? "loading"
-                                                  : ""
-                                              }
-                                              ${
-                                                dataChildren?.switchChecked
-                                                  ?.cursorHover
-                                                  ? "cursorHover"
-                                                  : ""
-                                              }
-                                              ${
-                                                dataChildren?.switchChecked
-                                                  ?.parentHover
-                                                  ? "parentHover"
-                                                  : ""
-                                              }
-                                              >${
-                                                dataChildren?.textfieldProps
-                                                  ?.children &&
-                                                dataChildren?.textfieldProps
-                                                  ?.children
-                                              }</Button;`}
+        } ${
+          dataChildren?.selectProps?.type &&
+          `type="${dataChildren?.selectProps?.type}"`
+        } ${
+          dataChildren?.selectProps?.spacing &&
+          `spacing="${dataChildren?.selectProps?.spacing}"`
+        } ${dataChildren?.switchChecked?.fullwidth ? "fullwidth" : ""} ${
+          dataChildren?.switchChecked?.disabled ? "disabled" : ""
+        } ${dataChildren?.switchChecked?.loading ? "loading" : ""} ${
+          dataChildren?.switchChecked?.cursorHover ? "cursorHover" : ""
+        } ${dataChildren?.switchChecked?.parentHover ? "parentHover" : ""}>${
+          dataChildren?.textfieldProps?.children &&
+          dataChildren?.textfieldProps?.children
+        }</Button>;`}
       </SyntaxHighlighter>
 
       {
