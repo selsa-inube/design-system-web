@@ -1,15 +1,3 @@
-export const appearanceOptions: readonly string[] = [
-  "primary",
-  "error",
-  "warning",
-  "success",
-  "information",
-  "help",
-  "light",
-  "gray",
-  "dark",
-];
-
 interface IOption {
   id: string;
   label: string;
