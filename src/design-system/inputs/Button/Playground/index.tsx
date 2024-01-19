@@ -62,8 +62,6 @@ export const PlaygroundButton = () => {
         customStyle={{ borderRadius: "10px" }}
         showLineNumbers
         useInlineStyles
-        wrapLines
-        //codeTagProps={{}}
       >
         {`import { Button } from "@inube/design-system";
 
