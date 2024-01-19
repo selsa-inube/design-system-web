@@ -12,6 +12,7 @@ export interface IOptions {
 
 export interface IselectProps {
   status: string;
+  size: string;
 }
 
 export interface ItextfielProps {
@@ -19,8 +20,6 @@ export interface ItextfielProps {
   label: string;
   name: string;
   placeholder: string;
-  value: string;
-  lengthThreshold: string;
 }
 
 export interface IswitchProps {
