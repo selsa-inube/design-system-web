@@ -1,14 +1,9 @@
-import { IOptions, htmlForOptions, sizeOptions } from "./types";
+import { IOptions, sizeOptions } from "./types";
 
 export const optionsLabel: IOptions[] = [
   {
     nameProps: "htmlFor",
-    typeControl: "Select",
-    option: htmlForOptions.map((htmlForOption) => ({
-      id: htmlForOption,
-      label: htmlForOption,
-      disabled: false,
-    })),
+    typeControl: "Textfield",
   },
   {
     nameProps: "children",

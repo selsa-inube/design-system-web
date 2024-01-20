@@ -11,7 +11,6 @@ export const PlaygroundLabel = () => {
     IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
   >({
     selectProps: {
-      htmlFor: "id",
       size: "large",
     },
     switchChecked: {
@@ -20,6 +19,7 @@ export const PlaygroundLabel = () => {
       invalid: false,
     },
     textfieldProps: {
+      htmlFor: "id",
       children: "Label Text",
       margin: "0px",
       padding: "0px",
@@ -37,15 +37,16 @@ export const PlaygroundLabel = () => {
       <Stack direction="column" gap="20px" margin="s400">
         <Stack>
           <Label
-            htmlFor={dataChildren?.selectProps?.htmlFor}
-            children={dataChildren?.textfieldProps?.children}
+            htmlFor={dataChildren?.textfieldProps?.htmlFor}
             size={dataChildren?.selectProps?.size}
             disabled={dataChildren?.switchChecked?.disabled}
             focused={dataChildren?.switchChecked?.focused}
             invalid={dataChildren?.switchChecked?.invalid}
             margin={dataChildren?.textfieldProps?.margin}
             padding={dataChildren?.textfieldProps?.padding}
-          />
+          >
+            {dataChildren?.textfieldProps?.children}
+          </Label>
         </Stack>
 
         <SyntaxHighlighter
@@ -56,10 +57,9 @@ export const PlaygroundLabel = () => {
         >
           {`import { Label } from "@inube/design-system";
 
-export const LabelDefaultExample = () => <Label htmlFor="${dataChildren
-            ?.selectProps?.htmlFor}" ${
-            dataChildren?.textfieldProps?.children &&
-            `children="${dataChildren?.textfieldProps?.children}"`
+export const LabelDefaultExample = () => <Label ${
+            dataChildren?.textfieldProps?.htmlFor &&
+            `htmlFor="${dataChildren?.textfieldProps?.htmlFor}"`
           } size="${dataChildren?.selectProps?.size}" ${
             dataChildren?.switchChecked?.disabled ? "disabled" : ""
           } ${dataChildren?.switchChecked?.focused ? "focused" : ""} ${
@@ -70,7 +70,7 @@ export const LabelDefaultExample = () => <Label htmlFor="${dataChildren
           } ${
             dataChildren?.textfieldProps?.padding &&
             `padding="${dataChildren?.textfieldProps?.padding}"`
-          } />;`}
+          } >${dataChildren?.textfieldProps?.children}</Label>;`}
         </SyntaxHighlighter>
 
         <ControlsProps

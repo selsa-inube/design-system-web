@@ -1,5 +1,4 @@
-export const htmlForOptions: readonly string[] = ["id"];
-export const sizeOptions: readonly string[] = ["small", "medium", "large"];
+export const sizeOptions = ["small", "medium", "large"] as const;
 
 interface Ioption {
   id: string;
@@ -13,12 +12,12 @@ export interface IOptions {
 }
 
 export interface IselectProps {
-  htmlFor: (typeof htmlForOptions)[number];
   size: (typeof sizeOptions)[number];
   [key: string]: string;
 }
 
 export interface ItextfieldProps {
+  htmlFor: string;
   children: string;
   margin: string;
   padding: string;
