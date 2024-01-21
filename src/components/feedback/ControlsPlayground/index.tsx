@@ -123,7 +123,9 @@ export const ControlsProps = <S = undefined, T = undefined, W = undefined>(
                   fullwidth
                   options={option.option}
                   onChange={handleOnChangeSelect}
-                  value={controlsData?.selectProps?.[option.nameProps]}
+                  value={
+                    controlsData?.selectProps?.[option.nameProps as keyof S]
+                  }
                 />
               )}
               {option.typeControl === "Textfield" && (
@@ -132,7 +134,9 @@ export const ControlsProps = <S = undefined, T = undefined, W = undefined>(
                   name={option.nameProps}
                   fullwidth
                   onChange={handleOnChangeTextfield}
-                  value={controlsData?.textfieldProps?.[option.nameProps]}
+                  value={
+                    controlsData?.textfieldProps?.[option.nameProps as keyof T]
+                  }
                 />
               )}
               {option.typeControl === "Switch" && (
@@ -140,7 +144,9 @@ export const ControlsProps = <S = undefined, T = undefined, W = undefined>(
                   id={option.nameProps}
                   name={option.nameProps}
                   size="large"
-                  checked={controlsData?.switchChecked?.[option.nameProps]}
+                  checked={
+                    controlsData?.switchChecked?.[option.nameProps as keyof W]
+                  }
                   onChange={handleOnChangeSwitch}
                 />
               )}
