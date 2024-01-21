@@ -41,7 +41,7 @@ export const PlaygroundUser = () => {
       >
         {`import { User } from "@inube/design-system";
 
-export const UserDefaultExample = () => <User ${
+export const ComponentUser = () => <User ${
           valuesProps?.textfieldProps?.userName &&
           `userName="${valuesProps?.textfieldProps?.userName}"`
         } ${

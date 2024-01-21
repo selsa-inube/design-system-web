@@ -16,7 +16,7 @@ export const PlaygroundAvatar = () => {
     },
   });
   const handleValuesProps = (
-    data: IvaluesProps<undefined, ItextfieldProps>,
+    data: IvaluesProps<undefined, ItextfieldProps>
   ) => {
     setValuesProps(data);
   };
@@ -48,7 +48,7 @@ export const PlaygroundAvatar = () => {
           >
             {`import { Avatar } from "@inube/design-system";
 
-export const AvatarDefaultExample = () => <Avatar icon={<MdOutlineAccountCircle/>} />;`}
+export const ComponentAvatar = () => <Avatar icon={<MdOutlineAccountCircle/>} />;`}
           </SyntaxHighlighter>
 
           <ControlsProps

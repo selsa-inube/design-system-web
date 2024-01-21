@@ -1,4 +1,4 @@
-import { InformationsProps } from "../../../components/data/InformationProps";
+import { InformationsProps } from "../../../../components/data/InformationProps";
 
 export const parameters: InformationsProps[] = [
   {
