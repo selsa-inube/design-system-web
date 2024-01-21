@@ -15,13 +15,14 @@ export interface IOptions {
 export interface IselectProps {
   type: string;
   status: string;
+  size: string;
 }
 
 export interface ItextfieldProps {
-  id: string;
-  label: string;
-  name: string;
-  placeholder: string;
+  id?: string;
+  label?: string;
+  name?: string;
+  placeholder?: string;
   value: string;
 }
 
