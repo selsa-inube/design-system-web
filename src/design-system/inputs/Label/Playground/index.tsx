@@ -1,11 +1,15 @@
-import { ControlsProps } from "@components/feedback/ControlsPlayground";
-import { Stack, Label } from "@inube/design-system";
+import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { useState } from "react";
+
+import { Stack, Label } from "@inube/design-system";
+
+import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
-import { optionsLabel } from "./data";
+
 import { IselectProps, IswitchChecked, ItextfieldProps } from "./types";
+import { optionsLabel } from "./data";
+
 export const PlaygroundLabel = () => {
   const [dataChildren, setDataChildren] = useState<
     IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
