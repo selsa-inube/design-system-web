@@ -11,10 +11,8 @@ interface IOption {
 
 export interface ItextfieldProps {
   size: string;
-  [key: string]: string;
 }
 
 export interface IswitchChecked {
   animated: boolean;
-  [key: string]: boolean;
 }
