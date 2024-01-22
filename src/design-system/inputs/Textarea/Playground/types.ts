@@ -15,12 +15,13 @@ export interface IselectProps {
 }
 
 export interface ItextfielProps {
-  id: string;
-  label: string;
-  name: string;
-  placeholder: string;
-  value: string;
-  lengthThreshold: string;
+  id?: string;
+  label?: string;
+  name?: string;
+  placeholder?: string;
+  value?: string;
+  maxLength?: string;
+  lengthThreshold?: string;
 }
 
 export interface IswitchProps {

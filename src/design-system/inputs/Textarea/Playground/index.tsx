@@ -23,7 +23,6 @@ export const PlaygroundTextarea = () => {
       label: "label",
       placeholder: "placeholder",
       value: "",
-
       lengthThreshold: "10",
       maxLength: "200",
     },
@@ -64,7 +63,7 @@ export const PlaygroundTextarea = () => {
           required={dataChildren?.switchChecked?.required}
           readonly={dataChildren?.switchChecked?.readonly}
           value={dataChildren?.textfieldProps?.value}
-          status={dataChildren?.textfieldProps?.status}
+          status={dataChildren?.selectProps?.status}
           lengthThreshold={dataChildren?.textfieldProps?.lengthThreshold}
           maxLength={dataChildren?.textfieldProps?.maxLength}
           onChange={onChange}
