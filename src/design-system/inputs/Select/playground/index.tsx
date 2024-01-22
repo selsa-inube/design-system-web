@@ -2,29 +2,27 @@ import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Stack, Textarea } from "@inube/design-system";
+import { Stack, Select } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
 
-import { options } from "./data";
+import { optionSelect, options } from "./data";
 import { IselectProps, IswitchProps, ItextfielProps } from "./types";
 
-export const PlaygroundTextarea = () => {
+export const PlaygroundSelect = () => {
   const [dataChildren, setDataChildren] = useState<
     IvaluesProps<IselectProps, ItextfielProps, IswitchProps>
   >({
     selectProps: {
       status: "pending",
+      size: "wide",
     },
     textfieldProps: {
       id: "id",
       name: "name",
       label: "label",
       placeholder: "placeholder",
-      value: "",
-      lengthThreshold: "10",
-      maxLength: "200",
     },
     switchChecked: {
       fullwidth: false,
@@ -40,32 +38,30 @@ export const PlaygroundTextarea = () => {
     setDataChildren(data);
   };
 
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setDataChildren({
-      ...dataChildren,
-      textfieldProps: {
-        ...dataChildren.textfieldProps,
-        value: e.target.value,
-      },
-    });
+  const [value, setValue] = useState({
+    value: "",
+    name: dataChildren?.textfieldProps?.name,
+  });
+
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>, name: string) => {
+    setValue({ ...value, value: e.target.innerText, name });
   };
 
   return (
     <Stack direction="column" margin="s400">
       <Stack>
-        <Textarea
+        <Select
           id={dataChildren?.textfieldProps?.id}
           name={dataChildren?.textfieldProps?.name}
           label={dataChildren?.textfieldProps?.label}
           placeholder={dataChildren?.textfieldProps?.placeholder}
           fullwidth={dataChildren?.switchChecked?.fullwidth}
           disabled={dataChildren?.switchChecked?.disabled}
+          size={dataChildren?.selectProps?.size}
           required={dataChildren?.switchChecked?.required}
           readonly={dataChildren?.switchChecked?.readonly}
-          value={dataChildren?.textfieldProps?.value}
-          status={dataChildren?.selectProps?.status}
-          lengthThreshold={dataChildren?.textfieldProps?.lengthThreshold}
-          maxLength={dataChildren?.textfieldProps?.maxLength}
+          value={value.value}
+          options={optionSelect}
           onChange={onChange}
         />
       </Stack>
@@ -76,9 +72,9 @@ export const PlaygroundTextarea = () => {
         customStyle={{ borderRadius: "10px" }}
         showLineNumbers
       >
-        {`import { Textarea } from "@inube/design-system";
+        {`import { Select } from "@inube/design-system";
 
-export const ComponentTextarea = () => <Textarea  ${
+export const ComponentSelect = () => <Select  ${
           dataChildren?.textfieldProps?.id &&
           `id="${dataChildren?.textfieldProps?.id}"`
         } ${
@@ -93,18 +89,14 @@ export const ComponentTextarea = () => <Textarea  ${
         } ${
           dataChildren?.selectProps?.status &&
           `status="${dataChildren?.selectProps?.status}"`
-        } 
-        ${dataChildren?.switchChecked?.fullwidth ? "fullwidh" : ""} ${
+        } ${
+          dataChildren?.selectProps?.size &&
+          `size="${dataChildren?.selectProps?.size}"`
+        } ${dataChildren?.switchChecked?.fullwidth ? "fullwidh" : ""} ${
           dataChildren?.switchChecked?.disabled ? "disabled" : ""
         } ${dataChildren?.switchChecked?.required ? "required" : ""} ${
           dataChildren?.switchChecked?.readonly ? "readonly" : ""
-        } ${
-          dataChildren?.textfieldProps?.lengthThreshold &&
-          `lengthThreshold="${dataChildren?.textfieldProps?.lengthThreshold}"`
-        }   ${
-          dataChildren?.textfieldProps?.maxLength &&
-          `maxLength="${dataChildren?.textfieldProps?.maxLength}"`
-        }/>;`}
+        } />;`}
       </SyntaxHighlighter>
 
       <ControlsProps
