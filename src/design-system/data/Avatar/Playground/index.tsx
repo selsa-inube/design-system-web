@@ -1,11 +1,11 @@
-import { Avatar, Stack, Text } from "@inube/design-system";
+import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Avatar, Stack, Text } from "@inube/design-system";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
-import { optionsAvatar } from "./data";
-import { useState } from "react";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
 import { ItextfieldProps } from "./types";
+import { optionsAvatar } from "./data";
 
 export const PlaygroundAvatar = () => {
   const [valuesProps, setValuesProps] = useState<
