@@ -51,7 +51,7 @@ export const PlaygroundCountdownBar = () => {
       >
         {`import { CountdownBar } from "@inube/design-system";
 
-export const ComponentIcon = () => <CountdownBar ${
+export const ComponentCountdownBar = () => <CountdownBar ${
           dataChildren?.textfieldProps?.height &&
           `height="${dataChildren?.textfieldProps?.height}"`
         }  ${
