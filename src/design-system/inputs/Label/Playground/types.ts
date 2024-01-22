@@ -13,7 +13,6 @@ export interface IOptions {
 
 export interface IselectProps {
   size: (typeof sizeOptions)[number];
-  [key: string]: string;
 }
 
 export interface ItextfieldProps {
@@ -21,12 +20,10 @@ export interface ItextfieldProps {
   children: string;
   margin: string;
   padding: string;
-  [key: string]: string;
 }
 
 export interface IswitchChecked {
-  cursorHover: boolean;
+  focused: boolean;
   disabled: boolean;
-  parentHover: boolean;
-  [key: string]: boolean;
+  invalid: boolean;
 }
