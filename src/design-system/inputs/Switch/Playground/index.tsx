@@ -50,7 +50,7 @@ export const PlaygroundSwitch = () => {
           disabled={dataChildren?.switchChecked?.disabled}
           name={dataChildren?.textfieldProps?.name}
           value={dataChildren?.selectProps?.value}
-          checked={dataChildren?.switchChecked?.checked}
+          checked={dataChildren?.switchChecked?.checked || checkout.checked}
           size={dataChildren?.selectProps?.size}
           margin={dataChildren?.textfieldProps?.margin}
           padding={dataChildren?.textfieldProps?.padding}
