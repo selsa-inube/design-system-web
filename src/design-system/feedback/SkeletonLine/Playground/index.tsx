@@ -43,7 +43,7 @@ export const PlaygroundSkeletonLine = () => {
       >
         {`import { SkeletonLine } from "@inube/design-system";
 
-export const ComponentIcon = () => <SkeletonLine ${
+export const ComponentSkeletonLine = () => <SkeletonLine ${
           dataChildren?.textfieldProps?.width &&
           `width="${dataChildren?.textfieldProps?.width}"`
         } ${dataChildren?.switchChecked?.animated ? "animated" : ""} />;`}
