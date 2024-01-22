@@ -8,13 +8,11 @@ interface IOption {
   label: string;
   disabled: boolean;
 }
-export const sizeOption: readonly string[] = ["large", "small"];
 
 export interface ItextfieldProps {
-  id?: string;
-  userName?: string;
-  client?: string;
+  size: string;
 }
-export interface IselectProps {
-  size: (typeof sizeOption)[number];
+
+export interface IswitchChecked {
+  animated: boolean;
 }

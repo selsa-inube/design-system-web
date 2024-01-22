@@ -10,23 +10,25 @@ export interface IOptions {
   option?: IOption[];
 }
 
+//type typeKeySelect = "type" | "status";
+
 export interface IselectProps {
+  type: string;
   status: string;
+  size: string;
 }
 
-export interface ItextfielProps {
+export interface ItextfieldProps {
   id?: string;
   label?: string;
   name?: string;
   placeholder?: string;
-  value?: string;
-  maxLength?: string;
-  lengthThreshold?: string;
+  value: string;
 }
 
-export interface IswitchProps {
+export interface IswitchChecked {
   fullwidth: boolean;
   disabled: boolean;
   required: boolean;
-  readonly: boolean;
+  readOnly: boolean;
 }

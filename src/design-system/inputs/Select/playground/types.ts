@@ -12,16 +12,14 @@ export interface IOptions {
 
 export interface IselectProps {
   status: string;
+  size: string;
 }
 
 export interface ItextfielProps {
-  id?: string;
-  label?: string;
-  name?: string;
-  placeholder?: string;
-  value?: string;
-  maxLength?: string;
-  lengthThreshold?: string;
+  id: string;
+  label: string;
+  name: string;
+  placeholder: string;
 }
 
 export interface IswitchProps {

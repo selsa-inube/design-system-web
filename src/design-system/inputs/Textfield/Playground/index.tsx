@@ -2,45 +2,39 @@ import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-import { Stack, Textarea } from "@inube/design-system";
+import { Stack, Textfield } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
 
+import { IselectProps, ItextfieldProps, IswitchChecked } from "./type";
 import { options } from "./data";
-import { IselectProps, IswitchProps, ItextfielProps } from "./types";
 
-export const PlaygroundTextarea = () => {
+export const PlaygroundTextfield = () => {
   const [dataChildren, setDataChildren] = useState<
-    IvaluesProps<IselectProps, ItextfielProps, IswitchProps>
+    IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
   >({
     selectProps: {
+      type: "text",
       status: "pending",
+      size: "compact",
     },
     textfieldProps: {
       id: "id",
-      name: "name",
       label: "label",
+      name: "name",
       placeholder: "placeholder",
       value: "",
-      lengthThreshold: "10",
-      maxLength: "200",
     },
     switchChecked: {
       fullwidth: false,
       disabled: false,
       required: false,
-      readonly: false,
+      readOnly: false,
     },
   });
 
-  const handleChildData = (
-    data: IvaluesProps<IselectProps, ItextfielProps, IswitchProps>,
-  ) => {
-    setDataChildren(data);
-  };
-
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataChildren({
       ...dataChildren,
       textfieldProps: {
@@ -50,22 +44,28 @@ export const PlaygroundTextarea = () => {
     });
   };
 
+  const handleChildData = (
+    data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>,
+  ) => {
+    setDataChildren(data);
+  };
+
   return (
     <Stack direction="column" margin="s400">
       <Stack>
-        <Textarea
+        <Textfield
           id={dataChildren?.textfieldProps?.id}
-          name={dataChildren?.textfieldProps?.name}
           label={dataChildren?.textfieldProps?.label}
+          name={dataChildren?.textfieldProps?.name}
           placeholder={dataChildren?.textfieldProps?.placeholder}
+          value={dataChildren?.textfieldProps?.value}
+          type={dataChildren?.selectProps?.type}
+          status={dataChildren?.selectProps?.status}
+          size={dataChildren?.selectProps?.size}
           fullwidth={dataChildren?.switchChecked?.fullwidth}
           disabled={dataChildren?.switchChecked?.disabled}
           required={dataChildren?.switchChecked?.required}
-          readonly={dataChildren?.switchChecked?.readonly}
-          value={dataChildren?.textfieldProps?.value}
-          status={dataChildren?.selectProps?.status}
-          lengthThreshold={dataChildren?.textfieldProps?.lengthThreshold}
-          maxLength={dataChildren?.textfieldProps?.maxLength}
+          readOnly={dataChildren?.switchChecked?.readOnly}
           onChange={onChange}
         />
       </Stack>
@@ -76,9 +76,9 @@ export const PlaygroundTextarea = () => {
         customStyle={{ borderRadius: "10px" }}
         showLineNumbers
       >
-        {`import { Textarea } from "@inube/design-system";
+        {`import { Icon } from "@inube/design-system";
 
-export const ComponentTextarea = () => <Textarea  ${
+export const ComponentIcon = () => <Textfield ${
           dataChildren?.textfieldProps?.id &&
           `id="${dataChildren?.textfieldProps?.id}"`
         } ${
@@ -91,20 +91,19 @@ export const ComponentTextarea = () => <Textarea  ${
           dataChildren?.textfieldProps?.placeholder &&
           `placeholder="${dataChildren?.textfieldProps?.placeholder}"`
         } ${
+          dataChildren?.selectProps?.type &&
+          `type="${dataChildren?.selectProps?.type}"`
+        } ${
           dataChildren?.selectProps?.status &&
           `status="${dataChildren?.selectProps?.status}"`
-        } 
-        ${dataChildren?.switchChecked?.fullwidth ? "fullwidh" : ""} ${
-          dataChildren?.switchChecked?.disabled ? "disabled" : ""
-        } ${dataChildren?.switchChecked?.required ? "required" : ""} ${
-          dataChildren?.switchChecked?.readonly ? "readonly" : ""
         } ${
-          dataChildren?.textfieldProps?.lengthThreshold &&
-          `lengthThreshold="${dataChildren?.textfieldProps?.lengthThreshold}"`
-        }   ${
-          dataChildren?.textfieldProps?.maxLength &&
-          `maxLength="${dataChildren?.textfieldProps?.maxLength}"`
-        }/>;`}
+          dataChildren?.selectProps?.size &&
+          `size="${dataChildren?.selectProps?.size}"`
+        } ${dataChildren?.switchChecked?.fullwidth ? "fullwidth" : ""} ${
+          dataChildren?.switchChecked?.disabled ? "disabled" : ""
+        } ${dataChildren?.switchChecked?.readOnly ? "readOnly" : ""} ${
+          dataChildren?.switchChecked?.readOnly ? "required" : ""
+        }  />;`}
       </SyntaxHighlighter>
 
       <ControlsProps
