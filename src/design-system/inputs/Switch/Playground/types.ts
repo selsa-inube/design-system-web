@@ -21,7 +21,6 @@ export interface IOptions {
 export interface IselectProps {
   value: (typeof optionsValue)[number];
   size: (typeof optionSize)[number];
-  [key: string]: string;
 }
 
 export interface ItextfieldProps {
@@ -29,11 +28,9 @@ export interface ItextfieldProps {
   name: string;
   margin: string;
   padding: string;
-  [key: string]: string;
 }
 
 export interface IswitchChecked {
   checked: boolean;
   disabled: boolean;
-  [key: string]: boolean;
 }

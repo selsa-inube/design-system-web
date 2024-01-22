@@ -26,6 +26,16 @@ export const PlaygroundSwitch = () => {
       padding: "s0",
     },
   });
+  const [checkout, setCheckout] = useState({
+    checked: false,
+  });
+
+  const handleCheckout = () => {
+    setCheckout({
+      checked: !checkout.checked,
+    });
+  };
+
   const handleChildData = (
     data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
   ) => {
@@ -35,6 +45,7 @@ export const PlaygroundSwitch = () => {
     <Stack direction="column" gap="20px" margin="s400">
       <Stack>
         <Switch
+          onChange={handleCheckout}
           id={dataChildren?.textfieldProps?.id}
           disabled={dataChildren?.switchChecked?.disabled}
           name={dataChildren?.textfieldProps?.name}
