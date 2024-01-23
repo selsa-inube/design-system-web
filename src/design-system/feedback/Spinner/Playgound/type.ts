@@ -8,6 +8,9 @@ export const appearanceOptions = [
   "light",
   "gray",
   "dark",
+  "link",
+  "divider",
+  "spinner",
 ] as const;
 
 export const sizeOptions = ["small", "medium", "large"] as const;
