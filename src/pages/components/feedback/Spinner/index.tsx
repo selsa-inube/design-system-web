@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
 import { CodeSpinner } from "@design-system/feedback/Spinner/code";
+import { PlaygroundSpinner } from "@design-system/feedback/Spinner/Playgound";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playgroun",
+    label: "Playgroun",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageSpinner = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playgroun" && <PlaygroundSpinner />}
       {activeTab === "Code" && <CodeSpinner />}
     </>
   );
