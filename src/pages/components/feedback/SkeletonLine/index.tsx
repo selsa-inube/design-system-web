@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
 import { CodeSkeletonLine } from "@design-system/feedback/SkeletonLine/code";
+import { PlaygroundSkeletonLine } from "@design-system/feedback/SkeletonLine/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageSkeletonLine = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundSkeletonLine />}
       {activeTab === "Code" && <CodeSkeletonLine />}
     </>
   );
