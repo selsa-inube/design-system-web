@@ -1,4 +1,4 @@
-export const appearanceOptions: readonly string[] = [
+export const appearanceOptions = [
   "primary",
   "error",
   "warning",
@@ -8,13 +8,13 @@ export const appearanceOptions: readonly string[] = [
   "light",
   "gray",
   "dark",
-];
+] as const;
 
-export const spacingOptions: readonly string[] = ["wide", "compact", "none"];
+export const spacingOptions = ["wide", "compact", "none"] as const;
 
-export const variant: readonly string[] = ["filled", "outlined", "none"];
+export const variant = ["filled", "outlined", "none"] as const;
 
-export const shape: readonly string[] = ["circle", "rectangle"];
+export const shape = ["circle", "rectangle"] as const;
 
 interface IOption {
   id: string;
@@ -33,17 +33,14 @@ export interface IselectProps {
   spacing: (typeof spacingOptions)[number];
   variant: (typeof variant)[number];
   shape: (typeof shape)[number];
-  [key: string]: string;
 }
 
 export interface ItextfieldProps {
   size: string;
-  [key: string]: string;
 }
 
 export interface IswitchChecked {
   cursorHover: boolean;
   disabled: boolean;
   parentHover: boolean;
-  [key: string]: boolean;
 }
