@@ -24,10 +24,8 @@ export interface IOptions {
 
 export interface IselectProps {
   appearance: (typeof appearanceOptions)[number];
-  [key: string]: string;
 }
 
 export interface ItextfieldProps {
   label: string;
-  [key: string]: string;
 }
