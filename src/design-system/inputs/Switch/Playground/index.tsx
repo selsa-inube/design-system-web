@@ -1,11 +1,14 @@
+import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import { Stack, Switch } from "@inube/design-system";
-import { IselectProps, ItextfieldProps, IswitchChecked } from "./types";
+
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
-import { useState } from "react";
+
 import { options } from "./data";
+import { IselectProps, ItextfieldProps, IswitchChecked } from "./types";
 
 export const PlaygroundSwitch = () => {
   const [dataChildren, setDataChildren] = useState<
@@ -26,13 +29,14 @@ export const PlaygroundSwitch = () => {
       padding: "s0",
     },
   });
-  const [checkout, setCheckout] = useState({
-    checked: false,
+  const [checkout, setCheckout] = useState<{ [key: string]: boolean }>({
+    name: false,
   });
 
-  const handleCheckout = () => {
+  const handleCheckout = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target;
     setCheckout({
-      checked: !checkout.checked,
+      [name]: checked,
     });
   };
 
@@ -50,7 +54,7 @@ export const PlaygroundSwitch = () => {
           disabled={dataChildren?.switchChecked?.disabled}
           name={dataChildren?.textfieldProps?.name}
           value={dataChildren?.selectProps?.value}
-          checked={dataChildren?.switchChecked?.checked || checkout.checked}
+          checked={dataChildren?.switchChecked?.checked || checkout.name}
           size={dataChildren?.selectProps?.size}
           margin={dataChildren?.textfieldProps?.margin}
           padding={dataChildren?.textfieldProps?.padding}
