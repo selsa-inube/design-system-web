@@ -12,5 +12,4 @@ interface IOption {
 
 export interface ItextfieldProps {
   icon: string;
-  [key: string]: string;
 }

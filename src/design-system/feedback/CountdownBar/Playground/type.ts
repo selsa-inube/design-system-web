@@ -10,12 +10,6 @@ export const appearanceOptions = [
   "dark",
 ] as const;
 
-export const spacingOptions = ["wide", "compact", "none"] as const;
-
-export const variant = ["filled", "outlined", "none"] as const;
-
-export const shape = ["circle", "rectangle"] as const;
-
 interface IOption {
   id: string;
   label: string;
@@ -30,17 +24,13 @@ export interface IOptions {
 
 export interface IselectProps {
   appearance: (typeof appearanceOptions)[number];
-  spacing: (typeof spacingOptions)[number];
-  variant: (typeof variant)[number];
-  shape: (typeof shape)[number];
 }
 
 export interface ItextfieldProps {
-  size: string;
+  height: string;
+  duration: number;
 }
 
 export interface IswitchChecked {
-  cursorHover: boolean;
-  disabled: boolean;
-  parentHover: boolean;
+  paused: boolean;
 }
