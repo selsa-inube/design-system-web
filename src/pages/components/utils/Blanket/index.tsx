@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
 import { CodeBlanket } from "@design-system/utils/Blnaket/code";
+import { PlaygroundBlanket } from "@design-system/utils/Blnaket/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageBlankent = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundBlanket />}
       {activeTab === "Code" && <CodeBlanket />}
     </>
   );
