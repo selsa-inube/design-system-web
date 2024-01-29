@@ -14,7 +14,7 @@ import { crumbs } from "./mucks";
 export const PlaygroundBreadcrumbs = () => {
   const [dataChildren, setDataChildren] = useState<IvaluesProps<IselectProps>>({
     selectProps: {
-      options: "3",
+      options: "5",
     },
   });
 
@@ -22,7 +22,7 @@ export const PlaygroundBreadcrumbs = () => {
     setDataChildren(data);
   };
 
-  const spliceCrumbs = crumbs.splice(
+  const sliceCrumbs = crumbs.slice(
     0,
     parseInt(dataChildren!.selectProps!.options)
   );
@@ -30,7 +30,7 @@ export const PlaygroundBreadcrumbs = () => {
   return (
     <Stack direction="column" gap="20px" margin="s400">
       <Stack direction="column" width="800px">
-        <Breadcrumbs crumbs={spliceCrumbs} />
+        <Breadcrumbs crumbs={sliceCrumbs} />
       </Stack>
 
       <SyntaxHighlighter language="javascript" style={darcula} showLineNumbers>
