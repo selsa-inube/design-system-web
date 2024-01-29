@@ -17,13 +17,16 @@ export const PlaygroundBreadcrumbs = () => {
       options: "3",
     },
   });
+
   const handleChildData = (data: IvaluesProps<IselectProps>) => {
     setDataChildren(data);
   };
+
   const spliceCrumbs = crumbs.splice(
     0,
     parseInt(dataChildren!.selectProps!.options)
   );
+
   return (
     <Stack direction="column" gap="20px" margin="s400">
       <Stack direction="column" width="800px">
