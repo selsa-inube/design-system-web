@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import { Stack, Tabs } from "@inube/design-system";
 import { CodeBreadcrumbs } from "@design-system/navigation/Breadcrumbs/code";
+import { PlaygroundBreadcrumbs } from "@design-system/navigation/Breadcrumbs/Playground";
 
 const tabs = [
   {
-    id: "Example",
-    label: "Example",
+    id: "Playground",
+    label: "Playground",
     isDisabled: false,
   },
   {
@@ -27,7 +28,7 @@ export const PageBreadcrumbs = () => {
       <Stack margin="s200 s400">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {/*activeTab === "Example" && < /> */}
+      {activeTab === "Playground" && <PlaygroundBreadcrumbs />}
       {activeTab === "Code" && <CodeBreadcrumbs />}
     </>
   );
