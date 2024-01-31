@@ -137,7 +137,7 @@ export const navItems = {
         },
         stack: {
           id: "stack",
-          label: "stack",
+          label: "Stack",
           path: "/stack",
           icon: <MdAccountBalanceWallet />,
         },
