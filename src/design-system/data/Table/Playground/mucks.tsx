@@ -1,5 +1,5 @@
 import { MdToggleOff, MdModeEdit, MdDelete } from "react-icons/md";
-import { Icon } from "@inube/design-system";
+import { Icon } from "@inubekit/icon";
 
 export const entries = [
   {

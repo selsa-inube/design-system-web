@@ -3,8 +3,8 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { MdOutlineAccountCircle } from "react-icons/md";
 
-import { Stack, Icon } from "@inube/design-system";
-
+import { Stack } from "@inube/design-system";
+import { Icon } from "@inubekit/icon";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
 
@@ -39,7 +39,7 @@ export const PlaygroundIcon = () => {
     <Stack direction="column" margin="s400">
       <Stack>
         <Icon
-          appearance={dataChildren?.selectProps?.appearance}
+          appearance={dataChildren?.selectProps?.appearance!}
           icon={<MdOutlineAccountCircle />}
           size={dataChildren?.textfieldProps?.size}
           variant={dataChildren?.selectProps?.variant}
