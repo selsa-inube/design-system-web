@@ -1,42 +1,42 @@
 import { MdAccountBalanceWallet } from "react-icons/md";
 
-export const navItems = {
+const navigation = {
   title: "Components",
   sections: {
     data: {
       name: "Data",
       links: {
-        Avatar: {
+        avatar: {
           id: "Avatar",
           label: "Avatar",
           path: "component/avatar",
           icon: <MdAccountBalanceWallet />,
         },
-        Icon: {
+        icon: {
           id: "Icon",
           label: "Icon",
           path: "component/icon",
           icon: <MdAccountBalanceWallet />,
         },
-        Table: {
+        table: {
           id: "Table",
           label: "Table",
           path: "component/table",
           icon: <MdAccountBalanceWallet />,
         },
-        Tag: {
+        tag: {
           id: "Tag",
           label: "Tag",
           path: "component/tag",
           icon: <MdAccountBalanceWallet />,
         },
-        Text: {
+        text: {
           id: "Text",
           label: "Text",
           path: "component/text",
           icon: <MdAccountBalanceWallet />,
         },
-        User: {
+        user: {
           id: "User",
           label: "User",
           path: "component/user",
@@ -44,40 +44,40 @@ export const navItems = {
         },
       },
     },
-    FeedBack: {
+    feedback: {
       name: "FeedBack",
       links: {
-        Assisted: {
+        assisted: {
           id: "Assisted",
           label: "Assisted",
           path: "component/assisted",
           icon: <MdAccountBalanceWallet />,
         },
-        CountdownBar: {
+        countdownBar: {
           id: "CountdownBar",
           label: "CountdownBar",
           path: "component/countdown-bar",
           icon: <MdAccountBalanceWallet />,
         },
-        SectionMessage: {
+        sectionMessage: {
           id: "SectionMessage",
           label: "SectionMessage",
           path: "component/section-message",
           icon: <MdAccountBalanceWallet />,
         },
-        SkeletonIcon: {
+        skeletonIcon: {
           id: "SkeletonIcon",
           label: "SkeletonIcon",
           path: "component/skeleton-icon",
           icon: <MdAccountBalanceWallet />,
         },
-        SkeletonLine: {
+        skeletonLine: {
           id: "SkeletonLine",
           label: "SkeletonLine",
           path: "component/skeleton-line",
           icon: <MdAccountBalanceWallet />,
         },
-        Spinner: {
+        spinner: {
           id: "Spinner",
           label: "Spinner",
           path: "component/spinner",
@@ -85,40 +85,40 @@ export const navItems = {
         },
       },
     },
-    Inputs: {
+    inputs: {
       name: "Inputs",
       links: {
-        Button: {
+        button: {
           id: "Button",
           label: "Button",
           path: "component/button",
           icon: <MdAccountBalanceWallet />,
         },
-        Label: {
+        label: {
           id: "Label",
           label: "Label",
           path: "component/label",
           icon: <MdAccountBalanceWallet />,
         },
-        Select: {
+        select: {
           id: "Select",
           label: "Select",
           path: "component/select",
           icon: <MdAccountBalanceWallet />,
         },
-        Switch: {
+        switch: {
           id: "Switch",
           label: "Switch",
           path: "component/switch",
           icon: <MdAccountBalanceWallet />,
         },
-        Textarea: {
+        textarea: {
           id: "Textarea",
           label: "Textarea",
           path: "component/text-area",
           icon: <MdAccountBalanceWallet />,
         },
-        Textfield: {
+        textfield: {
           id: "Textfield",
           label: "Textfield",
           path: "component/text-field",
@@ -126,10 +126,10 @@ export const navItems = {
         },
       },
     },
-    Layout: {
+    layout: {
       name: "Layout",
       links: {
-        Grid: {
+        grid: {
           id: "Grid",
           label: "Grid",
           path: "/grid",
@@ -143,34 +143,34 @@ export const navItems = {
         },
       },
     },
-    Navigation: {
+    navigation: {
       name: "Navigation",
       links: {
-        Breadcrumbs: {
+        breadcrumbs: {
           id: "Breadcrumbs",
           label: "Breadcrumbs",
           path: "component/breadcrumbs",
           icon: <MdAccountBalanceWallet />,
         },
-        FullscreenNav: {
+        fullscreenNav: {
           id: "FullscreenNav",
           label: "FullscreenNav",
           path: "component/fullscreen-nav",
           icon: <MdAccountBalanceWallet />,
         },
-        Header: {
+        header: {
           id: "Header",
           label: "Header",
           path: "component/header",
           icon: <MdAccountBalanceWallet />,
         },
-        Nav: {
+        nav: {
           id: "Nav",
           label: "Nav",
           path: "component/nav",
           icon: <MdAccountBalanceWallet />,
         },
-        Tabs: {
+        tabs: {
           id: "Tabs",
           label: "Tabs",
           path: "component/tabs",
@@ -178,10 +178,10 @@ export const navItems = {
         },
       },
     },
-    Utils: {
+    utils: {
       name: "Utils",
       links: {
-        Blanket: {
+        blanket: {
           id: "Blanket",
           label: "Blanket",
           path: "component/blanket",
@@ -191,3 +191,5 @@ export const navItems = {
     },
   },
 };
+
+export { navigation };
