@@ -5,13 +5,13 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-import { InformationComponentRoutes } from "./routes/informationComponent";
 import { Root } from "@pages/Root";
+import { Component } from "@pages/Component";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="component/*" element={<InformationComponentRoutes />} />
+      <Route path="component/*" element={<Component />} />
     </Route>,
   ),
 );
