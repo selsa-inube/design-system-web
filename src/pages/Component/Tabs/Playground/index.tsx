@@ -1,7 +1,6 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { Text } from "@inube/design-system";
 import { components } from "../../../../content";
-import { MdAdd } from "react-icons/md";
 
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
@@ -13,21 +12,27 @@ interface IPlayground {
 function Playground(props: IPlayground) {
   const { component } = props;
 
-  const [content] = useState(components[component]);
+  const [content, setContent] = useState(components[component]);
+
+  useEffect(() => {
+    setContent(components[component]);
+  }, [component]);
 
   const Example = content.example;
 
+  const propsString = Object.entries(content.props)
+    .map(([key, value]) => `${key}="${value}"`)
+    .join(" ");
+
   return (
     <>
-      <h1>{content.name}</h1>
-      <p>{content.description}</p>
-      <Example
-        appearance={content.props.appearance}
-        icon={<MdAdd />}
-        size="32px"
-      />
+      <Text margin="10px 0 0 0" size="large" type="headline">
+        {content.name}
+      </Text>
+      <Text margin="0 0 10px 0">{content.description}</Text>
+      <Example {...content.props} />
       <SyntaxHighlighter language="javascript" style={docco}>
-        {`<${content.name} appearance="${content.props.appearance}"/>`}
+        {`<${content.name} ${propsString} />`}
       </SyntaxHighlighter>
     </>
   );

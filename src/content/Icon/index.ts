@@ -1,7 +1,7 @@
 import { Icon } from "@inube/design-system";
 
 const icon = {
-  description: "This is a description",
+  description: "Icons used to communicate actions and decisions graphically",
   example: Icon,
   name: "Icon",
   props: {

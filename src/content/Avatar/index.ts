@@ -1,12 +1,12 @@
 import { Avatar } from "@inube/design-system";
+import { MdOutlineAccountCircle } from "react-icons/md";
 
 const avatar = {
-  description: "This is a description",
+  description: "This component uses a filled primary icon for all applications",
   example: Avatar,
   name: "Avatar",
   props: {
-    appearance: "warning",
-    size: "16px",
+    icon: MdOutlineAccountCircle,
   },
 };
 

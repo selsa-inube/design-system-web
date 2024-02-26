@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { icon } from "./Icon";
 import { avatar } from "./Avatar";
+import { table } from "./Table";
 
 interface Components {
   [key: string]: {
@@ -14,6 +15,7 @@ interface Components {
 const components: Components = {
   icon,
   avatar,
+  table,
 };
 
 export { components };
