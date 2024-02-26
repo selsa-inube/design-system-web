@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { icon } from "./Icon";
+import { avatar } from "./Avatar";
 
 interface Components {
   [key: string]: {
@@ -12,6 +13,7 @@ interface Components {
 
 const components: Components = {
   icon,
+  avatar,
 };
 
 export { components };
