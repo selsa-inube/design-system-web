@@ -5,18 +5,21 @@ interface ContentProps {
 }
 
 function processProps(contentProps: ContentProps) {
-  return Object.keys(contentProps).reduce<ContentProps>((acc, key) => {
-    const value = contentProps[key];
-    if (
-      typeof value === "function" ||
-      (typeof value === "object" && value?.$$typeof)
-    ) {
-      acc[key] = React.createElement(value);
-    } else {
-      acc[key] = value;
-    }
-    return acc;
-  }, {});
+  return Object.keys(contentProps).reduce<ContentProps>(
+    (processedProps, key) => {
+      const value = contentProps[key];
+      if (
+        typeof value === "function" ||
+        (typeof value === "object" && value?.$$typeof)
+      ) {
+        processedProps[key] = React.createElement(value);
+      } else {
+        processedProps[key] = value;
+      }
+      return processedProps;
+    },
+    {},
+  );
 }
 
 function formatPropValue(value: any): string {
@@ -25,7 +28,7 @@ function formatPropValue(value: any): string {
     (typeof value === "object" && value?.$$typeof)
   ) {
     const displayName = value.displayName || value.name || "Component";
-    return `<${displayName} />`;
+    return `{<${displayName} />}`;
   }
   if (typeof value === "string") {
     return `"${value}"`;
