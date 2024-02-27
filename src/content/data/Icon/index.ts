@@ -1,4 +1,5 @@
 import { Icon } from "@inube/design-system";
+import { MdAdd } from "react-icons/md";
 
 const icon = {
   description: "Icons used to communicate actions and decisions graphically",
@@ -6,7 +7,8 @@ const icon = {
   name: "Icon",
   props: {
     appearance: "warning",
-    size: "16px",
+    icon: MdAdd,
+    size: "32px",
   },
 };
 
