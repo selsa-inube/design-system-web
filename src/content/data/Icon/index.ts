@@ -1,12 +1,14 @@
 import { Icon } from "@inube/design-system";
+import { MdAdd } from "react-icons/md";
 
 const icon = {
-  description: "This is a description",
+  description: "Icons used to communicate actions and decisions graphically",
   example: Icon,
   name: "Icon",
   props: {
     appearance: "warning",
-    size: "16px",
+    icon: MdAdd,
+    size: "32px",
   },
 };
 
