@@ -4,13 +4,14 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Home } from "./pages/home/home";
-import { InformationComponentRoutes } from "./routes/informationComponent";
+
+import { Root } from "@pages/Root";
+import { Component } from "@pages/Component";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />}>
-      <Route path="component/*" element={<InformationComponentRoutes />} />
+    <Route path="/" element={<Root />}>
+      <Route path="component/*" element={<Component />} />
     </Route>,
   ),
 );
