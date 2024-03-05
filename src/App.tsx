@@ -6,12 +6,12 @@ import {
 } from "react-router-dom";
 
 import { Root } from "@pages/Root";
-import { Component } from "@pages/Component";
+import { InformationComponentRoutes } from "@routes/informationComponent";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="component/*" element={<Component />} />
+      <Route path="component/*" element={<InformationComponentRoutes />} />
     </Route>,
   ),
 );
