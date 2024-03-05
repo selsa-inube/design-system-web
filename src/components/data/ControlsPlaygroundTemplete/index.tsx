@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Select, Switch, Text, Textfield } from "@inube/design-system";
-
+import { Select, Switch, Textfield } from "@inube/design-system";
+import { Text } from "@inubekit/text";
 import {
   IOptions,
   IValuesProps,

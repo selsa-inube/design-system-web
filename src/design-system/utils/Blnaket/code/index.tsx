@@ -1,4 +1,5 @@
-import { Stack, Text } from "@inube/design-system";
+import { Stack } from "@inube/design-system";
+import { Text } from "@inubekit/text";
 import { InformationsProps } from "@components/data/InformationProps";
 import { parameters } from "./parameters";
 
