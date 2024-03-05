@@ -10,7 +10,7 @@ const StyledRoot = styled.div`
 const StyledMain = styled.main`
   box-sizing: border-box;
   height: calc(100vh - 56px);
-  padding: 64px 32px;
+  padding: 32px 32px;
   overflow-y: scroll;
 `;
 
