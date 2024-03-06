@@ -1,5 +1,4 @@
-import { Text } from "@inube/design-system";
-
+import { Text } from "@inubekit/text";
 import {
   StyledTable,
   StyledTr,

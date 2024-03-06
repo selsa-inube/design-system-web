@@ -1,4 +1,4 @@
-import { Text } from "@inube/design-system";
+import { Text } from "@inubekit/text";
 
 interface ITitle {
   title: string;
