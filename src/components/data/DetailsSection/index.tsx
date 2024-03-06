@@ -1,4 +1,5 @@
-import { Stack, useMediaQuery } from "@inube/design-system";
+import { Stack } from "@inube/design-system";
+import { useMediaQuery } from "@inubekit/hooks";
 import { Text } from "@inubekit/text";
 import { StyledContainer } from "./styles";
 

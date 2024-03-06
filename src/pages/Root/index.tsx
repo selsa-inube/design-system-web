@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import { Grid, Header, useMediaQuery, Nav } from "@inube/design-system";
-
+import { Grid, Header, Nav } from "@inube/design-system";
+import { useMediaQuery } from "@inubekit/hooks";
 import { navigation } from "./navigation";
 
 import { StyledRoot, StyledMain } from "./styles";
