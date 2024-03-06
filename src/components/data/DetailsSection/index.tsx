@@ -1,4 +1,5 @@
-import { Stack, Text, useMediaQuery } from "@inube/design-system";
+import { Stack, Text } from "@inube/design-system";
+import { useMediaQuery } from "@inubekit/hooks";
 import { StyledContainer } from "./styles";
 
 interface DetailsSectionProps {
