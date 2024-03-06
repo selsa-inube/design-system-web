@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Table } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Table } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -30,7 +30,7 @@ export const PlaygroundTable = () => {
   };
 
   return (
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <Stack width="100%" direction="column">
         {
           <Table
@@ -47,7 +47,7 @@ export const PlaygroundTable = () => {
           />
         }
       </Stack>
-      <Stack width="100%" direction="column" margin="s300 s0 s0 s0">
+      <Stack width="100%" direction="column" margin="24px 0 0 0">
         <SyntaxHighlighter
           language="tsx"
           style={darcula}

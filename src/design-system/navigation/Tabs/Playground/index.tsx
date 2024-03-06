@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Tabs } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Tabs } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -36,7 +36,7 @@ export const PlaygroundTabs = () => {
   };
 
   return (
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <StyledContainerTabs>
         <Tabs
           type={dataChildren?.selectProps?.type}

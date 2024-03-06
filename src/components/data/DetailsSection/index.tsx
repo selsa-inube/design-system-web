@@ -1,4 +1,4 @@
-import { Stack } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { useMediaQuery } from "@inubekit/hooks";
 import { Text } from "@inubekit/text";
 import { StyledContainer } from "./styles";
@@ -15,7 +15,7 @@ export const DetailsSection = (props: DetailsSectionProps) => {
   const movilScreen = useMediaQuery("(max-width: 849px)");
   return (
     <StyledContainer>
-      <Stack height="100%" padding="s0 s400">
+      <Stack height="100%" padding="0 32px">
         <Stack direction="column" justifyContent="center">
           <Text as="h1" type="headline">
             {section}

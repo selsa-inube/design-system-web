@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { PlaygroundLabel } from "@design-system/inputs/Label/Playground";
-import { Stack, Tabs } from "@inube/design-system";
+import { Tabs } from "@inube/design-system";
 import { PageCodeLabel } from "@design-system/inputs/Label/code";
+import { Stack } from "@inubekit/stack";
 
 const tabs = [
   {
@@ -24,7 +25,7 @@ export const PageLabel = () => {
 
   return (
     <>
-      <Stack margin="s200 s400">
+      <Stack margin="16px 32px">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {activeTab === "Playground" && <PlaygroundLabel />}

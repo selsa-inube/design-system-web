@@ -1,7 +1,7 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { User } from "@inube/design-system";
-import { Stack } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { optionsUser } from "./data";
 import { useState } from "react";
@@ -20,12 +20,12 @@ export const PlaygroundUser = () => {
     },
   });
   const handleValuesProps = (
-    data: IvaluesProps<IselectProps, ItextfieldProps>
+    data: IvaluesProps<IselectProps, ItextfieldProps>,
   ) => {
     setValuesProps(data);
   };
   return (
-    <Stack direction="column" gap="20px" margin="s400">
+    <Stack direction="column" gap="20px" margin="32px">
       <Stack>
         <User
           userName={valuesProps?.textfieldProps?.userName}

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Switch } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Switch } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -41,12 +41,12 @@ export const PlaygroundSwitch = () => {
   };
 
   const handleChildData = (
-    data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
+    data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>,
   ) => {
     setDataChildren(data);
   };
   return (
-    <Stack direction="column" gap="20px" margin="s400">
+    <Stack direction="column" gap="20px" margin="32px">
       <Stack>
         <Switch
           onChange={handleCheckout}

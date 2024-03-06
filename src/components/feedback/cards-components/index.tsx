@@ -1,5 +1,4 @@
-import { Stack } from "@inube/design-system";
-
+import { Stack } from "@inubekit/stack";
 import { Card } from "../card";
 
 const cards = [
@@ -13,7 +12,7 @@ const cards = [
 
 export const CardsComponents = () => {
   return (
-    <Stack margin="s400" gap="8pxs">
+    <Stack margin="32px" gap="8px">
       {cards.map((card) => (
         <Card
           key={card.title}

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Stack, Tabs } from "@inube/design-system";
-
+import { Tabs } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { CodeTag } from "@design-system/data/Tag/code";
 import { PlaygroundTag } from "@design-system/data/Tag/Playground";
 
@@ -25,7 +25,7 @@ export const PageTag = () => {
 
   return (
     <>
-      <Stack margin="s200 s400">
+      <Stack margin="16px 32px">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {activeTab === "Playground" && <PlaygroundTag />}

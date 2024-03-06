@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Blanket, Button } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Blanket, Button } from "@inube/design-system";
 import { StyledBackdropBlanket } from "./styles";
 
 /* import { ControlsProps } from "@components/feedback/ControlsPlayground";
@@ -17,7 +17,7 @@ export const PlaygroundBlanket = () => {
   };
 
   return (
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <Stack direction="column">
         <Button onClick={handleShowBlanket}>Show Blanket</Button>
         {showBlanket && (
