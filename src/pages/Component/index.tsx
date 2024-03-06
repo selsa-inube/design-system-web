@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Tabs, Text, Stack } from "@inube/design-system";
-
+import { Tabs, Stack } from "@inube/design-system";
+import { Text } from "@inubekit/text";
 import { Playground } from "./Tabs/Playground";
 
 const tabs = [
