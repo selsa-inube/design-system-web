@@ -1,11 +1,11 @@
-import { Stack } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { InformationsProps } from "@components/data/InformationProps";
 import { parameters } from "./parameters";
 
 export const CodeBlanket = () => (
   <>
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <Text as="h3" type="title">
         Props
       </Text>
@@ -16,7 +16,7 @@ export const CodeBlanket = () => (
         key={parameter.nameProps}
         direction="column"
         gap="16px"
-        margin="s400"
+        margin="32px"
       >
         <Stack>
           <InformationsProps

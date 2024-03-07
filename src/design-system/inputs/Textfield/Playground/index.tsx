@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Textfield } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Textfield } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -51,7 +51,7 @@ export const PlaygroundTextfield = () => {
   };
 
   return (
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <Stack>
         <Textfield
           id={dataChildren?.textfieldProps?.id}

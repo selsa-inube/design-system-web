@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { Avatar, Stack } from "@inube/design-system";
+import { Avatar } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
@@ -22,7 +23,7 @@ export const PlaygroundAvatar = () => {
     setValuesProps(data);
   };
   return (
-    <Stack direction="column" gap="64px" margin="s400">
+    <Stack direction="column" gap="64px" margin="32px">
       <Stack direction="column" gap="16px">
         <Stack direction="column">
           <Text as="h2" type="title">
@@ -36,8 +37,8 @@ export const PlaygroundAvatar = () => {
             react-icon-md.
           </Text>
         </Stack>
-        <Stack direction="column" margin="s400 s0 s0 s0">
-          <Stack margin="s0 s0 s200 s200">
+        <Stack direction="column" margin="32px 0 0 0">
+          <Stack margin="0 0 16px 16px">
             <Avatar />
           </Stack>
 

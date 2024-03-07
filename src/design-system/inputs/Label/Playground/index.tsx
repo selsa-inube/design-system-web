@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Label } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Label } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -31,14 +31,14 @@ export const PlaygroundLabel = () => {
   });
 
   const handleChildData = (
-    data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>
+    data: IvaluesProps<IselectProps, ItextfieldProps, IswitchChecked>,
   ) => {
     setDataChildren(data);
   };
 
   return (
     <>
-      <Stack direction="column" gap="20px" margin="s400">
+      <Stack direction="column" gap="20px" margin="32px">
         <Stack>
           <Label
             htmlFor={dataChildren?.textfieldProps?.htmlFor}

@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, SkeletonIcon } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { SkeletonIcon } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -23,12 +23,12 @@ export const PlaygroundSkeletonIcon = () => {
   });
 
   const handleChildData = (
-    data: IvaluesProps<undefined, ItextfieldProps, IswitchChecked>
+    data: IvaluesProps<undefined, ItextfieldProps, IswitchChecked>,
   ) => {
     setDataChildren(data);
   };
   return (
-    <Stack margin="s200 s400" direction="column" gap="20px">
+    <Stack margin="16px 32px" direction="column" gap="20px">
       <Stack>
         <SkeletonIcon
           size={dataChildren?.textfieldProps?.size}

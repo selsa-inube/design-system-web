@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, SkeletonLine } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { SkeletonLine } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -27,7 +27,7 @@ export const PlaygroundSkeletonLine = () => {
   };
 
   return (
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <Stack>
         <SkeletonLine
           width={dataChildren?.textfieldProps?.width}

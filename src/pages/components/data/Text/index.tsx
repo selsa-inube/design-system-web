@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Stack, Tabs } from "@inube/design-system";
+import { Tabs } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { CodeText } from "@design-system/data/Text/code";
 
 const tabs = [
@@ -23,7 +24,7 @@ export const PageText = () => {
 
   return (
     <>
-      <Stack margin="s200 s400">
+      <Stack margin="16px 32px">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {/*activeTab === "Example" && < /> */}

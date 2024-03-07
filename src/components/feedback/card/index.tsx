@@ -1,5 +1,5 @@
 import { StyledLink } from "./styles";
-import { Stack } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 
 interface CardProps {

@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-import { Stack, Tabs } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Tabs } from "@inube/design-system";
 import { CodeCountdownBar } from "@design-system/feedback/CountdownBar/code";
 import { PlaygroundCountdownBar } from "@design-system/feedback/CountdownBar/Playground";
 
@@ -25,7 +25,7 @@ export const PageCountdownBar = () => {
 
   return (
     <>
-      <Stack margin="s200 s400">
+      <Stack margin="16px 32px">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {activeTab === "Playground" && <PlaygroundCountdownBar />}

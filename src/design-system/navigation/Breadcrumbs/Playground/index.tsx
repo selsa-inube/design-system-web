@@ -1,8 +1,8 @@
 import { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-import { Stack, Breadcrumbs } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Breadcrumbs } from "@inube/design-system";
 
 import { ControlsProps } from "@components/feedback/ControlsPlayground";
 import { IvaluesProps } from "@components/feedback/ControlsPlayground/types";
@@ -24,11 +24,11 @@ export const PlaygroundBreadcrumbs = () => {
 
   const sliceCrumbs = crumbs.slice(
     0,
-    parseInt(dataChildren!.selectProps!.options)
+    parseInt(dataChildren!.selectProps!.options),
   );
 
   return (
-    <Stack direction="column" gap="20px" margin="s400">
+    <Stack direction="column" gap="20px" margin="32px">
       <Stack direction="column" width="800px">
         <Breadcrumbs crumbs={sliceCrumbs} />
       </Stack>

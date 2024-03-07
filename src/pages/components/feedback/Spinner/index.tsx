@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-import { Stack, Tabs } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
+import { Tabs } from "@inube/design-system";
 import { CodeSpinner } from "@design-system/feedback/Spinner/code";
 import { PlaygroundSpinner } from "@design-system/feedback/Spinner/Playgound";
 
@@ -25,7 +25,7 @@ export const PageSpinner = () => {
 
   return (
     <>
-      <Stack margin="s200 s400">
+      <Stack margin="16px 32px">
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
       {activeTab === "Playgroun" && <PlaygroundSpinner />}

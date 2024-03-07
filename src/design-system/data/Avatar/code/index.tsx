@@ -1,16 +1,16 @@
-import { Stack } from "@inube/design-system";
+import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { InformationsProps } from "@components/data/InformationProps";
 
 export const CodeAvatar = () => (
   <>
-    <Stack direction="column" margin="s400">
+    <Stack direction="column" margin="32px">
       <Text as="h3" type="title">
         Props
       </Text>
     </Stack>
 
-    <Stack direction="column" gap="16px" margin="s400">
+    <Stack direction="column" gap="16px" margin="32px">
       <Stack>
         <InformationsProps
           nameProps="icon"
