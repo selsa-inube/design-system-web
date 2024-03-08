@@ -1,9 +1,8 @@
 export const appearanceOptions = [
   "primary",
-  "error",
+  "danger",
   "warning",
   "success",
-  "information",
   "help",
   "light",
   "gray",
