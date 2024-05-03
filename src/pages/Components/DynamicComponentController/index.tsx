@@ -3,6 +3,7 @@ import { Table } from "@components/data/Table";
 import { Textfield } from "@inubekit/textfield";
 import { Toggle } from "@inubekit/toggle";
 import { Select } from "@inube/design-system";
+import { Text } from "@inubekit/text";
 function DynamicComponentController(props: any) {
   const { component, handlePropChange, dynamicComponentProps } = props;
 
@@ -17,6 +18,7 @@ function DynamicComponentController(props: any) {
             handlePropChange(propName, e.target.innerText.toLowerCase())
           }
           size="compact"
+          id={`${component.name}-${propName}-Select`}
         />
       );
     } else if (typeof value === "boolean") {
@@ -26,11 +28,15 @@ function DynamicComponentController(props: any) {
           onChange={(e: { target: { checked: any } }) =>
             handlePropChange(propName, e.target.checked)
           }
-          id=""
+          id={`${component.name}-${propName}-toggle`}
           label=""
           margin=""
           padding=""
         />
+      );
+    } else if (typeof value === "function") {
+      return (
+        <Text size="small">Function: {`${value.name}( )` || "Anonymous"}</Text>
       );
     } else {
       return (
@@ -40,7 +46,7 @@ function DynamicComponentController(props: any) {
           onChange={(e: { target: { value: any } }) =>
             handlePropChange(propName, e.target.value)
           }
-          id=""
+          id={`${component.name}-${propName}-Textfield`}
           size="compact"
         />
       );

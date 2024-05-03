@@ -5,6 +5,7 @@ import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
 import { useEffect, useState } from "react";
 import { DynamicComponentController } from "@pages/Components/DynamicComponentController";
+import { StyledTag } from "./styles";
 
 interface IPlayground {
   component: any;
@@ -39,10 +40,12 @@ function Playground(props: IPlayground) {
     >
       <Stack direction="column" gap="32px">
         <Text type="headline" size="small" children="Installation" />
-        <Tag
-          appearance="dark"
-          label={`npm install @inubekit/${component.name.toLowerCase()}`}
-        />
+        <StyledTag>
+          <Tag
+            appearance="dark"
+            label={`npm install @inubekit/${component.name.toLowerCase()}`}
+          />
+        </StyledTag>
       </Stack>
 
       <Stack direction="column" gap="24px">
