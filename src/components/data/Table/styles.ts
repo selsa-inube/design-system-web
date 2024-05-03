@@ -24,13 +24,10 @@ const StyledTable = styled.table<IStyledTable>`
   border-collapse: collapse;
   table-layout: ${({ colsSameWidth }) => (colsSameWidth ? "fixed" : "auto")};
   width: 100%;
+  border: none;
 `;
 
 const StyledThead = styled.thead`
-  border-bottom: solid 1px
-    ${({ theme }) =>
-      theme.color?.stroke?.divider?.regular ||
-      inube.color.stroke.divider.regular};
   background-color: ${({ theme }) =>
     theme.color?.surface?.light?.clear || inube.color.surface.light.clear};
 `;
@@ -45,14 +42,6 @@ interface IStyledTr {
 }
 
 const StyledTr = styled.tr<IStyledTr>`
-  border-bottom: solid 1px
-    ${({ isLastTr, theme }) => {
-      if (isLastTr) return "transparent";
-      return (
-        theme.color?.stroke?.divider?.regular ||
-        inube.color.stroke.divider.regular
-      );
-    }};
   height: 40px;
 `;
 
@@ -63,6 +52,8 @@ interface IStyledThTitle {
 }
 
 const StyledThTitle = styled.th<IStyledThTitle>`
+  background-color: ${({ theme }) =>
+    theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
   padding: 12px 16px;
   min-width: ${({ countColumns, colsSameWidth }) =>
     colsSameWidth ? `${100 / countColumns}%` : "auto"};
