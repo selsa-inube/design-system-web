@@ -64,6 +64,7 @@ function DynamicComponentController(props: any) {
   const entries = Object.entries(dynamicComponentProps).map(([key, value]) => ({
     id: key,
     name: key,
+    default: component.props[key],
     value: value,
     description: `${typeof value}`,
   }));
@@ -71,7 +72,8 @@ function DynamicComponentController(props: any) {
   const titles = [
     { id: "name", titleName: "Name", priority: 1 },
     { id: "description", titleName: "Description", priority: 2 },
-    { id: "value", titleName: "Default", priority: 3 },
+    { id: "default", titleName: "Default", priority: 3 },
+    { id: "", titleName: "", priority: 0, hidden: true },
   ];
 
   return (
