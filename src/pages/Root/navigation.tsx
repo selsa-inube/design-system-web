@@ -56,25 +56,25 @@ const navigation = {
         countdownBar: {
           id: "CountdownBar",
           label: "CountdownBar",
-          path: "component/countdown-bar",
+          path: "component/countdownbar",
           icon: <MdAccountBalanceWallet />,
         },
         sectionMessage: {
           id: "SectionMessage",
           label: "SectionMessage",
-          path: "component/section-message",
+          path: "component/sectionmessage",
           icon: <MdAccountBalanceWallet />,
         },
         skeletonIcon: {
           id: "SkeletonIcon",
           label: "SkeletonIcon",
-          path: "component/skeleton-icon",
+          path: "component/skeletonicon",
           icon: <MdAccountBalanceWallet />,
         },
         skeletonLine: {
           id: "SkeletonLine",
           label: "SkeletonLine",
-          path: "component/skeleton-line",
+          path: "component/skeletonline",
           icon: <MdAccountBalanceWallet />,
         },
         spinner: {
@@ -94,6 +94,12 @@ const navigation = {
           path: "component/button",
           icon: <MdAccountBalanceWallet />,
         },
+        fieldset: {
+          id: "Fieldset",
+          label: "Fieldset",
+          path: "component/fieldset",
+          icon: <MdAccountBalanceWallet />,
+        },
         label: {
           id: "Label",
           label: "Label",
@@ -106,22 +112,28 @@ const navigation = {
           path: "component/select",
           icon: <MdAccountBalanceWallet />,
         },
-        switch: {
-          id: "Switch",
-          label: "Switch",
-          path: "component/switch",
+        toggle: {
+          id: "Toggle",
+          label: "Toggle",
+          path: "component/toggle",
           icon: <MdAccountBalanceWallet />,
         },
         textarea: {
           id: "Textarea",
           label: "Textarea",
-          path: "component/text-area",
+          path: "component/textarea",
           icon: <MdAccountBalanceWallet />,
         },
         textfield: {
           id: "Textfield",
           label: "Textfield",
-          path: "component/text-field",
+          path: "component/textfield",
+          icon: <MdAccountBalanceWallet />,
+        },
+        datefield: {
+          id: "Datefield",
+          label: "Datefield",
+          path: "component/datefield",
           icon: <MdAccountBalanceWallet />,
         },
       },
@@ -132,13 +144,13 @@ const navigation = {
         grid: {
           id: "Grid",
           label: "Grid",
-          path: "/grid",
+          path: "component/grid",
           icon: <MdAccountBalanceWallet />,
         },
         stack: {
           id: "stack",
           label: "Stack",
-          path: "/stack",
+          path: "component/stack",
           icon: <MdAccountBalanceWallet />,
         },
       },
@@ -155,13 +167,19 @@ const navigation = {
         fullscreenNav: {
           id: "FullscreenNav",
           label: "FullscreenNav",
-          path: "component/fullscreen-nav",
+          path: "component/fullscreennav",
           icon: <MdAccountBalanceWallet />,
         },
         header: {
           id: "Header",
           label: "Header",
           path: "component/header",
+          icon: <MdAccountBalanceWallet />,
+        },
+        link: {
+          id: "Link",
+          label: "Link",
+          path: "component/link",
           icon: <MdAccountBalanceWallet />,
         },
         nav: {

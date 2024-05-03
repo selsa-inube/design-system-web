@@ -8,8 +8,12 @@ function DynamicComponentController(props: any) {
   const { component, handlePropChange, dynamicComponentProps } = props;
 
   const renderInput = (propName: string | number, value: any) => {
-    if (component.typeOptions && component.typeOptions[propName]) {
-      const options = component.typeOptions[propName];
+    if (
+      component.propTypes &&
+      component.propTypes[propName] &&
+      component.propTypes[propName].type
+    ) {
+      const options = component.propTypes[propName].options;
       return (
         <Select
           value={value}
@@ -29,9 +33,10 @@ function DynamicComponentController(props: any) {
             handlePropChange(propName, e.target.checked)
           }
           id={`${component.name}-${propName}-toggle`}
+          size="large"
           label=""
-          margin=""
-          padding=""
+          margin="0"
+          padding="0"
         />
       );
     } else if (typeof value === "function") {
@@ -64,7 +69,7 @@ function DynamicComponentController(props: any) {
   const entries = Object.entries(dynamicComponentProps).map(([key, value]) => ({
     id: key,
     name: key,
-    default: component.props[key],
+    default: component.props[key] || String(component.props[key]) || "-",
     value: value,
     description: `${typeof value}`,
   }));
@@ -76,20 +81,22 @@ function DynamicComponentController(props: any) {
     { id: "", titleName: "", priority: 0, hidden: true },
   ];
 
+  const breakpoints = [
+    { breakpoint: "(min-width: 1091px)", totalColumns: 4 },
+    { breakpoint: "(max-width: 1090px)", totalColumns: 3 },
+    { breakpoint: "(max-width: 980px)", totalColumns: 2 },
+    { breakpoint: "(max-width: 850px)", totalColumns: 4 },
+    { breakpoint: "(max-width: 680px)", totalColumns: 3 },
+    { breakpoint: "(max-width: 550px)", totalColumns: 2 },
+    { breakpoint: "(max-width: 360px)", totalColumns: 1 },
+  ];
+
   return (
     <Table
       titles={titles}
       entries={entries}
       actions={actions}
-      breakpoints={[
-        { breakpoint: "(min-width: 1091px)", totalColumns: 4 },
-        { breakpoint: "(max-width: 1090px)", totalColumns: 3 },
-        { breakpoint: "(max-width: 980px)", totalColumns: 2 },
-        { breakpoint: "(max-width: 850px)", totalColumns: 4 },
-        { breakpoint: "(max-width: 680px)", totalColumns: 3 },
-        { breakpoint: "(max-width: 550px)", totalColumns: 2 },
-        { breakpoint: "(max-width: 360px)", totalColumns: 1 },
-      ]}
+      breakpoints={breakpoints}
       pageLength={15}
     />
   );
