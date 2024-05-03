@@ -4,6 +4,7 @@ import { Stack } from "@inubekit/stack";
 import { Tabs } from "@inube/design-system";
 import { Text } from "@inubekit/text";
 import { Playground } from "./Tabs/Playground";
+import { components } from "../../content";
 
 const tabs = [
   {
@@ -12,8 +13,18 @@ const tabs = [
     isDisabled: false,
   },
   {
-    id: "Code",
-    label: "Code",
+    id: "PropsAndtypes",
+    label: "Props and types",
+    isDisabled: false,
+  },
+  {
+    id: "Theming",
+    label: "Theming",
+    isDisabled: false,
+  },
+  {
+    id: "IssuesAndSuggestions",
+    label: "Issues and suggestions",
     isDisabled: false,
   },
 ];
@@ -28,11 +39,19 @@ function Component() {
   return (
     <>
       <Stack direction="column" gap="32px">
-        <Text type="headline">{component}</Text>
+        <Stack direction="column" gap="8px">
+          <Text type="display" size="medium">
+            {components[component!].name}
+          </Text>
+          <Text type="title" size="large" appearance="gray">
+            {components[component!].description}
+          </Text>
+        </Stack>
+
         <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
       </Stack>
-      {activeTab === "Playground" && component && (
-        <Playground component={component} />
+      {activeTab === "Playground" && components[component!] && (
+        <Playground component={components[component!]} />
       )}
       {/* {activeTab === "Code" && <CodeIcon />} */}
     </>

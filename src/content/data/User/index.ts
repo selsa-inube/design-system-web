@@ -10,6 +10,12 @@ const user = {
     client: "Sistemas Enlínea S.A",
     size: "large",
   },
+  typeOptions: {
+    size: [
+      { id: "large", label: "Large" },
+      { id: "small", label: "Small" },
+    ],
+  },
 };
 
 export { user };

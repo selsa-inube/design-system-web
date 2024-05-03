@@ -1,4 +1,4 @@
-import { Icon } from "@inube/design-system";
+import { Icon } from "@inubekit/icon";
 import { MdAdd } from "react-icons/md";
 
 const icon = {
@@ -6,9 +6,16 @@ const icon = {
   example: Icon,
   name: "Icon",
   props: {
-    appearance: "warning",
+    appearance: "primary",
     icon: MdAdd,
-    size: "32px",
+    cursorHover: false,
+    parentHover: false,
+    disabled: false,
+    spacing: "wide",
+    variant: "none",
+    shape: "rectangle",
+    size: "24px",
+    onClick: () => {},
   },
 };
 
