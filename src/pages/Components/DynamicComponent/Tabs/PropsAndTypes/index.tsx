@@ -12,22 +12,20 @@ interface PropInfo {
 }
 
 interface IPropEntry {
-  key: string;
+  name: string;
   value: any;
   propInfo: PropInfo;
 }
 
 function PropEntry(props: IPropEntry) {
-  const { key, value, propInfo } = props;
+  const { name, value, propInfo } = props;
   const typeValue =
     propInfo && Array.isArray(propInfo.options)
       ? propInfo.options.map((option) => option.id).join(", ")
       : "-";
-
   return (
     <ComponentProperties
-      key={key}
-      name={key}
+      name={name}
       description={propInfo?.description || "No description available."}
       type={propInfo?.type || typeof value}
       value={typeValue}
@@ -46,7 +44,12 @@ function PropsAndTypes({ component }: any) {
           {Object.entries(component.props).map(([key, value]) => {
             const propInfo = component.propTypes[key];
             return (
-              <PropEntry key={key} value={value} propInfo={propInfo || {}} />
+              <PropEntry
+                key={key}
+                name={key}
+                value={value}
+                propInfo={propInfo || {}}
+              />
             );
           })}
         </StyledComponentProperties>
