@@ -56,25 +56,25 @@ const navigation = {
         countdownBar: {
           id: "CountdownBar",
           label: "CountdownBar",
-          path: "component/countdownbar",
+          path: "component/countdownBar",
           icon: <MdAccountBalanceWallet />,
         },
         sectionMessage: {
           id: "SectionMessage",
           label: "SectionMessage",
-          path: "component/sectionmessage",
+          path: "component/sectionMessage",
           icon: <MdAccountBalanceWallet />,
         },
         skeletonIcon: {
           id: "SkeletonIcon",
           label: "SkeletonIcon",
-          path: "component/skeletonicon",
+          path: "component/skeletonIcon",
           icon: <MdAccountBalanceWallet />,
         },
         skeletonLine: {
           id: "SkeletonLine",
           label: "SkeletonLine",
-          path: "component/skeletonline",
+          path: "component/skeletonLine",
           icon: <MdAccountBalanceWallet />,
         },
         spinner: {
@@ -167,7 +167,7 @@ const navigation = {
         fullscreenNav: {
           id: "FullscreenNav",
           label: "FullscreenNav",
-          path: "component/fullscreennav",
+          path: "component/fullscreenNav",
           icon: <MdAccountBalanceWallet />,
         },
         header: {

@@ -24,7 +24,6 @@ const ComponentProperties = (props: IComponentProperties) => {
         templateColumns="auto 1fr"
         templateRows="auto"
       >
-        {/* <Tag appearance="gray" label={name} weight="strong" /> */}
         <Text type="title" size="medium" children="Description" />
         <Text appearance="gray">{description}</Text>
         <Text type="title" size="medium" children="Type" />

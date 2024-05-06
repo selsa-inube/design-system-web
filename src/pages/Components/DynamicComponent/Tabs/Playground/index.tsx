@@ -19,7 +19,7 @@ function Playground(props: IPlayground) {
   const [modifiedProps, setModifiedProps] = useState({});
 
   const processedProps = processProps({ ...component.props, ...modifiedProps });
-
+  console.log("processedProps: ", processedProps);
   const handlePropChange = (propName: any, newValue: any) => {
     setModifiedProps((prevProps) => ({
       ...prevProps,
@@ -48,7 +48,9 @@ function Playground(props: IPlayground) {
       <Stack direction="column" gap="24px">
         <Text type="headline" size="small" children="Examples" />
         <Fieldset legend="Component sample">
-          {component.example && <Example {...processedProps} />}
+          {component.example && (
+            <Example key={component.key} {...processedProps} />
+          )}
         </Fieldset>
         <Fieldset legend="Props">
           <DynamicComponentController
