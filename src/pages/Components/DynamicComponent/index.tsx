@@ -41,19 +41,25 @@ function DynamicComponent() {
 
   return (
     <>
-      <Stack direction="column" gap="32px">
-        <Stack direction="column" gap="8px">
-          <Text type="display" size="medium">
-            {components[component!].name}
-          </Text>
-          <Text type="title" size="large" appearance="gray">
-            {components[component!].description}
-          </Text>
-        </Stack>
+      {component && (
+        <Stack direction="column" gap="32px">
+          <Stack direction="column" gap="8px">
+            <Text type="display" size="medium">
+              {components[component].name}
+            </Text>
+            <Text type="title" size="large" appearance="gray">
+              {components[component].description}
+            </Text>
+          </Stack>
 
-        <Tabs onChange={handleTabChange} tabs={tabs} selectedTab={activeTab} />
-      </Stack>
-      {activeTab === "Playground" && components[component!] && (
+          <Tabs
+            onChange={handleTabChange}
+            tabs={tabs}
+            selectedTab={activeTab}
+          />
+        </Stack>
+      )}
+      {activeTab === "Playground" && component && components[component!] && (
         <Playground component={components[component!]} />
       )}
       {activeTab === "PropsAndTypes" && components[component!] && (

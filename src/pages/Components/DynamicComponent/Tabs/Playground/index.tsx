@@ -3,9 +3,10 @@ import { Grid, Text } from "@inube/design-system";
 import { Stack } from "@inubekit/stack";
 import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DynamicComponentController } from "@pages/Components/DynamicComponentController";
 import { StyledTag } from "./styles";
+import { processProps } from "../utils";
 
 interface IPlayground {
   component: any;
@@ -15,16 +16,12 @@ function Playground(props: IPlayground) {
   const { component } = props;
   const Example = component.example;
 
-  const [dynamicComponentProps, setDynamicComponentProps] = useState({
-    ...component.props,
-  });
+  const [modifiedProps, setModifiedProps] = useState({});
 
-  useEffect(() => {
-    setDynamicComponentProps({ ...component.props });
-  }, [component]);
+  const processedProps = processProps({ ...component.props, ...modifiedProps });
 
   const handlePropChange = (propName: any, newValue: any) => {
-    setDynamicComponentProps((prevProps: any) => ({
+    setModifiedProps((prevProps) => ({
       ...prevProps,
       [propName]: newValue,
     }));
@@ -51,15 +48,13 @@ function Playground(props: IPlayground) {
       <Stack direction="column" gap="24px">
         <Text type="headline" size="small" children="Examples" />
         <Fieldset legend="Component sample">
-          {component.example && dynamicComponentProps && (
-            <Example {...dynamicComponentProps} />
-          )}
+          {component.example && <Example {...processedProps} />}
         </Fieldset>
         <Fieldset legend="Props">
           <DynamicComponentController
             component={component}
             handlePropChange={handlePropChange}
-            dynamicComponentProps={dynamicComponentProps}
+            dynamicComponentProps={processedProps}
           />
         </Fieldset>
       </Stack>

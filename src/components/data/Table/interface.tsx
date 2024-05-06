@@ -138,7 +138,7 @@ interface TableUIProps {
   hideMobileResume?: boolean;
   mobileResumeTitle?: string;
   colsSameWidth?: boolean;
-  withActions: boolean;
+  withactions: boolean;
   customAppearance?: (titleId: string, entry: IEntry) => TextAppearanceType;
 }
 
@@ -153,7 +153,7 @@ const TableUI = (props: TableUIProps) => {
     hideMobileResume,
     mobileResumeTitle,
     colsSameWidth,
-    withActions,
+    withactions,
     customAppearance,
   } = props;
 
@@ -181,9 +181,9 @@ const TableUI = (props: TableUIProps) => {
             <StyledThTitle
               key={`title-${title.id}`}
               aria-label={title.titleName}
-              countColumns={titleColumns.length}
+              countcolumns={titleColumns.length}
               colsSameWidth={colsSameWidth}
-              withActions={withActions}
+              withactions={withactions.toString()}
             >
               <Text type="label" size="medium" appearance="dark">
                 {title.titleName}
@@ -209,10 +209,13 @@ const TableUI = (props: TableUIProps) => {
                 <StyledTr
                   key={`entry-${entry.id}`}
                   aria-labelledby={`entry-${entry.id}`}
-                  isLastTr={index === entries.length - 1}
+                  islasttr={(index === entries.length - 1).toString()}
                 >
                   {titleColumns.map((title) => (
-                    <StyledTd key={`e-${title.id}`} withActions={withActions}>
+                    <StyledTd
+                      key={`e-${title.id}`}
+                      withactions={withactions.toString()}
+                    >
                       <Text
                         type="body"
                         size="small"
@@ -234,7 +237,7 @@ const TableUI = (props: TableUIProps) => {
                 </StyledTr>
               ))
             ) : (
-              <StyledTr aria-labelledby={`no-data`} isLastTr>
+              <StyledTr aria-labelledby={`no-data`} islasttr={true.toString()}>
                 <StyledTd colSpan={titleColumns.length + 1}>
                   <Text type="body" size="small" appearance="dark" ellipsis>
                     No se encontró información
