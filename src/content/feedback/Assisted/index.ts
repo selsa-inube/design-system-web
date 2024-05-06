@@ -1,4 +1,4 @@
-import { Assisted } from "@inube/design-system";
+import { AssistedController } from "./Controller/Assisted.Controller";
 
 const stepsMock = [
   {
@@ -40,7 +40,7 @@ const stepsMock = [
 
 const assisted = {
   description: "This component uses a filled primary icon for all applications",
-  example: Assisted,
+  example: AssistedController,
   name: "Assisted",
   props: {
     steps: stepsMock,

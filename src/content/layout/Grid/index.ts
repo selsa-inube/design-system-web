@@ -1,8 +1,8 @@
-import { Grid } from "@inubekit/grid";
+import { GridController } from "./Controller/Grid.Controller";
 
 const grid = {
   description: "This component uses a filled primary icon for all applications",
-  example: Grid,
+  example: GridController,
   name: "Grid",
   props: {
     templateColumns: "repeat(3, 1fr)",

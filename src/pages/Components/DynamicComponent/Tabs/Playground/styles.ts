@@ -13,4 +13,10 @@ const StyledTag = styled.div`
   }
 `;
 
-export { StyledTag };
+const StyledFieldSetComponentContainer = styled.div`
+  & > fieldset {
+    display: block;
+  }
+`;
+
+export { StyledFieldSetComponentContainer, StyledTag };

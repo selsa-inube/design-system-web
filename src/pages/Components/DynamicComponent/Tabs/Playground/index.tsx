@@ -5,7 +5,7 @@ import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
 import { useState } from "react";
 import { DynamicComponentController } from "@pages/Components/DynamicComponentController";
-import { StyledTag } from "./styles";
+import { StyledFieldSetComponentContainer, StyledTag } from "./styles";
 import { processProps } from "../utils";
 
 interface IPlayground {
@@ -19,7 +19,7 @@ function Playground(props: IPlayground) {
   const [modifiedProps, setModifiedProps] = useState({});
 
   const processedProps = processProps({ ...component.props, ...modifiedProps });
-  console.log("processedProps: ", processedProps);
+
   const handlePropChange = (propName: any, newValue: any) => {
     setModifiedProps((prevProps) => ({
       ...prevProps,
@@ -47,11 +47,13 @@ function Playground(props: IPlayground) {
 
       <Stack direction="column" gap="24px">
         <Text type="headline" size="small" children="Examples" />
-        <Fieldset legend="Component sample">
-          {component.example && (
-            <Example key={component.key} {...processedProps} />
-          )}
-        </Fieldset>
+        <StyledFieldSetComponentContainer>
+          <Fieldset legend="Component sample">
+            {component.example && (
+              <Example key={component.key} {...processedProps} />
+            )}
+          </Fieldset>
+        </StyledFieldSetComponentContainer>
         <Fieldset legend="Props">
           <DynamicComponentController
             component={component}

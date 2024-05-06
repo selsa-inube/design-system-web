@@ -1,8 +1,8 @@
-import { Tabs } from "@inube/design-system";
+import { TabsController } from "./Controller/Tabs.Controller";
 
 const tabs = {
   description: "This component uses a filled primary icon for all applications",
-  example: Tabs,
+  example: TabsController,
   name: "Tabs",
   props: {
     tabs: [

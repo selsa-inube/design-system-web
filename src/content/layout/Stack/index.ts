@@ -1,8 +1,8 @@
-import { Stack } from "@inubekit/stack";
+import { StackController } from "./Controller/Stack.Controller";
 
 const stack = {
   description: "This component uses a filled primary icon for all applications",
-  example: Stack,
+  example: StackController,
   name: "Stack",
   props: {
     children: [...Array(6 + 1).keys()].slice(1),
