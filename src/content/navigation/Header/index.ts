@@ -90,6 +90,28 @@ const header = {
       },
     },
   },
+  propTypes: {
+    portalId: {
+      description: "id of the portal element",
+    },
+    navigation: {
+      description:
+        "The primary object that will organize and store the requisite paths for the correct operation of the Nav component is forthcoming and is required",
+    },
+    logoURL: {
+      description:
+        "prop accepts a component to be used as the logo in the header. This component can be an image, an icon, stylized text or any other visual element that represents the brand identity.",
+    },
+    userName: {
+      description: "shall be the displayed username",
+    },
+    client: {
+      description: "shall be the displayed business Unit",
+    },
+    links: {
+      description: "shall be the links that it'll be shown in the header",
+    },
+  },
 };
 
 export { header };

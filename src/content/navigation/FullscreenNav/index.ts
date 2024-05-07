@@ -81,6 +81,21 @@ const fullscreenNav = {
     logoutPath: "/logout",
     logoutTitle: "logout",
   },
+  propTypes: {
+    portalId: {
+      description: "id of the portal element",
+    },
+    navigation: {
+      description:
+        "shall be designed to accept an array of objects with a predetermined structure, as specified below: Each object shall contain the following attributes",
+    },
+    logoutPath: {
+      description: "path to the logout page",
+    },
+    logoutTitle: {
+      description: "title of the logout page",
+    },
+  },
 };
 
 export { fullscreenNav };

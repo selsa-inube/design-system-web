@@ -80,6 +80,19 @@ const nav = {
     logoutPath: "/logout",
     logoutTitle: "logout",
   },
+  propTypes: {
+    navigation: {
+      description:
+        "The primary object that will organize and store the requisite paths for the correct operation of the Nav component is forthcoming and is required",
+    },
+    logoutPath: {
+      description:
+        "is the path where the user is going to navigate when he wants to logout and is required",
+    },
+    logoutTitle: {
+      description: "title of the logout page",
+    },
+  },
 };
 
 export { nav };

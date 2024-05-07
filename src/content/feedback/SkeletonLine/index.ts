@@ -8,6 +8,14 @@ const skeletonLine = {
     width: "100%",
     animated: false,
   },
+  propTypes: {
+    width: {
+      description: "indicates the width that the component should take",
+    },
+    animated: {
+      description: "enable loading effect animation",
+    },
+  },
 };
 
 export { skeletonLine };

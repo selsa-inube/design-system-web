@@ -8,6 +8,15 @@ const skeletonIcon = {
     size: "24px",
     animated: false,
   },
+  propTypes: {
+    size: {
+      description: "sets the size of the skeleton icon component",
+    },
+    animated: {
+      description:
+        "toggles whether or not the skeleton component's animation is active",
+    },
+  },
 };
 
 export { skeletonIcon };
