@@ -3,54 +3,37 @@ import { MdAccountBalanceWallet } from "react-icons/md";
 const navigation = {
   title: "Components",
   sections: {
-    data: {
-      name: "Data",
+    components: {
+      name: "components",
       links: {
+        assisted: {
+          id: "Assisted",
+          label: "Assisted",
+          path: "component/assisted",
+          icon: <MdAccountBalanceWallet />,
+        },
         avatar: {
           id: "Avatar",
           label: "Avatar",
           path: "component/avatar",
           icon: <MdAccountBalanceWallet />,
         },
-        icon: {
-          id: "Icon",
-          label: "Icon",
-          path: "component/icon",
+        blanket: {
+          id: "Blanket",
+          label: "Blanket",
+          path: "component/blanket",
           icon: <MdAccountBalanceWallet />,
         },
-        table: {
-          id: "Table",
-          label: "Table",
-          path: "component/table",
+        breadcrumbs: {
+          id: "Breadcrumbs",
+          label: "Breadcrumbs",
+          path: "component/breadcrumbs",
           icon: <MdAccountBalanceWallet />,
         },
-        tag: {
-          id: "Tag",
-          label: "Tag",
-          path: "component/tag",
-          icon: <MdAccountBalanceWallet />,
-        },
-        text: {
-          id: "Text",
-          label: "Text",
-          path: "component/text",
-          icon: <MdAccountBalanceWallet />,
-        },
-        user: {
-          id: "User",
-          label: "User",
-          path: "component/user",
-          icon: <MdAccountBalanceWallet />,
-        },
-      },
-    },
-    feedback: {
-      name: "FeedBack",
-      links: {
-        assisted: {
-          id: "Assisted",
-          label: "Assisted",
-          path: "component/assisted",
+        button: {
+          id: "Button",
+          label: "Button",
+          path: "component/button",
           icon: <MdAccountBalanceWallet />,
         },
         countdownBar: {
@@ -59,10 +42,70 @@ const navigation = {
           path: "component/countdownBar",
           icon: <MdAccountBalanceWallet />,
         },
+        datefield: {
+          id: "Datefield",
+          label: "Datefield",
+          path: "component/datefield",
+          icon: <MdAccountBalanceWallet />,
+        },
+        fieldset: {
+          id: "Fieldset",
+          label: "Fieldset",
+          path: "component/fieldset",
+          icon: <MdAccountBalanceWallet />,
+        },
+        fullscreenNav: {
+          id: "FullscreenNav",
+          label: "FullscreenNav",
+          path: "component/fullscreenNav",
+          icon: <MdAccountBalanceWallet />,
+        },
+        grid: {
+          id: "Grid",
+          label: "Grid",
+          path: "component/grid",
+          icon: <MdAccountBalanceWallet />,
+        },
+        header: {
+          id: "Header",
+          label: "Header",
+          path: "component/header",
+          icon: <MdAccountBalanceWallet />,
+        },
+        icon: {
+          id: "Icon",
+          label: "Icon",
+          path: "component/icon",
+          icon: <MdAccountBalanceWallet />,
+        },
+        label: {
+          id: "Label",
+          label: "Label",
+          path: "component/label",
+          icon: <MdAccountBalanceWallet />,
+        },
+        link: {
+          id: "Link",
+          label: "Link",
+          path: "component/link",
+          icon: <MdAccountBalanceWallet />,
+        },
+        nav: {
+          id: "Nav",
+          label: "Nav",
+          path: "component/nav",
+          icon: <MdAccountBalanceWallet />,
+        },
         sectionMessage: {
           id: "SectionMessage",
           label: "SectionMessage",
           path: "component/sectionMessage",
+          icon: <MdAccountBalanceWallet />,
+        },
+        select: {
+          id: "Select",
+          label: "Select",
+          path: "component/select",
           icon: <MdAccountBalanceWallet />,
         },
         skeletonIcon: {
@@ -83,39 +126,28 @@ const navigation = {
           path: "component/spinner",
           icon: <MdAccountBalanceWallet />,
         },
-      },
-    },
-    inputs: {
-      name: "Inputs",
-      links: {
-        button: {
-          id: "Button",
-          label: "Button",
-          path: "component/button",
+        stack: {
+          id: "Stack",
+          label: "Stack",
+          path: "component/stack",
           icon: <MdAccountBalanceWallet />,
         },
-        fieldset: {
-          id: "Fieldset",
-          label: "Fieldset",
-          path: "component/fieldset",
+        table: {
+          id: "Table",
+          label: "Table",
+          path: "component/table",
           icon: <MdAccountBalanceWallet />,
         },
-        label: {
-          id: "Label",
-          label: "Label",
-          path: "component/label",
+        tabs: {
+          id: "Tabs",
+          label: "Tabs",
+          path: "component/tabs",
           icon: <MdAccountBalanceWallet />,
         },
-        select: {
-          id: "Select",
-          label: "Select",
-          path: "component/select",
-          icon: <MdAccountBalanceWallet />,
-        },
-        toggle: {
-          id: "Toggle",
-          label: "Toggle",
-          path: "component/toggle",
+        tag: {
+          id: "Tag",
+          label: "Tag",
+          path: "component/tag",
           icon: <MdAccountBalanceWallet />,
         },
         textarea: {
@@ -130,79 +162,22 @@ const navigation = {
           path: "component/textfield",
           icon: <MdAccountBalanceWallet />,
         },
-        datefield: {
-          id: "Datefield",
-          label: "Datefield",
-          path: "component/datefield",
+        text: {
+          id: "Text",
+          label: "Text",
+          path: "component/text",
           icon: <MdAccountBalanceWallet />,
         },
-      },
-    },
-    layout: {
-      name: "Layout",
-      links: {
-        grid: {
-          id: "Grid",
-          label: "Grid",
-          path: "component/grid",
+        toggle: {
+          id: "Toggle",
+          label: "Toggle",
+          path: "component/toggle",
           icon: <MdAccountBalanceWallet />,
         },
-        stack: {
-          id: "stack",
-          label: "Stack",
-          path: "component/stack",
-          icon: <MdAccountBalanceWallet />,
-        },
-      },
-    },
-    navigation: {
-      name: "Navigation",
-      links: {
-        breadcrumbs: {
-          id: "Breadcrumbs",
-          label: "Breadcrumbs",
-          path: "component/breadcrumbs",
-          icon: <MdAccountBalanceWallet />,
-        },
-        fullscreenNav: {
-          id: "FullscreenNav",
-          label: "FullscreenNav",
-          path: "component/fullscreenNav",
-          icon: <MdAccountBalanceWallet />,
-        },
-        header: {
-          id: "Header",
-          label: "Header",
-          path: "component/header",
-          icon: <MdAccountBalanceWallet />,
-        },
-        link: {
-          id: "Link",
-          label: "Link",
-          path: "component/link",
-          icon: <MdAccountBalanceWallet />,
-        },
-        nav: {
-          id: "Nav",
-          label: "Nav",
-          path: "component/nav",
-          icon: <MdAccountBalanceWallet />,
-        },
-        tabs: {
-          id: "Tabs",
-          label: "Tabs",
-          path: "component/tabs",
-          icon: <MdAccountBalanceWallet />,
-        },
-      },
-    },
-    utils: {
-      name: "Utils",
-      links: {
-        blanket: {
-          id: "Blanket",
-          label: "Blanket",
-          path: "component/blanket",
+        user: {
+          id: "User",
+          label: "User",
+          path: "component/user",
           icon: <MdAccountBalanceWallet />,
         },
       },
