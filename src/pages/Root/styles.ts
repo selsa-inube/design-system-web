@@ -9,9 +9,9 @@ const StyledRoot = styled.div`
 
 const StyledMain = styled.main`
   box-sizing: border-box;
-  height: calc(100vh - 56px);
+  // height: calc(100vh - 56px);
   padding: 32px 32px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 `;
 
 export { StyledRoot, StyledMain };

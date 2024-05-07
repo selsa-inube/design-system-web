@@ -1,48 +1,57 @@
-import { Text } from "@inubekit/text";
 import {
   StyledTable,
   StyledTr,
   StyledTd,
   StyledTbody,
-  StyledCode,
-  StyledCaption,
-  StyledCodeTd,
   StyledTdTitle,
 } from "./styles";
+import { Tag } from "@inubekit/tag";
+import { Text } from "@inubekit/text";
 
-export interface InformationsProps {
+interface IInformationsProps {
   nameProps: string;
   description?: string;
   type: string;
+  value: string;
 }
 
-export const InformationsProps = (props: InformationsProps) => {
-  const { nameProps, description, type } = props;
+const InformationsProps = (props: IInformationsProps) => {
+  const { nameProps, description, type, value } = props;
 
   return (
     <StyledTable>
-      <StyledCaption>
-        <StyledCode>{nameProps}</StyledCode>
-      </StyledCaption>
-
+      <StyledTdTitle>
+        <Tag appearance="gray" label={nameProps} weight="strong" />
+      </StyledTdTitle>
       <StyledTbody>
         <StyledTr>
           <StyledTdTitle>
-            <Text>Description</Text>
+            <Text type="title" size="medium" children="Description" />
           </StyledTdTitle>
           <StyledTd>
-            <Text size="medium">{description}</Text>
+            <Text appearance="gray">{description}</Text>
           </StyledTd>
         </StyledTr>
         <StyledTr>
           <StyledTdTitle>
-            <Text>Type</Text>
+            <Text type="title" size="medium" children="Type" />
           </StyledTdTitle>
           <StyledTd>
-            <StyledCodeTd>{type}</StyledCodeTd>
+            <Text appearance="gray">{type}</Text>
+          </StyledTd>
+        </StyledTr>
+        <StyledTr>
+          <StyledTdTitle>
+            <Text type="title" size="medium" children="Values" />
+          </StyledTdTitle>
+          <StyledTd>
+            <Text appearance="gray">{value}</Text>
           </StyledTd>
         </StyledTr>
       </StyledTbody>
     </StyledTable>
   );
 };
+
+export { InformationsProps };
+export type { IInformationsProps };
