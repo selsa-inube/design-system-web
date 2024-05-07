@@ -1,8 +1,8 @@
-import { Label } from "@inube/design-system";
+import { LabelController } from "./Controller/Label.Controller";
 
 const label = {
   description: "This component uses a filled primary icon for all applications",
-  example: Label,
+  example: LabelController,
   name: "Label",
   props: {
     htmlFor: "id",
