@@ -181,9 +181,9 @@ const TableUI = (props: TableUIProps) => {
             <StyledThTitle
               key={`title-${title.id}`}
               aria-label={title.titleName}
-              countcolumns={titleColumns.length}
+              $countcolumns={titleColumns.length}
               colsSameWidth={colsSameWidth}
-              withactions={withactions.toString()}
+              $withactions={withactions.toString()}
             >
               <Text type="label" size="medium" appearance="dark">
                 {title.titleName}
@@ -209,12 +209,12 @@ const TableUI = (props: TableUIProps) => {
                 <StyledTr
                   key={`entry-${entry.id}`}
                   aria-labelledby={`entry-${entry.id}`}
-                  islasttr={(index === entries.length - 1).toString()}
+                  $islasttr={(index === entries.length - 1).toString()}
                 >
                   {titleColumns.map((title) => (
                     <StyledTd
                       key={`e-${title.id}`}
-                      withactions={withactions.toString()}
+                      $withactions={withactions.toString()}
                     >
                       <Text
                         type="body"
@@ -237,7 +237,7 @@ const TableUI = (props: TableUIProps) => {
                 </StyledTr>
               ))
             ) : (
-              <StyledTr aria-labelledby={`no-data`} islasttr={true.toString()}>
+              <StyledTr aria-labelledby={`no-data`} $islasttr={true.toString()}>
                 <StyledTd colSpan={titleColumns.length + 1}>
                   <Text type="body" size="small" appearance="dark" ellipsis>
                     No se encontró información

@@ -38,7 +38,7 @@ const StyledTbody = styled.tbody`
 `;
 
 interface IStyledTr {
-  islasttr?: string;
+  $islasttr?: string;
 }
 
 const StyledTr = styled.tr<IStyledTr>`
@@ -46,20 +46,20 @@ const StyledTr = styled.tr<IStyledTr>`
 `;
 
 interface IStyledThTitle {
-  countcolumns: number;
+  $countcolumns: number;
   colsSameWidth?: boolean;
-  withactions?: string;
+  $withactions?: string;
 }
 
 const StyledThTitle = styled.th<IStyledThTitle>`
   background-color: ${({ theme }) =>
     theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
   padding: 12px 16px;
-  min-width: ${({ countcolumns, colsSameWidth }) =>
-    colsSameWidth ? `${100 / countcolumns}%` : "auto"};
+  min-width: ${({ $countcolumns, colsSameWidth }) =>
+    colsSameWidth ? `${100 / $countcolumns}%` : "auto"};
 
   p {
-    text-align: ${({ withactions }) => (withactions ? "left" : "center")};
+    text-align: ${({ $withactions }) => ($withactions ? "left" : "center")};
   }
 `;
 
@@ -71,7 +71,7 @@ const StyledThAction = styled.th`
 `;
 
 interface IStyledTd {
-  withactions?: string;
+  $withactions?: string;
 }
 
 const StyledTd = styled.td<IStyledTd>`
@@ -81,7 +81,7 @@ const StyledTd = styled.td<IStyledTd>`
   white-space: nowrap;
 
   p {
-    text-align: ${({ withactions }) => (withactions ? "left" : "center")};
+    text-align: ${({ $withactions }) => ($withactions ? "left" : "center")};
   }
 `;
 

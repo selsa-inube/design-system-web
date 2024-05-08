@@ -1,4 +1,23 @@
 import { Text } from "@inubekit/text";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const textTokensConfig = {
+  businessUnit: "inube",
+  component: "text",
+  block: "content",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "appearance",
+    "block",
+    "element",
+    "modifier",
+    "token",
+    "reference",
+  ],
+};
 
 const text = {
   description:
@@ -114,6 +133,7 @@ const text = {
         " Add the ellipsis prop to control that the text cannot overflow or resize the parent.Instead, the text will be shown as much as possible in the available space and the rest of it will be replaced with an ellipsis.To make this work you must use the overflow, white - space and text - overflow CSS properties.",
     },
   },
+  tokens: buildTokenDescriptions(inube.text, textTokensConfig),
 };
 
 export { text };
