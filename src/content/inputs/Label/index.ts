@@ -1,4 +1,22 @@
 import { LabelController } from "./Controller/Label.Controller";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const labelTokensConfig = {
+  businessUnit: "inube",
+  component: "label",
+  block: "content",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "modifier",
+    "token",
+    "reference",
+  ],
+};
 
 const label = {
   description: "This component uses a filled primary icon for all applications",
@@ -48,6 +66,7 @@ const label = {
       description: "component text content",
     },
   },
+  tokens: buildTokenDescriptions(inube.label, labelTokensConfig),
 };
 
 export { label };

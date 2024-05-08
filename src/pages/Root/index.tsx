@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Outlet } from "react-router-dom";
-import { Grid, Header, Nav } from "@inube/design-system";
+import { Grid, Header } from "@inube/design-system";
+import { Nav } from "@inubekit/nav";
 import { useMediaQuery } from "@inubekit/hooks";
 import { navigation } from "./navigation";
 import { StyledRoot, StyledMain } from "./styles";
@@ -17,7 +19,7 @@ function Root() {
       >
         {!smallScreen && (
           <Nav
-            navigation={navigation}
+            navigation={navigation as any}
             logoutPath="/"
             logoutTitle="Cerrar Sesión"
           />

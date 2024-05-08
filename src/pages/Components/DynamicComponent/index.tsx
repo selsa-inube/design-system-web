@@ -65,7 +65,9 @@ function DynamicComponent() {
       {activeTab === "PropsAndTypes" && components[component!] && (
         <PropsAndTypes component={components[component!]} />
       )}
-      {activeTab === "Theming" && <Theming />}
+      {activeTab === "Theming" && components[component!] && (
+        <Theming component={components[component!]} />
+      )}
       {activeTab === "IssuesAndSuggestions" && <IssuesAndSuggestions />}
     </>
   );
