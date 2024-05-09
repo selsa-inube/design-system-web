@@ -1,5 +1,23 @@
 import { Icon } from "@inubekit/icon";
 import { MdAdd } from "react-icons/md";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const iconTokensConfig = {
+  businessUnit: "inube",
+  component: "icon",
+  block: "background",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "appearance",
+    "block",
+    "element",
+    "modifier",
+    "token",
+  ],
+};
 
 const icon = {
   description: "Icons used to communicate actions and decisions graphically",
@@ -77,6 +95,7 @@ const icon = {
       description: "Size of the icon in pixels",
     },
   },
+  tokens: buildTokenDescriptions(inube.icon, iconTokensConfig),
 };
 
 export { icon };

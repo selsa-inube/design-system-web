@@ -1,5 +1,25 @@
 import { Spinner } from "@inube/design-system";
 
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const spinnerTokensConfig = {
+  businessUnit: "inube",
+  component: "spinner",
+  block: "background",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "appearance",
+    "type",
+    "block",
+    "element",
+    "token",
+    "reference",
+  ],
+};
+
 const spinner = {
   description: "This component uses a filled primary icon for all applications",
   example: Spinner,
@@ -39,6 +59,7 @@ const spinner = {
         "indicates when the background of the spinner should have color",
     },
   },
+  tokens: buildTokenDescriptions(inube.spinner, spinnerTokensConfig),
 };
 
 export { spinner };

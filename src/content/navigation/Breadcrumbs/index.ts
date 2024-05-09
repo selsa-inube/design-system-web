@@ -1,4 +1,14 @@
 import { Breadcrumbs } from "@inube/design-system";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const breadcrumbsTokensConfig = {
+  businessUnit: "inube",
+  component: "breadcrumbs",
+  block: "content",
+  element: "active",
+  include: ["businessUnit", "component", "block", "element", "token"],
+};
 
 const breadcrumbs = {
   description: "This component uses a filled primary icon for all applications",
@@ -50,6 +60,7 @@ const breadcrumbs = {
         "An array of objects that contain the path, label, id, and isActive properties.",
     },
   },
+  tokens: buildTokenDescriptions(inube.breadcrumbs, breadcrumbsTokensConfig),
 };
 
 export { breadcrumbs };

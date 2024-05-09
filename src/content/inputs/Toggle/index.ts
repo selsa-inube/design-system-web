@@ -1,4 +1,23 @@
 import { ToggleController } from "./Controller/Toggle.Controller";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const toggleTokensConfig = {
+  businessUnit: "inube",
+  component: "toggle",
+  block: "background",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "status",
+    "block",
+    "element",
+    "modifier",
+    "token",
+    "reference",
+  ],
+};
 
 const toggle = {
   description: "This component uses a filled primary icon for all applications",
@@ -65,6 +84,7 @@ const toggle = {
         "Sets the padding in px p global values for all four sides of the component. Accepted values are the spacing tokens",
     },
   },
+  tokens: buildTokenDescriptions(inube.toggle, toggleTokensConfig),
 };
 
 export { toggle };

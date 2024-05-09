@@ -1,4 +1,22 @@
 import { Tag } from "@inubekit/tag";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const tagTokensConfig = {
+  businessUnit: "inube",
+  component: "tag",
+  block: "content",
+  element: "appearance",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "modifier",
+    "token",
+    "reference",
+  ],
+};
 
 const tag = {
   description: "Icons used to communicate actions and decisions graphically",
@@ -44,6 +62,7 @@ const tag = {
       ],
     },
   },
+  tokens: buildTokenDescriptions(inube.tag, tagTokensConfig),
 };
 
 export { tag };

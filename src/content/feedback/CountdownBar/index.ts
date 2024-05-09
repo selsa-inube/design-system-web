@@ -1,4 +1,13 @@
 import { CountdownBar } from "@inubekit/countdownbar";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const countdownBarTokensConfig = {
+  businessUnit: "inube",
+  component: "countdownBar",
+  element: "color",
+  include: ["businessUnit", "component", "appearance", "element", "token"],
+};
 
 const countdownBar = {
   description: "This component uses a filled primary icon for all applications",
@@ -35,6 +44,7 @@ const countdownBar = {
         "indicates the name of the customer or company associated with the user.",
     },
   },
+  tokens: buildTokenDescriptions(inube.countdownBar, countdownBarTokensConfig),
 };
 
 export { countdownBar };

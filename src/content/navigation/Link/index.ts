@@ -1,4 +1,22 @@
 import { Link } from "@inubekit/link";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const linkTokensConfig = {
+  businessUnit: "inube",
+  component: "link",
+  block: "content",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "modifier",
+    "token",
+    "reference",
+  ],
+};
 
 const link = {
   description: "This component uses a filled primary icon for all applications",
@@ -44,6 +62,7 @@ const link = {
       description: "Indicates when the mouse passes over the text",
     },
   },
+  tokens: buildTokenDescriptions(inube.link, linkTokensConfig),
 };
 
 export { link };

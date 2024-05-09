@@ -1,5 +1,22 @@
 import { NavLink } from "@inube/design-system";
 import { MdHouse } from "react-icons/md";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const navLinkTokensConfig = {
+  businessUnit: "inube",
+  component: "navLink",
+  block: "link",
+  element: "appearance",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "token",
+    "reference",
+  ],
+};
 
 const navLink = {
   description: "This component uses a filled primary icon for all applications",
@@ -41,6 +58,7 @@ const navLink = {
         "shall constitute the content to be displayed within the MenuLink-component and is required",
     },
   },
+  tokens: buildTokenDescriptions(inube.nav.link, navLinkTokensConfig),
 };
 
 export { navLink };
