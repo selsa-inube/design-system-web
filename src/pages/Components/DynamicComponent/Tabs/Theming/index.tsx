@@ -10,22 +10,30 @@ import { StyledTokenInfoContainer } from "./styles";
 function Theming(props: any) {
   const { component } = props;
 
-  const tokensArray = Object.values(component?.tokens ?? {});
-  const firstTokenObject = tokensArray[0] ?? {};
+  let tokensArray: any[] = [];
+  let tokenStructure: string[] = [];
+  let tokenEntries: any[] = [];
+  let titles: any[] = [];
+  let entries: any[] = [];
 
-  const tokenStructure = Object.keys(firstTokenObject);
-  const tokenEntries = Object.values(component.tokens).slice(0, 3);
+  if (component?.tokens) {
+    tokensArray = Object.values(component.tokens);
+    const firstTokenObject = tokensArray[0] ?? {};
 
-  const titles = tokenStructure.map((key, index) => ({
-    id: key,
-    titleName: key.replace(/([A-Z])/g, " $1").trim(),
-    priority: 1 - index,
-  }));
+    tokenStructure = Object.keys(firstTokenObject);
+    tokenEntries = Object.values(component.tokens).slice(0, 3);
 
-  const entries: any = tokenEntries.map((entry: any, index) => ({
-    id: index,
-    ...entry,
-  }));
+    titles = tokenStructure.map((key, index) => ({
+      id: key,
+      titleName: key.replace(/([A-Z])/g, " $1").trim(),
+      priority: 1 - index,
+    }));
+
+    entries = tokenEntries.map((entry, index) => ({
+      id: index,
+      ...entry,
+    }));
+  }
 
   return (
     <Grid
@@ -44,39 +52,51 @@ function Theming(props: any) {
           children="Tokens are separated by elements that range from the generic to the most detailed."
         />
       </Stack>
-      <Grid
-        gap="s150"
-        autoRows="unset"
-        alignContent="unset"
-        justifyContent="unset"
-        templateColumns="auto auto"
-        templateRows="auto"
-      >
-        {tokenStructure.map(
-          (key, index) =>
-            tokenDescription[key]?.description && (
-              <StyledTokenInfoContainer key={key}>
-                <Stack
-                  gap="14px"
-                  height="36px"
-                  alignItems="center"
-                  padding="8px 16px"
-                >
-                  <Text
-                    type="label"
-                    children={`${index + 1}. ${tokenDescription[key]?.label}:`}
-                  ></Text>
-                  <Text
-                    appearance="gray"
-                    size="medium"
-                    children={tokenDescription[key]?.description}
-                  ></Text>
-                </Stack>
-              </StyledTokenInfoContainer>
-            ),
-        )}
-      </Grid>
-      <Table titles={titles} entries={entries} breakpoints={breakpoints} />
+      {tokensArray.length > 0 ? (
+        <>
+          <Grid
+            gap="s150"
+            autoRows="unset"
+            alignContent="unset"
+            justifyContent="unset"
+            templateColumns="auto auto"
+            templateRows="auto"
+          >
+            {tokenStructure.map(
+              (key, index) =>
+                tokenDescription[key]?.description && (
+                  <StyledTokenInfoContainer key={key}>
+                    <Stack
+                      gap="14px"
+                      height="36px"
+                      alignItems="center"
+                      padding="8px 16px"
+                    >
+                      <Text
+                        type="label"
+                        children={`${index + 1}. ${tokenDescription[key]
+                          ?.label}:`}
+                      ></Text>
+                      <Text
+                        appearance="gray"
+                        size="medium"
+                        children={tokenDescription[key]?.description}
+                      ></Text>
+                    </Stack>
+                  </StyledTokenInfoContainer>
+                ),
+            )}
+          </Grid>
+          <Table titles={titles} entries={entries} breakpoints={breakpoints} />
+        </>
+      ) : (
+        <Text
+          type="body"
+          size="large"
+          appearance="gray"
+          children="No tokens have been associated with this component yet."
+        />
+      )}
     </Grid>
   );
 }

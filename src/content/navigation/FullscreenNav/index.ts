@@ -8,6 +8,16 @@ import {
   MdAccountBalanceWallet,
   MdAccountBalance,
 } from "react-icons/md";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const fullscreenNavTokensConfig = {
+  businessUnit: "inube",
+  component: "fullscreenNav",
+  block: "background",
+  element: "color",
+  include: ["businessUnit", "component", "block", "element", "token"],
+};
 
 const fullscreenNav = {
   description: "This component uses a filled primary icon for all applications",
@@ -96,6 +106,10 @@ const fullscreenNav = {
       description: "title of the logout page",
     },
   },
+  tokens: buildTokenDescriptions(
+    inube.fullscreenNav,
+    fullscreenNavTokensConfig,
+  ),
 };
 
 export { fullscreenNav };

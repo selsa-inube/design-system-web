@@ -1,4 +1,14 @@
 import { Fieldset } from "@inubekit/fieldset";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const fieldsetTokensConfig = {
+  businessUnit: "inube",
+  component: "fieldset",
+  block: "legend",
+  element: "color",
+  include: ["businessUnit", "component", "block", "element", "token"],
+};
 
 const fieldset = {
   description: "This component uses a filled primary icon for all applications",
@@ -26,6 +36,7 @@ const fieldset = {
       ],
     },
   },
+  tokens: buildTokenDescriptions(inube.fieldset, fieldsetTokensConfig),
 };
 
 export { fieldset };

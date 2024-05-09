@@ -1,5 +1,23 @@
 import { Button } from "@inube/design-system";
 import { MdAdd } from "react-icons/md";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const buttonTokensConfig = {
+  businessUnit: "inube",
+  component: "button",
+  block: "content",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "appearance",
+    "block",
+    "element",
+    "modifier",
+    "token",
+  ],
+};
 
 const button = {
   description: "This component uses a filled primary icon for all applications",
@@ -94,6 +112,7 @@ const button = {
       description: "whether the button changes upon its parent hover",
     },
   },
+  tokens: buildTokenDescriptions(inube.button, buttonTokensConfig),
 };
 
 export { button };

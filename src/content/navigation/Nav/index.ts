@@ -8,6 +8,23 @@ import {
   MdAccountBalance,
   MdAccountBalanceWallet,
 } from "react-icons/md";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const navTokensConfig = {
+  businessUnit: "inube",
+  component: "nav",
+  block: "background",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "token",
+    "reference",
+  ],
+};
 
 const nav = {
   description: "This component uses a filled primary icon for all applications",
@@ -93,6 +110,7 @@ const nav = {
       description: "title of the logout page",
     },
   },
+  tokens: buildTokenDescriptions(inube.nav, navTokensConfig),
 };
 
 export { nav };

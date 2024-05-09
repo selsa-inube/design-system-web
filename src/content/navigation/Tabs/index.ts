@@ -1,4 +1,22 @@
 import { TabsController } from "./Controller/Tabs.Controller";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const tabsTokensConfig = {
+  businessUnit: "inube",
+  component: "tabs",
+  block: "content",
+  element: "appearance",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "modifier",
+    "token",
+    "reference",
+  ],
+};
 
 const tabs = {
   description: "This component uses a filled primary icon for all applications",
@@ -39,6 +57,7 @@ const tabs = {
         "allows the component to determine whether it scrolls sideways",
     },
   },
+  tokens: buildTokenDescriptions(inube.tabs, tabsTokensConfig),
 };
 
 export { tabs };

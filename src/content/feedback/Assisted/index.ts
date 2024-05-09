@@ -1,4 +1,6 @@
 import { AssistedController } from "./Controller/Assisted.Controller";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const stepsMock = [
   {
@@ -37,6 +39,22 @@ const stepsMock = [
     description: "Verificación",
   },
 ];
+
+const assistedTokensConfig = {
+  businessUnit: "inube",
+  component: "assisted",
+  block: "title",
+  element: "appearance",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "token",
+    "reference",
+    "value",
+  ],
+};
 
 const assisted = {
   description: "This component uses a filled primary icon for all applications",
@@ -93,6 +111,7 @@ const assisted = {
       ],
     },
   },
+  tokens: buildTokenDescriptions(inube.assisted, assistedTokensConfig),
 };
 
 export { assisted };

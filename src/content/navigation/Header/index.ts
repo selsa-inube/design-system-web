@@ -9,6 +9,16 @@ import {
   MdAccountBalance,
 } from "react-icons/md";
 import { Logo } from "./logo";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const headerTokensConfig = {
+  businessUnit: "inube",
+  component: "header",
+  block: "background",
+  element: "color",
+  include: ["businessUnit", "component", "block", "element", "token"],
+};
 
 const header = {
   description: "This component uses a filled primary icon for all applications",
@@ -112,6 +122,7 @@ const header = {
       description: "shall be the links that it'll be shown in the header",
     },
   },
+  tokens: buildTokenDescriptions(inube.header, headerTokensConfig),
 };
 
 export { header };

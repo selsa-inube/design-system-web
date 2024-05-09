@@ -1,5 +1,23 @@
 import { SectionMessage } from "@inube/design-system";
 import { MdWarning } from "react-icons/md";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const sectionMessageTokensConfig = {
+  businessUnit: "inube",
+  component: "sectionMessage",
+  block: "background",
+  element: "appearance",
+  include: [
+    "businessUnit",
+    "component",
+    "appearance",
+    "block",
+    "element",
+    "token",
+    "reference",
+  ],
+};
 
 const sectionMessage = {
   description: "This component uses a filled primary icon for all applications",
@@ -50,6 +68,10 @@ const sectionMessage = {
         "Callback function that is called when the section message needs to be closed, either by user action or after the countdown.",
     },
   },
+  tokens: buildTokenDescriptions(
+    inube.sectionMessage,
+    sectionMessageTokensConfig,
+  ),
 };
 
 export { sectionMessage };

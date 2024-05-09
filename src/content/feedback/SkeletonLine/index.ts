@@ -1,4 +1,21 @@
 import { SkeletonLine } from "@inube/design-system";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const skeletonLineTokensConfig = {
+  businessUnit: "inube",
+  component: "skeleton",
+  block: "background",
+  element: "color",
+  include: [
+    "businessUnit",
+    "component",
+    "block",
+    "element",
+    "token",
+    "reference",
+  ],
+};
 
 const skeletonLine = {
   description: "This component uses a filled primary icon for all applications",
@@ -16,6 +33,7 @@ const skeletonLine = {
       description: "enable loading effect animation",
     },
   },
+  tokens: buildTokenDescriptions(inube.skeleton, skeletonLineTokensConfig),
 };
 
 export { skeletonLine };
