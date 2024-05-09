@@ -1,24 +1,39 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getTokenNameFromValue } from "@pages/Components/DynamicComponent/Tabs/utils/getTokenNameFromValue";
 
+interface TokenConfigItem {
+  id: string;
+  order: number;
+}
+
+interface TokenConfig {
+  businessUnit: string;
+  component: string;
+  include: TokenConfigItem[];
+  block?: string;
+  element?: string;
+  value?: string;
+  [key: string]: any;
+}
+
 function buildTokenDescriptions(
   tokenObject: any,
-  config: any,
-  path = [],
+  config: TokenConfig,
+  path: string[] = [],
   parentPath = "",
 ) {
   const tokens: any = {};
 
-  Object.keys(tokenObject).forEach((key) => {
-    const currentPath: any = [...path, key];
-    const fullPath = parentPath ? `${parentPath}.${key}` : key;
+  Object.keys(tokenObject).forEach((piece) => {
+    const currentPath = [...path, piece];
+    const fullPath = parentPath ? `${parentPath}.${piece}` : piece;
 
     if (
-      typeof tokenObject[key] === "object" &&
-      !Array.isArray(tokenObject[key])
+      typeof tokenObject[piece] === "object" &&
+      !Array.isArray(tokenObject[piece])
     ) {
       const subTokens = buildTokenDescriptions(
-        tokenObject[key],
+        tokenObject[piece],
         config,
         currentPath,
         fullPath,
@@ -30,24 +45,37 @@ function buildTokenDescriptions(
         .join("");
 
       const tokenDescription: any = {};
+      const fullPathParts = fullPath.split(".");
 
-      config.include.forEach((prop: string) => {
-        if (prop === "appearance" && path[0]) {
-          tokenDescription[prop] = path[0];
-        } else if (prop === "modifier") {
-          tokenDescription[prop] = key;
-        } else if (prop === "value" && config.value) {
-          tokenDescription[prop] = config.value;
-        } else if (config[prop]) {
-          tokenDescription[prop] = config[prop];
+      const sortedInclude = [...config.include].sort(
+        (a, b) => a.order - b.order,
+      );
+
+      let pathIndex = 0;
+      sortedInclude.forEach((item) => {
+        switch (item.id) {
+          case "businessUnit":
+            tokenDescription[item.id] = config.businessUnit;
+            break;
+          case "component":
+            tokenDescription[item.id] = config.component;
+            break;
+          case "token":
+            tokenDescription[item.id] =
+              `${config.businessUnit}.${config.component}.${fullPath}`;
+            break;
+          default:
+            tokenDescription[item.id] =
+              fullPathParts[pathIndex] || config[item.id];
+            pathIndex++;
+            break;
         }
       });
 
-      tokenDescription.token = `${config.businessUnit}.${config.component}.${fullPath}`;
-      tokenDescription.reference = `${
-        config.businessUnit
-      }.palette.${getTokenNameFromValue(tokenObject[key])
-        ?.category}.${getTokenNameFromValue(tokenObject[key])?.tokenName}`;
+      const tokenDetails = getTokenNameFromValue(tokenObject[piece]);
+      tokenDescription.reference = tokenDetails
+        ? `${config.businessUnit}.palette.${tokenDetails.category}.${tokenDetails.tokenName}`
+        : "";
 
       tokens[tokenName] = tokenDescription;
     }

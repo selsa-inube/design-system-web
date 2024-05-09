@@ -6,17 +6,15 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const spinnerTokensConfig = {
   businessUnit: "inube",
   component: "spinner",
-  block: "background",
-  element: "color",
   include: [
-    "businessUnit",
-    "component",
-    "appearance",
-    "type",
-    "block",
-    "element",
-    "token",
-    "reference",
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "appearance", order: 3 },
+    { id: "type", order: 4 },
+    { id: "block", order: 5 },
+    { id: "element", order: 6 },
+    { id: "token", order: 7 },
+    { id: "reference", order: 8 },
   ],
 };
 

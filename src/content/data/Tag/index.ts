@@ -5,16 +5,14 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const tagTokensConfig = {
   businessUnit: "inube",
   component: "tag",
-  block: "content",
-  element: "appearance",
   include: [
-    "businessUnit",
-    "component",
-    "block",
-    "element",
-    "modifier",
-    "token",
-    "reference",
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "block", order: 3 },
+    { id: "element", order: 4 },
+    { id: "modifier", order: 5 },
+    { id: "token", order: 6 },
+    { id: "reference", order: 7 },
   ],
 };
 

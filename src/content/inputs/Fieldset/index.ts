@@ -5,9 +5,13 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const fieldsetTokensConfig = {
   businessUnit: "inube",
   component: "fieldset",
-  block: "legend",
-  element: "color",
-  include: ["businessUnit", "component", "block", "element", "token"],
+  include: [
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "block", order: 3 },
+    { id: "element", order: 4 },
+    { id: "token", order: 5 },
+  ],
 };
 
 const fieldset = {
