@@ -6,16 +6,14 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const sectionMessageTokensConfig = {
   businessUnit: "inube",
   component: "sectionMessage",
-  block: "background",
-  element: "appearance",
   include: [
-    "businessUnit",
-    "component",
-    "appearance",
-    "block",
-    "element",
-    "token",
-    "reference",
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "appearance", order: 3 },
+    { id: "block", order: 4 },
+    { id: "element", order: 5 },
+    { id: "token", order: 6 },
+    { id: "reference", order: 7 },
   ],
 };
 

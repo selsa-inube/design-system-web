@@ -5,15 +5,13 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const skeletonLineTokensConfig = {
   businessUnit: "inube",
   component: "skeleton",
-  block: "background",
-  element: "color",
   include: [
-    "businessUnit",
-    "component",
-    "block",
-    "element",
-    "token",
-    "reference",
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "block", order: 3 },
+    { id: "element", order: 4 },
+    { id: "token", order: 5 },
+    { id: "reference", order: 6 },
   ],
 };
 

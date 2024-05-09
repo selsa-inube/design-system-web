@@ -35,6 +35,12 @@ function Theming(props: any) {
     }));
   }
 
+  console.log(
+    "titles: ",
+    titles,
+    "    component.tokens:      ",
+    component.tokens,
+  );
   return (
     <Grid
       gap="s400"

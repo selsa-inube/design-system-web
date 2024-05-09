@@ -5,17 +5,14 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const toggleTokensConfig = {
   businessUnit: "inube",
   component: "toggle",
-  block: "background",
-  element: "color",
   include: [
-    "businessUnit",
-    "component",
-    "status",
-    "block",
-    "element",
-    "modifier",
-    "token",
-    "reference",
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "status", order: 3 },
+    { id: "block", order: 4 },
+    { id: "element", order: 5 },
+    { id: "modifier", order: 6 },
+    { id: "token", order: 7 },
   ],
 };
 

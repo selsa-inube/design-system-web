@@ -5,8 +5,13 @@ import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 const countdownBarTokensConfig = {
   businessUnit: "inube",
   component: "countdownBar",
-  element: "color",
-  include: ["businessUnit", "component", "appearance", "element", "token"],
+  include: [
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "appearance", order: 3 },
+    { id: "element", order: 4 },
+    { id: "token", order: 5 },
+  ],
 };
 
 const countdownBar = {
