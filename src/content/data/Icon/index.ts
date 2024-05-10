@@ -93,6 +93,7 @@ const icon = {
     },
     size: {
       description: "Size of the icon in pixels",
+      type: "input",
     },
   },
   tokens: buildTokenDescriptions(inube.icon, iconTokensConfig),

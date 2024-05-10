@@ -6,6 +6,7 @@ import { Text } from "@inubekit/text";
 
 const renderInput = (
   propName: string | number,
+  type: any,
   value: any,
   component: any,
   handlePropChange: any,
@@ -13,7 +14,7 @@ const renderInput = (
   if (
     component.propTypes &&
     component.propTypes[propName] &&
-    component.propTypes[propName].type
+    component.propTypes[propName].options
   ) {
     const options = component.propTypes[propName].options;
     return (
@@ -27,7 +28,7 @@ const renderInput = (
         id={`${component.name}-${propName}-Select`}
       />
     );
-  } else if (typeof value === "boolean") {
+  } else if (type === "boolean") {
     return (
       <Toggle
         checked={value}
@@ -41,9 +42,9 @@ const renderInput = (
         padding="0"
       />
     );
-  } else if (typeof value === "function") {
+  } else if (type === "function") {
     return <Text size="small">Function: {value.name || "Anonymous"}( )</Text>;
-  } else {
+  } else if (type === "input") {
     return (
       <Textfield
         type={typeof value === "number" ? "number" : "text"}
@@ -55,6 +56,8 @@ const renderInput = (
         size="compact"
       />
     );
+  } else {
+    return <Text size="small" children="-" />;
   }
 };
 

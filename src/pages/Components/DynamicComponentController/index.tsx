@@ -10,8 +10,10 @@ function DynamicComponentController(props: any) {
     id: key,
     name: key,
     default: determineValue(component.props[key]),
+    type: component.propTypes[key]?.type || typeof value,
     value: value,
-    description: `${typeof component.props[key]}`,
+    description:
+      component.propTypes[key]?.type || `${typeof component.props[key]}`,
   }));
 
   const actions = [
@@ -19,7 +21,13 @@ function DynamicComponentController(props: any) {
       id: "control",
       actionName: "Control",
       content: (entry: any) =>
-        renderInput(entry.name, entry.value, component, handlePropChange),
+        renderInput(
+          entry.name,
+          entry.type,
+          entry.value,
+          component,
+          handlePropChange,
+        ),
     },
   ];
 
