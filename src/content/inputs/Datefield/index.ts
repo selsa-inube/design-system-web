@@ -1,8 +1,8 @@
-import { Datefield } from "@inubekit/datefield";
+import { DatefieldController } from "./Controller/Datefield.Controller";
 
 const datefield = {
   description: "This component uses a filled primary icon for all applications",
-  example: Datefield,
+  example: DatefieldController,
   name: "Datefield",
   props: {
     label: "Date",

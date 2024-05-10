@@ -1,8 +1,8 @@
-import { Textarea } from "@inube/design-system";
+import { TextareaController } from "./Controller/Textarea.Controller";
 
 const textarea = {
   description: "This component uses a filled primary icon for all applications",
-  example: Textarea,
+  example: TextareaController,
   name: "Textarea",
   props: {
     label: "Textarea",

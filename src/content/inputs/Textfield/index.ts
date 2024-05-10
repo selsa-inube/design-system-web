@@ -1,8 +1,8 @@
-import { Textfield } from "@inubekit/textfield";
+import { TextfieldController } from "./Controller/Textfield.Controller";
 
 const textfield = {
   description: "This component uses a filled primary icon for all applications",
-  example: Textfield,
+  example: TextfieldController,
   name: "Textfield",
   props: {
     label: "Username",
