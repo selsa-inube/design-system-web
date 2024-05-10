@@ -19,8 +19,15 @@ const blanket = {
   description: "This component uses a filled primary icon for all applications",
   example: BlanketController,
   name: "Blanket",
-  props: {},
-  propTypes: {},
+  props: {
+    children: "-",
+  },
+  propTypes: {
+    children: {
+      description: "Whether the icon changes upon cursor hover",
+      type: "ReactElement",
+    },
+  },
   tokens: buildTokenDescriptions(inube.blanket, blanketTokensConfig),
 };
 

@@ -1,8 +1,8 @@
-import { Select } from "@inube/design-system";
+import { SelectController } from "./Controller/Select.Controller";
 
 const select = {
   description: "This component uses a filled primary icon for all applications",
-  example: Select,
+  example: SelectController,
   name: "Select",
   props: {
     label: "Label",
