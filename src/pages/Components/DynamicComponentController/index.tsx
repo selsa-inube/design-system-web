@@ -6,15 +6,18 @@ import { breakpoints, titles } from "./config";
 function DynamicComponentController(props: any) {
   const { component, handlePropChange, dynamicComponentProps } = props;
 
-  const entries = Object.entries(dynamicComponentProps).map(([key, value]) => ({
-    id: key,
-    name: key,
-    default: determineValue(component.props[key]),
-    type: component.propTypes[key]?.type || typeof value,
-    value: value,
-    description:
-      component.propTypes[key]?.type || `${typeof component.props[key]}`,
-  }));
+  const isPropsEmpty = Object.keys(dynamicComponentProps).length === 0;
+
+  const entries = Object.entries(component.propTypes).map(
+    ([key, propType]: any) => ({
+      id: key,
+      name: key,
+      default: propType.default || determineValue(component.props[key]),
+      type: propType.type || typeof component.props[key],
+      value: !isPropsEmpty ? dynamicComponentProps[key] : "-",
+      description: propType.type || `${typeof component.props[key]}`,
+    }),
+  );
 
   const actions = [
     {
