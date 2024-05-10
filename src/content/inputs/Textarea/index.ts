@@ -1,4 +1,19 @@
 import { TextareaController } from "./Controller/Textarea.Controller";
+import { inube } from "@inubekit/foundations";
+import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+
+const inputTokensConfig = {
+  businessUnit: "inube",
+  component: "input",
+  include: [
+    { id: "businessUnit", order: 1 },
+    { id: "component", order: 2 },
+    { id: "block", order: 3 },
+    { id: "element", order: 4 },
+    { id: "modifier", order: 5 },
+    { id: "token", order: 6 },
+  ],
+};
 
 const textarea = {
   description: "This component uses a filled primary icon for all applications",
@@ -70,6 +85,7 @@ const textarea = {
         "defines the minimum number of characters for displaying counter alerts",
     },
   },
+  tokens: buildTokenDescriptions(inube.input, inputTokensConfig),
 };
 
 export { textarea };
