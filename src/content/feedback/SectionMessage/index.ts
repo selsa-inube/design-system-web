@@ -37,10 +37,12 @@ const sectionMessage = {
     },
     title: {
       description: "The title text of the section message.",
+      type: "input",
     },
     description: {
       description:
         "The description text of the section message. If the description is too long, it will be truncated to the MAX_DESCRIPTION_LENGTH.",
+      type: "input",
     },
     appearance: {
       description:
@@ -60,6 +62,7 @@ const sectionMessage = {
     duration: {
       description:
         "The duration for which the countdown bar runs. If provided, a countdown bar will appear.",
+      type: "input",
     },
     closeSectionMessage: {
       description:

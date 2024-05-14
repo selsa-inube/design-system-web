@@ -103,9 +103,11 @@ const nav = {
     logoutPath: {
       description:
         "is the path where the user is going to navigate when he wants to logout and is required",
+      type: "input",
     },
     logoutTitle: {
       description: "title of the logout page",
+      type: "input",
     },
   },
   tokens: buildTokenDescriptions(inube.nav, navTokensConfig),

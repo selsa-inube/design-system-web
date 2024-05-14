@@ -36,16 +36,20 @@ const textarea = {
   propTypes: {
     label: {
       description: "prompts the user what value to enter",
+      type: "input",
     },
     name: {
       description: "name of the Textarea element",
+      type: "input",
     },
     id: {
       description:
         "uniquely identifies the **Textarea Component**, it will also allow the **label element** to be connected to the **Textarea element** through the htmlFor of the label",
+      type: "input",
     },
     placeholder: {
       description: "text to display in the text field whenever it is empty",
+      type: "input",
     },
     disabled: {
       description:
@@ -57,10 +61,12 @@ const textarea = {
     onChange: {
       description:
         "allows you to control what to do when the user changes the value of the component",
+      type: "Event",
     },
     maxLength: {
       description:
         "defines how many characters maximum are received in the component value",
+      type: "input",
     },
     required: {
       description: "defines if the field is required or not",
@@ -76,6 +82,7 @@ const textarea = {
     message: {
       description:
         "display a message, provided by the developer implementing the component, which can be either an error notification or a validation prompt",
+      type: "string",
     },
     fullwidth: {
       description: "option to fit field width to its parent width",
@@ -83,6 +90,7 @@ const textarea = {
     lengthThreshold: {
       description:
         "defines the minimum number of characters for displaying counter alerts",
+      type: "input",
     },
   },
   tokens: buildTokenDescriptions(inube.input, inputTokensConfig),

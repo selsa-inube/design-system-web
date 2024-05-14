@@ -1,23 +1,25 @@
-import { User } from "@inube/design-system";
+import { UserController } from "./Controller/User.Controller";
 
 const user = {
   description:
     "Component that allows the user to identify himself and locate himself next to the business unit",
-  example: User,
+  example: UserController,
   name: "User",
   props: {
-    userName: "Leonardo Garzón",
+    username: "Leonardo Garzón",
     client: "Sistemas Enlínea S.A",
     size: "large",
   },
   propTypes: {
-    userName: {
+    username: {
       description:
         "specify the name of the user to be displayed in the component. Allows customising the visual identification of the user within the application interface.",
+      type: "input",
     },
     client: {
       description:
         "indicates the name of the customer or company associated with the user.",
+      type: "input",
     },
     size: {
       description:

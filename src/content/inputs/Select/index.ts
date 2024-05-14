@@ -25,16 +25,20 @@ const select = {
   propTypes: {
     label: {
       description: "prompts the user what value to enter",
+      type: "input",
     },
     name: {
       description: "name of the input element",
+      type: "input",
     },
     id: {
       description:
         "uniquely identifies the **Textfield Component**, it will also allow the **label element** to be connected to the **input element** through the htmlFor of the label",
+      type: "input",
     },
     placeholder: {
       description: "text to display in the text field whenever it is empty",
+      type: "input",
     },
     disabled: {
       description:
@@ -46,6 +50,7 @@ const select = {
     onChange: {
       description:
         "allows you to control what to do when the user changes the value of the component",
+      type: "Event",
     },
     required: {
       description: "defines if the field is required or not",
@@ -61,9 +66,11 @@ const select = {
     },
     errorMessage: {
       description: "show when the field is validated and there is an error",
+      type: "string",
     },
     validMessage: {
       description: "show when the field is validated without errors",
+      type: "string",
     },
     size: {
       description: "defines the size of the component",
@@ -79,10 +86,12 @@ const select = {
     onFocus: {
       description:
         "allows you to control what to do when the onfocus event occurs.",
+      type: "Event",
     },
     onBlur: {
       description:
         "allows you to control what to do when the onblur event occurs.",
+      type: "Event",
     },
     options: {
       description:

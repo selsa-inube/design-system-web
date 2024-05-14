@@ -23,11 +23,13 @@ function PropEntry(props: IPropEntry) {
     propInfo && Array.isArray(propInfo.options)
       ? propInfo.options.map((option) => option.id).join(", ")
       : "-";
+  const type =
+    propInfo?.type === "input" ? "string" : propInfo?.type || typeof value;
   return (
     <ComponentProperties
       name={name}
       description={propInfo?.description || "No description available."}
-      type={propInfo?.type || typeof value}
+      type={type}
       value={typeValue}
     />
   );
@@ -41,7 +43,7 @@ function PropsAndTypes({ component }: any) {
       </Text>
       <StyledContainerProperties>
         <StyledComponentProperties>
-          {Object.entries(component.props).map(([key, value]) => {
+          {Object.entries(component.propTypes).map(([key, value]) => {
             const propInfo = component.propTypes[key];
             return (
               <PropEntry

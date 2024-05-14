@@ -49,10 +49,12 @@ const tabs = {
     onChange: {
       description:
         "attribute shall determine the behavior of the click event and should handle the state for the tabs-component",
+      type: "Event",
     },
     scroll: {
       description:
         "allows the component to determine whether it scrolls sideways",
+      type: "boolean",
     },
   },
   tokens: buildTokenDescriptions(inube.tabs, tabsTokensConfig),

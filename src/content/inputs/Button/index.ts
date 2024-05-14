@@ -65,6 +65,7 @@ const button = {
     },
     iconAfter: {
       description: "places an icon within the button, after the button's text",
+      type: "ReactElement",
     },
     type: {
       description: "pass type down to a button",

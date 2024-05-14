@@ -33,13 +33,16 @@ const datefield = {
   propTypes: {
     label: {
       description: "prompts the user what value to enter",
+      type: "input",
     },
     name: {
       description: "name of the input element",
+      type: "input",
     },
     id: {
       description:
         "uniquely identifies the **Textfield Component**, it will also allow the **label element** to be connected to the **input element** through the htmlFor of the label",
+      type: "input",
     },
     disabled: {
       description:

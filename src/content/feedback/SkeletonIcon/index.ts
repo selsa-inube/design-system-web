@@ -26,6 +26,7 @@ const skeletonIcon = {
   propTypes: {
     size: {
       description: "sets the size of the skeleton icon component",
+      type: "input",
     },
     animated: {
       description:

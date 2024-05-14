@@ -36,6 +36,7 @@ const toggle = {
     id: {
       description:
         "this element can have a label on it, so this id allows us to connect the label with the switch",
+      type: "input",
     },
     disabled: {
       description:
@@ -47,6 +48,7 @@ const toggle = {
     name: {
       description:
         "descriptive name for value property to be submitted in a form",
+      type: "input",
     },
     value: {
       description: "value to be submitted in a form",
@@ -71,14 +73,17 @@ const toggle = {
     },
     label: {
       description: "component text content",
+      type: "input",
     },
     margin: {
       description:
         "Sets the margin in px or global values for all four sides of the component. Accepted values are the spacing tokens",
+      type: "input",
     },
     padding: {
       description:
         "Sets the padding in px p global values for all four sides of the component. Accepted values are the spacing tokens",
+      type: "input",
     },
   },
   tokens: buildTokenDescriptions(inube.toggle, toggleTokensConfig),

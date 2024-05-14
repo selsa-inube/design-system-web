@@ -106,6 +106,7 @@ const assisted = {
         { id: "large", label: "Large" },
         { id: "small", label: "Small" },
       ],
+      default: "large",
     },
   },
   tokens: buildTokenDescriptions(inube.assisted, assistedTokensConfig),

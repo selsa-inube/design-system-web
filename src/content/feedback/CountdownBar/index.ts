@@ -31,14 +31,27 @@ const countdownBar = {
     height: {
       description:
         "specify the name of the user to be displayed in the component. Allows customising the visual identification of the user within the application interface.",
+      type: "input",
     },
     appearance: {
       description:
         "indicates the name of the customer or company associated with the user.",
+      type: "ICountdownBarAppearance",
+      options: [
+        { id: "primary", label: "Primary" },
+        { id: "success", label: "Success" },
+        { id: "warning", label: "Warning" },
+        { id: "danger", label: "Danger" },
+        { id: "help", label: "Help" },
+        { id: "dark", label: "Dark" },
+        { id: "gray", label: "Gray" },
+        { id: "light", label: "Light" },
+      ],
     },
     duration: {
       description:
         "indicates the name of the customer or company associated with the user.",
+      type: "input",
     },
     paused: {
       description:
