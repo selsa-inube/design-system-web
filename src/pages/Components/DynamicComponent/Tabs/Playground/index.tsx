@@ -4,9 +4,9 @@ import { Stack } from "@inubekit/stack";
 import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
 import { useState } from "react";
-import { DynamicComponentController } from "@pages/Components/DynamicComponentController";
 import { StyledFieldSetComponentContainer, StyledTag } from "./styles";
 import { processProps } from "../utils";
+import { DynamicComponentControls } from "@components/data/DynamicComponentControls";
 
 interface IPlayground {
   component: any;
@@ -55,7 +55,7 @@ function Playground(props: IPlayground) {
           </Fieldset>
         </StyledFieldSetComponentContainer>
         <Fieldset legend="Props">
-          <DynamicComponentController
+          <DynamicComponentControls
             component={component}
             handlePropChange={handlePropChange}
             dynamicComponentProps={processedProps}

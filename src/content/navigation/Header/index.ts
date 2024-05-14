@@ -118,9 +118,11 @@ const header = {
     },
     userName: {
       description: "shall be the displayed username",
+      type: "input",
     },
     client: {
       description: "shall be the displayed business Unit",
+      type: "input",
     },
     links: {
       description: "shall be the links that it'll be shown in the header",

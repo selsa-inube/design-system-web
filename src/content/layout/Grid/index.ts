@@ -23,16 +23,20 @@ const grid = {
   propTypes: {
     children: {
       description: "Children elements placed inside the Grid.",
+      type: "ReactElement",
     },
     templateColumns: {
       description: "Defines the size and layout of the columns in the grid.",
+      type: "input",
     },
     templateRows: {
       description: "Defines the size and layout of the rows in the grid.",
+      type: "input",
     },
     gap: {
       description:
         "Controls the spacing between grid cells, both horizontally and vertically.",
+      type: "input",
     },
     justifyItems: {
       description:
@@ -138,11 +142,13 @@ const grid = {
     autoColumns: {
       description:
         "Allows you to specify the automatic width of the grid columns. This means that the columns will automatically adjust according to the content.",
+      type: "input",
     },
 
     autoRows: {
       description:
         "Allows you to specify the automatic height of the grid columns. This means that the columns will automatically adjust according to the content.",
+      type: "input",
     },
 
     autoFlow: {
@@ -160,18 +166,22 @@ const grid = {
 
     height: {
       description: "Controls the height of the grid.",
+      type: "input",
     },
 
     width: {
       description: "Controls the width of the grid.",
+      type: "input",
     },
 
     margin: {
       description: "Sets the outer margin of the grid.",
+      type: "input",
     },
 
     padding: {
       description: "Sets the inner padding of the grid.",
+      type: "input",
     },
   },
 };

@@ -16,6 +16,7 @@ function IssuesAndSuggestions() {
       alignContent="unset"
       justifyContent="unset"
       margin="s300 s0 s0 s0"
+      width="800px"
     >
       <Stack direction="column" gap="8px">
         <Text type="headline" size="small" children="Tell us your experience" />
@@ -34,6 +35,7 @@ function IssuesAndSuggestions() {
         maxLength={120}
         onChange={onChange}
         value={form.value}
+        fullwidth
       />
     </Grid>
   );

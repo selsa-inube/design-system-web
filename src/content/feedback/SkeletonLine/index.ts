@@ -26,6 +26,7 @@ const skeletonLine = {
   propTypes: {
     width: {
       description: "indicates the width that the component should take",
+      type: "input",
     },
     animated: {
       description: "enable loading effect animation",

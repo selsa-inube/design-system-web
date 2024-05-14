@@ -26,6 +26,7 @@ const fieldset = {
     legend: {
       description:
         "A string that represents the title or heading for the fieldset component.",
+      type: "input",
     },
     children: {
       description:

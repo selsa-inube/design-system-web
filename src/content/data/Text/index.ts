@@ -44,10 +44,12 @@ const text = {
     margin: {
       description:
         "Sets the margin in px or global values for all four sides of the component.",
+      type: "input",
     },
     padding: {
       description:
         "Sets the padding in px p global values for all four sides of the component",
+      type: "input",
     },
     textAlign: {
       description: "This prop controls the text-align style property.",

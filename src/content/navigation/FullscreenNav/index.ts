@@ -105,9 +105,11 @@ const fullscreenNav = {
     },
     logoutPath: {
       description: "path to the logout page",
+      type: "input",
     },
     logoutTitle: {
       description: "title of the logout page",
+      type: "input",
     },
   },
   tokens: buildTokenDescriptions(

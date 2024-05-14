@@ -55,9 +55,11 @@ const link = {
     path: {
       description:
         "is the path where the MenuLink is going to navigate and is required.",
+      type: "input",
     },
     hover: {
       description: "Indicates when the mouse passes over the text",
+      type: "boolean",
     },
   },
   tokens: buildTokenDescriptions(inube.link, linkTokensConfig),

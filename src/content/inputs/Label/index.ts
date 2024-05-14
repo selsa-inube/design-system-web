@@ -41,6 +41,7 @@ const label = {
     },
     htmlFor: {
       description: "Useful to match this label with the id of a specific entry",
+      type: "input",
     },
     invalid: {
       description: "Indicates the possible states in witch the label could be",
@@ -48,10 +49,12 @@ const label = {
     margin: {
       description:
         "Sets the margin in px or global values for all four sides of the component.",
+      type: "input",
     },
     padding: {
       description:
         "Sets the padding in px or global values for all four sides of the component",
+      type: "input",
     },
     size: {
       description: "indicates the font size used in the component",
@@ -64,6 +67,7 @@ const label = {
     },
     children: {
       description: "component text content",
+      type: "ReactElement",
     },
   },
   tokens: buildTokenDescriptions(inube.label, labelTokensConfig),

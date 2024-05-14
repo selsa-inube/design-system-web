@@ -53,6 +53,7 @@ const stack = {
     gap: {
       description:
         "Controls the spacing between grid cells, both horizontally and vertically.",
+      type: "input",
     },
     alignItems: {
       description:
@@ -124,18 +125,22 @@ const stack = {
 
     height: {
       description: "Controls the height of the grid.",
+      type: "input",
     },
 
     width: {
       description: "Controls the width of the grid.",
+      type: "input",
     },
 
     margin: {
       description: "Sets the outer margin of the grid.",
+      type: "input",
     },
 
     padding: {
       description: "Sets the inner padding of the grid.",
+      type: "input",
     },
   },
 };

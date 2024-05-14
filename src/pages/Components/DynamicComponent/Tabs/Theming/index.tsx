@@ -4,8 +4,13 @@ import { Grid } from "@inube/design-system";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { tokenDescription } from "../../../../../content/tokens";
-import { breakpoints } from "@pages/Components/DynamicComponentController/config";
-import { StyledTokenInfoContainer } from "./styles";
+
+import { StyledTableWrapper, StyledTokenInfoContainer } from "./styles";
+import { breakpoints } from "@components/data/DynamicComponentControls/config";
+
+const capitalizeFirstLetter = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
 function Theming(props: any) {
   const { component } = props;
@@ -25,7 +30,7 @@ function Theming(props: any) {
 
     titles = tokenStructure.map((key, index) => ({
       id: key,
-      titleName: key.replace(/([A-Z])/g, " $1").trim(),
+      titleName: capitalizeFirstLetter(key.replace(/([A-Z])/g, " $1").trim()),
       priority: 1 - index,
     }));
 
@@ -35,12 +40,6 @@ function Theming(props: any) {
     }));
   }
 
-  console.log(
-    "titles: ",
-    titles,
-    "    component.tokens:      ",
-    component.tokens,
-  );
   return (
     <Grid
       gap="s400"
@@ -93,7 +92,13 @@ function Theming(props: any) {
                 ),
             )}
           </Grid>
-          <Table titles={titles} entries={entries} breakpoints={breakpoints} />
+          <StyledTableWrapper>
+            <Table
+              titles={titles}
+              entries={entries}
+              breakpoints={breakpoints}
+            />
+          </StyledTableWrapper>
         </>
       ) : (
         <Text

@@ -30,6 +30,7 @@ const tag = {
   propTypes: {
     label: {
       description: "Controls the text that the tag will display",
+      type: "input",
     },
     removable: {
       description: "Controls the tag in order to allow an event",
