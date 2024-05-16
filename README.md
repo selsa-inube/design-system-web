@@ -7,7 +7,7 @@
 
 <br />
 
-Inubekit, developed by Sistemas EnLinea S.A., is a comprehensive set of libraries designed to enhance software development with modern, robust, and highly customizable components. Tailored to meet the diverse needs of developers, Inubekit offers a versatile toolkit that simplifies complex tasks, accelerates development processes, and ensures high-performance outcomes.
+Inubekit is a comprehensive set of libraries designed to enhance software development with modern, robust, and highly customizable components. Tailored to meet the diverse needs of developers, Inubekit offers a versatile toolkit that simplifies complex tasks, accelerates development processes, and ensures high-performance outcomes.
 
 ## Table of contents
 
