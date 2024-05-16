@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/chakra-ui/chakra-ui">
+  <a href="https://github.com/selsa-inube">
     <img src="https://avatars.githubusercontent.com/u/112717130?s=200&v=4?raw=true" alt="Chakra logo" width="50" height="50" />
   </a>
 </p>
@@ -322,7 +322,7 @@ $ npm install @inubekit/assisted
 
 ```
 
-
+Made with ❤️ by Sistemas EnLinea S.A.
 
 
 
