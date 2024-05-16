@@ -19,7 +19,35 @@ Inubekit, developed by Sistemas EnLinea S.A., is a comprehensive set of librarie
 
 ## Documentation
 
-Each component comes with its own documentation, providing detailed information on how to use it. However, on this site we provide you more information about how to integrate them into your projects.
+Each component comes with its own documentation, providing detailed information on how to use it. However, on this site we provide you more information about how to integrate them into your projects. Each component is built using TypeScript, React, and Vite, which ensures exceptional performance. Moreover, they are user-friendly, reusable, and highly customizable, adhering to our structural guidelines, which are as follows:
+
+1. ### Tokens Structure
+![image](https://github.com/selsa-inube/design-system-web/assets/45011420/9204e875-bfa1-471d-b615-19e19ec06ab2)
+
+   - **A. Business Unit**: Defines which unit the token belongs to.
+   - **B. Component**: Specifies the component to modify.
+   - **C. Appearance**: Indicates the state the component should take.
+   - **D. Block**: Defines the characteristic the token should receive.
+   - **E. Element**: Specifies the design attribute.
+   - **F. Modifier**: Defines how the component should look.
+
+2. ### Conditions
+   - **1. Content**: Applies to border, background, text, and icon components.
+   - **2. Contrast**: Applies to texts, icons, and spinners when the background is filled.
+   - **3. Hover**: When filled, texts and icons do not support hover effects.
+
+3. ### Customization
+   Depending on the structure and configuration, you can customize the component as follows:
+
+   - **Default:** using inube theme
+   ![image](https://github.com/selsa-inube/design-system-web/assets/45011420/f633efed-f56e-4833-ba30-f8306c0d9e46)
+
+   - **Custom:** customized theme
+   ![image](https://github.com/selsa-inube/design-system-web/assets/45011420/36dd1e6a-167e-4df3-9de2-6f9ec24a7e58)
+
+**For more information about the token structure and how to use them please follow this link:**
+👉 [https://github.com/selsa-inube/inubekit-avatar](https://github.com/selsa-inube/inubekit-foundations)
+
 
 ## Installation
 
@@ -44,7 +72,7 @@ To use an Inubekit component in your project, import it from the package and inc
 
 To start using the components, please follow these steps:
 
-1. verify the component is in the package.json using the latest version avaliable
+1. Make sure that the component is listed in package.json with the latest available version.
 
 ```js
   "dependencies": {
@@ -70,10 +98,16 @@ function App() {
 export default App;
 
 ```
+3. Example
+![image](https://github.com/selsa-inube/design-system-web/assets/45011420/877e96fc-e85a-4ead-b0b2-334d54e78561)
+
 ## Playground
 Curious to learn more? Come and try it out yourself in our playground!
 
-[design.inube.cloud](https://design.inube.cloud/)
+👉 [design.inube.cloud](https://design.inube.cloud/)
+
+![image](https://github.com/selsa-inube/design-system-web/assets/45011420/425c42d6-6907-4a8a-912c-56af21463bb5)
+
 
 ## Components
 Available Components:
