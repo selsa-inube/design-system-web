@@ -1,4 +1,4 @@
-import { NavLink } from "@inube/design-system";
+import { NavLink } from "@inubekit/nav";
 import { MdHouse } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";

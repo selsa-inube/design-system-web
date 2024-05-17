@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import { Textarea } from "@inube/design-system";
+import { Textarea } from "@inubekit/textarea";
 
 const TextareaController = (props: any) => {
   const { value = "", status = "pending", maxLength = 0 } = props;

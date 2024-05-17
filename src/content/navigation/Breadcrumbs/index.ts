@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@inube/design-system";
+import { Breadcrumbs } from "@inubekit/breadcrumbs";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 

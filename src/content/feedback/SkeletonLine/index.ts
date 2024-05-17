@@ -1,4 +1,4 @@
-import { SkeletonLine } from "@inube/design-system";
+import { SkeletonLine } from "@inubekit/skeleton";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 

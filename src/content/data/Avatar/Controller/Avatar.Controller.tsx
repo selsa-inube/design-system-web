@@ -1,4 +1,4 @@
-import { Avatar } from "@inube/design-system";
+import { Avatar } from "@inubekit/avatar";
 import { Stack } from "@inubekit/stack";
 
 const AvatarController = () => {

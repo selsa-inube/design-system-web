@@ -1,4 +1,4 @@
-import { Button } from "@inube/design-system";
+import { Button } from "@inubekit/button";
 import { MdAdd } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
@@ -39,6 +39,7 @@ const button = {
   propTypes: {
     children: {
       description: "the text to be displayed",
+      type: "input",
     },
     loading: {
       description: "conditionally show a spinner over the top of a button",
