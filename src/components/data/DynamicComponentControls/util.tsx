@@ -54,7 +54,6 @@ const renderInput = (
         }
         id={`${component.name}-${propName}-Textfield`}
         size="compact"
-        fullwidth
       />
     );
   } else {

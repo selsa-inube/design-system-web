@@ -1,4 +1,4 @@
-import { Nav } from "@inube/design-system";
+import { Nav } from "@inubekit/nav";
 import {
   MdKey,
   MdMeetingRoom,
@@ -33,25 +33,25 @@ const nav = {
       title: "MENU",
       sections: {
         administrate: {
-          name: "Administrate",
+          name: "ADMINISTRATE",
           links: {
-            privileges: {
-              id: "privileges",
-              label: "Privileges",
+            text: {
+              id: "text",
+              label: "Text",
               icon: MdKey,
-              path: "/privileges",
+              path: "/components/text",
             },
-            accounting: {
-              id: "accounting",
-              label: "Accounting",
+            textfield: {
+              id: "textfield",
+              label: "Textfield",
               icon: MdMeetingRoom,
-              path: "/accounting",
+              path: "/components/textfield",
             },
-            contacts: {
-              id: "contacts",
-              label: "Contacts",
+            textarea: {
+              id: "textarea",
+              label: "Textarea",
               icon: MdPhone,
-              path: "/contacts",
+              path: "/components/textarea",
             },
             crm: {
               id: "crm",
@@ -62,7 +62,7 @@ const nav = {
           },
         },
         request: {
-          name: "Request",
+          name: "REQUEST",
           links: {
             documents: {
               id: "documents",
@@ -94,6 +94,7 @@ const nav = {
     },
     logoutPath: "/logout",
     logoutTitle: "logout",
+    collapse: true,
   },
   propTypes: {
     navigation: {
@@ -108,6 +109,9 @@ const nav = {
     logoutTitle: {
       description: "title of the logout page",
       type: "input",
+    },
+    collapse: {
+      description: "determine if the Nav should be collapsed or not",
     },
   },
   tokens: buildTokenDescriptions(inube.nav, navTokensConfig),
