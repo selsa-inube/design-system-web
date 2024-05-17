@@ -67,7 +67,7 @@ const label = {
     },
     children: {
       description: "component text content",
-      type: "ReactElement",
+      type: "input",
     },
   },
   tokens: buildTokenDescriptions(inube.label, labelTokensConfig),

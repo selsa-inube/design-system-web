@@ -1,4 +1,5 @@
-import { Header } from "@inube/design-system";
+import { Header } from "@inubekit/header";
+
 import {
   MdKey,
   MdMeetingRoom,
@@ -7,6 +8,7 @@ import {
   MdBadge,
   MdAccountBalanceWallet,
   MdAccountBalance,
+  MdAndroid,
 } from "react-icons/md";
 import { Logo } from "./logo";
 import { inube } from "@inubekit/foundations";
@@ -96,13 +98,15 @@ const header = {
     logoURL: Logo,
     userName: "Leonardo Garzón",
     client: "Sistemas Enlínea S.A",
-    links: {
-      documents: {
-        id: "dataUpdate",
-        label: "Data update",
-        path: "/dataUpdate",
+    links: [
+      {
+        label: "Actualizar datos",
+        path: "/update-data-assisted",
+        icon: MdAndroid,
       },
-    },
+    ],
+    showLinks: false,
+    showUser: false,
   },
   propTypes: {
     portalId: {
@@ -126,6 +130,12 @@ const header = {
     },
     links: {
       description: "shall be the links that it'll be shown in the header",
+    },
+    showLinks: {
+      description: "it determines if the links will be shown in the header",
+    },
+    showUser: {
+      description: "it determines if the user will be shown in the header",
     },
   },
   tokens: buildTokenDescriptions(inube.header, headerTokensConfig),

@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Outlet } from "react-router-dom";
-import { Grid, Header } from "@inube/design-system";
+import { Grid } from "@inube/design-system";
 import { Nav } from "@inubekit/nav";
+import { Header } from "@inubekit/header";
 import { useMediaQuery } from "@inubekit/hooks";
 import { navigation } from "./navigation";
 import { StyledRoot, StyledMain, StyledNavContainer } from "./styles";
@@ -12,7 +13,12 @@ function Root() {
 
   return (
     <StyledRoot>
-      <Header portalId="portals" logoURL={<Logo />} navigation={navigation} />
+      <Header
+        portalId="portals"
+        logoURL={<Logo />}
+        navigation={navigation}
+        showUser={false}
+      />
       <StyledNavContainer>
         <Grid
           templateColumns={smallScreen ? "1fr" : "auto 1fr"}
