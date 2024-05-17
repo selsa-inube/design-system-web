@@ -1,4 +1,4 @@
-import { Spinner } from "@inube/design-system";
+import { Spinner } from "@inubekit/spinner";
 
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import { Select } from "@inube/design-system";
+import { Select } from "@inubekit/select";
 
 const SelectController = (props: any) => {
   const { value, status = "pending", name } = props;

@@ -1,4 +1,4 @@
-import { SectionMessage } from "@inube/design-system";
+import { SectionMessage } from "@inubekit/sectionmessage";
 import { MdWarning } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";

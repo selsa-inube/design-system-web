@@ -1,4 +1,4 @@
-import { SkeletonIcon } from "@inube/design-system";
+import { SkeletonIcon } from "@inubekit/skeleton";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
