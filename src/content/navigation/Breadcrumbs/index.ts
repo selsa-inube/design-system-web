@@ -62,6 +62,7 @@ const breadcrumbs = {
     crumbs: {
       description:
         "An array of objects that contain the path, label, id, and isActive properties.",
+      type: "IBreadcrumbsRoute[ ]",
     },
   },
   tokens: buildTokenDescriptions(inube.breadcrumbs, breadcrumbsTokensConfig),

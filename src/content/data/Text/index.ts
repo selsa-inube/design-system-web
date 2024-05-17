@@ -40,6 +40,7 @@ const text = {
     children: {
       description:
         "This prop allows the component to get and print text in the screen.",
+      type: "input",
     },
     margin: {
       description:
