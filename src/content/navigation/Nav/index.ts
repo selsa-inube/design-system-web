@@ -1,4 +1,3 @@
-import { Nav } from "@inubekit/nav";
 import {
   MdKey,
   MdMeetingRoom,
@@ -10,6 +9,7 @@ import {
 } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { NavController } from "./Controller/Nav.Controller";
 
 const navTokensConfig = {
   businessUnit: "inube",
@@ -26,7 +26,7 @@ const navTokensConfig = {
 
 const nav = {
   description: "This component uses a filled primary icon for all applications",
-  example: Nav,
+  example: NavController,
   name: "Nav",
   props: {
     navigation: {
@@ -112,6 +112,7 @@ const nav = {
     },
     collapse: {
       description: "determine if the Nav should be collapsed or not",
+      type: "boolean",
     },
   },
   tokens: buildTokenDescriptions(inube.nav, navTokensConfig),

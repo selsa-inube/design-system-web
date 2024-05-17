@@ -3,10 +3,19 @@ import { Grid, Text } from "@inube/design-system";
 import { Stack } from "@inubekit/stack";
 import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
-import { useState } from "react";
-import { StyledFieldSetComponentContainer, StyledTag } from "./styles";
+import { useMemo, useState } from "react";
+import {
+  StyledFieldSetComponentContainer,
+  StyledTag,
+  StyledSectionMessageWrapper,
+} from "./styles";
 import { processProps } from "../utils";
 import { DynamicComponentControls } from "@components/data/DynamicComponentControls";
+import {
+  ISectionMessageAppearance,
+  SectionMessage,
+} from "@inubekit/sectionmessage";
+import { MdInfo } from "react-icons/md";
 
 interface IPlayground {
   component: any;
@@ -17,8 +26,17 @@ function Playground(props: IPlayground) {
   const Example = component.example;
 
   const [modifiedProps, setModifiedProps] = useState({});
+  const [sectionMessage, setSectionMessage] = useState<{
+    title: string;
+    description: string;
+    appearance: string;
+  } | null>(null);
 
   const processedProps = processProps({ ...component.props, ...modifiedProps });
+  const installCommand = useMemo(
+    () => `npm install @inubekit/${component.name.toLowerCase()}`,
+    [component.name],
+  );
 
   const handlePropChange = (propName: any, newValue: any) => {
     setModifiedProps((prevProps) => ({
@@ -27,42 +45,73 @@ function Playground(props: IPlayground) {
     }));
   };
 
-  return (
-    <Grid
-      gap="s600"
-      autoRows="unset"
-      alignContent="unset"
-      justifyContent="unset"
-      margin="s300 s0 s0 s0"
-    >
-      <Stack direction="column" gap="32px">
-        <Text type="headline" size="small" children="Installation" />
-        <StyledTag>
-          <Tag
-            appearance="dark"
-            label={`npm install @inubekit/${component.name.toLowerCase()}`}
-          />
-        </StyledTag>
-      </Stack>
+  const handleTagClick = () => {
+    navigator.clipboard.writeText(installCommand).then(
+      () => {
+        setSectionMessage({
+          title: "Success",
+          description: "Text copied to clipboard successfully!",
+          appearance: "success",
+        });
+      },
+      (err) => {
+        setSectionMessage({
+          title: "Error",
+          description: `Could not copy text to clipboard. ${err}`,
+          appearance: "error",
+        });
+      },
+    );
+  };
 
-      <Stack direction="column" gap="24px">
-        <Text type="headline" size="small" children="Examples" />
-        <StyledFieldSetComponentContainer>
-          <Fieldset legend="Component sample">
-            {component.example && (
-              <Example key={component.key} {...processedProps} />
-            )}
+  return (
+    <>
+      <Grid
+        gap="s600"
+        autoRows="unset"
+        alignContent="unset"
+        justifyContent="unset"
+        margin="s300 s0 s0 s0"
+      >
+        <Stack direction="column" gap="32px">
+          <Text type="headline" size="small" children="Installation" />
+          <StyledTag onClick={handleTagClick}>
+            <Tag appearance="dark" label={installCommand} />
+          </StyledTag>
+        </Stack>
+
+        <Stack direction="column" gap="24px">
+          <Text type="headline" size="small" children="Examples" />
+          <StyledFieldSetComponentContainer>
+            <Fieldset legend="Component sample">
+              {component.example && (
+                <Example key={component.key} {...processedProps} />
+              )}
+            </Fieldset>
+          </StyledFieldSetComponentContainer>
+          <Fieldset legend="Props">
+            <DynamicComponentControls
+              component={component}
+              handlePropChange={handlePropChange}
+              dynamicComponentProps={processedProps}
+            />
           </Fieldset>
-        </StyledFieldSetComponentContainer>
-        <Fieldset legend="Props">
-          <DynamicComponentControls
-            component={component}
-            handlePropChange={handlePropChange}
-            dynamicComponentProps={processedProps}
+        </Stack>
+      </Grid>
+      {sectionMessage && (
+        <StyledSectionMessageWrapper>
+          <SectionMessage
+            icon={<MdInfo />}
+            title={sectionMessage.title}
+            description={sectionMessage.description}
+            appearance={sectionMessage.appearance as ISectionMessageAppearance}
+            duration={5000}
+            closeSectionMessage={() => setSectionMessage(null)}
+            isMessageResponsive={false}
           />
-        </Fieldset>
-      </Stack>
-    </Grid>
+        </StyledSectionMessageWrapper>
+      )}
+    </>
   );
 }
 
