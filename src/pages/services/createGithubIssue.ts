@@ -12,7 +12,7 @@ const createGithubIssue = async (
   body: string,
 ): Promise<CreateIssueResponse> => {
   try {
-    const response = await axios.post("/api/index", { title, body });
+    const response = await axios.post("/api/createIssue", { title, body });
     return { success: true, data: response.data };
   } catch (error: any) {
     return { success: false, error: error.message };
