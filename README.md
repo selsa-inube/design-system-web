@@ -46,7 +46,8 @@ Each component comes with its own documentation, providing detailed information 
    ![image](https://github.com/selsa-inube/design-system-web/assets/45011420/36dd1e6a-167e-4df3-9de2-6f9ec24a7e58)
 
 **For more information about the token structure and how to use them please follow this link:**
-👉 [https://github.com/selsa-inube/inubekit-avatar](https://github.com/selsa-inube/inubekit-foundations)
+<br />
+👉 [https://github.com/selsa-inube/inubekit-foundations](https://github.com/selsa-inube/inubekit-foundations)
 
 
 ## Installation
