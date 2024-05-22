@@ -1,6 +1,24 @@
 import styled from "styled-components";
 import { inube } from "@inube/design-system";
 
+interface IStyledTd {
+  $withactions?: string;
+}
+
+interface IStyledTable {
+  colsSameWidth?: boolean;
+}
+
+interface IStyledTr {
+  $islasttr?: string;
+}
+
+interface IStyledThTitle {
+  $countcolumns: number;
+  colsSameWidth?: boolean;
+  $withactions?: string;
+}
+
 const StyledTableContainer = styled.div`
   border-radius: 8px;
   border: solid 1px
@@ -10,10 +28,6 @@ const StyledTableContainer = styled.div`
   overflow: hidden;
   width: 100%;
 `;
-
-interface IStyledTable {
-  colsSameWidth?: boolean;
-}
 
 const StyledTable = styled.table<IStyledTable>`
   outline: solid 1px
@@ -37,19 +51,9 @@ const StyledTbody = styled.tbody`
     theme.color?.surface?.light?.clear || inube.color.surface.light.clear};
 `;
 
-interface IStyledTr {
-  $islasttr?: string;
-}
-
 const StyledTr = styled.tr<IStyledTr>`
   height: 40px;
 `;
-
-interface IStyledThTitle {
-  $countcolumns: number;
-  colsSameWidth?: boolean;
-  $withactions?: string;
-}
 
 const StyledThTitle = styled.th<IStyledThTitle>`
   background-color: ${({ theme }) =>
@@ -70,17 +74,13 @@ const StyledThAction = styled.th`
   padding: 12px 0px;
 `;
 
-interface IStyledTd {
-  $withactions?: string;
-}
-
 const StyledTd = styled.td<IStyledTd>`
-  padding: 0px 16px;
   text-align: center;
   max-width: 310px;
   white-space: nowrap;
 
   p {
+    padding: 12px 16px;
     text-align: ${({ $withactions }) => ($withactions ? "left" : "center")};
   }
 `;

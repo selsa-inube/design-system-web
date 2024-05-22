@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Table } from "@components/data/Table";
-import { Grid } from "@inube/design-system";
+import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { tokenDescription } from "../../../../../content/tokens";
@@ -42,11 +42,11 @@ function Theming(props: any) {
 
   return (
     <Grid
-      gap="s400"
+      gap="32px"
       autoRows="unset"
       alignContent="unset"
       justifyContent="unset"
-      margin="s300 s0 s0 s0"
+      margin="48px 0 0 0"
     >
       <Stack direction="column" gap="8px">
         <Text type="headline" size="small" children="How to read tokens" />
@@ -60,7 +60,7 @@ function Theming(props: any) {
       {tokensArray.length > 0 ? (
         <>
           <Grid
-            gap="s150"
+            gap="12px"
             autoRows="unset"
             alignContent="unset"
             justifyContent="unset"

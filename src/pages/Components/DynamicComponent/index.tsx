@@ -42,7 +42,7 @@ function DynamicComponent() {
   return (
     <>
       {component && (
-        <Stack direction="column" gap="32px">
+        <Stack direction="column" gap="48px">
           <Stack direction="column" gap="8px">
             <Text type="display" size="medium">
               {components[component].name}
