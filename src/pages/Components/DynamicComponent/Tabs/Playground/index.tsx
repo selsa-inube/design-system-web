@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Grid, Text } from "@inube/design-system";
+import { Text } from "@inubekit/text";
+import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
@@ -67,11 +68,11 @@ function Playground(props: IPlayground) {
   return (
     <>
       <Grid
-        gap="s600"
+        gap="48px"
         autoRows="unset"
         alignContent="unset"
         justifyContent="unset"
-        margin="s300 s0 s0 s0"
+        margin="24px 0 0 0"
       >
         <Stack direction="column" gap="32px">
           <Text type="headline" size="small" children="Installation" />
@@ -80,7 +81,7 @@ function Playground(props: IPlayground) {
           </StyledTag>
         </Stack>
 
-        <Stack direction="column" gap="24px">
+        <Stack direction="column" gap="32px">
           <Text type="headline" size="small" children="Examples" />
           <StyledFieldSetComponentContainer>
             <Fieldset legend="Component sample">

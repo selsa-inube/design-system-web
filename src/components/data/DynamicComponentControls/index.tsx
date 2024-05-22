@@ -2,6 +2,7 @@
 import { Table } from "@components/data/Table";
 import { determineValue, renderInput } from "./util";
 import { breakpoints, titles } from "./config";
+import { StyledTableContainer } from "./styles";
 
 function DynamicComponentControls(props: any) {
   const { component, handlePropChange, dynamicComponentProps } = props;
@@ -41,13 +42,15 @@ function DynamicComponentControls(props: any) {
   ];
 
   return (
-    <Table
-      titles={titles}
-      entries={entries}
-      actions={actions}
-      breakpoints={breakpoints}
-      pageLength={15}
-    />
+    <StyledTableContainer>
+      <Table
+        titles={titles}
+        entries={entries}
+        actions={actions}
+        breakpoints={breakpoints}
+        pageLength={15}
+      />
+    </StyledTableContainer>
   );
 }
 

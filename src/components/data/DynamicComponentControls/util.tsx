@@ -3,6 +3,7 @@ import { Textfield } from "@inubekit/textfield";
 import { Toggle } from "@inubekit/toggle";
 import { Select } from "@inube/design-system";
 import { Text } from "@inubekit/text";
+import { StyledTextfieldContainer } from "./styles";
 
 const renderInput = (
   propName: string | number,
@@ -46,15 +47,17 @@ const renderInput = (
     return <Text size="small">Function: {value.name || "Anonymous"}( )</Text>;
   } else if (type === "input") {
     return (
-      <Textfield
-        type={typeof value === "number" ? "number" : "text"}
-        value={value}
-        onChange={(e: { target: { value: any } }) =>
-          handlePropChange(propName, e.target.value)
-        }
-        id={`${component.name}-${propName}-Textfield`}
-        size="compact"
-      />
+      <StyledTextfieldContainer>
+        <Textfield
+          type={typeof value === "number" ? "number" : "text"}
+          value={value}
+          onChange={(e: { target: { value: any } }) =>
+            handlePropChange(propName, e.target.value)
+          }
+          id={`${component.name}-${propName}-Textfield`}
+          size="compact"
+        />
+      </StyledTextfieldContainer>
     );
   } else {
     return <Text size="small" children="-" />;

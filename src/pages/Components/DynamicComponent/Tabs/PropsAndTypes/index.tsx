@@ -37,7 +37,7 @@ function PropEntry(props: IPropEntry) {
 
 function PropsAndTypes({ component }: any) {
   return (
-    <Stack direction="column" gap="10px" margin="24px 0 0 0">
+    <Stack direction="column" gap="32px" margin="48px 0 0 0">
       <Text type="headline" size="small">
         Component properties
       </Text>
