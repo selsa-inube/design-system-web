@@ -18,7 +18,11 @@ const StyledTextfieldContainer = styled.div`
 
 const StyledSelectContainer = styled.div`
   & > div {
-    position: absolute;
+    position: unset;
+    & > ul {
+      max-width: 300px;
+      background-color: #ffffff;
+    }
   }
 `;
 
