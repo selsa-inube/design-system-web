@@ -21,7 +21,6 @@ const StyledSelectContainer = styled.div`
     position: unset;
     & > ul {
       max-width: 300px;
-      background-color: #ffffff;
     }
   }
 `;
