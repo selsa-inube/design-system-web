@@ -72,7 +72,7 @@ function Playground(props: IPlayground) {
         autoRows="unset"
         alignContent="unset"
         justifyContent="unset"
-        margin="24px 0 0 0"
+        margin="48px 0 0 0"
       >
         <Stack direction="column" gap="32px">
           <Text type="headline" size="small" children="Installation" />
