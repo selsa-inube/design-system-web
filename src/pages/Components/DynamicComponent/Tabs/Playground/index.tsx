@@ -84,13 +84,13 @@ function Playground(props: IPlayground) {
         <Stack direction="column" gap="32px">
           <Text type="headline" size="small" children="Examples" />
           <StyledFieldSetComponentContainer>
-            <Fieldset legend="Component sample">
+            <Fieldset legend="Component sample" spacing="wide">
               {component.example && (
                 <Example key={component.key} {...processedProps} />
               )}
             </Fieldset>
           </StyledFieldSetComponentContainer>
-          <Fieldset legend="Props">
+          <Fieldset legend="Props" spacing="wide">
             <DynamicComponentControls
               component={component}
               handlePropChange={handlePropChange}
