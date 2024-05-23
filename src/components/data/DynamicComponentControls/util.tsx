@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Textfield } from "@inubekit/textfield";
 import { Toggle } from "@inubekit/toggle";
-import { Select } from "@inube/design-system";
+import { Select } from "@inubekit/select";
 import { Text } from "@inubekit/text";
-import { StyledTextfieldContainer } from "./styles";
+import { StyledSelectContainer, StyledTextfieldContainer } from "./styles";
 
 const renderInput = (
   propName: string | number,
@@ -19,15 +19,18 @@ const renderInput = (
   ) {
     const options = component.propTypes[propName].options;
     return (
-      <Select
-        value={value}
-        options={options}
-        onChange={(e: { target: { innerText: string } }) =>
-          handlePropChange(propName, e.target.innerText.toLowerCase())
-        }
-        size="compact"
-        id={`${component.name}-${propName}-Select`}
-      />
+      <StyledSelectContainer>
+        <Select
+          value={value}
+          options={options}
+          onChange={(e: { target: { innerText: string } }) =>
+            handlePropChange(propName, e.target.innerText.toLowerCase())
+          }
+          size="compact"
+          id={`${component.name}-${propName}-Select`}
+          name={`${component.name}-${propName}-Select`}
+        />{" "}
+      </StyledSelectContainer>
     );
   } else if (type === "boolean") {
     return (
