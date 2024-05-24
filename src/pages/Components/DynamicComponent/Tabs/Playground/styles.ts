@@ -17,6 +17,7 @@ const StyledTag = styled.div`
 const StyledFieldSetComponentContainer = styled.div`
   & > fieldset {
     display: block;
+    min-height: 150px;
   }
 `;
 

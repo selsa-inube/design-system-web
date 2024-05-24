@@ -3,7 +3,7 @@ import { Stack } from "@inubekit/stack";
 
 const LabelController = (props: ILabel) => {
   return (
-    <Stack justifyContent="center">
+    <Stack justifyContent="center" alignItems="center" height="150px">
       <Label {...props} />
     </Stack>
   );

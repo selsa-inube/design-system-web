@@ -1,6 +1,6 @@
-import { Link } from "@inubekit/link";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { LinkController } from "./Controller/Link.Controller";
 
 const linkTokensConfig = {
   businessUnit: "inube",
@@ -18,7 +18,7 @@ const linkTokensConfig = {
 
 const link = {
   description: "This component uses a filled primary icon for all applications",
-  example: Link,
+  example: LinkController,
   name: "Link",
   props: {
     children: "Link",
