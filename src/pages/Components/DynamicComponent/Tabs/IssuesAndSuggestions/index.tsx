@@ -6,6 +6,7 @@ import { Textarea } from "@inubekit/textarea";
 import { Stack } from "@inubekit/stack";
 import { useState } from "react";
 import { createGithubIssue } from "@pages/services/createGithubIssue";
+import { StyledTextareaContainer } from "./styles";
 
 function IssuesAndSuggestions() {
   const [form, setForm] = useState({ value: "", status: "" });
@@ -41,16 +42,19 @@ function IssuesAndSuggestions() {
           children="Use the text box if you have any suggestions or if you had problems with the documentation. We use feedback to improve the user experience."
         />
       </Stack>
-      <Textarea
-        id="suggestions"
-        label="Additional comments"
-        name="suggestions"
-        placeholder="Write us your issues or suggestions..."
-        maxLength={120}
-        onChange={onChange}
-        value={form.value}
-        fullwidth
-      />
+      <StyledTextareaContainer>
+        <Textarea
+          id="suggestions"
+          label="Additional comments"
+          name="suggestions"
+          placeholder="Write us your issues or suggestions..."
+          maxLength={120}
+          onChange={onChange}
+          value={form.value}
+          fullwidth
+        />
+      </StyledTextareaContainer>
+
       <Button onClick={handleSubmit}>Submit</Button>
     </Grid>
   );
