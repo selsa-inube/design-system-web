@@ -32,7 +32,7 @@
     "@inubekit/tabs": "^2.1.0",
     "@inubekit/tag": "^3.2.0",
     "@inubekit/text": "^2.2.1",
-    "@inubekit/textarea": "^2.4.0",
+    "@inubekit/textarea": "^2.5.0",
     "@inubekit/textfield": "^2.2.0",
     "@inubekit/toggle": "^2.2.0",
     "axios": "^1.7.1",

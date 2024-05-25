@@ -13,4 +13,11 @@ const StyledTag = styled.div`
   }
 `;
 
-export { StyledTag };
+const StyledTextareaContainer = styled.div`
+  width: 100%;
+  textarea {
+    resize: none;
+  }
+`;
+
+export { StyledTag, StyledTextareaContainer };
