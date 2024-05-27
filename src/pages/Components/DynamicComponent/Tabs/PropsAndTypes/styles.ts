@@ -9,7 +9,7 @@ const StyledContainerProperties = styled.div`
     theme?.fieldset?.border?.color || inube.fieldset.border.color};
   width: 100%;
   max-width: 800px;
-  padding: 4px 18px;
+  padding: 24px 20px;
 `;
 
 const StyledTag = styled.div`
@@ -30,6 +30,14 @@ const StyledComponentProperties = styled.div`
     border-bottom: dashed 2px
       ${({ theme }) =>
         theme?.fieldset?.border?.color || inube.fieldset.border.color};
+  }
+
+  & > div:first-child {
+    padding-bottom: 20px;
+  }
+
+  & > div:not(:first-child) {
+    padding: 20px 0px;
   }
 
   & > div:last-child {
