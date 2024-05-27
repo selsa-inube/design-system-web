@@ -41,4 +41,17 @@ const StyledTableWrapper = styled.div`
   }
 `;
 
-export { StyledTokenInfoContainer, StyledTableWrapper };
+const StyledSectionMessageWrapper = styled.div`
+  & > div {
+    display: flex;
+    & > div > figure {
+      display: none;
+    }
+  }
+`;
+
+export {
+  StyledTokenInfoContainer,
+  StyledTableWrapper,
+  StyledSectionMessageWrapper,
+};

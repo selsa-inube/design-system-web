@@ -12,6 +12,13 @@ const avatar = {
       default: "MdPersonOutline",
     },
   },
+  dependencies: {
+    icon: {
+      component: "<Icon />",
+      description:
+        "This component uses a filled primary icon for all applications. To change the appearance of 'Avatar' you must modify the token colors of the 'icon' component",
+    },
+  },
 };
 
 export { avatar };

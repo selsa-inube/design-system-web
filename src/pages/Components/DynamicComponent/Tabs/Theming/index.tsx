@@ -4,9 +4,14 @@ import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { tokenDescription } from "../../../../../content/tokens";
-
-import { StyledTableWrapper, StyledTokenInfoContainer } from "./styles";
+import {
+  StyledSectionMessageWrapper,
+  StyledTableWrapper,
+  StyledTokenInfoContainer,
+} from "./styles";
 import { breakpoints } from "@components/data/DynamicComponentControls/config";
+import { SectionMessage } from "@inubekit/sectionmessage";
+import { MdHelpOutline } from "react-icons/md";
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -39,6 +44,9 @@ function Theming(props: any) {
       ...entry,
     }));
   }
+
+  const dependencies =
+    component?.dependencies && Object.values(component.dependencies);
 
   return (
     <Grid
@@ -101,12 +109,23 @@ function Theming(props: any) {
           </StyledTableWrapper>
         </>
       ) : (
-        <Text
-          type="body"
-          size="large"
-          appearance="gray"
-          children="No tokens have been associated with this component yet."
-        />
+        dependencies &&
+        dependencies.map(
+          (value: { component: string; description: string }) => (
+            <StyledSectionMessageWrapper>
+              <SectionMessage
+                key={value.component}
+                icon={<MdHelpOutline />}
+                title="Dependencies"
+                description={`${value.component}: ${value.description}`}
+                appearance="help"
+                duration={1}
+                closeSectionMessage={() => {}}
+                isMessageResponsive
+              />
+            </StyledSectionMessageWrapper>
+          ),
+        )
       )}
     </Grid>
   );
