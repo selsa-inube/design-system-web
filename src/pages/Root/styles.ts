@@ -12,7 +12,7 @@ const StyledRoot = styled.div`
 
 const StyledMain = styled.main`
   box-sizing: border-box;
-  padding: 32px 32px;
+  padding: 32px 64px;
 `;
 
 const StyledNavContainer = styled.div`
