@@ -1,6 +1,6 @@
-import { Text } from "@inubekit/text";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { TextController } from "./Controller/Text.Controller";
 
 const textTokensConfig = {
   businessUnit: "inube",
@@ -20,7 +20,7 @@ const textTokensConfig = {
 const text = {
   description:
     "Component designed to specify the colors that the text receives within the application",
-  example: Text,
+  example: TextController,
   name: "Text",
   props: {
     children: "“The quick brown fox jumps over the lazy dog”",
