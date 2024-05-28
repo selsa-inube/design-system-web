@@ -1,15 +1,19 @@
 import styled from "styled-components";
+import { inube } from "@inubekit/foundations";
 
 const StyledTag = styled.div`
-  max-width: 200px;
-  & > div {
-    display: flex;
-    max-width: 200px;
-    max-height: 52px;
-    height: 100%;
-    align-items: center;
-    padding: 6px;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  max-width: 264px;
+  max-height: 52px;
+  height: 100%;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: ${({ theme }) =>
+    theme.tag?.dark?.normal?.background?.color ||
+    inube.tag.dark.normal.background.color};
+  & > figure:hover {
     cursor: pointer;
   }
 `;
