@@ -17,6 +17,8 @@ import {
   SectionMessage,
 } from "@inubekit/sectionmessage";
 import { MdInfo } from "react-icons/md";
+import { Icon } from "@inubekit/icon";
+import { MdContentCopy } from "react-icons/md";
 
 interface IPlayground {
   component: any;
@@ -76,8 +78,15 @@ function Playground(props: IPlayground) {
       >
         <Stack direction="column" gap="32px">
           <Text type="headline" size="small" children="Installation" />
-          <StyledTag onClick={handleTagClick}>
+          <StyledTag>
             <Tag appearance="dark" label={installCommand} />
+            <Icon
+              appearance="primary"
+              icon={<MdContentCopy />}
+              spacing="compact"
+              variant="filled"
+              onClick={handleTagClick}
+            />
           </StyledTag>
         </Stack>
 
