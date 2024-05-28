@@ -7,7 +7,8 @@ const StyledTag = styled.div`
   max-width: 264px;
   max-height: 52px;
   height: 100%;
-  justify-content: space-between;
+  width: fit-content;
+  gap: 16px;
   padding: 16px;
   border-radius: 8px;
   background-color: ${({ theme }) =>
