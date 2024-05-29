@@ -45,13 +45,14 @@ function totalTitleColumns(
   return priorityColumns(titles, numColumns);
 }
 
-const renderActionTitle = (actionName: string, key?: React.Key) => (
-  <StyledThAction key={key}>
-    <Text type="label" size="medium" textAlign="center" appearance="dark">
-      {actionName}
-    </Text>
-  </StyledThAction>
-);
+const renderActionTitle = (actionName: string, key?: React.Key) =>
+  actionName ? (
+    <StyledThAction key={key}>
+      <Text type="label" size="medium" textAlign="center" appearance="dark">
+        {actionName}
+      </Text>
+    </StyledThAction>
+  ) : null;
 
 function renderActionsTitles(
   actions: IAction[],
@@ -177,19 +178,22 @@ const TableUI = (props: TableUIProps) => {
     <StyledTable colsSameWidth={colsSameWidth}>
       <StyledThead>
         <StyledTr>
-          {titleColumns.map((title) => (
-            <StyledThTitle
-              key={`title-${title.id}`}
-              aria-label={title.titleName}
-              $countcolumns={titleColumns.length}
-              colsSameWidth={colsSameWidth}
-              $withactions={withactions.toString()}
-            >
-              <Text type="label" size="medium" appearance="dark">
-                {title.titleName}
-              </Text>
-            </StyledThTitle>
-          ))}
+          {titleColumns.map(
+            (title) =>
+              title.titleName && (
+                <StyledThTitle
+                  key={`title-${title.id}`}
+                  aria-label={title.titleName}
+                  $countcolumns={titleColumns.length}
+                  colsSameWidth={colsSameWidth}
+                  $withactions={withactions.toString()}
+                >
+                  <Text type="label" size="medium" appearance="dark">
+                    {title.titleName}
+                  </Text>
+                </StyledThTitle>
+              ),
+          )}
           {actions &&
             renderActionsTitles(
               actions,
@@ -211,28 +215,31 @@ const TableUI = (props: TableUIProps) => {
                   aria-labelledby={`entry-${entry.id}`}
                   $islasttr={(index === entries.length - 1).toString()}
                 >
-                  {titleColumns.map((title) => (
-                    <StyledTd
-                      key={`e-${title.id}`}
-                      $withactions={withactions.toString()}
-                    >
-                      <Text
-                        type="body"
-                        size="small"
-                        appearance={
-                          customAppearance
-                            ? (customAppearance(
-                                title.id,
-                                entry,
-                              ) as ITextAppearance)
-                            : "dark"
-                        }
-                        ellipsis
-                      >
-                        {entry[title.id]}
-                      </Text>
-                    </StyledTd>
-                  ))}
+                  {titleColumns.map(
+                    (title) =>
+                      entry[title.id] && (
+                        <StyledTd
+                          key={`e-${title.id}`}
+                          $withactions={withactions.toString()}
+                        >
+                          <Text
+                            type="body"
+                            size="small"
+                            appearance={
+                              customAppearance
+                                ? (customAppearance(
+                                    title.id,
+                                    entry,
+                                  ) as ITextAppearance)
+                                : "dark"
+                            }
+                            ellipsis
+                          >
+                            {entry[title.id]}
+                          </Text>
+                        </StyledTd>
+                      ),
+                  )}
                   {actions && renderActions(actions, entry, isTablet, portalId)}
                 </StyledTr>
               ))
