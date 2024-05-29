@@ -36,7 +36,7 @@ const StyledTable = styled.table<IStyledTable>`
       inube.color.stroke.divider.regular};
   box-sizing: border-box;
   border-collapse: collapse;
-  table-layout: ${({ colsSameWidth }) => (colsSameWidth ? "fixed" : "auto")};
+  table-layout: fixed;
   width: 100%;
   border: none;
 `;
@@ -59,8 +59,10 @@ const StyledThTitle = styled.th<IStyledThTitle>`
   background-color: ${({ theme }) =>
     theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
   padding: 12px 16px;
-  min-width: ${({ $countcolumns, colsSameWidth }) =>
-    colsSameWidth ? `${100 / $countcolumns}%` : "auto"};
+  width: 101.33px;
+  min-width: 101.33px;
+  max-width: 344px;
+  flex: 1;
 
   p {
     text-align: ${({ $withactions }) => ($withactions ? "left" : "center")};
@@ -70,18 +72,30 @@ const StyledThTitle = styled.th<IStyledThTitle>`
 const StyledThAction = styled.th`
   background-color: ${({ theme }) =>
     theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
-  width: 80px;
-  padding: 12px 0px;
+  padding: 12px 16px;
+  width: 101.33px;
+  min-width: 101.33px;
+  max-width: 344px;
+  flex: 1;
 `;
 
 const StyledTd = styled.td<IStyledTd>`
   text-align: center;
-  max-width: 310px;
+  width: 101.33px;
+  min-width: 101.33px;
+  max-width: 344px;
+  flex: 1;
   white-space: nowrap;
-
   p {
     padding: 12px 16px;
     text-align: ${({ $withactions }) => ($withactions ? "left" : "center")};
+    text-wrap: wrap;
+  }
+  & > div > div {
+    width: unset;
+    & > div > figure {
+      margin-left: -2rem;
+    }
   }
 `;
 
