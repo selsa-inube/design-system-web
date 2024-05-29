@@ -28,6 +28,7 @@ import { blanket } from "./utils/Blanket";
 import { link } from "./navigation/Link";
 import { stack } from "./layout/Stack";
 import { grid } from "./layout/Grid";
+import { divider } from "./layout/Divider";
 
 interface Components {
   [key: string]: {
@@ -51,6 +52,7 @@ const components: Components = {
   select,
   stack,
   grid,
+  divider,
   datefield,
   textarea,
   textfield,

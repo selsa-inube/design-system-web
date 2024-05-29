@@ -39,6 +39,11 @@ const navigation = {
           label: "Datefield",
           path: "/component/datefield",
         },
+        divider: {
+          id: "Divider",
+          label: "Divider",
+          path: "/component/divider",
+        },
         fieldset: {
           id: "Fieldset",
           label: "Fieldset",

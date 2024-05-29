@@ -17,6 +17,7 @@
     "@inubekit/blanket": "^2.2.0",
     "@inubekit/breadcrumbs": "^2.3.0",
     "@inubekit/datefield": "^2.2.0",
+    "@inubekit/divider": "^0.1.1",
     "@inubekit/fieldset": "^0.4.0",
     "@inubekit/fullscreennav": "^2.1.0",
     "@inubekit/grid": "^2.1.0",
