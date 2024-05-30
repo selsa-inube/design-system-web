@@ -89,7 +89,11 @@ const StyledTd = styled.td<IStyledTd>`
   p {
     padding: 12px 16px;
     text-align: ${({ $withactions }) => ($withactions ? "left" : "center")};
-    text-wrap: wrap;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-wrap: break-word;
+    box-sizing: border-box;
   }
   & > div > div {
     width: unset;
