@@ -24,13 +24,7 @@ function Root() {
           templateColumns={smallScreen ? "1fr" : "auto 1fr"}
           alignContent="unset"
         >
-          {!smallScreen && (
-            <Nav
-              navigation={navigation as any}
-              logoutPath="/"
-              logoutTitle="Cerrar Sesión"
-            />
-          )}
+          {!smallScreen && <Nav navigation={navigation as any} />}
           <StyledMain>
             <Outlet />
           </StyledMain>

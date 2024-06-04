@@ -16,7 +16,7 @@ const StyledMain = styled.main`
 `;
 
 const StyledNavContainer = styled.div`
-  & > div > div {
+  & > div > nav {
     position: relative;
     overflow-y: hidden;
     scrollbar-width: thin;
@@ -25,20 +25,20 @@ const StyledNavContainer = styled.div`
     transition: overflow-y 0.3s ease-in-out;
   }
 
-  & > div > div::-webkit-scrollbar {
+  & > div > nav::-webkit-scrollbar {
     width: 8px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }
 
-  & > div > div::-webkit-scrollbar-thumb {
+  & > div > nav::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     border-radius: 8px;
   }
 
-  & > div > div:hover {
+  & > div > nav:hover {
     overflow-y: scroll;
   }
 
