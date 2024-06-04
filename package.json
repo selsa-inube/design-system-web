@@ -26,7 +26,7 @@
     "@inubekit/hooks": "^1.1.1",
     "@inubekit/icon": "^1.5.1",
     "@inubekit/link": "^1.1.0",
-    "@inubekit/nav": "^4.1.0",
+    "@inubekit/nav": "^4.2.0",
     "@inubekit/sectionmessage": "^4.2.0",
     "@inubekit/select": "^2.2.0",
     "@inubekit/skeleton": "^2.1.0",
