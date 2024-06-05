@@ -1,7 +1,6 @@
-import { Spinner } from "@inubekit/spinner";
-
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { SpinnerController } from "./Controller/Spinner.Controller";
 
 const spinnerTokensConfig = {
   businessUnit: "inube",
@@ -20,7 +19,7 @@ const spinnerTokensConfig = {
 
 const spinner = {
   description: "This component uses a filled primary icon for all applications",
-  example: Spinner,
+  example: SpinnerController,
   name: "Spinner",
   props: {
     size: "medium",

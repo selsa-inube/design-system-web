@@ -3,7 +3,12 @@ import { Stack } from "@inubekit/stack";
 
 const AvatarController = () => {
   return (
-    <Stack justifyContent="center" alignItems="center" height="150px">
+    <Stack
+      justifyContent="center"
+      alignItems="center"
+      height="150px"
+      width="100%"
+    >
       <Avatar />
     </Stack>
   );

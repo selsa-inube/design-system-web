@@ -29,6 +29,7 @@ import { link } from "./navigation/Link";
 import { stack } from "./layout/Stack";
 import { grid } from "./layout/Grid";
 import { divider } from "./layout/Divider";
+import { table } from "./data/Table";
 
 interface Components {
   [key: string]: {
@@ -62,6 +63,7 @@ const components: Components = {
   skeletonIcon,
   skeletonLine,
   spinner,
+  table,
   breadcrumbs,
   fullscreenNav,
   header,

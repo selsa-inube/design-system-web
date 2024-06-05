@@ -5,11 +5,7 @@ import { Stack } from "@inubekit/stack";
 import { Tag } from "@inubekit/tag";
 import { Fieldset } from "@inubekit/fieldset";
 import { useMemo, useState } from "react";
-import {
-  StyledFieldSetComponentContainer,
-  StyledTag,
-  StyledSectionMessageWrapper,
-} from "./styles";
+import { StyledTag, StyledSectionMessageWrapper } from "./styles";
 import { processProps } from "../utils";
 import { DynamicComponentControls } from "@components/data/DynamicComponentControls";
 import {
@@ -92,13 +88,11 @@ function Playground(props: IPlayground) {
 
         <Stack direction="column" gap="32px">
           <Text type="headline" size="small" children="Examples" />
-          <StyledFieldSetComponentContainer>
-            <Fieldset legend="Component sample" spacing="wide">
-              {component.example && (
-                <Example key={component.key} {...processedProps} />
-              )}
-            </Fieldset>
-          </StyledFieldSetComponentContainer>
+          <Fieldset legend="Component sample" spacing="wide">
+            {component.example && (
+              <Example key={component.key} {...processedProps} />
+            )}
+          </Fieldset>
           <Fieldset legend="Props" spacing="wide">
             <DynamicComponentControls
               component={component}
