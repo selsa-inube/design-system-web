@@ -1,6 +1,6 @@
-import { CountdownBar } from "@inubekit/countdownbar";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { CountdownBarController } from "./Controller/CountdownBar.Controller";
 
 const countdownBarTokensConfig = {
   businessUnit: "inube",
@@ -16,7 +16,7 @@ const countdownBarTokensConfig = {
 
 const countdownBar = {
   description: "This component uses a filled primary icon for all applications",
-  example: CountdownBar,
+  example: CountdownBarController,
   name: "CountdownBar",
   props: {
     height: "4px",

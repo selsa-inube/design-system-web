@@ -1,7 +1,7 @@
-import { Button } from "@inubekit/button";
 import { MdAdd } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { ButtonController } from "./Controller/Button.Controller";
 
 const buttonTokensConfig = {
   businessUnit: "inube",
@@ -19,7 +19,7 @@ const buttonTokensConfig = {
 
 const button = {
   description: "This component uses a filled primary icon for all applications",
-  example: Button,
+  example: ButtonController,
   name: "Button",
   props: {
     children: "Button",

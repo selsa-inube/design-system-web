@@ -19,13 +19,6 @@ const StyledTag = styled.div`
   }
 `;
 
-const StyledFieldSetComponentContainer = styled.div`
-  & > fieldset {
-    display: block;
-    min-height: 150px;
-  }
-`;
-
 const StyledSectionMessageWrapper = styled.div`
   position: fixed;
   bottom: 16px;
@@ -33,8 +26,4 @@ const StyledSectionMessageWrapper = styled.div`
   z-index: 2;
 `;
 
-export {
-  StyledFieldSetComponentContainer,
-  StyledTag,
-  StyledSectionMessageWrapper,
-};
+export { StyledTag, StyledSectionMessageWrapper };

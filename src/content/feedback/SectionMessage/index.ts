@@ -1,7 +1,7 @@
-import { SectionMessage } from "@inubekit/sectionmessage";
 import { MdWarning } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { SectionMessageController } from "./Controller/SectionMessage.Controller";
 
 const sectionMessageTokensConfig = {
   businessUnit: "inube",
@@ -19,7 +19,7 @@ const sectionMessageTokensConfig = {
 
 const sectionMessage = {
   description: "This component uses a filled primary icon for all applications",
-  example: SectionMessage,
+  example: SectionMessageController,
   name: "SectionMessage",
   props: {
     title: "Title",

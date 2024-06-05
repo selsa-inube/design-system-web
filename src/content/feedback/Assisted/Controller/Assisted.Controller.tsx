@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Assisted, IAssisted } from "@inubekit/assisted";
+import { StyledContainerAssited } from "./styles";
+import { Stack } from "@inubekit/stack";
 
 const AssistedController = (props: IAssisted) => {
   const { steps, currentStepId } = props;
@@ -17,13 +19,17 @@ const AssistedController = (props: IAssisted) => {
   };
 
   return (
-    <Assisted
-      {...props}
-      steps={steps}
-      currentStepId={currentStep}
-      handlePrev={handlePrev}
-      handleNext={handleNext}
-    />
+    <Stack alignItems="center" width="100%">
+      <StyledContainerAssited>
+        <Assisted
+          {...props}
+          steps={steps}
+          currentStepId={currentStep}
+          handlePrev={handlePrev}
+          handleNext={handleNext}
+        />
+      </StyledContainerAssited>
+    </Stack>
   );
 };
 

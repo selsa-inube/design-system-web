@@ -8,6 +8,7 @@ import { components } from "../../../content";
 import { PropsAndTypes } from "./Tabs/PropsAndTypes";
 import { IssuesAndSuggestions } from "./Tabs/IssuesAndSuggestions";
 import { Theming } from "./Tabs/Theming";
+import { UnderConstruction } from "@pages/Errors/UnderConstruction";
 
 const tabs = [
   {
@@ -51,24 +52,31 @@ function DynamicComponent() {
               {components[component].description}
             </Text>
           </Stack>
-
-          <Tabs
-            onChange={handleTabChange}
-            tabs={tabs}
-            selectedTab={activeTab}
-          />
+          {components[component!].example === "" ? (
+            <UnderConstruction />
+          ) : (
+            <>
+              <Tabs
+                onChange={handleTabChange}
+                tabs={tabs}
+                selectedTab={activeTab}
+              />
+              {activeTab === "Playground" &&
+                component &&
+                components[component!] && (
+                  <Playground component={components[component!]} />
+                )}
+              {activeTab === "PropsAndTypes" && components[component!] && (
+                <PropsAndTypes component={components[component!]} />
+              )}
+              {activeTab === "Theming" && components[component!] && (
+                <Theming component={components[component!]} />
+              )}
+              {activeTab === "IssuesAndSuggestions" && <IssuesAndSuggestions />}
+            </>
+          )}
         </Stack>
       )}
-      {activeTab === "Playground" && component && components[component!] && (
-        <Playground component={components[component!]} />
-      )}
-      {activeTab === "PropsAndTypes" && components[component!] && (
-        <PropsAndTypes component={components[component!]} />
-      )}
-      {activeTab === "Theming" && components[component!] && (
-        <Theming component={components[component!]} />
-      )}
-      {activeTab === "IssuesAndSuggestions" && <IssuesAndSuggestions />}
     </>
   );
 }
