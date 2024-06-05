@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutlet } from "react-router-dom";
 import { Grid } from "@inube/design-system";
 import { Nav } from "@inubekit/nav";
 import { Header } from "@inubekit/header";
@@ -7,9 +7,21 @@ import { useMediaQuery } from "@inubekit/hooks";
 import { navigation } from "./navigation";
 import { StyledRoot, StyledMain, StyledNavContainer } from "./styles";
 import { Logo } from "../../content/navigation/Header/logo";
+import { useEffect, useState } from "react";
+import { Main } from "@pages/Main";
 
 function Root() {
   const smallScreen = useMediaQuery("(max-width: 849px)");
+  const outlet = useOutlet();
+  const [hasContent, setHasContent] = useState(false);
+
+  useEffect(() => {
+    if (outlet) {
+      setHasContent(true);
+    } else {
+      setHasContent(false);
+    }
+  }, [outlet]);
 
   return (
     <StyledRoot>
@@ -24,10 +36,8 @@ function Root() {
           templateColumns={smallScreen ? "1fr" : "auto 1fr"}
           alignContent="unset"
         >
-          {!smallScreen && <Nav navigation={navigation as any} />}
-          <StyledMain>
-            <Outlet />
-          </StyledMain>
+          {!smallScreen && <Nav navigation={navigation as any} collapse />}
+          <StyledMain>{hasContent ? <Outlet /> : <Main />}</StyledMain>
         </Grid>
       </StyledNavContainer>
     </StyledRoot>

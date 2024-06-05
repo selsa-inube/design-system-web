@@ -1,98 +1,63 @@
 const navigation = {
-  title: "Components",
+  title: "COMPONENTS",
   sections: {
-    components: {
-      name: "components",
+    data: {
+      name: "DATA",
       links: {
-        assisted: {
-          id: "Assisted",
-          label: "Assisted",
-          path: "/component/assisted",
-        },
         avatar: {
           id: "Avatar",
           label: "Avatar",
           path: "/component/avatar",
-        },
-        blanket: {
-          id: "Blanket",
-          label: "Blanket",
-          path: "/component/blanket",
-        },
-        breadcrumbs: {
-          id: "Breadcrumbs",
-          label: "Breadcrumbs",
-          path: "/component/breadcrumbs",
-        },
-        button: {
-          id: "Button",
-          label: "Button",
-          path: "/component/button",
-        },
-        countdownBar: {
-          id: "CountdownBar",
-          label: "CountdownBar",
-          path: "/component/countdownBar",
-        },
-        datefield: {
-          id: "Datefield",
-          label: "Datefield",
-          path: "/component/datefield",
-        },
-        divider: {
-          id: "Divider",
-          label: "Divider",
-          path: "/component/divider",
-        },
-        fieldset: {
-          id: "Fieldset",
-          label: "Fieldset",
-          path: "/component/fieldset",
-        },
-        fullscreenNav: {
-          id: "FullscreenNav",
-          label: "FullscreenNav",
-          path: "/component/fullscreenNav",
-        },
-        grid: {
-          id: "Grid",
-          label: "Grid",
-          path: "/component/grid",
-        },
-        header: {
-          id: "Header",
-          label: "Header",
-          path: "/component/header",
         },
         icon: {
           id: "Icon",
           label: "Icon",
           path: "/component/icon",
         },
-        label: {
-          id: "Label",
-          label: "Label",
-          path: "/component/label",
+        text: {
+          id: "Text",
+          label: "Text",
+          path: "/component/text",
         },
-        link: {
-          id: "Link",
-          label: "Link",
-          path: "/component/link",
+        tag: {
+          id: "Tag",
+          label: "Tag",
+          path: "/component/tag",
         },
-        nav: {
-          id: "Nav",
-          label: "Nav",
-          path: "/component/nav",
+        user: {
+          id: "User",
+          label: "User",
+          path: "/component/user",
+        },
+        table: {
+          id: "Table",
+          label: "Table",
+          path: "/component/table",
+        },
+      },
+    },
+    feedback: {
+      name: "FEEDBACK",
+      links: {
+        assisted: {
+          id: "Assisted",
+          label: "Assisted",
+          path: "/component/assisted",
+        },
+        countdownBar: {
+          id: "CountdownBar",
+          label: "CountdownBar",
+          path: "/component/countdownBar",
+        },
+        spinner: {
+          id: "Spinner",
+          label: "Spinner",
+          path: "/component/spinner",
         },
         sectionMessage: {
           id: "SectionMessage",
           label: "SectionMessage",
           path: "/component/sectionMessage",
-        },
-        select: {
-          id: "Select",
-          label: "Select",
-          path: "/component/select",
         },
         skeletonIcon: {
           id: "SkeletonIcon",
@@ -104,30 +69,30 @@ const navigation = {
           label: "SkeletonLine",
           path: "/component/skeletonLine",
         },
-        spinner: {
-          id: "Spinner",
-          label: "Spinner",
-          path: "/component/spinner",
+      },
+    },
+    inputs: {
+      name: "INPUTS",
+      links: {
+        button: {
+          id: "Button",
+          label: "Button",
+          path: "/component/button",
         },
-        stack: {
-          id: "Stack",
-          label: "Stack",
-          path: "/component/stack",
+        fieldset: {
+          id: "Fieldset",
+          label: "Fieldset",
+          path: "/component/fieldset",
         },
-        table: {
-          id: "Table",
-          label: "Table",
-          path: "/component/table",
+        label: {
+          id: "Label",
+          label: "Label",
+          path: "/component/label",
         },
-        tabs: {
-          id: "Tabs",
-          label: "Tabs",
-          path: "/component/tabs",
-        },
-        tag: {
-          id: "Tag",
-          label: "Tag",
-          path: "/component/tag",
+        toggle: {
+          id: "Toggle",
+          label: "Toggle",
+          path: "/component/toggle",
         },
         textarea: {
           id: "Textarea",
@@ -139,20 +104,80 @@ const navigation = {
           label: "Textfield",
           path: "/component/textfield",
         },
-        text: {
-          id: "Text",
-          label: "Text",
-          path: "/component/text",
+        select: {
+          id: "Select",
+          label: "Select",
+          path: "/component/select",
         },
-        toggle: {
-          id: "Toggle",
-          label: "Toggle",
-          path: "/component/toggle",
+        datefield: {
+          id: "Datefield",
+          label: "Datefield",
+          path: "/component/datefield",
         },
-        user: {
-          id: "User",
-          label: "User",
-          path: "/component/user",
+      },
+    },
+    layouts: {
+      name: "LAYOUTS",
+      links: {
+        divider: {
+          id: "Divider",
+          label: "Divider",
+          path: "/component/divider",
+        },
+        stack: {
+          id: "Stack",
+          label: "Stack",
+          path: "/component/stack",
+        },
+        grid: {
+          id: "Grid",
+          label: "Grid",
+          path: "/component/grid",
+        },
+      },
+    },
+    navigation: {
+      name: "NAVIGATION",
+      links: {
+        breadcrumbs: {
+          id: "Breadcrumbs",
+          label: "Breadcrumbs",
+          path: "/component/breadcrumbs",
+        },
+        fullscreenNav: {
+          id: "FullscreenNav",
+          label: "FullscreenNav",
+          path: "/component/fullscreenNav",
+        },
+        header: {
+          id: "Header",
+          label: "Header",
+          path: "/component/header",
+        },
+        link: {
+          id: "Link",
+          label: "Link",
+          path: "/component/link",
+        },
+        nav: {
+          id: "Nav",
+          label: "Nav",
+          path: "/component/nav",
+        },
+        tabs: {
+          id: "Tabs",
+          label: "Tabs",
+          path: "/component/tabs",
+        },
+      },
+    },
+    utils: {
+      name: "UTILS",
+      links: {
+        blanket: {
+          id: "Blanket",
+          label: "Blanket",
+          path: "/component/blanket",
         },
       },
     },
