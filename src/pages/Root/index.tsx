@@ -31,15 +31,18 @@ function Root() {
         navigation={navigation}
         showUser={false}
       />
-      <StyledNavContainer>
-        <Grid
-          templateColumns={smallScreen ? "1fr" : "auto 1fr"}
-          alignContent="unset"
-        >
-          {!smallScreen && <Nav navigation={navigation as any} collapse />}
-          <StyledMain>{hasContent ? <Outlet /> : <Main />}</StyledMain>
-        </Grid>
-      </StyledNavContainer>
+
+      <Grid
+        templateColumns={smallScreen ? "1fr" : "auto 1fr"}
+        alignContent="unset"
+      >
+        {!smallScreen && (
+          <StyledNavContainer>
+            <Nav navigation={navigation as any} collapse />
+          </StyledNavContainer>
+        )}
+        <StyledMain>{hasContent ? <Outlet /> : <Main />}</StyledMain>
+      </Grid>
     </StyledRoot>
   );
 }

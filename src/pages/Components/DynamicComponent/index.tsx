@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Stack } from "@inubekit/stack";
 import { Tabs } from "@inube/design-system";
@@ -40,6 +40,10 @@ function DynamicComponent() {
   const location = useLocation();
   const component = location.pathname.split("/").pop();
 
+  useEffect(() => {
+    setActiveTab(tabs[0].id);
+  }, [component]);
+
   return (
     <>
       {component && (
@@ -64,13 +68,22 @@ function DynamicComponent() {
               {activeTab === "Playground" &&
                 component &&
                 components[component!] && (
-                  <Playground component={components[component!]} />
+                  <Playground
+                    key={`${component}-Playground`}
+                    component={components[component!]}
+                  />
                 )}
               {activeTab === "PropsAndTypes" && components[component!] && (
-                <PropsAndTypes component={components[component!]} />
+                <PropsAndTypes
+                  key={`${component}-PropsAndTypes`}
+                  component={components[component!]}
+                />
               )}
               {activeTab === "Theming" && components[component!] && (
-                <Theming component={components[component!]} />
+                <Theming
+                  key={`${component}-Theming`}
+                  component={components[component!]}
+                />
               )}
               {activeTab === "IssuesAndSuggestions" && <IssuesAndSuggestions />}
             </>
