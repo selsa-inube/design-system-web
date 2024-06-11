@@ -57,10 +57,9 @@ function Theming(props: any) {
       margin="48px 0 0 0"
     >
       <Stack direction="column" gap="8px">
-        <Text type="headline" size="small" children="How to read tokens" />
+        <Text type="title" size="medium" children="How to read tokens" />
         <Text
-          type="body"
-          size="large"
+          size="medium"
           appearance="gray"
           children="Tokens are separated by elements that range from the generic to the most detailed."
         />
