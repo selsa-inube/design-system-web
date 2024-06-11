@@ -49,10 +49,10 @@ function DynamicComponent() {
       {component && (
         <Stack direction="column" gap="48px">
           <Stack direction="column" gap="8px">
-            <Text type="display" size="medium">
+            <Text type="title" size="large">
               {components[component].name}
             </Text>
-            <Text type="title" size="large" appearance="gray">
+            <Text type="body" size="medium" appearance="gray">
               {components[component].description}
             </Text>
           </Stack>

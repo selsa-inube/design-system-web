@@ -34,10 +34,9 @@ function IssuesAndSuggestions() {
       width="800px"
     >
       <Stack direction="column" gap="8px">
-        <Text type="headline" size="small" children="Tell us your experience" />
+        <Text type="title" size="medium" children="Tell us your experience" />
         <Text
-          type="body"
-          size="large"
+          size="medium"
           appearance="gray"
           children="Use the text box if you have any suggestions or if you had problems with the documentation. We use feedback to improve the user experience."
         />
