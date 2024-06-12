@@ -31,6 +31,7 @@ function IssuesAndSuggestions() {
       alignContent="unset"
       justifyContent="unset"
       width="800px"
+      margin="-16px 0 0 0"
     >
       <Stack direction="column" gap="8px">
         <Text type="title" size="medium" children="Tell us your experience" />
