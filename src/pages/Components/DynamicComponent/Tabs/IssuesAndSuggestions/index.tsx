@@ -30,7 +30,6 @@ function IssuesAndSuggestions() {
       autoRows="unset"
       alignContent="unset"
       justifyContent="unset"
-      margin="48px 0 0 0"
       width="800px"
     >
       <Stack direction="column" gap="8px">
