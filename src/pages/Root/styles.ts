@@ -16,7 +16,7 @@ const StyledRoot = styled.div`
 
 const StyledMain = styled.main`
   box-sizing: border-box;
-  padding: 32px 64px;
+  padding: 64px;
   flex-grow: 1;
   height: calc(100vh - 53px);
   overflow-y: auto;
