@@ -54,6 +54,7 @@ function Theming(props: any) {
       autoRows="unset"
       alignContent="unset"
       justifyContent="unset"
+      margin="-16px 0 0 0"
     >
       <Stack direction="column" gap="8px">
         <Text type="title" size="medium" children="How to read tokens" />
