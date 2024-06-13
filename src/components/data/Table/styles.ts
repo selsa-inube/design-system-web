@@ -25,7 +25,7 @@ const StyledTableContainer = styled.div`
     ${({ theme }) =>
       theme.color?.stroke?.divider?.regular ||
       inube.color.stroke.divider.regular};
-  overflow: hidden;
+  //overflow: hidden;
   width: 100%;
 `;
 
@@ -35,6 +35,7 @@ const StyledTable = styled.table<IStyledTable>`
       theme.color?.stroke?.divider?.regular ||
       inube.color.stroke.divider.regular};
   box-sizing: border-box;
+  border-radius: 8px;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
