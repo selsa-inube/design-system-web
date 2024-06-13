@@ -1,6 +1,6 @@
-import { Tag } from "@inubekit/tag";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { TagController } from "./Controller/Tag.Controller";
 
 const tagTokensConfig = {
   businessUnit: "inube",
@@ -18,7 +18,7 @@ const tagTokensConfig = {
 
 const tag = {
   description: "Icons used to communicate actions and decisions graphically",
-  example: Tag,
+  example: TagController,
   name: "Tag",
   props: {
     appearance: "primary",
