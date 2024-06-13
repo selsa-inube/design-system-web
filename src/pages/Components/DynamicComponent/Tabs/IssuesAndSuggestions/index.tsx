@@ -53,8 +53,9 @@ function IssuesAndSuggestions() {
           fullwidth
         />
       </StyledTextareaContainer>
-
-      <Button onClick={handleSubmit}>Submit</Button>
+      <Stack justifyContent="flex-end" margin="-8px 0 0 0">
+        <Button onClick={handleSubmit}>Submit</Button>
+      </Stack>
     </Grid>
   );
 }
