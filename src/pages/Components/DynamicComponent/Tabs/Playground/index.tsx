@@ -1,30 +1,31 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Text } from "@inubekit/text";
+import { Text } from "@inube/design-system";
 import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Fieldset } from "@inubekit/fieldset";
 import { useState } from "react";
 import { processProps } from "../utils";
-import { DynamicComponentControls } from "@components/data/DynamicComponentControls";
+import { PropsAndTypes } from "../PropsAndTypes";
 
 interface IPlayground {
   component: any;
 }
 
-function Playground(props: IPlayground) {
-  const { component } = props;
+function Playground({ component }: IPlayground) {
   const Example = component.example;
 
   const [modifiedProps, setModifiedProps] = useState({});
 
   const processedProps = processProps({ ...component.props, ...modifiedProps });
 
-  const handlePropChange = (propName: any, newValue: any) => {
+  const handlePropChange = (propName: string, newValue: any) => {
     setModifiedProps((prevProps) => ({
       ...prevProps,
       [propName]: newValue,
     }));
   };
+
+  const propKeys = Object.keys(component.propTypes);
 
   return (
     <Grid
@@ -44,13 +45,17 @@ function Playground(props: IPlayground) {
 
       <Stack direction="column" gap="32px">
         <Text type="title" size="medium" children="Component properties" />
-        <Fieldset legend="Props" spacing="wide">
-          <DynamicComponentControls
-            component={component}
-            handlePropChange={handlePropChange}
-            dynamicComponentProps={processedProps}
-          />
-        </Fieldset>
+        <Stack direction="column" gap="16px">
+          {propKeys.map((key) => (
+            <PropsAndTypes
+              key={key}
+              component={component}
+              modifiedProps={modifiedProps}
+              title={key}
+              handlePropChange={handlePropChange}
+            />
+          ))}
+        </Stack>
       </Stack>
     </Grid>
   );

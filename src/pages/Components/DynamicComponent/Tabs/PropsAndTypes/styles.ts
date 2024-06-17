@@ -45,4 +45,42 @@ const StyledComponentProperties = styled.div`
   }
 `;
 
-export { StyledContainerProperties, StyledComponentProperties, StyledTag };
+const StyledTokenInfoContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  gap: 12px;
+  padding: 6px 16px;
+  background-color: ${({ theme }) =>
+    theme.palette?.neutral?.N10 || inube.palette.neutral.N10};
+  border-radius: 8px;
+  max-width: 722px;
+  height: 52px;
+`;
+
+const StyledSelectContainer = styled.div`
+  & > div {
+    position: relative;
+    & > ul {
+      max-width: 300px;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+`;
+
+const StyledTextfieldContainer = styled.div`
+  & > div {
+    width: auto;
+  }
+`;
+
+export {
+  StyledContainerProperties,
+  StyledComponentProperties,
+  StyledTag,
+  StyledTokenInfoContainer,
+  StyledSelectContainer,
+  StyledTextfieldContainer,
+};
