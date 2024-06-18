@@ -19,6 +19,7 @@ const skeletonLine = {
   description: "This component uses a filled primary icon for all applications",
   example: SkeletonLine,
   name: "SkeletonLine",
+  installation: "npm install @inubekit/skeleton",
   props: {
     width: "100%",
     animated: false,

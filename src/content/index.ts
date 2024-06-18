@@ -34,6 +34,7 @@ import { table } from "./data/Table";
 interface Components {
   [key: string]: {
     description: string;
+    installation?: string;
     name: string;
     example: any;
     props: any;
