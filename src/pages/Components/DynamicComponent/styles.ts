@@ -4,7 +4,7 @@ import { inube } from "@inubekit/foundations";
 const StyledTag = styled.div`
   display: flex;
   align-items: center;
-  max-width: 264px;
+  max-width: 360px;
   max-height: 52px;
   height: 100%;
   width: fit-content;
