@@ -106,7 +106,14 @@ function DynamicComponent() {
                       children="Installation"
                     />
                     <StyledTag>
-                      <Tag appearance="dark" label={installCommand} />
+                      <Tag
+                        appearance="dark"
+                        label={
+                          components[component].installation
+                            ? components[component].installation!
+                            : installCommand
+                        }
+                      />
                       <Icon
                         appearance="primary"
                         icon={<MdContentCopy />}
@@ -136,7 +143,7 @@ function DynamicComponent() {
             </>
           )}
         </Stack>
-      )}{" "}
+      )}
       {sectionMessage && (
         <StyledSectionMessageWrapper>
           <SectionMessage
