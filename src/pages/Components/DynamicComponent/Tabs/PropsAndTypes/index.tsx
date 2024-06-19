@@ -1,10 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
 import { Text } from "@inube/design-system";
 import { Stack } from "@inubekit/stack";
 import { Grid } from "@inubekit/grid";
-import { StyledTokenInfoContainer } from "./styles";
+import {
+  StyledDetailsContainer,
+  StyledPropertiesContainer,
+  StyledTokenInfoContainer,
+} from "./styles";
 import { Accordion } from "@components/feedback/Accordion";
 import { renderInput } from "./util";
+import { Icon } from "@inubekit/icon";
+import { Tag } from "@inubekit/tag";
+import { MdOpenInNew, MdClear } from "react-icons/md";
+import { Blanket } from "@inubekit/blanket";
+import { Button } from "@inubekit/button";
+import { Divider } from "@inubekit/divider";
 
 interface PropsAndTypesProps {
   component: any;
@@ -19,6 +30,8 @@ function PropsAndTypes({
   handlePropChange,
   title,
 }: PropsAndTypesProps) {
+  const [isBlanketVisible, setIsBlanketVisible] = useState(false);
+
   const propType = component.propTypes[title];
   const actualPropValue =
     modifiedProps[title] !== undefined
@@ -27,6 +40,17 @@ function PropsAndTypes({
   const defaultValue =
     actualPropValue !== undefined ? actualPropValue : propType?.default || "-";
   const type = propType?.type || typeof defaultValue;
+
+  const description = propType?.description || "-";
+  const isDescriptionLong = description.length > 105;
+
+  const handleIconClick = () => {
+    setIsBlanketVisible(true);
+  };
+
+  const handleBlanketClose = () => {
+    setIsBlanketVisible(false);
+  };
 
   return (
     <Accordion title={title}>
@@ -44,12 +68,22 @@ function PropsAndTypes({
             <Text
               appearance="gray"
               size="medium"
-              children={propType?.description || "-"}
+              children={description.slice(0, 110)}
             />
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer>
             <Text type="label" children="Details" />
-            <Text appearance="gray" size="medium" children={""} />
+            <Stack alignItems="center">
+              <Icon
+                appearance={isDescriptionLong ? "primary" : "gray"}
+                icon={<MdOpenInNew />}
+                onClick={isDescriptionLong ? handleIconClick : undefined}
+              />
+              <Tag
+                label="View"
+                appearance={isDescriptionLong ? "dark" : "gray"}
+              />
+            </Stack>
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer>
             <Text type="label" children="Default" />
@@ -88,6 +122,57 @@ function PropsAndTypes({
             )}
           </StyledTokenInfoContainer>
         </Grid>
+        {isBlanketVisible && (
+          <Blanket>
+            <StyledDetailsContainer>
+              <Stack
+                direction="column"
+                gap="20px"
+                alignItems="center"
+                padding="24px"
+                width="100%"
+                height="100%"
+              >
+                <Stack direction="column" gap="16px" width="100%">
+                  <Stack justifyContent="space-between">
+                    <Text
+                      appearance="dark"
+                      type="title"
+                      size="medium"
+                      children={"Details"}
+                    />
+                    <Icon
+                      appearance="dark"
+                      icon={<MdClear />}
+                      onClick={handleBlanketClose}
+                    />
+                  </Stack>
+                  <Text appearance="gray" size="medium">
+                    Aadditional property details
+                  </Text>
+                  <Divider dashed />
+                </Stack>
+                <StyledPropertiesContainer>
+                  <Stack padding="16px">
+                    <Text
+                      appearance="gray"
+                      size="medium"
+                      children={description}
+                    />
+                  </Stack>
+                </StyledPropertiesContainer>
+
+                <Stack justifyContent="flex-end" width="100%">
+                  <Button
+                    children="Accept"
+                    onClick={handleBlanketClose}
+                    spacing="compact"
+                  />
+                </Stack>
+              </Stack>
+            </StyledDetailsContainer>
+          </Blanket>
+        )}
       </Stack>
     </Accordion>
   );
