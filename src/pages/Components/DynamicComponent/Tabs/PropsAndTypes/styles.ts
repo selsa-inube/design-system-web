@@ -76,9 +76,29 @@ const StyledTextfieldContainer = styled.div`
   }
 `;
 
+const StyledDetailsContainer = styled.div`
+  & > div {
+    background-color: ${({ theme }) =>
+      theme?.palette?.neutral?.N0 || inube.palette.neutral.N0};
+    border-radius: 16px;
+    max-width: 616px;
+    max-height: 744px;
+  }
+`;
+
+const StyledPropertiesContainer = styled.div`
+  & > div {
+    background-color: ${({ theme }) =>
+      theme?.palette?.neutral?.N10 || inube.palette.neutral.N10};
+    border-radius: 8px;
+  }
+`;
+
 export {
   StyledContainerProperties,
   StyledComponentProperties,
+  StyledDetailsContainer,
+  StyledPropertiesContainer,
   StyledTag,
   StyledTokenInfoContainer,
   StyledSelectContainer,
