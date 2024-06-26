@@ -2,9 +2,7 @@
 import { Text } from "@inube/design-system";
 import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
-import { Fieldset } from "@inubekit/fieldset";
 import { useState } from "react";
-import { processProps } from "../utils";
 import { PropsAndTypes } from "../PropsAndTypes";
 
 interface IPlayground {
@@ -12,11 +10,7 @@ interface IPlayground {
 }
 
 function Playground({ component }: IPlayground) {
-  const Example = component.example;
-
   const [modifiedProps, setModifiedProps] = useState({});
-
-  const processedProps = processProps({ ...component.props, ...modifiedProps });
 
   const handlePropChange = (propName: string, newValue: any) => {
     setModifiedProps((prevProps) => ({
@@ -36,11 +30,7 @@ function Playground({ component }: IPlayground) {
     >
       <Stack direction="column" gap="32px">
         <Text type="title" size="medium" children="Playground" />
-        <Fieldset legend="Component sample" spacing="wide">
-          {component.example && (
-            <Example key={component.key} {...processedProps} />
-          )}
-        </Fieldset>
+        {component && component.frame && component.frame}
       </Stack>
 
       <Stack direction="column" gap="32px">

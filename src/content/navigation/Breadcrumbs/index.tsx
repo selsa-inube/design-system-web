@@ -18,6 +18,20 @@ const breadcrumbs = {
   description: "This component uses a filled primary icon for all applications",
   example: Breadcrumbs,
   name: "Breadcrumbs",
+  frame: (
+    <iframe
+      src="https://codesandbox.io/embed/66sfh9?view=split&hidenavigation=0+%2B+preview&module=%2Fsrc%2FApp.tsx"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        borderRadius: "4px",
+        overflow: "hidden",
+      }}
+      title="Avatar"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  ),
   props: {
     crumbs: [
       {

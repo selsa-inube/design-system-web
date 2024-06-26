@@ -21,6 +21,20 @@ const spinner = {
   description: "This component uses a filled primary icon for all applications",
   example: SpinnerController,
   name: "Spinner",
+  frame: (
+    <iframe
+      src="https://codesandbox.io/embed/jjq4x6?view=split&hidenavigation=0+%2B+preview&module=%2Fsrc%2FApp.tsx"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        borderRadius: "4px",
+        overflow: "hidden",
+      }}
+      title="Avatar"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  ),
   props: {
     size: "medium",
     appearance: "primary",
