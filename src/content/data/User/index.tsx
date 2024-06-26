@@ -5,6 +5,20 @@ const user = {
     "Component that allows the user to identify himself and locate himself next to the business unit",
   example: UserController,
   name: "User",
+  frame: (
+    <iframe
+      src="https://codesandbox.io/embed/ddv6gc?view=split&hidenavigation=0+%2B+preview&module=%2Fsrc%2FApp.tsx"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        borderRadius: "4px",
+        overflow: "hidden",
+      }}
+      title="Avatar"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  ),
   props: {
     username: "Leonardo Garzón",
     client: "Sistemas Enlínea S.A",

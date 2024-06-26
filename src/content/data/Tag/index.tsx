@@ -20,6 +20,20 @@ const tag = {
   description: "Icons used to communicate actions and decisions graphically",
   example: TagController,
   name: "Tag",
+  frame: (
+    <iframe
+      src="https://codesandbox.io/embed/yjqph9?view=split&hidenavigation=0+%2B+preview&module=%2Fsrc%2FApp.tsx"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        borderRadius: "4px",
+        overflow: "hidden",
+      }}
+      title="Avatar"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  ),
   props: {
     appearance: "primary",
     label: "Tag",

@@ -22,6 +22,20 @@ const text = {
     "Component designed to specify the colors that the text receives within the application",
   example: TextController,
   name: "Text",
+  frame: (
+    <iframe
+      src="https://codesandbox.io/embed/gqwn39?view=split&hidenavigation=0&module=%2Fsrc%2FApp.tsx"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        borderRadius: "4px",
+        overflow: "hidden",
+      }}
+      title="Text"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  ),
   props: {
     children: "“The quick brown fox jumps over the lazy dog”",
     as: "p",

@@ -1,19 +1,22 @@
-import { FullscreenNav } from "@inubekit/fullscreennav";
+import { Header } from "@inubekit/header";
+
 import {
-  MdVpnKey,
+  MdKey,
   MdMeetingRoom,
-  MdContacts,
+  MdPhone,
   MdStarBorder,
   MdBadge,
   MdAccountBalanceWallet,
   MdAccountBalance,
+  MdAndroid,
 } from "react-icons/md";
+import { Logo } from "./logo";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
-const fullscreenNavTokensConfig = {
+const headerTokensConfig = {
   businessUnit: "inube",
-  component: "fullscreenNav",
+  component: "header",
   include: [
     { id: "businessUnit", order: 1 },
     { id: "component", order: 2 },
@@ -23,22 +26,36 @@ const fullscreenNavTokensConfig = {
   ],
 };
 
-const fullscreenNav = {
+const header = {
   description: "This component uses a filled primary icon for all applications",
-  example: FullscreenNav,
-  name: "FullscreenNav",
+  example: Header,
+  name: "Header",
+  frame: (
+    <iframe
+      src="https://codesandbox.io/embed/dz89t7?view=split&hidenavigation=0+%2B+preview&module=%2Fsrc%2FApp.tsx"
+      style={{
+        width: "100%",
+        height: "500px",
+        border: "0",
+        borderRadius: "4px",
+        overflow: "hidden",
+      }}
+      title="Avatar"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  ),
   props: {
     portalId: "portals",
     navigation: {
       title: "MENU",
       sections: {
-        administrative: {
-          name: "Administrative",
+        administrate: {
+          name: "Administrate",
           links: {
             privileges: {
               id: "privileges",
               label: "Privileges",
-              icon: MdVpnKey,
+              icon: MdKey,
               path: "/privileges",
             },
             accounting: {
@@ -50,7 +67,7 @@ const fullscreenNav = {
             contacts: {
               id: "contacts",
               label: "Contacts",
-              icon: MdContacts,
+              icon: MdPhone,
               path: "/contacts",
             },
             crm: {
@@ -92,8 +109,18 @@ const fullscreenNav = {
         },
       },
     },
-    logoutPath: "/logout",
-    logoutTitle: "logout",
+    logoURL: Logo,
+    userName: "Leonardo Garzón",
+    client: "Sistemas Enlínea S.A",
+    links: [
+      {
+        label: "Actualizar datos",
+        path: "/update-data-assisted",
+        icon: MdAndroid,
+      },
+    ],
+    showLinks: false,
+    showUser: false,
   },
   propTypes: {
     portalId: {
@@ -101,21 +128,31 @@ const fullscreenNav = {
     },
     navigation: {
       description:
-        "shall be designed to accept an array of objects with a predetermined structure, as specified below: Each object shall contain the following attributes",
+        "The primary object that will organize and store the requisite paths for the correct operation of the Nav component is forthcoming and is required",
     },
-    logoutPath: {
-      description: "path to the logout page",
+    logoURL: {
+      description:
+        "prop accepts a component to be used as the logo in the header. This component can be an image, an icon, stylized text or any other visual element that represents the brand identity.",
+    },
+    userName: {
+      description: "shall be the displayed username",
       type: "input",
     },
-    logoutTitle: {
-      description: "title of the logout page",
+    client: {
+      description: "shall be the displayed business Unit",
       type: "input",
+    },
+    links: {
+      description: "shall be the links that it'll be shown in the header",
+    },
+    showLinks: {
+      description: "it determines if the links will be shown in the header",
+    },
+    showUser: {
+      description: "it determines if the user will be shown in the header",
     },
   },
-  tokens: buildTokenDescriptions(
-    inube.fullscreenNav,
-    fullscreenNavTokensConfig,
-  ),
+  tokens: buildTokenDescriptions(inube.header, headerTokensConfig),
 };
 
-export { fullscreenNav };
+export { header };
