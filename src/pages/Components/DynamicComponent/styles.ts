@@ -11,9 +11,6 @@ const StyledTag = styled.div`
   gap: 16px;
   padding: 16px;
   border-radius: 8px;
-  background-color: ${({ theme }) =>
-    theme.tag?.dark?.normal?.background?.color ||
-    inube.tag.dark.normal.background.color};
   & > figure:hover {
     cursor: pointer;
   }

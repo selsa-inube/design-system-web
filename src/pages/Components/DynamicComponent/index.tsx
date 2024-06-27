@@ -81,7 +81,7 @@ function DynamicComponent() {
       {component && (
         <Stack direction="column" gap="48px">
           <Stack direction="column" gap="4px">
-            <Text type="title" size="large">
+            <Text type="headline" size="large">
               {components[component].name}
             </Text>
             <Text type="body" size="medium" appearance="gray">
@@ -100,14 +100,10 @@ function DynamicComponent() {
                 />
                 {activeTab === "Playground" && (
                   <Stack direction="column" gap="16px">
-                    <Text
-                      type="headline"
-                      size="small"
-                      children="Installation"
-                    />
+                    <Text type="title" size="medium" children="Installation" />
                     <StyledTag>
                       <Tag
-                        appearance="dark"
+                        appearance="light"
                         label={
                           components[component].installation
                             ? components[component].installation!
@@ -115,10 +111,9 @@ function DynamicComponent() {
                         }
                       />
                       <Icon
-                        appearance="primary"
+                        appearance="gray"
                         icon={<MdContentCopy />}
                         spacing="compact"
-                        variant="filled"
                         onClick={handleTagClick}
                       />
                     </StyledTag>
