@@ -34,7 +34,7 @@ function Playground({ component }: IPlayground) {
       </Stack>
 
       <Stack direction="column" gap="32px">
-        <Text type="title" size="medium" children="Component properties" />
+        <Text type="title" size="medium" children="Interface" />
         <Stack direction="column" gap="16px">
           {propKeys.map((key) => (
             <PropsAndTypes
