@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { inube } from "@inube/design-system";
+import { inube } from "@inubekit/foundations";
 
 const StyledTokenInfoContainer = styled.div`
   > div {
     background-color: ${({ theme }) =>
-      theme.color?.surface?.gray?.clear || inube.color.surface.gray.clear};
+      theme?.table?.action?.background || inube.table.action.background};
     border-radius: 8px;
   }
 `;
@@ -16,8 +16,7 @@ const StyledTableWrapper = styled.div`
     tr {
       border-bottom: 1px solid
         ${({ theme }) =>
-          theme.color?.stroke?.divider?.regular ||
-          inube.color.stroke.divider.regular};
+          theme?.table?.border?.color || inube.table.border.color};
     }
 
     tr:last-child {
@@ -29,13 +28,12 @@ const StyledTableWrapper = styled.div`
         background-color: transparent;
         border-bottom: 1px solid
           ${({ theme }) =>
-            theme.color?.stroke?.divider?.regular ||
-            inube.color.stroke.divider.regular};
+            theme?.table?.border?.color || inube.table.border.color};
       }
 
       th:nth-last-child(-n + 2) {
         background-color: ${({ theme }) =>
-          theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
+          theme?.table?.action?.background || inube.table.action.background};
       }
     }
   }

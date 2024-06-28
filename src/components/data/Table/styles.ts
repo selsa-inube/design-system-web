@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { inube } from "@inube/design-system";
+import { inube } from "@inubekit/foundations";
 
 interface IStyledTd {
   $withactions?: string;
@@ -22,18 +22,14 @@ interface IStyledThTitle {
 const StyledTableContainer = styled.div`
   border-radius: 8px;
   border: solid 1px
-    ${({ theme }) =>
-      theme.color?.stroke?.divider?.regular ||
-      inube.color.stroke.divider.regular};
+    ${({ theme }) => theme?.table?.border?.color || inube.table.border.color};
   //overflow: hidden;
   width: 100%;
 `;
 
 const StyledTable = styled.table<IStyledTable>`
   outline: solid 1px
-    ${({ theme }) =>
-      theme.color?.stroke?.divider?.regular ||
-      inube.color.stroke.divider.regular};
+    ${({ theme }) => theme?.table?.border?.color || inube.table.border.color};
   box-sizing: border-box;
   border-radius: 8px;
   border-collapse: collapse;
@@ -44,12 +40,13 @@ const StyledTable = styled.table<IStyledTable>`
 
 const StyledThead = styled.thead`
   background-color: ${({ theme }) =>
-    theme.color?.surface?.light?.clear || inube.color.surface.light.clear};
+    theme?.table?.heading?.background || inube.table.heading.background};
 `;
 
 const StyledTbody = styled.tbody`
   background-color: ${({ theme }) =>
-    theme.color?.surface?.light?.clear || inube.color.surface.light.clear};
+    theme?.table?.row?.background?.regular ||
+    inube.table.row.background.regular};
 `;
 
 const StyledTr = styled.tr<IStyledTr>`
@@ -58,11 +55,8 @@ const StyledTr = styled.tr<IStyledTr>`
 
 const StyledThTitle = styled.th<IStyledThTitle>`
   background-color: ${({ theme }) =>
-    theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
+    theme?.table?.heading?.background || inube.table.heading.background};
   padding: 12px 16px;
-  width: 101.33px;
-  min-width: 101.33px;
-  max-width: 344px;
   flex: 1;
 
   p {
@@ -72,19 +66,13 @@ const StyledThTitle = styled.th<IStyledThTitle>`
 
 const StyledThAction = styled.th`
   background-color: ${({ theme }) =>
-    theme.color?.surface?.dark?.clear || inube.color.surface.dark.clear};
+    theme?.table?.action?.background || inube.table.action.background};
   padding: 12px 16px;
-  width: 101.33px;
-  min-width: 101.33px;
-  max-width: 344px;
   flex: 1;
 `;
 
 const StyledTd = styled.td<IStyledTd>`
   text-align: center;
-  width: 101.33px;
-  min-width: 101.33px;
-  max-width: 344px;
   flex: 1;
   white-space: nowrap;
   p {

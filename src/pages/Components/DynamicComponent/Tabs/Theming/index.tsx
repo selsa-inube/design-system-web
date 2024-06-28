@@ -56,7 +56,7 @@ function Theming(props: any) {
       justifyContent="unset"
       margin="-16px 0 0 0"
     >
-      <Stack direction="column" gap="8px">
+      <Stack direction="column" gap="8px" width="fit-content">
         <Text type="title" size="medium" children="How to read tokens" />
         <Text
           size="medium"
@@ -113,7 +113,7 @@ function Theming(props: any) {
           (value: { component: string; description: string }) => (
             <StyledSectionMessageWrapper>
               <SectionMessage
-                key={value.component}
+                key={value.component + value.description}
                 icon={<MdHelpOutline />}
                 title="Dependencies"
                 description={`${value.component}: ${value.description}`}
