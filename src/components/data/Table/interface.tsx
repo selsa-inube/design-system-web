@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { useMediaQueries, useMediaQuery } from "@inube/design-system";
+import { useMediaQueries, useMediaQuery } from "@inubekit/hooks";
 
-import { SkeletonLine } from "@inube/design-system";
+import { SkeletonLine } from "@inubekit/skeleton";
 import {
   IAction,
   IBreakpoint,

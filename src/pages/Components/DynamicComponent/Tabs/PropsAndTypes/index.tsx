@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import { Text } from "@inube/design-system";
+import { Text } from "@inubekit/text";
 import { Stack } from "@inubekit/stack";
 import { Grid } from "@inubekit/grid";
 import {

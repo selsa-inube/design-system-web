@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Stack } from "@inubekit/stack";
-import { Tabs } from "@inube/design-system";
+import { Tabs } from "@inubekit/tabs";
 import { Text } from "@inubekit/text";
 import { Playground } from "./Tabs/Playground";
 import { components } from "../../../content";

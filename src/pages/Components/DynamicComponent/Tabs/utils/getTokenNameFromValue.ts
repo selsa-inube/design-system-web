@@ -1,11 +1,12 @@
-import { inube } from "@inube/design-system";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { inube } from "@inubekit/foundations";
 
 function getTokenNameFromValue(tokenValue: string, theme?: typeof inube) {
-  const palette = theme?.color?.palette || inube.color.palette;
+  const palette = theme?.palette || inube.palette;
 
   for (const category in palette) {
-    if (Object.hasOwn(palette, category)) {
-      const tokens = palette[category as keyof typeof palette];
+    if (Object.prototype.hasOwnProperty.call(palette, category)) {
+      const tokens: any = palette[category as keyof typeof palette];
       for (const tokenName in tokens) {
         if (tokens[tokenName] === tokenValue) {
           return { tokenName, category };

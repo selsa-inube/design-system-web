@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Outlet, useOutlet } from "react-router-dom";
-import { Grid } from "@inube/design-system";
+import { Grid } from "@inubekit/grid";
 import { Nav } from "@inubekit/nav";
 import { Header } from "@inubekit/header";
 import { useMediaQuery } from "@inubekit/hooks";
