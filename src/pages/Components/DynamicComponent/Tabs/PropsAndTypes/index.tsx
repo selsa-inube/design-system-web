@@ -9,7 +9,7 @@ import {
   StyledTokenInfoContainer,
 } from "./styles";
 import { Accordion } from "@components/feedback/Accordion";
-import { renderInput } from "./util";
+
 import { Icon } from "@inubekit/icon";
 import { Tag } from "@inubekit/tag";
 import { MdOpenInNew, MdClear } from "react-icons/md";
@@ -27,7 +27,6 @@ interface PropsAndTypesProps {
 function PropsAndTypes({
   component,
   modifiedProps,
-  handlePropChange,
   title,
 }: PropsAndTypesProps) {
   const [isBlanketVisible, setIsBlanketVisible] = useState(false);
@@ -110,16 +109,6 @@ function PropsAndTypes({
                   : "-"
               }
             />
-          </StyledTokenInfoContainer>
-          <StyledTokenInfoContainer>
-            <Text type="label" children="Control" />
-            {renderInput(
-              title,
-              type,
-              defaultValue,
-              propType?.options,
-              handlePropChange,
-            )}
           </StyledTokenInfoContainer>
         </Grid>
         {isBlanketVisible && (
