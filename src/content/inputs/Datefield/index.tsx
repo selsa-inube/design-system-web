@@ -29,7 +29,7 @@ const datefield = {
         borderRadius: "4px",
         overflow: "hidden",
       }}
-      title="Avatar"
+      title="Datefield"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     />
   ),

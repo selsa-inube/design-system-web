@@ -14,7 +14,7 @@ const stack = {
         borderRadius: "4px",
         overflow: "hidden",
       }}
-      title="Avatar"
+      title="Stack"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     />
   ),

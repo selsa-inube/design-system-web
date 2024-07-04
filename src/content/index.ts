@@ -1,35 +1,35 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { icon } from "./data/Icon";
-import { avatar } from "./data/Avatar";
-import { tag } from "./data/Tag";
-import { text } from "./data/Text";
-import { user } from "./data/User";
-import { button } from "./inputs/Button";
-import { label } from "./inputs/Label";
-import { toggle } from "./inputs/Toggle";
-import { fieldset } from "./inputs/Fieldset";
-import { select } from "./inputs/Select";
-import { datefield } from "./inputs/Datefield";
-import { textarea } from "./inputs/Textarea";
-import { textfield } from "./inputs/Textfield";
 import { assisted } from "./feedback/Assisted";
+import { avatar } from "./data/Avatar";
+import { blanket } from "./utils/Blanket";
+import { breadcrumbs } from "./navigation/Breadcrumbs";
+import { button } from "./inputs/Button";
 import { countdownBar } from "./feedback/CountdownBar";
-import { sectionMessage } from "./feedback/SectionMessage";
+import { datefield } from "./inputs/Datefield";
+import { divider } from "./layout/Divider";
+import { fieldset } from "./inputs/Fieldset";
+import { flag } from "./feedback/Flag";
+import { fullscreenNav } from "./navigation/FullscreenNav";
+import { grid } from "./layout/Grid";
+import { header } from "./navigation/Header";
+import { icon } from "./data/Icon";
+import { label } from "./inputs/Label";
+import { link } from "./navigation/Link";
+import { nav } from "./navigation/Nav";
+import { navLink } from "./navigation/NavLink";
+import { select } from "./inputs/Select";
 import { skeletonIcon } from "./feedback/SkeletonIcon";
 import { skeletonLine } from "./feedback/SkeletonLine";
 import { spinner } from "./feedback/Spinner";
-import { breadcrumbs } from "./navigation/Breadcrumbs";
-import { fullscreenNav } from "./navigation/FullscreenNav";
-import { header } from "./navigation/Header";
-import { nav } from "./navigation/Nav";
-import { navLink } from "./navigation/NavLink";
-import { tabs } from "./navigation/Tabs";
-import { blanket } from "./utils/Blanket";
-import { link } from "./navigation/Link";
 import { stack } from "./layout/Stack";
-import { grid } from "./layout/Grid";
-import { divider } from "./layout/Divider";
 import { table } from "./data/Table";
+import { tabs } from "./navigation/Tabs";
+import { tag } from "./data/Tag";
+import { text } from "./data/Text";
+import { textarea } from "./inputs/Textarea";
+import { textfield } from "./inputs/Textfield";
+import { toggle } from "./inputs/Toggle";
+import { user } from "./data/User";
 
 interface Components {
   [key: string]: {
@@ -42,37 +42,37 @@ interface Components {
 }
 
 const components: Components = {
-  icon,
-  avatar,
-  tag,
-  text,
-  user,
-  button,
-  label,
-  toggle,
-  fieldset,
-  select,
-  stack,
-  grid,
-  divider,
-  datefield,
-  textarea,
-  textfield,
   assisted,
+  avatar,
+  blanket,
+  breadcrumbs,
+  button,
   countdownBar,
-  sectionMessage,
+  datefield,
+  divider,
+  fieldset,
+  flag,
+  fullscreenNav,
+  grid,
+  header,
+  icon,
+  label,
+  link,
+  nav,
+  navLink,
+  select,
   skeletonIcon,
   skeletonLine,
   spinner,
+  stack,
   table,
-  breadcrumbs,
-  fullscreenNav,
-  header,
-  nav,
-  navLink,
   tabs,
-  link,
-  blanket,
+  tag,
+  text,
+  textarea,
+  textfield,
+  toggle,
+  user,
 };
 
 export { components };

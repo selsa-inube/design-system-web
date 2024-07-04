@@ -39,7 +39,7 @@ const StyledTableWrapper = styled.div`
   }
 `;
 
-const StyledSectionMessageWrapper = styled.div`
+const StyledFlagWrapper = styled.div`
   & > div {
     display: flex;
     & > div > figure {
@@ -48,8 +48,4 @@ const StyledSectionMessageWrapper = styled.div`
   }
 `;
 
-export {
-  StyledTokenInfoContainer,
-  StyledTableWrapper,
-  StyledSectionMessageWrapper,
-};
+export { StyledTokenInfoContainer, StyledTableWrapper, StyledFlagWrapper };

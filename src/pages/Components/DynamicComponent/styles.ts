@@ -31,11 +31,11 @@ const StyledTag = styled.div`
   }
 `;
 
-const StyledSectionMessageWrapper = styled.div`
+const StyledFlagWrapper = styled.div`
   position: fixed;
   bottom: 16px;
   right: 16px;
   z-index: 2;
 `;
 
-export { StyledTag, StyledSectionMessageWrapper };
+export { StyledTag, StyledFlagWrapper };

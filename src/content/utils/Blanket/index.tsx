@@ -29,7 +29,7 @@ const blanket = {
         borderRadius: "4px",
         overflow: "hidden",
       }}
-      title="Avatar"
+      title="Blanket"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     />
   ),

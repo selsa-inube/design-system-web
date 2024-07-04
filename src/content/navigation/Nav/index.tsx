@@ -38,7 +38,7 @@ const nav = {
         borderRadius: "4px",
         overflow: "hidden",
       }}
-      title="Avatar"
+      title="Nav"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     />
   ),
