@@ -55,9 +55,9 @@ const navigation = {
           path: "/component/spinner",
         },
         sectionMessage: {
-          id: "SectionMessage",
-          label: "SectionMessage",
-          path: "/component/sectionMessage",
+          id: "Flag",
+          label: "Flag",
+          path: "/component/flag",
         },
         skeletonIcon: {
           id: "SkeletonIcon",

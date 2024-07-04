@@ -1,11 +1,11 @@
 import { MdWarning } from "react-icons/md";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
-import { SectionMessageController } from "./Controller/SectionMessage.Controller";
+import { FlagController } from "./Controller/Flag.Controller";
 
-const sectionMessageTokensConfig = {
+const flagTokensConfig = {
   businessUnit: "inube",
-  component: "sectionMessage",
+  component: "flag",
   include: [
     { id: "businessUnit", order: 1 },
     { id: "component", order: 2 },
@@ -17,10 +17,10 @@ const sectionMessageTokensConfig = {
   ],
 };
 
-const sectionMessage = {
+const flag = {
   description: "This component uses a filled primary icon for all applications",
-  example: SectionMessageController,
-  name: "SectionMessage",
+  example: FlagController,
+  name: "Flag",
   frame: (
     <iframe
       src="https://codesandbox.io/embed/9grh4r?view=split&hidenavigation=0+%2B+preview&module=%2Fsrc%2FApp.tsx"
@@ -31,7 +31,7 @@ const sectionMessage = {
         borderRadius: "4px",
         overflow: "hidden",
       }}
-      title="Avatar"
+      title="Flag"
       sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
     />
   ),
@@ -41,8 +41,8 @@ const sectionMessage = {
     icon: MdWarning,
     appearance: "primary",
     duration: 10000,
-    closeSectionMessage: () => {
-      console.log("closeSectionMessage");
+    closeFlag: () => {
+      console.log("closeFlag");
     },
   },
   propTypes: {
@@ -61,7 +61,7 @@ const sectionMessage = {
     appearance: {
       description:
         "The appearance style of the section message and related components.",
-      type: "ISectionMessageAppearance",
+      type: "IFlagAppearance",
       options: [
         { id: "primary", label: "Primary" },
         { id: "success", label: "Success" },
@@ -78,15 +78,12 @@ const sectionMessage = {
         "The duration for which the countdown bar runs. If provided, a countdown bar will appear.",
       type: "input",
     },
-    closeSectionMessage: {
+    closeFlag: {
       description:
         "Callback function that is called when the section message needs to be closed, either by user action or after the countdown.",
     },
   },
-  tokens: buildTokenDescriptions(
-    inube.sectionMessage,
-    sectionMessageTokensConfig,
-  ),
+  tokens: buildTokenDescriptions(inube.sectionMessage, flagTokensConfig),
 };
 
-export { sectionMessage };
+export { flag };

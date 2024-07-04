@@ -5,12 +5,12 @@ import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { tokenDescription } from "../../../../../content/tokens";
 import {
-  StyledSectionMessageWrapper,
+  StyledFlagWrapper,
   StyledTableWrapper,
   StyledTokenInfoContainer,
 } from "./styles";
 import { breakpoints } from "@components/data/DynamicComponentControls/config";
-import { SectionMessage } from "@inubekit/sectionmessage";
+import { Flag } from "@inubekit/flag";
 import { MdHelpOutline } from "react-icons/md";
 
 const capitalizeFirstLetter = (string: string) => {
@@ -111,18 +111,18 @@ function Theming(props: any) {
         dependencies &&
         dependencies.map(
           (value: { component: string; description: string }) => (
-            <StyledSectionMessageWrapper>
-              <SectionMessage
+            <StyledFlagWrapper>
+              <Flag
                 key={value.component + value.description}
                 icon={<MdHelpOutline />}
                 title="Dependencies"
                 description={`${value.component}: ${value.description}`}
                 appearance="help"
                 duration={1}
-                closeSectionMessage={() => {}}
+                closeFlag={() => {}}
                 isMessageResponsive
               />
-            </StyledSectionMessageWrapper>
+            </StyledFlagWrapper>
           ),
         )
       )}
