@@ -1,140 +1,115 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
-import { TableUI } from "./interface";
-import { StyledTableContainer } from "./styles";
 import {
-  IAction,
-  IBreakpoint,
-  IEntry,
-  ITitle,
-  TextAppearanceType,
-} from "./types";
-import { Pagination } from "./Pagination";
+  Col,
+  Colgroup,
+  Pagination,
+  Table,
+  Tbody,
+  Td,
+  Tfoot,
+  Th,
+  Thead,
+  Tr,
+} from "@inubekit/table";
 
-interface TableProps {
-  portalId?: string;
-  titles: ITitle[];
-  actions?: IAction[];
-  entries: IEntry[];
-  loading?: boolean;
-  filter?: string;
-  pageLength?: number;
-  breakpoints?: IBreakpoint[];
-  modalTitle?: string;
-  infoTitle?: string;
-  actionsTitle?: string;
-  hideMobileResume?: boolean;
-  mobileResumeTitle?: string;
-  colsSameWidth?: boolean;
-  customAppearance?: (titleId: string, entry: IEntry) => TextAppearanceType;
+interface IDataItem {
+  [key: string]: {
+    value: React.ReactNode;
+    type?: "text" | "toggle" | "icon" | "custom";
+    checked?: boolean;
+    onToggle?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onClick?: (e: React.MouseEvent) => void;
+  };
 }
 
-const Table = (props: TableProps) => {
-  const {
-    portalId,
-    titles,
-    actions,
-    entries,
-    loading,
-    filter = "",
-    pageLength = 10,
-    breakpoints,
-    modalTitle,
-    infoTitle,
-    actionsTitle,
-    hideMobileResume,
-    mobileResumeTitle,
-    colsSameWidth,
-    customAppearance,
-  } = props;
+interface TableProps {
+  headers: { label: string; key: string; action?: boolean }[];
+  data: IDataItem[];
+  pageLength?: number;
+  caption?: string;
+}
 
-  const filteredEntries = useMemo(() => {
-    const titlesId = titles.map((title) => title.id);
-
-    return entries.filter((entry) => {
-      for (const attribute in entry) {
-        if (
-          titlesId.includes(attribute) &&
-          entry[attribute]
-            .toString()
-            .toLowerCase()
-            .includes(filter.toLowerCase())
-        ) {
-          return true;
-        }
-      }
-      return false;
-    });
-  }, [entries, filter, titles]);
+const CustomTable = (props: TableProps) => {
+  const { headers, data, pageLength = 3 } = props;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(filteredEntries.length / pageLength);
+  const totalPages = Math.ceil(data.length / pageLength);
 
   const firstEntryInPage = (currentPage - 1) * pageLength;
+  const lastEntryInPage = Math.min(firstEntryInPage + pageLength, data.length);
 
-  const lastEntryInPage = Math.min(
-    firstEntryInPage + pageLength,
-    filteredEntries.length,
-  );
+  const getPageEntries = () => data.slice(firstEntryInPage, lastEntryInPage);
 
-  function getPageEntries() {
-    return filteredEntries.slice(firstEntryInPage, lastEntryInPage);
-  }
-
-  function goToFirstPage() {
-    setCurrentPage(1);
-  }
-
-  function goToEndPage() {
-    setCurrentPage(totalPages);
-  }
-
-  function nextPage() {
-    if (currentPage !== totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-  }
-
-  function prevPage() {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  }
-
-  const withactions = !!actions;
+  const goToFirstPage = () => setCurrentPage(1);
+  const goToEndPage = () => setCurrentPage(totalPages);
+  const nextPage = () =>
+    currentPage !== totalPages && setCurrentPage(currentPage + 1);
+  const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
   return (
-    <StyledTableContainer>
-      <TableUI
-        portalId={portalId}
-        titles={titles}
-        actions={actions}
-        loading={loading}
-        entries={getPageEntries()}
-        breakpoints={breakpoints}
-        modalTitle={modalTitle}
-        infoTitle={infoTitle}
-        actionsTitle={actionsTitle}
-        hideMobileResume={hideMobileResume}
-        mobileResumeTitle={mobileResumeTitle}
-        colsSameWidth={colsSameWidth}
-        withactions={withactions}
-        customAppearance={customAppearance}
-      />
-      {filteredEntries.length > pageLength && (
-        <Pagination
-          firstEntryInPage={firstEntryInPage}
-          lastEntryInPage={lastEntryInPage}
-          totalRecords={filteredEntries.length}
-          onStartPage={goToFirstPage}
-          onPrevPage={prevPage}
-          onNextPage={nextPage}
-          onEndPage={goToEndPage}
-        />
-      )}
-    </StyledTableContainer>
+    <Table>
+      <Colgroup>
+        {headers.map((_header, index) => (
+          <Col key={index} span={1} />
+        ))}
+      </Colgroup>
+      <Thead>
+        <Tr border="bottom">
+          {headers.map((header, index) => (
+            <Th key={index} action={header.action} align="center">
+              {header.label}
+            </Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {getPageEntries().map((row, rowIndex) => (
+          <Tr key={rowIndex} border="bottom">
+            {headers.map((header, colIndex) => {
+              const cellData = row[header.key];
+              return (
+                <Td
+                  key={colIndex}
+                  type={cellData?.type || "text"}
+                  checked={cellData?.checked}
+                  align="center"
+                  onToggle={
+                    cellData?.type === "toggle"
+                      ? (e) => cellData.onToggle && cellData.onToggle(e)
+                      : undefined
+                  }
+                  onClick={
+                    cellData?.type === "icon" || cellData?.type === "custom"
+                      ? (e) => cellData.onClick && cellData.onClick(e)
+                      : undefined
+                  }
+                >
+                  {cellData?.value}
+                </Td>
+              );
+            })}
+          </Tr>
+        ))}
+      </Tbody>
+      <Tfoot>
+        <Tr border="bottom">
+          <Td colSpan={headers.length} type="custom" align="center">
+            <Pagination
+              firstEntryInPage={firstEntryInPage}
+              lastEntryInPage={lastEntryInPage}
+              totalRecords={data.length}
+              handleStartPage={goToFirstPage}
+              handlePrevPage={prevPage}
+              handleNextPage={nextPage}
+              handleEndPage={goToEndPage}
+            />
+          </Td>
+        </Tr>
+      </Tfoot>
+    </Table>
   );
 };
 
-export { Table };
+export { CustomTable };
 export type { TableProps };

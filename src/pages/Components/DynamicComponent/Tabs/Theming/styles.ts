@@ -11,30 +11,15 @@ const StyledTokenInfoContainer = styled.div`
 
 const StyledTableWrapper = styled.div`
   table {
-    border-collapse: collapse;
-
-    tr {
-      border-bottom: 1px solid
-        ${({ theme }) =>
-          theme?.table?.border?.color || inube.table.border.color};
-    }
-
-    tr:last-child {
-      border-bottom: none;
-    }
-
-    thead {
-      th {
-        background-color: transparent;
-        border-bottom: 1px solid
-          ${({ theme }) =>
-            theme?.table?.border?.color || inube.table.border.color};
+    user-select: none;
+    tbody {
+      tr > td > p:nth-last-child(-n + 2) {
+        word-break: break-word;
       }
-
-      th:nth-last-child(-n + 2) {
-        background-color: ${({ theme }) =>
-          theme?.table?.action?.background || inube.table.action.background};
-      }
+    }
+    button,
+    a {
+      user-select: none;
     }
   }
 `;
