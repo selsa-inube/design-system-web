@@ -45,6 +45,13 @@ const user = {
       ],
     },
   },
+  dependencies: {
+    icon: {
+      component: "<Avatar />",
+      description:
+        "This component uses a filled primary icon for all applications. To change the appearance of 'user' you must modify the token colors of the 'avatar' component",
+    },
+  },
 };
 
 export { user };

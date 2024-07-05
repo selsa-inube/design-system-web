@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Table } from "@components/data/Table";
+import { CustomTable as Table } from "@components/data/Table";
 import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
@@ -9,7 +9,6 @@ import {
   StyledTableWrapper,
   StyledTokenInfoContainer,
 } from "./styles";
-import { breakpoints } from "@components/data/DynamicComponentControls/config";
 import { Flag } from "@inubekit/flag";
 import { MdHelpOutline } from "react-icons/md";
 
@@ -23,26 +22,44 @@ function Theming(props: any) {
   let tokensArray: any[] = [];
   let tokenStructure: string[] = [];
   let tokenEntries: any[] = [];
-  let titles: any[] = [];
-  let entries: any[] = [];
+  let headers: { label: string; key: string; action?: boolean }[] = [];
+  let data: {
+    [key: string]: {
+      value: React.ReactNode;
+      type?: "text" | "toggle" | "icon" | "custom";
+      checked?: boolean;
+    };
+  }[] = [];
 
   if (component?.tokens) {
     tokensArray = Object.values(component.tokens);
     const firstTokenObject = tokensArray[0] ?? {};
 
     tokenStructure = Object.keys(firstTokenObject);
-    tokenEntries = Object.values(component.tokens).slice(0, 3);
+    tokenEntries = Object.values(component.tokens);
 
-    titles = tokenStructure.map((key, index) => ({
-      id: key,
-      titleName: capitalizeFirstLetter(key.replace(/([A-Z])/g, " $1").trim()),
-      priority: 1 - index,
+    headers = tokenStructure.map((key, index) => ({
+      label: capitalizeFirstLetter(key.replace(/([A-Z])/g, " $1").trim()),
+      key: key,
+      action: index >= tokenStructure.length - 2,
     }));
 
-    entries = tokenEntries.map((entry, index) => ({
-      id: index,
-      ...entry,
-    }));
+    data = tokenEntries.map((entry) => {
+      const formattedEntry: {
+        [key: string]: {
+          value: React.ReactNode;
+          type?: "text" | "toggle" | "icon" | "custom";
+          checked?: boolean;
+        };
+      } = {};
+      tokenStructure.forEach((key) => {
+        formattedEntry[key] = {
+          value: entry[key],
+          type: "text",
+        };
+      });
+      return formattedEntry;
+    });
   }
 
   const dependencies =
@@ -100,20 +117,15 @@ function Theming(props: any) {
             )}
           </Grid>
           <StyledTableWrapper>
-            <Table
-              titles={titles}
-              entries={entries}
-              breakpoints={breakpoints}
-            />
+            <Table headers={headers} data={data} />
           </StyledTableWrapper>
         </>
       ) : (
         dependencies &&
         dependencies.map(
           (value: { component: string; description: string }) => (
-            <StyledFlagWrapper>
+            <StyledFlagWrapper key={value.component + value.description}>
               <Flag
-                key={value.component + value.description}
                 icon={<MdHelpOutline />}
                 title="Dependencies"
                 description={`${value.component}: ${value.description}`}
