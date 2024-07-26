@@ -137,7 +137,7 @@ function PropsAndTypes({
                     />
                   </Stack>
                   <Text appearance="gray" size="medium">
-                    Aadditional property details
+                    Additional property details
                   </Text>
                   <Divider dashed />
                 </Stack>
