@@ -78,7 +78,7 @@ const text = {
     },
     as: {
       description:
-        "This prop allows us to control the tag that we will inject in the DOM.",
+        "This prop allows the user to change the HTML element that will appear in the DOM. It's useful for adjusting the semantic meaning of the content without changing the component's appearance or behavior. For example, using 'h1' for headings and 'p' for paragraphs",
       type: "ITextHtmlElement",
       options: [
         { id: "h1", label: "H1" },
@@ -137,15 +137,15 @@ const text = {
     },
     cursorHover: {
       description:
-        " prop to allow the text to use the hover modifier you find in color.text tokens and activate the cursor: pointer CSS property.",
+        "When cursorHover is set to true, the component will change the cursor to a pointer on hover, indicating that the text is interactive. If false, the cursor will not change, suggesting the text is not interactive",
     },
     parentHover: {
       description:
-        " prop to force the text to always appear in its hover state. This works when the parent is being hover (not the text), but the parent must display as if all the component is",
+        "When parentHover is true, the text will adopt its hover state whenever the parent element is hovered over, regardless of the text's own hover state. This is useful for maintaining consistent visual feedback in nested or grouped components",
     },
     ellipsis: {
       description:
-        " Add the ellipsis prop to control that the text cannot overflow or resize the parent.Instead, the text will be shown as much as possible in the available space and the rest of it will be replaced with an ellipsis.To make this work you must use the overflow, white - space and text - overflow CSS properties.",
+        "The ellipsis prop controls text overflow behavior. When set to true, it uses CSS properties like overflow: hidden;, white-space: nowrap;, and text-overflow: ellipsis; to truncate overflowing text and replace the excess with an ellipsis, indicating that more content is available but not visible",
     },
   },
   tokens: buildTokenDescriptions(inube.text, textTokensConfig),
