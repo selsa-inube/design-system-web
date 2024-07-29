@@ -19,7 +19,8 @@ const labelTokensConfig = {
 };
 
 const label = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Label component is used to provide a descriptive text label for form elements, enhancing accessibility and usability by associating with a specific input element.",
   example: LabelController,
   name: "Label",
   frame: (
@@ -48,30 +49,35 @@ const label = {
   },
   propTypes: {
     disabled: {
-      description: "indicates wheter the text is in its disabled state",
+      description:
+        "Indicates whether the text is in a disabled state, making it less prominent and signaling that the associated input is not currently interactive.",
     },
     focused: {
-      description: "indicates wheter the text is in its focused state",
+      description:
+        "Indicates whether the label or associated input is focused, often highlighting the label to guide user attention to the active form element.",
     },
     htmlFor: {
-      description: "Useful to match this label with the id of a specific entry",
-      type: "input",
+      description:
+        "Associates the label with a specific form input by matching the label's htmlFor attribute with the input's id attribute, enhancing accessibility.",
+      type: "string",
     },
     invalid: {
-      description: "Indicates the possible states in witch the label could be",
+      description:
+        "Indicates whether the label is associated with an invalid input state, often changing the label's appearance to signal an error or issue.",
     },
     margin: {
       description:
-        "Sets the margin in px or global values for all four sides of the component.",
-      type: "input",
+        "Sets the margin around the label component, defining space outside the label's bounding box. Values can be specified in pixels or other global CSS units.",
+      type: "string",
     },
     padding: {
       description:
-        "Sets the padding in px or global values for all four sides of the component",
-      type: "input",
+        "Sets the padding within the label component, defining space inside the label's bounding box. This provides control over the space between the text and the label's borders.",
+      type: "string",
     },
     size: {
-      description: "indicates the font size used in the component",
+      description:
+        "Specifies the font size used in the label. Options include 'large', 'medium', and 'small', allowing for different text sizes to suit various design requirements.",
       type: "ILabelSize",
       options: [
         { id: "large", label: "Large" },
@@ -80,8 +86,9 @@ const label = {
       ],
     },
     children: {
-      description: "component text content",
-      type: "input",
+      description:
+        "The text or content to be displayed within the label, which can include plain text or other React components, such as icons or styled elements.",
+      type: "string",
     },
   },
   tokens: buildTokenDescriptions(inube.label, labelTokensConfig),

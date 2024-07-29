@@ -17,7 +17,8 @@ const toggleTokensConfig = {
 };
 
 const toggle = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Toggle component is a switch used to switch between two states, such as on and off. It provides a visual representation of a binary option and is commonly used in forms and settings.",
   example: ToggleController,
   name: "Toggle",
   frame: (
@@ -49,23 +50,28 @@ const toggle = {
   propTypes: {
     id: {
       description:
-        "this element can have a label on it, so this id allows us to connect the label with the switch",
-      type: "input",
+        "A unique identifier for the toggle input. It allows the `Label` component to associate itself with the input element, enhancing accessibility.",
+      type: "string",
     },
     disabled: {
       description:
-        "if the switch is disabled or not. This prevents any interaction.",
+        "Indicates whether the toggle is in a disabled state. When true, the toggle is non-interactive and appears dimmed.",
+      type: "boolean",
     },
     checked: {
-      description: "",
+      description:
+        "Defines the current checked state of the toggle. When true, the toggle is in the 'on' position; when false, it is in the 'off' position.",
+      type: "boolean",
     },
     name: {
       description:
-        "descriptive name for value property to be submitted in a form",
-      type: "input",
+        "A descriptive name for the value property to be submitted in a form. This helps identify the specific toggle's value during form submission.",
+      type: "string",
     },
     value: {
-      description: "value to be submitted in a form",
+      description:
+        "The value to be submitted when the toggle is part of a form. This value corresponds to the current state of the toggle.",
+      type: "string",
       options: [
         { id: "switchTest1", label: "switchTest1" },
         { id: "switchTest2", label: "switchTest2" },
@@ -75,10 +81,12 @@ const toggle = {
     },
     onChange: {
       description:
-        "is a function that the component receives and that can be executed every time the switch state is modified",
+        "A function that is called whenever the toggle's state changes. This handler receives a React.ChangeEvent<HTMLInputElement> as an argument.",
+      type: "function",
     },
     size: {
-      description: "toggle size",
+      description:
+        "Specifies the size of the toggle. The size can affect the visual appearance and click area of the toggle.",
       type: "IToggleSize",
       options: [
         { id: "small", label: "Small" },
@@ -86,18 +94,19 @@ const toggle = {
       ],
     },
     label: {
-      description: "component text content",
-      type: "input",
+      description:
+        "The text content displayed next to the toggle switch. It provides a label for the toggle, explaining its purpose or the choice it represents.",
+      type: "string",
     },
     margin: {
       description:
-        "Sets the margin in px or global values for all four sides of the component. Accepted values are the spacing tokens",
-      type: "input",
+        "Sets the margin around the toggle component, defining space outside the toggle's bounding box. Values can be specified in pixels or other global CSS units.",
+      type: "string",
     },
     padding: {
       description:
-        "Sets the padding in px p global values for all four sides of the component. Accepted values are the spacing tokens",
-      type: "input",
+        "Sets the padding inside the toggle component, defining space inside the toggle's bounding box, affecting the overall size and click area.",
+      type: "string",
     },
   },
   tokens: buildTokenDescriptions(inube.toggle, toggleTokensConfig),
