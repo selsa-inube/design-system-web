@@ -1,7 +1,8 @@
 import { StackController } from "./Controller/Stack.Controller";
 
 const stack = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Stack component arranges its children in a flexible layout, using properties like direction, wrapping, and alignment to create various UI layouts.",
   example: StackController,
   name: "Stack",
   frame: (
@@ -33,11 +34,12 @@ const stack = {
   },
   propTypes: {
     children: {
-      description: "Children elements placed inside the Grid.",
+      description:
+        "This prop allows the Stack component to receive and render React nodes. These children elements are organized within the layout defined by the Stack's properties, enabling flexible content arrangement.",
     },
     wrap: {
       description:
-        "Indicates whether the container should use more than one row/column to organize its children.",
+        "Determines whether the container should wrap its children into multiple lines or columns. Options include 'nowrap' (default), 'wrap', and 'wrap-reverse', controlling the flex-wrap property and allowing the content to wrap as needed within the container.",
       type: "IStackWrapControl",
       options: [
         { id: "wrap", label: "wrap" },
@@ -51,7 +53,7 @@ const stack = {
     },
     direction: {
       description:
-        "Defines if the elements will be organized in a row or column manner.",
+        "Defines the direction in which the elements are arranged within the Stack. Options include 'row', 'column', 'row-reverse', and 'column-reverse', which determine whether the children are laid out horizontally or vertically, and in which order.",
       type: "IStackDirectionAlignment",
       options: [
         { id: "row", label: "row" },
@@ -66,12 +68,12 @@ const stack = {
     },
     gap: {
       description:
-        "Controls the spacing between grid cells, both horizontally and vertically.",
+        "Defines the space between items in the container. It can specify both row and column gaps; for example, '16px 8px' sets a 16px gap between rows and an 8px gap between columns. This property helps in managing the spacing between children elements in the layout.",
       type: "input",
     },
     alignItems: {
       description:
-        "Controls the vertical alignment of the elements within each grid cell.",
+        "Aligns children along the cross axis (vertical if direction is 'row', horizontal if direction is 'column'). Options include 'flex-start', 'flex-end', 'center', 'baseline', 'stretch', 'normal', 'self-start', 'self-end', 'initial', 'revert', 'unset', 'start', and 'end'. It helps in controlling the alignment of items within the container based on their height or width.",
       type: "IStackAlignItem",
       options: [
         { id: "baseline", label: "baseline" },
@@ -89,10 +91,9 @@ const stack = {
         { id: "end", label: "end" },
       ],
     },
-
     alignContent: {
       description:
-        "This property affects the vertical alignment of the grid content in relation to its container.",
+        "Aligns the flex container's lines within it when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis. Options include 'baseline', 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'inherit', 'initial', 'revert', 'unset', 'stretch', and 'normal'.",
       type: "IStackAlignContent",
       options: [
         { id: "baseline", label: "baseline" },
@@ -112,10 +113,9 @@ const stack = {
         { id: "normal", label: "normal" },
       ],
     },
-
     justifyContent: {
       description:
-        "This property affects the horizontal alignment of the entire grid in relation to its container.",
+        "Defines the horizontal alignment of elements when the direction is row or the vertical alignment of elements when the direction is column. Options include 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly', 'start', 'end', 'left', 'right', 'inherit', 'initial', 'revert', 'unset', 'stretch', and 'normal'. This property affects the alignment of the entire grid in relation to its container.",
       type: "IStackJustifyContent",
       options: [
         { id: "flex-start", label: "flex-start" },
@@ -136,24 +136,24 @@ const stack = {
         { id: "normal", label: "normal" },
       ],
     },
-
     height: {
-      description: "Controls the height of the grid.",
+      description:
+        "Controls the height of the Stack component, setting its vertical size. Accepts values in pixels or global CSS units.",
       type: "input",
     },
-
     width: {
-      description: "Controls the width of the grid.",
+      description:
+        "Controls the width of the Stack component, setting its horizontal size. Accepts values in pixels or global CSS units.",
       type: "input",
     },
-
     margin: {
-      description: "Sets the outer margin of the grid.",
+      description:
+        "Sets the outer margin of the Stack component, defining space outside the component. Accepts values in pixels or global CSS units.",
       type: "input",
     },
-
     padding: {
-      description: "Sets the inner padding of the grid.",
+      description:
+        "Sets the inner padding of the Stack component, defining space inside the component's border. Accepts values in pixels or global CSS units.",
       type: "input",
     },
   },
