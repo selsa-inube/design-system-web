@@ -15,7 +15,8 @@ const countdownBarTokensConfig = {
 };
 
 const countdownBar = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The CountdownBar component visually represents a countdown or timer, using a progress bar that animates from full to empty over a specified duration.",
   example: CountdownBarController,
   name: "CountdownBar",
   frame: (
@@ -44,12 +45,12 @@ const countdownBar = {
   propTypes: {
     height: {
       description:
-        "specify the name of the user to be displayed in the component. Allows customising the visual identification of the user within the application interface.",
-      type: "input",
+        "Specifies the height of the countdown bar. This allows customization of the bar's thickness to fit the design needs.",
+      type: "string",
     },
     appearance: {
       description:
-        "indicates the name of the customer or company associated with the user.",
+        "Determines the color theme of the countdown bar, indicating different states like primary, success, warning, etc.",
       type: "ICountdownBarAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -64,16 +65,18 @@ const countdownBar = {
     },
     duration: {
       description:
-        "indicates the name of the customer or company associated with the user.",
-      type: "input",
+        "Specifies the duration of the countdown in milliseconds. This controls how long the bar takes to complete the countdown.",
+      type: "number",
     },
     paused: {
       description:
-        "indicates the name of the customer or company associated with the user.",
+        "Indicates whether the countdown animation is paused. Set to true to pause the animation.",
+      type: "boolean",
     },
     onCountdown: {
       description:
-        "indicates the name of the customer or company associated with the user.",
+        "A callback function that is triggered when the countdown reaches zero.",
+      type: "function",
     },
   },
   tokens: buildTokenDescriptions(inube.countdownBar, countdownBarTokensConfig),

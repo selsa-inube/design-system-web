@@ -18,7 +18,8 @@ const spinnerTokensConfig = {
 };
 
 const spinner = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Spinner component provides a visual indication that an action is processing or loading. It is commonly used to keep users informed about the status of their actions, such as data loading or submission.",
   example: SpinnerController,
   name: "Spinner",
   frame: (
@@ -43,7 +44,7 @@ const spinner = {
   propTypes: {
     size: {
       description:
-        "different sizes that the component can have, according to the need",
+        "Defines the size of the spinner. Choose based on the context and space available.",
       type: "ISpinnerSize",
       options: [
         { id: "large", label: "Large" },
@@ -52,7 +53,8 @@ const spinner = {
       ],
     },
     appearance: {
-      description: "colors used to identify the state of the component",
+      description:
+        "Specifies the color scheme of the spinner, representing different states or importance levels.",
       type: "ISpinnerAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -67,7 +69,8 @@ const spinner = {
     },
     transparent: {
       description:
-        "indicates when the background of the spinner should have color",
+        "Indicates whether the spinner's background should be transparent. Useful for overlaying on colored backgrounds.",
+      type: "boolean",
     },
   },
   tokens: buildTokenDescriptions(inube.spinner, spinnerTokensConfig),
