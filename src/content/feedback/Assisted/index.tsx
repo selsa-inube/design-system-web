@@ -83,38 +83,44 @@ const assisted = {
   propTypes: {
     steps: {
       description:
-        " An array to represent each step of the journey. Each object in the array represents one step and must have the following structure: id, label, description (Optional). The order of the steps depends on the order in the array,",
-      type: "IAssistedStep[ ]",
+        "An array representing each step in the journey. Each step object includes: \n- `id`: A unique identifier for the step.\n- `label`: The title or name of the step.\n- `description`: (Optional) A brief description providing additional context or instructions for the step.",
+      type: "IAssistedStep[]",
     },
     currentStepId: {
       description:
-        " An identifier that matches one of the id values within the steps array to indicate the current step.",
-      type: "IAssistedStep[id]",
+        "The unique identifier (`id`) corresponding to the current step in the `steps` array. This value determines which step is currently active and displayed to the user.",
+      type: "IAssistedStep['id']",
     },
-
     handlePrev: {
       description:
-        "A function that will be called when the user clicks on the previous button. If not provided, the button will not be rendered.",
-      type: "IAssistedStep[id]",
+        "A function triggered when the user clicks the 'Previous' button. It typically navigates the user to the previous step. If this function is not provided, the 'Previous' button will not be rendered.",
+      type: "(id: IAssistedStep['id']) => void",
     },
-
-    handleNex: {
-      descriptions:
-        "A function that will be called when the user clicks on the next button.",
-      type: "IAssistedStep[id]",
-    },
-    titleButtonBefore: {
+    handleNext: {
       description:
-        "A string to be displayed in the button before the label of the current step.",
-      type: "IAssistedTitleButton",
+        "A function triggered when the user clicks the 'Next' button. It advances the user to the next step in the process.",
+      type: "(id: IAssistedStep['id']) => void",
     },
-    titleButtonAfter: {
-      description:
-        "A string to be displayed in the button after the label of the current step.",
-      type: "IAssistedTitleButton",
+    titleButtonText: {
+      before: {
+        description:
+          "Text displayed on the button that navigates to the previous step.",
+        type: "string",
+      },
+      after: {
+        description:
+          "Text displayed on the button that navigates to the next step.",
+        type: "string",
+      },
+      finish: {
+        description:
+          "Text displayed on the button during the final step, typically indicating submission or completion.",
+        type: "string",
+      },
     },
     size: {
-      description: "assited's size",
+      description:
+        "Determines the size of the Assisted component, affecting its layout and visibility of elements. In 'large' size, both the step number and description are prominently displayed. In 'small' size, the component is more compact with limited text visibility.",
       type: "IAssistedSize",
       options: [
         { id: "large", label: "Large" },

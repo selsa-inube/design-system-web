@@ -2,7 +2,7 @@ import { UserController } from "./Controller/User.Controller";
 
 const user = {
   description:
-    "Component that allows the user to identify himself and locate himself next to the business unit",
+    "The User component allows for the identification of a user and their association with a business unit. This component is essential for applications where user identity and client information need to be prominently displayed.",
   example: UserController,
   name: "User",
   frame: (
@@ -27,17 +27,17 @@ const user = {
   propTypes: {
     username: {
       description:
-        "specify the name of the user to be displayed in the component. Allows customising the visual identification of the user within the application interface.",
-      type: "input",
+        "Specifies the name of the user to be displayed within the component. This allows customization of the visual identification of the user within the application interface.",
+      type: "string",
     },
     client: {
       description:
-        "indicates the name of the customer or company associated with the user.",
-      type: "input",
+        "Indicates the name of the customer or company associated with the user. This information is displayed alongside the user's name.",
+      type: "string",
     },
     size: {
       description:
-        "determines the size of the user component in the interface. The avatar will always be visible, but the name and client will be visible according to the size of the component.",
+        "Determines the size of the User component. The avatar will always be visible, but the name and client will be shown based on the size specified.",
       type: "IUserSize",
       options: [
         { id: "large", label: "Large" },
@@ -49,7 +49,7 @@ const user = {
     icon: {
       component: "<Avatar />",
       description:
-        "This component uses a filled primary icon for all applications. To change the appearance of 'user' you must modify the token colors of the 'avatar' component",
+        "This component utilizes the Avatar component from the inube kit. To change the appearance of the User component, modify the token colors of the Avatar component.",
     },
   },
 };

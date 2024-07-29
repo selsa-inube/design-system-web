@@ -1,7 +1,7 @@
 import { AvatarController } from "./Controller/Avatar.Controller";
 
 const avatar = {
-  description: "This component uses a filled primary icon for all applications",
+  description: "An avatar is a visual representation of a user or entity.",
   example: AvatarController,
   name: "Avatar",
   frame: (
@@ -21,16 +21,19 @@ const avatar = {
   props: {},
   propTypes: {
     icon: {
-      description: "Whether the icon changes upon cursor hover",
+      description:
+        "Icon to be displayed inside the avatar component, using icons from 'react-icons/md'.",
       type: "ReactElement",
-      default: "MdPersonOutline",
+      table: {
+        defaultValue: { summary: "MdPersonOutline" },
+      },
     },
   },
   dependencies: {
     icon: {
       component: "<Icon />",
       description:
-        "This component uses a filled primary icon for all applications. To change the appearance of 'Avatar' you must modify the token colors of the 'icon' component",
+        "This component uses a filled primary icon for all applications. To change the appearance of 'Avatar', you must modify the token colors of the 'icon' component.",
     },
   },
 };
