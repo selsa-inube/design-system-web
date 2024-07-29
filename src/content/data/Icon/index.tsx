@@ -20,7 +20,8 @@ const iconTokensConfig = {
 };
 
 const icon = {
-  description: "Icons used to communicate actions and decisions graphically",
+  description:
+    "Icons are used to graphically represent actions, decisions, or statuses in the user interface. This component provides customizable options for icon appearance, size, shape, and behavior.",
   example: Icon,
   name: "Icon",
   frame: (
@@ -51,7 +52,8 @@ const icon = {
   },
   propTypes: {
     appearance: {
-      description: "The base styling to apply to the icon",
+      description:
+        "Determines the color scheme and overall style of the icon. Choose from predefined themes such as 'primary', 'success', 'warning', 'danger', 'help', 'dark', 'gray', and 'light'.",
       type: "IIconAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -65,19 +67,24 @@ const icon = {
       ],
     },
     cursorHover: {
-      description: "Whether the icon changes upon cursor hover",
+      description:
+        "Specifies whether the icon's appearance changes when the cursor hovers over it, indicating interactivity.",
     },
     parentHover: {
-      description: "Whether the icon changes upon its parent hover",
+      description:
+        "Determines if the icon's appearance changes when its parent element is hovered over, often used to enhance user experience.",
     },
     icon: {
-      description: "Icon to be displayed inside the Icon component",
+      description:
+        "The graphical element displayed within the Icon component. Typically an SVG or a React icon component like those from 'react-icons'.",
     },
     disabled: {
-      description: "Set if the icon is disabled",
+      description:
+        "Indicates whether the icon is in a disabled state, preventing interaction and applying a dimmed visual style.",
     },
     spacing: {
-      description: "Spacing around the icon",
+      description:
+        "Controls the padding around the icon. Options include 'none', 'compact', and 'wide' to adjust spacing according to design needs.",
       type: "IIconSpacing",
       options: [
         { id: "none", label: "None" },
@@ -86,16 +93,18 @@ const icon = {
       ],
     },
     variant: {
-      description: "Variant of the icon",
+      description:
+        "Defines the style of the icon. 'Filled' provides a solid background, 'outlined' has a border without a background, and 'none' is minimalistic with no additional styling.",
       type: "IIconVariant",
       options: [
         { id: "none", label: "None" },
-        { id: "outlined", label: "Compact" },
+        { id: "outlined", label: "Outlined" },
         { id: "filled", label: "Filled" },
       ],
     },
     shape: {
-      description: "Shape of the icon",
+      description:
+        "Sets the shape of the icon, which can be 'circle' or 'rectangle'. This affects the icon's border-radius and overall silhouette.",
       type: "IIconShape",
       options: [
         { id: "circle", label: "Circle" },
@@ -103,11 +112,13 @@ const icon = {
       ],
     },
     onClick: {
-      description: "Function to handle icon click",
+      description:
+        "A function that is called when the icon is clicked. Useful for triggering actions or events.",
     },
     size: {
-      description: "Size of the icon in pixels",
-      type: "input",
+      description:
+        "Specifies the size of the icon in pixels. This can be a number or a string representing the size in pixels, such as '24px'.",
+      type: "string",
     },
   },
   tokens: buildTokenDescriptions(inube.icon, iconTokensConfig),

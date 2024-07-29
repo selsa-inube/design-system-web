@@ -16,7 +16,8 @@ const inputTokensConfig = {
 };
 
 const datefield = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Datefield component allows users to select or input a date, providing a user-friendly interface for date selection.",
   example: DatefieldController,
   name: "Datefield",
   frame: (
@@ -46,46 +47,66 @@ const datefield = {
   },
   propTypes: {
     label: {
-      description: "prompts the user what value to enter",
-      type: "input",
+      description:
+        "Prompts the user on what value to enter, typically displayed as a label near the date field.",
+      type: "string",
     },
     name: {
-      description: "name of the input element",
-      type: "input",
+      description:
+        "The name of the input element, used to identify the data in form submissions.",
+      type: "string",
     },
     id: {
       description:
-        "uniquely identifies the **Textfield Component**, it will also allow the **label element** to be connected to the **input element** through the htmlFor of the label",
-      type: "input",
+        "A unique identifier for the Datefield component, linking the label to the input field through the label's htmlFor attribute.",
+      type: "string",
     },
     disabled: {
       description:
-        "sets the field as to appear disabled, users will not be able to interact with the text field",
+        "When set to true, the date field is non-interactive and appears dimmed, indicating that it cannot be edited.",
+      type: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
     },
     value: {
-      description: "component initial value",
+      description:
+        "The current value of the input field, formatted as a date string. Useful for controlled components where the value is managed externally.",
+      type: "string | number",
     },
     onChange: {
       description:
-        "allows you to control what to do when the user changes the value of the component",
+        "A function that handles changes to the input value, typically used to update the component's state.",
+      type: "function",
     },
     required: {
-      description: "defines if the field is required or not",
+      description:
+        "Indicates whether the input field is required. If true, the form cannot be submitted unless this field is filled.",
+      type: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
     },
     status: {
-      description: "status of the component",
+      description:
+        "Indicates the validation status of the input, such as 'invalid' for errors or 'pending' for ongoing validation.",
       type: "IDatefieldStatus",
       options: [
         { id: "invalid", label: "Invalid" },
         { id: "pending", label: "Pending" },
       ],
+      table: {
+        defaultValue: { summary: "pending" },
+      },
     },
     message: {
       description:
-        "display a message, provided by the developer implementing the component, which can be either an error notification or a validation prompt",
+        "A message displayed below the date field, providing feedback such as validation errors or additional instructions.",
+      type: "string",
     },
     size: {
-      description: "defines the size of the component",
+      description:
+        "Defines the size of the date field, affecting its height and font size. Available options include 'wide' and 'compact'.",
       type: "IDatefieldSize",
       options: [
         { id: "wide", label: "Wide" },
@@ -93,7 +114,9 @@ const datefield = {
       ],
     },
     fullwidth: {
-      description: "option to fit field width to its parent width",
+      description:
+        "When set to true, the date field expands to fit the full width of its parent container.",
+      type: "boolean",
       table: {
         defaultValue: { summary: false },
       },
