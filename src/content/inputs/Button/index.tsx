@@ -18,7 +18,8 @@ const buttonTokensConfig = {
 };
 
 const button = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Button component is a versatile UI element used to trigger actions or navigate users to different sections within an application. It supports various appearances, types, and additional elements like icons to enhance user interaction.",
   example: ButtonController,
   name: "Button",
   frame: (

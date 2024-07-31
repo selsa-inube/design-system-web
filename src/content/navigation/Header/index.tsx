@@ -27,7 +27,8 @@ const headerTokensConfig = {
 };
 
 const header = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Header component provides a consistent and recognizable area at the top of your application. It typically contains the logo, navigation links, and user information, enhancing the user experience by facilitating easy navigation and branding.",
   example: Header,
   name: "Header",
   frame: (
@@ -124,32 +125,46 @@ const header = {
   },
   propTypes: {
     portalId: {
-      description: "id of the portal element",
+      description:
+        "The unique identifier for the portal element where the header will be rendered.",
+      type: "string",
     },
     navigation: {
       description:
-        "The primary object that will organize and store the requisite paths for the correct operation of the Nav component is forthcoming and is required",
+        "An object that defines the navigation structure within the header. It includes sections with associated links, each having an id, label, icon, and path. This structure is essential for organizing and navigating the app.",
+      type: "object",
     },
     logoURL: {
       description:
-        "prop accepts a component to be used as the logo in the header. This component can be an image, an icon, stylized text or any other visual element that represents the brand identity.",
+        "A component used as the logo in the header, which can be an image, icon, or any other visual representation of the brand. This logo is a key element for brand identity.",
+      type: "JSX.Element",
     },
     userName: {
-      description: "shall be the displayed username",
-      type: "input",
+      description:
+        "The name of the user to be displayed in the header. This is typically shown alongside a user avatar and provides a personalized touch.",
+      type: "string",
     },
     client: {
-      description: "shall be the displayed business Unit",
-      type: "input",
+      description:
+        "The business unit or client name to be displayed, providing context or association with the user or organization.",
+      type: "string",
     },
     links: {
-      description: "shall be the links that it'll be shown in the header",
+      description:
+        "An array of link objects to be displayed in the header. Each link includes a label, path, and icon, offering quick navigation to key areas or actions.",
+      type: "array",
     },
     showLinks: {
-      description: "it determines if the links will be shown in the header",
+      description:
+        "A boolean flag to toggle the visibility of navigation links in the header. When set to true, the specified links are displayed.",
+      type: "boolean",
+      defaultValue: false,
     },
     showUser: {
-      description: "it determines if the user will be shown in the header",
+      description:
+        "A boolean flag to toggle the visibility of the user information (like userName and client) in the header. When set to true, user details are displayed.",
+      type: "boolean",
+      defaultValue: true,
     },
   },
   tokens: buildTokenDescriptions(inube.header, headerTokensConfig),

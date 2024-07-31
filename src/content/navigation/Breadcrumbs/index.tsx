@@ -15,7 +15,8 @@ const breadcrumbsTokensConfig = {
 };
 
 const breadcrumbs = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Breadcrumbs component is used to display the user's current location within the site hierarchy and allows navigation back to previous levels. It provides a trail for users to follow back to the starting or entry point of a website or application.",
   example: Breadcrumbs,
   name: "Breadcrumbs",
   frame: (
@@ -75,8 +76,8 @@ const breadcrumbs = {
   propTypes: {
     crumbs: {
       description:
-        "An array of objects that contain the path, label, id, and isActive properties.",
-      type: "IBreadcrumbsRoute[ ]",
+        "An array of breadcrumb objects, each containing the following properties: path (string): The URL path for the breadcrumb, label (string): The display text for the breadcrumb, id (string): A unique identifier for the breadcrumb, isActive (boolean): Indicates whether the breadcrumb is the current active page.",
+      type: "IBreadcrumbsRoute[]",
     },
   },
   tokens: buildTokenDescriptions(inube.breadcrumbs, breadcrumbsTokensConfig),

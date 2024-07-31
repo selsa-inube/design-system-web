@@ -19,7 +19,7 @@ const textTokensConfig = {
 
 const text = {
   description:
-    "Component designed to specify the colors that the text receives within the application",
+    "The Text component is used to render various types of text elements in the application, providing options for alignment, size, appearance, and more. It supports different HTML elements and styles, making it versatile for both standard and interactive text displays.",
   example: TextController,
   name: "Text",
   frame: (
@@ -53,21 +53,21 @@ const text = {
   propTypes: {
     children: {
       description:
-        "This prop allows the component to get and print text in the screen.",
-      type: "input",
+        "The content of the Text component, typically a string of text to be displayed.",
+      type: "ReactNode",
     },
     margin: {
       description:
-        "Sets the margin in px or global values for all four sides of the component.",
-      type: "input",
+        "Sets the margin around the text, accepting values in pixels or global spacing values.",
+      type: "string",
     },
     padding: {
       description:
-        "Sets the padding in px p global values for all four sides of the component",
-      type: "input",
+        "Sets the padding inside the text container, accepting values in pixels or global spacing values.",
+      type: "string",
     },
     textAlign: {
-      description: "This prop controls the text-align style property.",
+      description: "Controls the alignment of the text within its container.",
       type: "ITextAlignment",
       options: [
         { id: "start", label: "Start" },
@@ -78,7 +78,7 @@ const text = {
     },
     as: {
       description:
-        "This prop allows the user to change the HTML element that will appear in the DOM. It's useful for adjusting the semantic meaning of the content without changing the component's appearance or behavior. For example, using 'h1' for headings and 'p' for paragraphs",
+        "Determines the HTML element that the Text component will render as, useful for semantic HTML and accessibility.",
       type: "ITextHtmlElement",
       options: [
         { id: "h1", label: "H1" },
@@ -96,11 +96,12 @@ const text = {
     },
     disabled: {
       description:
-        " Add the “disabled” prop, which will control if the text should display a disabled state. For this you can make use of the disabled modifiers you find in the color.text tokens.",
+        "Applies a disabled style to the text, indicating that the text is not interactive or is in a disabled state.",
+      type: "boolean",
     },
     size: {
       description:
-        "This prop is used to select one of the typography roles defined in the Foundations.",
+        "Defines the size of the text, aligning with typography roles defined in the design system.",
       type: "ITextSize",
       options: [
         { id: "large", label: "Large" },
@@ -110,7 +111,7 @@ const text = {
     },
     type: {
       description:
-        "This prop is used to select one of the typography roles defined in the Foundations.",
+        "Specifies the typography role of the text, such as body, display, label, title, or headline.",
       type: "ITextType",
       options: [
         { id: "body", label: "Body" },
@@ -122,7 +123,7 @@ const text = {
     },
     appearance: {
       description:
-        "This prop is used to select one of the typography roles defined in the Foundations.",
+        "Defines the visual style of the text, such as color and emphasis, according to the design system's color palette.",
       type: "ITextAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -137,15 +138,18 @@ const text = {
     },
     cursorHover: {
       description:
-        "When cursorHover is set to true, the component will change the cursor to a pointer on hover, indicating that the text is interactive. If false, the cursor will not change, suggesting the text is not interactive",
+        "When true, changes the cursor to a pointer on hover, indicating that the text is interactive.",
+      type: "boolean",
     },
     parentHover: {
       description:
-        "When parentHover is true, the text will adopt its hover state whenever the parent element is hovered over, regardless of the text's own hover state. This is useful for maintaining consistent visual feedback in nested or grouped components",
+        "When true, the text will visually respond to the hover state of its parent container, useful for grouped interactions.",
+      type: "boolean",
     },
     ellipsis: {
       description:
-        "The ellipsis prop controls text overflow behavior. When set to true, it uses CSS properties like overflow: hidden;, white-space: nowrap;, and text-overflow: ellipsis; to truncate overflowing text and replace the excess with an ellipsis, indicating that more content is available but not visible",
+        "Applies an ellipsis to overflowed text, indicating that the full content is not visible. This is particularly useful for preventing text from breaking the layout.",
+      type: "boolean",
     },
   },
   tokens: buildTokenDescriptions(inube.text, textTokensConfig),

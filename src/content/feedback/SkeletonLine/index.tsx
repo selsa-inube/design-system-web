@@ -16,7 +16,8 @@ const skeletonLineTokensConfig = {
 };
 
 const skeletonLine = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The SkeletonLine component serves as a placeholder to indicate loading content, enhancing the user experience by showing a visual placeholder where content will eventually appear. This component helps in maintaining layout integrity during data fetches or slow content loads.",
   example: SkeletonLine,
   name: "SkeletonLine",
   frame: (
@@ -40,11 +41,16 @@ const skeletonLine = {
   },
   propTypes: {
     width: {
-      description: "indicates the width that the component should take",
-      type: "input",
+      description:
+        "Specifies the width of the SkeletonLine component. This prop accepts any valid CSS width value, such as '100%', '50px', or 'auto', allowing for flexible sizing to match different layout requirements.",
+      type: "string",
+      defaultValue: "100%",
     },
     animated: {
-      description: "enable loading effect animation",
+      description:
+        "Determines whether the SkeletonLine should display an animation, such as a pulsing or shimmer effect, to indicate loading. This provides a visual cue that the content is in the process of being loaded.",
+      type: "boolean",
+      defaultValue: false,
     },
   },
   tokens: buildTokenDescriptions(inube.skeleton, skeletonLineTokensConfig),

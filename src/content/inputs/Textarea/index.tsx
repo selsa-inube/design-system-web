@@ -16,7 +16,8 @@ const inputTokensConfig = {
 };
 
 const textarea = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Textarea component is a multi-line text input field that allows users to enter longer text content. It includes various features like placeholder text, character limits, and validation states, making it suitable for form submissions, user feedback, and other textual input needs.",
   example: TextareaController,
   name: "Textarea",
   frame: (
@@ -49,44 +50,53 @@ const textarea = {
   },
   propTypes: {
     label: {
-      description: "prompts the user what value to enter",
-      type: "input",
+      description:
+        "A label that describes the purpose of the textarea, guiding users on what information to provide.",
+      type: "string",
     },
     name: {
-      description: "name of the Textarea element",
-      type: "input",
+      description:
+        "The name attribute for the textarea, used to identify the form control in form submissions.",
+      type: "string",
     },
     id: {
       description:
-        "uniquely identifies the **Textarea Component**, it will also allow the **label element** to be connected to the **Textarea element** through the htmlFor of the label",
-      type: "input",
+        "A unique identifier for the textarea component, used for accessibility and to associate the label with the textarea.",
+      type: "string",
     },
     placeholder: {
-      description: "text to display in the text field whenever it is empty",
-      type: "input",
+      description:
+        "Text displayed inside the textarea when it is empty, providing a hint or example of what to enter.",
+      type: "string",
     },
     disabled: {
       description:
-        "sets the field as to appear disabled, users will not be able to interact with the text field",
+        "If true, the textarea is non-interactive and visually indicates that the field is not available for input.",
+      type: "boolean",
     },
     value: {
-      description: "component initial value",
+      description:
+        "The initial content of the textarea, often used to display existing data or default text.",
+      type: "string",
     },
     onChange: {
       description:
-        "allows you to control what to do when the user changes the value of the component",
-      type: "Event",
+        "Event handler function that is called whenever the user changes the text in the textarea.",
+      type: "function",
     },
     maxLength: {
       description:
-        "defines how many characters maximum are received in the component value",
-      type: "input",
+        "Specifies the maximum number of characters allowed in the textarea, preventing users from entering more.",
+      type: "number",
     },
     required: {
-      description: "defines if the field is required or not",
+      description:
+        "Indicates whether the textarea is a mandatory field in the form.",
+      type: "boolean",
     },
     status: {
-      description: "status of the component",
+      description:
+        "Visual indication of the validation state of the textarea, such as 'invalid' or 'pending'.",
       type: "ITextareaStatus",
       options: [
         { id: "invalid", label: "Invalid" },
@@ -95,16 +105,18 @@ const textarea = {
     },
     message: {
       description:
-        "display a message, provided by the developer implementing the component, which can be either an error notification or a validation prompt",
+        "A message displayed below the textarea, which can be used for validation feedback or additional instructions.",
       type: "string",
     },
     fullwidth: {
-      description: "option to fit field width to its parent width",
+      description:
+        "If true, the textarea expands to the full width of its parent container.",
+      type: "boolean",
     },
     lengthThreshold: {
       description:
-        "defines the minimum number of characters for displaying counter alerts",
-      type: "input",
+        "Specifies the number of characters at which to start displaying a character count or warning.",
+      type: "number",
     },
   },
   tokens: buildTokenDescriptions(inube.input, inputTokensConfig),
