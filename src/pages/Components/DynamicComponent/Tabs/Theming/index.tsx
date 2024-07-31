@@ -105,6 +105,7 @@ function Theming(props: any) {
                         type="label"
                         children={`${index + 1}. ${tokenDescription[key]
                           ?.label}:`}
+                        weight="bold"
                       ></Text>
                       <Text
                         appearance="gray"

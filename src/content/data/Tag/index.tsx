@@ -17,7 +17,8 @@ const tagTokensConfig = {
 };
 
 const tag = {
-  description: "Icons used to communicate actions and decisions graphically",
+  description:
+    "The Tag component provides a visual label for categorization, status indication, or selection. It can display a label with optional styling, and can include an icon for additional functionality such as removal.",
   example: TagController,
   name: "Tag",
   frame: (
@@ -43,17 +44,24 @@ const tag = {
   },
   propTypes: {
     label: {
-      description: "Controls the text that the tag will display",
-      type: "input",
+      description:
+        "The text content displayed within the Tag. It serves to identify or classify the tagged item or element. For instance, 'New', 'Sale', or 'Featured'.",
+      type: "string",
     },
     removable: {
-      description: "Controls the tag in order to allow an event",
+      description:
+        "A boolean that determines whether the Tag includes a close icon, allowing users to remove the tag if the functionality is implemented. This is useful for dynamic lists or selections.",
+      type: "boolean",
+      default: false,
     },
     onClose: {
-      description: "Event that be dispatch",
+      description:
+        "A function that is called when the close icon is clicked, typically used to remove the Tag from the display. This function should handle the logic for removing the Tag or handling the event.",
+      type: "function",
     },
     appearance: {
-      description: "Controls the background color of the tag",
+      description:
+        "Defines the color theme applied to the Tag, which sets the background and text colors according to the theme. Options include 'primary', 'success', 'warning', 'danger', 'help', 'dark', 'gray', and 'light'. These themes help to visually distinguish the Tag's purpose or category.",
       type: "ITagAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -67,11 +75,12 @@ const tag = {
       ],
     },
     weight: {
-      description: "Controls the color load that the label receives",
+      description:
+        "Controls the intensity of the Tag's background color. The 'normal' option applies a standard background color, while 'strong' increases the color's vibrancy, making the Tag more prominent.",
       type: "ITagWeight",
       options: [
-        { id: "normal", label: "normal" },
-        { id: "strong", label: "strong" },
+        { id: "normal", label: "Normal" },
+        { id: "strong", label: "Strong" },
       ],
     },
   },

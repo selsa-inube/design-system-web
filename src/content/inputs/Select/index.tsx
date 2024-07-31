@@ -1,7 +1,8 @@
 import { SelectController } from "./Controller/Select.Controller";
 
 const select = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Select component allows users to make a single or multiple selections from a list of options, providing a dropdown interface for easy selection.",
   example: SelectController,
   name: "Select",
   frame: (
@@ -38,39 +39,48 @@ const select = {
   },
   propTypes: {
     label: {
-      description: "prompts the user what value to enter",
-      type: "input",
+      description:
+        "Prompts the user on what value to select, typically displayed as a label near the dropdown.",
+      type: "string",
     },
     name: {
-      description: "name of the input element",
-      type: "input",
+      description:
+        "The name of the select element, used to identify the data in form submissions.",
+      type: "string",
     },
     id: {
       description:
-        "uniquely identifies the **Textfield Component**, it will also allow the **label element** to be connected to the **input element** through the htmlFor of the label",
-      type: "input",
+        "A unique identifier for the Select component, linking the label to the input field through the label's htmlFor attribute.",
+      type: "string",
     },
     placeholder: {
-      description: "text to display in the text field whenever it is empty",
-      type: "input",
+      description:
+        "Text to display in the select field whenever no selection is made, guiding the user.",
+      type: "string",
     },
     disabled: {
       description:
-        "sets the field as to appear disabled, users will not be able to interact with the text field",
+        "When set to true, the select field is non-interactive and appears dimmed, indicating that it cannot be edited.",
+      type: "boolean",
     },
     value: {
-      description: "component initial value",
+      description:
+        "The current value of the select field, representing the selected option.",
+      type: "string | number",
     },
     onChange: {
       description:
-        "allows you to control what to do when the user changes the value of the component",
-      type: "Event",
+        "A function that handles changes to the select value, typically used to update the component's state.",
+      type: "function",
     },
     required: {
-      description: "defines if the field is required or not",
+      description:
+        "Indicates whether the field must be filled before form submission.",
+      type: "boolean",
     },
     status: {
-      description: "status of the component",
+      description:
+        "Indicates the validation status of the select field, such as 'invalid' for errors, 'valid' for correct selection, or 'pending' for ongoing validation.",
       type: "ISelectStatus",
       options: [
         { id: "valid", label: "Valid" },
@@ -79,15 +89,18 @@ const select = {
       ],
     },
     errorMessage: {
-      description: "show when the field is validated and there is an error",
+      description:
+        "A message displayed when there is an error in the field, providing feedback to the user.",
       type: "string",
     },
     validMessage: {
-      description: "show when the field is validated without errors",
+      description:
+        "A message displayed when the field has been validated without errors, providing confirmation to the user.",
       type: "string",
     },
     size: {
-      description: "defines the size of the component",
+      description:
+        "Defines the size of the component, affecting its height and font size. Available options include 'wide' and 'compact'.",
       type: "ISelectSize",
       options: [
         { id: "wide", label: "Wide" },
@@ -95,21 +108,24 @@ const select = {
       ],
     },
     fullwidth: {
-      description: "option to fit field width to its parent width",
+      description:
+        "When set to true, the select field expands to fit the full width of its parent container.",
+      type: "boolean",
     },
     onFocus: {
       description:
-        "allows you to control what to do when the onfocus event occurs.",
-      type: "Event",
+        "A function that handles the onFocus event, typically used for managing focus-related state changes.",
+      type: "function",
     },
     onBlur: {
       description:
-        "allows you to control what to do when the onblur event occurs.",
-      type: "Event",
+        "A function that handles the onBlur event, typically used for managing blur-related state changes.",
+      type: "function",
     },
     options: {
       description:
-        "shall be designed to accept an array of objects with a predetermined structure.",
+        "An array of objects representing the available options in the select dropdown. Each object should have a predetermined structure, typically including properties like 'id', 'label', 'value', and 'disabled'.",
+      type: "array",
     },
   },
 };

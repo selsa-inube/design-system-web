@@ -25,7 +25,8 @@ const navTokensConfig = {
 };
 
 const nav = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Nav component provides a versatile side navigation system, allowing users to navigate through different sections of an application. It supports nested links and an optional collapsible feature.",
   example: NavController,
   name: "Nav",
   frame: (
@@ -113,19 +114,23 @@ const nav = {
   propTypes: {
     navigation: {
       description:
-        "The primary object that will organize and store the requisite paths for the correct operation of the Nav component is forthcoming and is required",
+        "An object defining the navigation structure. It contains a title for the navigation and sections, each with a name and a set of links. Each link object should include 'id', 'label', 'icon', and 'path'. This structure organizes the navigation and is essential for the Nav component's functionality.",
     },
     logoutPath: {
       description:
-        "is the path where the user is going to navigate when he wants to logout and is required",
+        "A string specifying the path to navigate to when the user clicks the logout link. This property is required if logout functionality is provided.",
       type: "input",
     },
     logoutTitle: {
-      description: "title of the logout page",
+      description:
+        "A string specifying the title for the logout link displayed in the navigation.",
+
       type: "input",
     },
     collapse: {
-      description: "determine if the Nav should be collapsed or not",
+      description:
+        "A boolean indicating whether the navigation sections should be collapsible. If true, sections can expand or collapse based on user interaction.",
+
       type: "boolean",
     },
   },

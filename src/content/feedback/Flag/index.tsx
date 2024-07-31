@@ -18,7 +18,8 @@ const flagTokensConfig = {
 };
 
 const flag = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Flag component is used to display important information or alerts in a visually prominent way. This component is often used to inform users of changes, errors, warnings, or other critical information that needs immediate attention.",
   example: FlagController,
   name: "Flag",
   frame: (
@@ -37,30 +38,34 @@ const flag = {
   ),
   props: {
     title: "Title",
-    description: "Description",
+    description:
+      "This is a description of the flag, providing more details about the message conveyed.",
     icon: MdWarning,
     appearance: "primary",
     duration: 10000,
     closeFlag: () => {
-      console.log("closeFlag");
+      console.log("Flag closed");
     },
   },
   propTypes: {
     icon: {
-      description: "The icon to be displayed in the section message.",
+      description:
+        "The icon to display within the Flag. Icons help visually communicate the type of message or alert.",
+      type: "element",
     },
     title: {
-      description: "The title text of the section message.",
-      type: "input",
+      description:
+        "The title text displayed prominently in the Flag, summarizing the message.",
+      type: "string",
     },
     description: {
       description:
-        "The description text of the section message. If the description is too long, it will be truncated to the MAX_DESCRIPTION_LENGTH.",
-      type: "input",
+        "Additional text providing more details about the message. If the description is too long, it may be truncated based on the component's configuration.",
+      type: "string",
     },
     appearance: {
       description:
-        "The appearance style of the section message and related components.",
+        "Defines the visual style of the Flag, including color scheme and icon appearance. This helps convey the type of message, such as a warning or success message.",
       type: "IFlagAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -75,12 +80,13 @@ const flag = {
     },
     duration: {
       description:
-        "The duration for which the countdown bar runs. If provided, a countdown bar will appear.",
-      type: "input",
+        "Specifies the duration (in milliseconds) for which the Flag is displayed. If provided, a countdown bar will be shown, indicating the time remaining until the Flag automatically closes.",
+      type: "number",
     },
     closeFlag: {
       description:
-        "Callback function that is called when the section message needs to be closed, either by user action or after the countdown.",
+        "A callback function triggered when the Flag is dismissed, either manually by the user or automatically after the duration ends. This function allows for custom behavior upon the Flag's closure.",
+      type: "function",
     },
   },
   tokens: buildTokenDescriptions(inube.sectionMessage, flagTokensConfig),

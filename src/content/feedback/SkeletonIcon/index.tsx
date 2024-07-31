@@ -16,7 +16,8 @@ const skeletonIconTokensConfig = {
 };
 
 const skeletonIcon = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The SkeletonIcon component provides a placeholder for icons, helping to manage the perception of loading time by displaying a low fidelity representation of content before it fully loads.",
   example: SkeletonIcon,
   name: "SkeletonIcon",
   frame: (
@@ -40,12 +41,16 @@ const skeletonIcon = {
   },
   propTypes: {
     size: {
-      description: "sets the size of the skeleton icon component",
-      type: "input",
+      description:
+        "Defines the size of the SkeletonIcon component. Accepts any valid CSS size value, such as '24px', '2em', or '1rem'. This property allows for flexible scaling of the icon to fit various design needs.",
+      type: "string",
+      defaultValue: "24px",
     },
     animated: {
       description:
-        "toggles whether or not the skeleton component's animation is active",
+        "Determines whether the SkeletonIcon component should display an animation to indicate loading. Set to true to activate a subtle shimmer effect, or false to keep the icon static.",
+      type: "boolean",
+      defaultValue: false,
     },
   },
   tokens: buildTokenDescriptions(inube.skeleton, skeletonIconTokensConfig),

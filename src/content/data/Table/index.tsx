@@ -18,7 +18,7 @@ const tableTokensConfig = {
 
 const table = {
   description:
-    "The table component is used to show the user relevant data, in an organized and systematic way.",
+    "The table component is used to display data in a structured and organized format, making it easy for users to compare and analyze information.",
   example: Table,
   name: "Table",
   frame: (
@@ -43,36 +43,41 @@ const table = {
   },
   propTypes: {
     tableLayout: {
-      description: "Specifies the layout algorithm to be used for the table.",
+      description:
+        "Determines the table's layout algorithm. 'fixed' sets a fixed width for all columns, whereas 'auto' adjusts columns based on content.",
       type: "ITableLayout",
       options: [
-        { id: "auto", label: "auto" },
-        { id: "fixed", label: "fixed" },
+        { id: "auto", label: "Auto" },
+        { id: "fixed", label: "Fixed" },
       ],
     },
     borderCollapse: {
-      description: "Controls the table's border collapse behavior.",
+      description:
+        "Specifies whether the table's borders are collapsed into a single border or separated. 'collapse' merges borders, 'separate' keeps them distinct.",
       type: "ITableBorderCollapse",
       options: [
-        { id: "collapse", label: "collapse" },
-        { id: "separate", label: "separate" },
+        { id: "collapse", label: "Collapse" },
+        { id: "separate", label: "Separate" },
       ],
     },
     borderWidth: {
-      description: "Defines the width of the table border.",
+      description:
+        "Sets the width of the table's border, defined in pixels or other valid CSS units.",
       type: "string",
     },
     borderStyle: {
-      description: "Defines the style of the table border.",
+      description:
+        "Defines the style of the table's border. Options include 'solid' for a continuous line or 'dashed' for a dashed line.",
       type: "ITableBorderStyle",
       options: [
-        { id: "solid", label: "solid" },
-        { id: "dashed", label: "dashed" },
+        { id: "solid", label: "Solid" },
+        { id: "dashed", label: "Dashed" },
       ],
     },
     children: {
-      description: "The content to display inside the table.",
-      type: "React.node",
+      description:
+        "Specifies the content to be displayed within the table. This can include table rows, cells, headers, and more.",
+      type: "React.ReactNode",
     },
   },
   tokens: buildTokenDescriptions(inube.table, tableTokensConfig),

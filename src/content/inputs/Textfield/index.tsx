@@ -16,7 +16,8 @@ const inputTokensConfig = {
 };
 
 const textfield = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Textfield component allows users to input and edit text in a form. It can include labels, icons, and messages to provide contextual information or feedback.",
   example: TextfieldController,
   name: "Textfield",
   frame: (
@@ -48,28 +49,33 @@ const textfield = {
   },
   propTypes: {
     label: {
-      description: "prompts the user what value to enter",
-      type: "input",
+      description:
+        "Prompts the user on what value to enter, typically displayed as a label near the text field.",
+      type: "string",
     },
     name: {
-      description: "name of the input element",
-      type: "input",
+      description:
+        "The name of the input element, used to identify the data in form submissions.",
+      type: "string",
     },
     id: {
       description:
-        "uniquely identifies the **Textfield Component**, it will also allow the **label element** to be connected to the **input element** through the htmlFor of the label",
-      type: "input",
+        "Uniquely identifies the Textfield Component. It links the label element to the input element using the label's htmlFor attribute.",
+      type: "string",
     },
     placeholder: {
-      description: "text to display in the text field whenever it is empty",
-      type: "input",
+      description:
+        "Text displayed inside the text field when it is empty, providing an example or hint of the expected input.",
+      type: "string",
     },
     disabled: {
       description:
-        "sets the field as to appear disabled, users will not be able to interact with the text field",
+        "When set to true, the text field is non-interactive and appears dimmed, indicating that it cannot be edited.",
+      type: "boolean",
     },
     type: {
-      description: "class name to apply to the input element",
+      description:
+        "Specifies the input type, such as 'text', 'email', 'number', 'password', 'search', or 'tel'. This determines the kind of data the field accepts and how it behaves.",
       type: "ITextfieldInputType",
       options: [
         { id: "text", label: "Text" },
@@ -81,28 +87,33 @@ const textfield = {
       ],
     },
     value: {
-      description: "component initial value",
+      description:
+        "The initial value of the component, which can be controlled programmatically. This is particularly useful in controlled components.",
+      type: "string | number",
     },
     onChange: {
       description:
-        "allows you to control what to do when the user changes the value of the component",
-      type: "Event",
+        "A function that handles changes to the input value, typically updating the state in a parent component.",
+      type: "function",
     },
     iconBefore: {
       description:
-        "allows to enter an icon to the left of the area where the user enters values",
-      type: "ReactElement",
+        "Allows the inclusion of an icon before the text input, providing additional context or functionality.",
+      type: "React.ReactNode",
     },
     iconAfter: {
       description:
-        "allows to enter an icon to the right of the area where the user enters values",
-      type: "ReactElement",
+        "Allows the inclusion of an icon after the text input, often used for actions like clearing the input.",
+      type: "React.ReactNode",
     },
     required: {
-      description: "defines if the field is required or not",
+      description:
+        "Indicates whether the field is required. If true, the form cannot be submitted unless this field is filled.",
+      type: "boolean",
     },
     status: {
-      description: "status of the component",
+      description:
+        "The validation status of the component, such as 'invalid' for errors or 'pending' for ongoing validation.",
       type: "ITextfieldStatus",
       options: [
         { id: "invalid", label: "Invalid" },
@@ -111,11 +122,12 @@ const textfield = {
     },
     message: {
       description:
-        "display a message, provided by the developer implementing the component, which can be either an error notification or a validation prompt",
+        "Displays a message related to the input field, such as a validation error or guidance text.",
       type: "string",
     },
     size: {
-      description: "defines the size of the component",
+      description:
+        "Defines the size of the component, affecting its height and layout. Options include 'wide' and 'compact'.",
       type: "ITextfieldSize",
       options: [
         { id: "wide", label: "Wide" },
@@ -123,7 +135,9 @@ const textfield = {
       ],
     },
     fullwidth: {
-      description: "option to fit field width to its parent width",
+      description:
+        "When set to true, the text field expands to fill the full width of its parent container.",
+      type: "boolean",
     },
   },
   tokens: buildTokenDescriptions(inube.input, inputTokensConfig),

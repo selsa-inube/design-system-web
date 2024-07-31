@@ -24,7 +24,8 @@ const fullscreenNavTokensConfig = {
 };
 
 const fullscreenNav = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The FullscreenNav component provides a comprehensive and immersive navigation experience, suitable for displaying a detailed menu or dashboard in a full-screen layout. It is particularly useful for applications requiring a rich and expansive navigation interface.",
   example: FullscreenNav,
   name: "FullscreenNav",
   frame: (
@@ -111,19 +112,24 @@ const fullscreenNav = {
   },
   propTypes: {
     portalId: {
-      description: "id of the portal element",
+      description:
+        "The unique identifier for the HTML element used as a portal to render the FullscreenNav component. This is essential for ensuring the navigation component is rendered in the correct location in the DOM.",
+      type: "string",
     },
     navigation: {
       description:
-        "shall be designed to accept an array of objects with a predetermined structure, as specified below: Each object shall contain the following attributes",
+        "An object detailing the structure of the navigation menu. It should contain sections, each with a name and an array of links. Each link object must include an id, label, icon, and path, defining the navigation structure displayed within the FullscreenNav component.",
+      type: "object",
     },
     logoutPath: {
-      description: "path to the logout page",
-      type: "input",
+      description:
+        "The URL path that the user will be redirected to upon clicking the logout option. This path should point to the logout functionality of your application.",
+      type: "string",
     },
     logoutTitle: {
-      description: "title of the logout page",
-      type: "input",
+      description:
+        "The text label for the logout option displayed in the navigation menu. This helps users easily identify the logout function.",
+      type: "string",
     },
   },
   tokens: buildTokenDescriptions(

@@ -28,9 +28,7 @@ const StyledTag = styled.div`
     letter-spacing: ${({ theme }) =>
       theme?.typography?.body?.large?.tracking ||
       inube.typography.body.large.tracking}px;
-    font-weight: ${({ theme }) =>
-      theme?.typography?.body?.large?.weight ||
-      inube.typography.body.large.weight};
+    font-weight: 400;
   }
 `;
 

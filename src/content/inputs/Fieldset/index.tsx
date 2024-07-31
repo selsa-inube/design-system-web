@@ -15,7 +15,8 @@ const fieldsetTokensConfig = {
 };
 
 const fieldset = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Fieldset component groups related content together with a visible legend, providing a structured and accessible way to display information.",
   example: Fieldset,
   name: "Fieldset",
   frame: (
@@ -39,15 +40,17 @@ const fieldset = {
   propTypes: {
     legend: {
       description:
-        "A string that represents the title or heading for the fieldset component.",
-      type: "input",
+        "A string that represents the title or heading for the Fieldset component. It is displayed in the legend area and provides context for the grouped content.",
+      type: "string",
     },
     children: {
       description:
-        "A prop that expects React nodes as its value, used to render the content inside the fieldset.",
+        "A prop that accepts React nodes as its value. This is used to render the content within the Fieldset, such as form fields or descriptive text.",
+      type: "React.ReactNode",
     },
     spacing: {
-      description: "Controls the spacing of the legend",
+      description:
+        "Controls the spacing within the Fieldset, particularly around the legend and content area. Options include 'compact' for tighter spacing and 'wide' for more spacious layouts.",
       type: "IFieldsetSpacing",
       options: [
         { id: "compact", label: "Compact" },

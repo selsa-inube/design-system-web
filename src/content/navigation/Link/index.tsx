@@ -17,7 +17,8 @@ const linkTokensConfig = {
 };
 
 const link = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Link component is designed to navigate users to different parts of the application. It displays text that, when clicked, redirects users to the specified path. This component is customizable in terms of size and typography, allowing for consistent styling across the application.",
   example: LinkController,
   name: "Link",
   frame: (
@@ -43,37 +44,41 @@ const link = {
   propTypes: {
     type: {
       description:
-        "This prop is used to select one of the typography roles defined in the Foundations.",
+        "Defines the typography role for the link text, providing options for different text styles such as body, display, label, title, and headline.",
       type: "ILinkType",
       options: [
-        { id: "body", label: "body" },
-        { id: "display", label: "display" },
-        { id: "label", label: "label" },
-        { id: "title", label: "title" },
-        { id: "headline", label: "headline" },
+        { id: "body", label: "Body" },
+        { id: "display", label: "Display" },
+        { id: "label", label: "Label" },
+        { id: "title", label: "Title" },
+        { id: "headline", label: "Headline" },
       ],
     },
     size: {
       description:
-        "This prop is used to select one of the typography roles defined in the Foundations.",
+        "Specifies the size of the link text, aligning with the predefined sizes in the typography foundation.",
       type: "ILinkSize",
       options: [
-        { id: "large", label: "large" },
-        { id: "medium", label: "medium" },
-        { id: "small", label: "small" },
+        { id: "large", label: "Large" },
+        { id: "medium", label: "Medium" },
+        { id: "small", label: "Small" },
       ],
     },
     children: {
-      description: "The text to be displayed",
+      description:
+        "The text content to be displayed within the link. This is the clickable element that users will interact with.",
+      type: "React.ReactNode",
     },
     path: {
       description:
-        "is the path where the MenuLink is going to navigate and is required.",
-      type: "input",
+        "The URL or path the link navigates to when clicked. This prop is required and should be a valid URL or path.",
+      type: "string",
     },
     hover: {
-      description: "Indicates when the mouse passes over the text",
+      description:
+        "Indicates the hover state of the link. When true, applies hover styles to the link.",
       type: "boolean",
+      defaultValue: false,
     },
   },
   tokens: buildTokenDescriptions(inube.link, linkTokensConfig),

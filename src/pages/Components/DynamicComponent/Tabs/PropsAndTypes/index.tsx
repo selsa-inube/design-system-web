@@ -63,7 +63,7 @@ function PropsAndTypes({
           templateRows="auto"
         >
           <StyledTokenInfoContainer>
-            <Text type="label" children="Description" />
+            <Text type="label" children="Description" weight="bold" />
             <Text
               appearance="gray"
               size="medium"
@@ -71,7 +71,7 @@ function PropsAndTypes({
             />
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer>
-            <Text type="label" children="Details" />
+            <Text type="label" children="Details" weight="bold" />
             <Stack alignItems="center">
               <Icon
                 appearance={isDescriptionLong ? "primary" : "gray"}
@@ -85,7 +85,7 @@ function PropsAndTypes({
             </Stack>
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer>
-            <Text type="label" children="Default" />
+            <Text type="label" children="Default" weight="bold" />
             <Text
               appearance="gray"
               size="medium"
@@ -93,11 +93,11 @@ function PropsAndTypes({
             />
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer>
-            <Text type="label" children="Type" />
+            <Text type="label" children="Type" weight="bold" />
             <Text appearance="gray" size="medium" children={type} />
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer>
-            <Text type="label" children="Values" />
+            <Text type="label" children="Values" weight="bold" />
             <Text
               appearance="gray"
               size="medium"
@@ -137,7 +137,7 @@ function PropsAndTypes({
                     />
                   </Stack>
                   <Text appearance="gray" size="medium">
-                    Aadditional property details
+                    Additional property details
                   </Text>
                   <Divider dashed />
                 </Stack>
