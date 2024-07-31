@@ -22,7 +22,24 @@ The improvement involves creating a centralized way to render Flag components th
 
 To illustrate how the component will work in an app, a sequence diagram will be shown. This diagram will depict the process of importing, executing, and rendering the message.
 
-![image](https://github.com/selsa-inube/design-system-web/assets/45011420/50ee5cea-318e-43a6-93d2-5b863a9824fe)
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant App as App
+    participant Context as FlagContext
+    participant Hook as useFlag
+    participant Portal as FlagPortal
+    participant Screen as Screen
+
+    Dev->>App: Initialize App
+    App->>Context: Setup FlagContext Provider
+    Context->>Hook: Provide Context/Hook
+    Screen->>Hook: useFlag().addMessage({ icon, title, description, appearance, duration })
+    Hook->>Context: Dispatch message to context
+    Context->>Portal: Update messages state
+    Portal->>Context: Render messages through portal
+    Portal->>Screen: Display messages on screen (stacked with gap if multiple)
+```
 
 ## Implementation :nut_and_bolt:
 
