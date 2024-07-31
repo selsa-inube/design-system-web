@@ -9,7 +9,7 @@ const StyledTag = styled.div`
   height: 100%;
   width: fit-content;
   gap: 16px;
-  padding: 16px;
+  padding: 16px 0px;
   border-radius: 8px;
   & > figure:hover {
     cursor: pointer;
