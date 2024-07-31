@@ -27,17 +27,117 @@ To illustrate how the component will work in an app, a sequence diagram will be 
 ## Implementation :nut_and_bolt:
 
 :one: We are going to create a flagContext and a provider that will manage the state and rendering of messages.
-![carbon](https://github.com/selsa-inube/design-system-web/assets/45011420/1862208d-4ff7-4e42-bc7b-22ee7de9c969)
+``` typescript
+import { createContext, useState, ReactNode } from "react";
+import { FlagMessage, FlagPortal } from "../components/FlagPortal/index";
+
+interface FlagContextType {
+  addMessage: (message: Omit<FlagMessage, "id">) => void;
+}
+
+const FlagContext = createContext<FlagContextType | undefined>(undefined);
+
+let idCounter = 0;
+
+export const FlagProvider = ({ children }: { children: ReactNode }) => {
+  const [messages, setMessages] = useState<FlagMessage[]>([]);
+
+  const addMessage = (message: Omit<FlagMessage, "id">) => {
+    const id = ++idCounter;
+    setMessages([...messages, { ...message, id }]);
+    setTimeout(() => removeMessage(id), message.duration);
+  };
+
+  const removeMessage = (id: number) => {
+    setMessages((prevMessages) => prevMessages.filter((msg) => msg.id !== id));
+  };
+
+  return (
+    <FlagContext.Provider value={{ addMessage }}>
+      {children}
+      <FlagPortal messages={messages} removeMessage={removeMessage} />
+    </FlagContext.Provider>
+  );
+};
+
+export { FlagContext };
+```
 
 :two: Develop a hook, **useFlag**, that components can use to dispatch messages to the context
-![carbon (1)](https://github.com/selsa-inube/design-system-web/assets/45011420/1953a04c-8ea7-4810-b166-8b7a74a83e39)
+``` typescript
+import { useContext } from "react";
+import { FlagContext } from "../context/FlagContext";
+
+export const useFlag = () => {
+  const context = useContext(FlagContext);
+  if (context === undefined) {
+    throw new Error("useFlag must be used within a FlagProvider");
+  }
+  return context;
+};
+```
 
 :three: Now we need to implement a stack display mechanism within the context provider to handle multiple messages.
-![carbon (3)](https://github.com/selsa-inube/design-system-web/assets/45011420/7a378eee-08d2-402b-b740-1b47a33a8767)
+``` typescript
+import { Flag, IFlagAppearance } from "@inubekit/flag";
+import ReactDOM from "react-dom";
+import { StyledContainer } from "./styles";
+
+interface FlagMessage {
+  id: number;
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  appearance: IFlagAppearance;
+  duration: number;
+  closeFlag: () => void;
+}
+
+interface FlagPortalProps {
+  messages: FlagMessage[];
+  removeMessage: (id: number) => void;
+}
+
+const FlagPortal = ({ messages, removeMessage }: FlagPortalProps) => {
+  return ReactDOM.createPortal(
+    <StyledContainer>
+      {messages.map((msg) => (
+        <Flag
+          key={msg.id}
+          icon={msg.icon}
+          title={msg.title}
+          description={msg.description}
+          appearance={msg.appearance}
+          duration={msg.duration}
+          closeFlag={() => removeMessage(msg.id)}
+          isMessageResponsive={false}
+        />
+      ))}
+    </StyledContainer>,
+    document.body
+  );
+};
+
+export { FlagPortal };
+export type { FlagMessage };
+```
 
 :four: Last but not least set up a portal to render the messages from the context provider
-![carbon (2)](https://github.com/selsa-inube/design-system-web/assets/45011420/82feaef8-0a9a-4cd5-ae76-ae1a65c82b5a)
+``` typescript
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { FlagProvider } from "./context/FlagContext";
+
+ReactDOM.render(
+  <FlagProvider>
+    <App />
+  </FlagProvider>,
+  document.getElementById("root")
+);
+```
 
 ## Example :trophy:
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/20240705-flag-component-enhancement-yd5gwy?layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522clz98jnn900062v6i6ymgo8r9%2522%252C%2522sizes%2522%253A%255B100%252C0%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522clz98jnn900022v6iy2vr8etf%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522clz98jnn900032v6itir3k16r%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522clz98jnn900052v6ibxu826s8%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522clz98jnn900022v6iy2vr8etf%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clz98jnn800012v6il3ww8boc%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252Fsrc%252Findex.tsx%2522%257D%255D%252C%2522id%2522%253A%2522clz98jnn900022v6iy2vr8etf%2522%252C%2522activeTabId%2522%253A%2522clz98jnn800012v6il3ww8boc%2522%257D%252C%2522clz98jnn900052v6ibxu826s8%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522clz98jnn900042v6iwb7nw78m%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%252C%2522path%2522%253A%2522%252F%2522%257D%255D%252C%2522id%2522%253A%2522clz98jnn900052v6ibxu826s8%2522%252C%2522activeTabId%2522%253A%2522clz98jnn900042v6iwb7nw78m%2522%257D%252C%2522clz98jnn900032v6itir3k16r%2522%253A%257B%2522tabs%2522%253A%255D%252C%2522id%2522%253A%2522clz98jnn900032v6itir3k16r%2522%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Afalse%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D)
 
-:point_right: ![Example](<[https://github.com/selsa-inube/design-system-web/assets/45011420/82feaef8-0a9a-4cd5-ae76-ae1a65c82b5a](https://codesandbox.io/p/sandbox/20240705-flag-component-enhancement-yd5gwy?layout=%257B%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522rootPanelGroup%2522%253A%257B%2522direction%2522%253A%2522horizontal%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522id%2522%253A%2522ROOT_LAYOUT%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522UNKNOWN%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522cly9551fu00062v6ki3q7ue55%2522%252C%2522sizes%2522%253A%255B100%255D%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522EDITOR%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522EDITOR%2522%252C%2522id%2522%253A%2522cly9551ft00022v6kekj2g4sm%2522%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522direction%2522%253A%2522horizontal%2522%252C%2522id%2522%253A%2522SHELLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522SHELLS%2522%252C%2522id%2522%253A%2522cly9551ft00032v6ki1tlfk3f%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%257D%252C%257B%2522type%2522%253A%2522PANEL_GROUP%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522direction%2522%253A%2522vertical%2522%252C%2522id%2522%253A%2522DEVTOOLS%2522%252C%2522panels%2522%253A%255B%257B%2522type%2522%253A%2522PANEL%2522%252C%2522contentType%2522%253A%2522DEVTOOLS%2522%252C%2522id%2522%253A%2522cly9551fu00052v6kdl8ow0hy%2522%257D%255D%252C%2522sizes%2522%253A%255B100%255D%257D%255D%252C%2522sizes%2522%253A%255B50%252C50%255D%257D%252C%2522tabbedPanels%2522%253A%257B%2522cly9551ft00022v6kekj2g4sm%2522%253A%257B%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522cly9551ft00012v6kxhxpefvy%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522filepath%2522%253A%2522%252Fsrc%252Findex.tsx%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%252C%257B%2522id%2522%253A%2522cly95nwua00022v6k6uoj2d9e%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522initialSelections%2522%253A%255B%257B%2522startLineNumber%2522%253A15%252C%2522startColumn%2522%253A26%252C%2522endLineNumber%2522%253A15%252C%2522endColumn%2522%253A26%257D%255D%252C%2522filepath%2522%253A%2522%252Fsrc%252FApp.tsx%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%252C%257B%2522id%2522%253A%2522cly981ohg00022v6k271wx81x%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522FILE%2522%252C%2522initialSelections%2522%253A%255B%257B%2522startLineNumber%2522%253A4%252C%2522startColumn%2522%253A28%252C%2522endLineNumber%2522%253A4%252C%2522endColumn%2522%253A28%257D%255D%252C%2522filepath%2522%253A%2522%252Fsrc%252Fcontext%252FFlagContext.tsx%2522%252C%2522state%2522%253A%2522IDLE%2522%257D%255D%252C%2522id%2522%253A%2522cly9551ft00022v6kekj2g4sm%2522%252C%2522activeTabId%2522%253A%2522cly95nwua00022v6k6uoj2d9e%2522%257D%252C%2522cly9551fu00052v6kdl8ow0hy%2522%253A%257B%2522id%2522%253A%2522cly9551fu00052v6kdl8ow0hy%2522%252C%2522activeTabId%2522%253A%2522cly9888pd00392v6k6ld08eiu%2522%252C%2522tabs%2522%253A%255B%257B%2522id%2522%253A%2522cly9551ft00042v6kokqx56d5%2522%252C%2522mode%2522%253A%2522permanent%2522%252C%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%252C%2522path%2522%253A%2522%252F%2522%257D%252C%257B%2522type%2522%253A%2522DOCS%2522%252C%2522path%2522%253A%2522%252Feditors%252Fweb%252Fvscode-web%2522%252C%2522id%2522%253A%2522cly985ui0000a2v6kfbt35h2u%2522%252C%2522mode%2522%253A%2522permanent%2522%257D%252C%257B%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%252C%2522id%2522%253A%2522cly9866s000142v6knyaz2j2y%2522%252C%2522mode%2522%253A%2522permanent%2522%257D%252C%257B%2522type%2522%253A%2522UNASSIGNED_PORT%2522%252C%2522port%2522%253A0%252C%2522id%2522%253A%2522cly9888pd00392v6k6ld08eiu%2522%252C%2522mode%2522%253A%2522permanent%2522%257D%255D%257D%252C%2522cly9551ft00032v6ki1tlfk3f%2522%253A%257B%2522tabs%2522%253A%255B%255D%252C%2522id%2522%253A%2522cly9551ft00032v6ki1tlfk3f%2522%257D%257D%252C%2522showDevtools%2522%253Atrue%252C%2522showShells%2522%253Afalse%252C%2522showSidebar%2522%253Atrue%252C%2522sidebarPanelSize%2522%253A15%257D)>)
+You can view the live code example by clicking the image above.
