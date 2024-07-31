@@ -1,6 +1,6 @@
-import { BlanketController } from "./Controller/Blanket.Controller";
 import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { BlanketController } from "./Controller/Blanket.Controller";
 
 const blanketTokensConfig = {
   businessUnit: "inube",
@@ -16,7 +16,8 @@ const blanketTokensConfig = {
 };
 
 const blanket = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Blanket component serves as a backdrop overlay, often used to dim the rest of the interface when a modal, pop-up, or other content needs to be highlighted. This component enhances the visual focus on the content above it by providing a subtle, opaque layer.",
   example: BlanketController,
   name: "Blanket",
   frame: (
@@ -38,7 +39,8 @@ const blanket = {
   },
   propTypes: {
     children: {
-      description: "Whether the icon changes upon cursor hover",
+      description:
+        "The content to be displayed within the Blanket component. Typically, this includes modals, pop-ups, or other interactive elements. The children are positioned in the center of the Blanket, making them the focal point while the rest of the interface is dimmed.",
       type: "ReactElement",
     },
   },

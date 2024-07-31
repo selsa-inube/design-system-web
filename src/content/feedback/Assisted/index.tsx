@@ -54,7 +54,8 @@ const assistedTokensConfig = {
 };
 
 const assisted = {
-  description: "This component uses a filled primary icon for all applications",
+  description:
+    "The Assisted component is designed to guide users through a multi-step process, providing clear instructions and feedback at each step. It enhances user experience by visually representing progress and offering navigation controls.",
   example: AssistedController,
   name: "Assisted",
   frame: (
