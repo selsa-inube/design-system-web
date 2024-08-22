@@ -30,6 +30,7 @@ import { textarea } from "./inputs/Textarea";
 import { textfield } from "./inputs/Textfield";
 import { toggle } from "./inputs/Toggle";
 import { user } from "./data/User";
+import { menu } from "./navigation/Menu";
 
 interface Components {
   [key: string]: {
@@ -60,6 +61,7 @@ const components: Components = {
   link,
   nav,
   navLink,
+  menu,
   select,
   skeletonIcon,
   skeletonLine,

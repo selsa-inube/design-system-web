@@ -26,6 +26,7 @@
     "@inubekit/icon": "^1.9.0",
     "@inubekit/link": "^1.3.0",
     "@inubekit/nav": "^4.6.0",
+    "@inubekit/menu": "^1.2.2",
     "@inubekit/flag": "^4.6.0",
     "@inubekit/select": "^2.5.0",
     "@inubekit/skeleton": "^2.3.0",

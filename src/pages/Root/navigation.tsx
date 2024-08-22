@@ -164,6 +164,11 @@ const navigation = {
           label: "Nav",
           path: "/component/nav",
         },
+        menu: {
+          id: "Menu",
+          label: "Menu",
+          path: "/component/menu",
+        },
         tabs: {
           id: "Tabs",
           label: "Tabs",
