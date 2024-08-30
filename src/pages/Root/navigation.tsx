@@ -69,6 +69,11 @@ const navigation = {
           label: "SkeletonLine",
           path: "/component/skeletonLine",
         },
+        progressBar: {
+          id: "ProgressBar",
+          label: "ProgressBar",
+          path: "/component/progressBar",
+        },
       },
     },
     inputs: {

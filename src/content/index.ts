@@ -31,6 +31,7 @@ import { textfield } from "./inputs/Textfield";
 import { toggle } from "./inputs/Toggle";
 import { user } from "./data/User";
 import { menu } from "./navigation/Menu";
+import { progressBar } from "./feedback/ProgressBar";
 
 interface Components {
   [key: string]: {
@@ -67,6 +68,7 @@ const components: Components = {
   skeletonLine,
   spinner,
   stack,
+  progressBar,
   table,
   tabs,
   tag,
