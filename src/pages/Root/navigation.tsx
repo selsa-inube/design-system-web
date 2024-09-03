@@ -119,6 +119,11 @@ const navigation = {
           label: "Datefield",
           path: "/component/datefield",
         },
+        monthpicker: {
+          id: "Monthpicker",
+          label: "Monthpicker",
+          path: "/component/monthpicker",
+        },
       },
     },
     layouts: {

@@ -32,6 +32,7 @@ import { toggle } from "./inputs/Toggle";
 import { user } from "./data/User";
 import { menu } from "./navigation/Menu";
 import { progressBar } from "./feedback/ProgressBar";
+import { monthpicker } from "./inputs/Monthpicker";
 
 interface Components {
   [key: string]: {
@@ -63,6 +64,7 @@ const components: Components = {
   nav,
   navLink,
   menu,
+  monthpicker,
   select,
   skeletonIcon,
   skeletonLine,
