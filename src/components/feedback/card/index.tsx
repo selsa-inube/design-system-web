@@ -2,38 +2,39 @@ import { StyledLink } from "./styles";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 
-interface CardProps {
+interface ICard {
   path: string;
-  URLimg?: string;
   title?: string;
   description?: string;
 }
 
-export const Card = (props: CardProps) => {
-  const { path, URLimg, title, description } = props;
+const Card = (props: ICard) => {
+  const { path, title, description } = props;
 
   return (
-    <Stack direction="column" alignItems="center" width="fit-content">
-      <StyledLink to={path}>
-        <Stack direction="column" width="-webkit-fill-available">
-          <Stack
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-            height="150px"
-          >
-            <img src={URLimg} />
-          </Stack>
-          <Text as="h2" margin="0 0 8px 0">
-            {title}
-          </Text>
-        </Stack>
-        <Stack direction="column" width="-webkit-fill-available">
-          <Text appearance="gray" size="medium" padding="0 0 8px 0">
+    <StyledLink to={path}>
+      <Stack
+        direction="column"
+        width="-webkit-fill-available"
+        height="100%"
+        justifyContent="space-between"
+      >
+        <Stack
+          alignItems="center"
+          justifyContent="center"
+          height="170px"
+        ></Stack>
+
+        <Stack direction="column" gap="6px">
+          <Text as="h2">{title}</Text>
+          <Text appearance="gray" size="medium">
             {description}
           </Text>
         </Stack>
-      </StyledLink>
-    </Stack>
+      </Stack>
+    </StyledLink>
   );
 };
+
+export { Card };
+export type { ICard };

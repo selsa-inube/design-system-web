@@ -1,18 +1,18 @@
-import { Stack } from "@inubekit/stack";
-import { Card } from "../card";
+import { Card, ICard } from "../card";
+import { Grid } from "@inubekit/grid";
 
-const cards = [
-  {
-    path: "avatar",
-    title: "Avatar",
-    description:
-      "The Avatar component is used to display a user's profile picture.",
-  },
-];
+interface ICards {
+  cards: ICard[];
+}
 
-export const CardsComponents = () => {
+const Cards = (props: ICards) => {
+  const { cards } = props;
   return (
-    <Stack margin="32px" gap="8px">
+    <Grid
+      templateColumns="repeat(auto-fit, minmax(250px, 1fr))"
+      gap="32px"
+      autoRows="minmax(150px, auto)"
+    >
       {cards.map((card) => (
         <Card
           key={card.title}
@@ -21,6 +21,8 @@ export const CardsComponents = () => {
           description={card.description}
         />
       ))}
-    </Stack>
+    </Grid>
   );
 };
+
+export { Cards };
