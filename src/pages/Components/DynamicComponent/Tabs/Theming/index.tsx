@@ -4,9 +4,13 @@ import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { tokenDescription } from "../../../../../content/tokens";
-import { StyledTableWrapper, StyledTokenInfoContainer } from "./styles";
-import { useFlag } from "@inubekit/flag";
-import { useEffect } from "react";
+import {
+  StyledFlagWrapper,
+  StyledTableWrapper,
+  StyledTokenInfoContainer,
+} from "./styles";
+import { Icon } from "@inubekit/icon";
+import { MdOutlineHelpOutline } from "react-icons/md";
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -14,7 +18,6 @@ const capitalizeFirstLetter = (string: string) => {
 
 function Theming(props: any) {
   const { component } = props;
-  const { addFlag } = useFlag();
 
   let tokensArray: any[] = [];
   let tokenStructure: string[] = [];
@@ -61,21 +64,6 @@ function Theming(props: any) {
 
   const dependencies =
     component?.dependencies && Object.values(component.dependencies);
-
-  useEffect(() => {
-    if (dependencies) {
-      dependencies.forEach(
-        (value: { component: string; description: string }) => {
-          addFlag({
-            title: "Dependencies",
-            description: `${value.component}: ${value.description}`,
-            appearance: "help",
-            duration: 5000,
-          });
-        },
-      );
-    }
-  }, [dependencies, addFlag]);
 
   return (
     <Grid
@@ -133,7 +121,37 @@ function Theming(props: any) {
             <Table headers={headers} data={data} />
           </StyledTableWrapper>
         </>
-      ) : null}
+      ) : (
+        dependencies &&
+        dependencies.map(
+          (value: { component: string; description: string }) => (
+            <StyledFlagWrapper key={value.component + value.description}>
+              <Stack justifyContent="space-between" padding="16px">
+                <Stack alignItems="center" gap="16px" height="fit-content">
+                  <Icon
+                    size="24px"
+                    appearance="help"
+                    icon={<MdOutlineHelpOutline />}
+                  />
+                  <Stack direction="column" gap="6px">
+                    <Text
+                      type="label"
+                      size="large"
+                      textAlign="start"
+                      weight="bold"
+                    >
+                      Dependencies
+                    </Text>
+                    <Text size="medium" appearance="gray" textAlign="start">
+                      {value.component}: {value.description}
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Stack>
+            </StyledFlagWrapper>
+          ),
+        )
+      )}
     </Grid>
   );
 }

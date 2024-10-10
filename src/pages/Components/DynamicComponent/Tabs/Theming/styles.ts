@@ -1,3 +1,4 @@
+import { inube } from "@inubekit/foundations";
 import { TableTokens } from "@inubekit/table";
 import styled from "styled-components";
 
@@ -25,12 +26,12 @@ const StyledTableWrapper = styled.div`
 `;
 
 const StyledFlagWrapper = styled.div`
-  & > div {
-    display: flex;
-    & > div > figure {
-      display: none;
-    }
-  }
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 4px;
+  background-color: ${({ theme }) =>
+    theme?.palette?.purple?.P50 || inube.palette.purple.P50};
 `;
 
 export { StyledTokenInfoContainer, StyledTableWrapper, StyledFlagWrapper };
