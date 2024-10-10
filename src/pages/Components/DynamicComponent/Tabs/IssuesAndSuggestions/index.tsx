@@ -8,9 +8,11 @@ import { useState } from "react";
 import { createGithubIssue } from "@pages/services/createGithubIssue";
 import { StyledTextareaContainer } from "./styles";
 import { Textfield } from "@inubekit/input";
+import { useFlag } from "@inubekit/flag";
 
 function IssuesAndSuggestions() {
   const [form, setForm] = useState({ title: "", value: "", status: "" });
+  const { addFlag } = useFlag();
 
   const onChange = (e: { target: { name: string; value: any } }) => {
     setForm({ ...form, [e.target.name]: e.target.value, status: "pending" });
@@ -20,8 +22,22 @@ function IssuesAndSuggestions() {
     const result = await createGithubIssue(form.title, form.value);
     if (result.success) {
       setForm({ title: "", value: "", status: "success" });
+      addFlag({
+        title: "Issue submitted successfully",
+        description:
+          "Your issue has been submitted and will be reviewed shortly.",
+        appearance: "success",
+        duration: 5000,
+      });
     } else {
       setForm({ ...form, status: "error" });
+      addFlag({
+        title: "Submission failed",
+        description:
+          "There was an issue submitting your request. Please try again.",
+        appearance: "danger",
+        duration: 5000,
+      });
     }
   };
 
