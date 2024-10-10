@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Textfield } from "@inubekit/input";
 import { Toggle } from "@inubekit/toggle";
-import { IOptionItem, Select } from "@inubekit/select";
+import { IOption, Select } from "@inubekit/select";
 import { Text } from "@inubekit/text";
 import { StyledSelectContainer, StyledTextfieldContainer } from "./styles";
 
@@ -9,7 +9,7 @@ const renderInput = (
   propName: string,
   type: string,
   value: string | number | boolean | undefined,
-  options: IOptionItem[],
+  options: IOption[],
   handlePropChange: (propName: string, newValue: string | boolean) => void,
 ) => {
   if (options && options.length > 0) {
