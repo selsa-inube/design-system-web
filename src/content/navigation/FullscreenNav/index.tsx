@@ -1,4 +1,4 @@
-import { FullscreenNav } from "@inubekit/fullscreennav";
+import { FullscreenNav, FullscreenNavTokens } from "@inubekit/fullscreennav";
 import {
   MdVpnKey,
   MdMeetingRoom,
@@ -8,7 +8,6 @@ import {
   MdAccountBalanceWallet,
   MdAccountBalance,
 } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const fullscreenNavTokensConfig = {
@@ -133,7 +132,7 @@ const fullscreenNav = {
     },
   },
   tokens: buildTokenDescriptions(
-    inube.fullscreenNav,
+    FullscreenNavTokens,
     fullscreenNavTokensConfig,
   ),
 };

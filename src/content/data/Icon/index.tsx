@@ -1,6 +1,5 @@
-import { Icon } from "@inubekit/icon";
+import { Icon, IconTokens } from "@inubekit/icon";
 import { MdAdd } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const iconTokensConfig = {
@@ -121,7 +120,7 @@ const icon = {
       type: "string",
     },
   },
-  tokens: buildTokenDescriptions(inube.icon, iconTokensConfig),
+  tokens: buildTokenDescriptions(IconTokens, iconTokensConfig),
 };
 
 export { icon };

@@ -1,6 +1,6 @@
 import { ToggleController } from "./Controller/Toggle.Controller";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { InputTokens } from "@inubekit/input";
 
 const toggleTokensConfig = {
   businessUnit: "inube",
@@ -109,7 +109,7 @@ const toggle = {
       type: "string",
     },
   },
-  tokens: buildTokenDescriptions(inube.toggle, toggleTokensConfig),
+  tokens: buildTokenDescriptions(InputTokens, toggleTokensConfig),
 };
 
 export { toggle };

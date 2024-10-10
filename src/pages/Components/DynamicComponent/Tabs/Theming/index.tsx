@@ -4,13 +4,9 @@ import { Grid } from "@inubekit/grid";
 import { Stack } from "@inubekit/stack";
 import { Text } from "@inubekit/text";
 import { tokenDescription } from "../../../../../content/tokens";
-import {
-  StyledFlagWrapper,
-  StyledTableWrapper,
-  StyledTokenInfoContainer,
-} from "./styles";
-import { Flag } from "@inubekit/flag";
-import { MdHelpOutline } from "react-icons/md";
+import { StyledTableWrapper, StyledTokenInfoContainer } from "./styles";
+import { useFlag } from "@inubekit/flag";
+import { useEffect } from "react";
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -18,6 +14,7 @@ const capitalizeFirstLetter = (string: string) => {
 
 function Theming(props: any) {
   const { component } = props;
+  const { addFlag } = useFlag();
 
   let tokensArray: any[] = [];
   let tokenStructure: string[] = [];
@@ -64,6 +61,21 @@ function Theming(props: any) {
 
   const dependencies =
     component?.dependencies && Object.values(component.dependencies);
+
+  useEffect(() => {
+    if (dependencies) {
+      dependencies.forEach(
+        (value: { component: string; description: string }) => {
+          addFlag({
+            title: "Dependencies",
+            description: `${value.component}: ${value.description}`,
+            appearance: "help",
+            duration: 5000,
+          });
+        },
+      );
+    }
+  }, [dependencies, addFlag]);
 
   return (
     <Grid
@@ -121,24 +133,7 @@ function Theming(props: any) {
             <Table headers={headers} data={data} />
           </StyledTableWrapper>
         </>
-      ) : (
-        dependencies &&
-        dependencies.map(
-          (value: { component: string; description: string }) => (
-            <StyledFlagWrapper key={value.component + value.description}>
-              <Flag
-                icon={<MdHelpOutline />}
-                title="Dependencies"
-                description={`${value.component}: ${value.description}`}
-                appearance="help"
-                duration={1}
-                closeFlag={() => {}}
-                isMessageResponsive
-              />
-            </StyledFlagWrapper>
-          ),
-        )
-      )}
+      ) : null}
     </Grid>
   );
 }

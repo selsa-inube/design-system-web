@@ -1,4 +1,4 @@
-import { inube } from "@inubekit/foundations";
+import { TextTokens } from "@inubekit/text";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { TextController } from "./Controller/Text.Controller";
 
@@ -152,7 +152,7 @@ const text = {
       type: "boolean",
     },
   },
-  tokens: buildTokenDescriptions(inube.text, textTokensConfig),
+  tokens: buildTokenDescriptions(TextTokens, textTokensConfig),
 };
 
 export { text };

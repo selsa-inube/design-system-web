@@ -1,5 +1,4 @@
-import { Breadcrumbs } from "@inubekit/breadcrumbs";
-import { inube } from "@inubekit/foundations";
+import { Breadcrumbs, BreadcrumbsTokens } from "@inubekit/breadcrumbs";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const breadcrumbsTokensConfig = {
@@ -80,7 +79,7 @@ const breadcrumbs = {
       type: "IBreadcrumbsRoute[]",
     },
   },
-  tokens: buildTokenDescriptions(inube.breadcrumbs, breadcrumbsTokensConfig),
+  tokens: buildTokenDescriptions(BreadcrumbsTokens, breadcrumbsTokensConfig),
 };
 
 export { breadcrumbs };

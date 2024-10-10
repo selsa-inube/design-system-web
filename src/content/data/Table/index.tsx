@@ -1,6 +1,5 @@
-import { Table } from "@inubekit/table";
+import { Table, TableTokens } from "@inubekit/table";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
-import { inube } from "@inubekit/foundations";
 
 const tableTokensConfig = {
   businessUnit: "inube",
@@ -80,7 +79,7 @@ const table = {
       type: "React.ReactNode",
     },
   },
-  tokens: buildTokenDescriptions(inube.table, tableTokensConfig),
+  tokens: buildTokenDescriptions(TableTokens, tableTokensConfig),
   dependencies: {},
 };
 

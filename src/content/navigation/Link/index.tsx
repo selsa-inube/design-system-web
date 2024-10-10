@@ -1,4 +1,4 @@
-import { inube } from "@inubekit/foundations";
+import { LinkTokens } from "@inubekit/link";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { LinkController } from "./Controller/Link.Controller";
 
@@ -81,7 +81,7 @@ const link = {
       defaultValue: false,
     },
   },
-  tokens: buildTokenDescriptions(inube.link, linkTokensConfig),
+  tokens: buildTokenDescriptions(LinkTokens, linkTokensConfig),
 };
 
 export { link };

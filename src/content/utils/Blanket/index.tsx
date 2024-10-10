@@ -1,4 +1,4 @@
-import { inube } from "@inubekit/foundations";
+import { BlanketTokens } from "@inubekit/blanket";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { BlanketController } from "./Controller/Blanket.Controller";
 
@@ -44,7 +44,7 @@ const blanket = {
       type: "ReactElement",
     },
   },
-  tokens: buildTokenDescriptions(inube.blanket, blanketTokensConfig),
+  tokens: buildTokenDescriptions(BlanketTokens, blanketTokensConfig),
 };
 
 export { blanket };

@@ -10,7 +10,7 @@ const StyledSquare = styled.div`
   padding: 3px;
   height: 50px;
   width: 70px;
-  color: ${inube.text.light.content.color.regular};
+  color: ${inube.palette.neutral.N200};
 `;
 
 export { StyledSquare };

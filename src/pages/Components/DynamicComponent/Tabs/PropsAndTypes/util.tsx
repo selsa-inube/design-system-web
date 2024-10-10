@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Textfield } from "@inubekit/textfield";
+import { Textfield } from "@inubekit/input";
 import { Toggle } from "@inubekit/toggle";
 import { IOptionItem, Select } from "@inubekit/select";
 import { Text } from "@inubekit/text";
@@ -9,23 +9,20 @@ const renderInput = (
   propName: string,
   type: string,
   value: string | number | boolean | undefined,
-  options: {
-    map: (arg0: (option: any) => { label: any; value: any }) => IOptionItem[];
-  },
-  handlePropChange: (arg0: any, arg1: string | boolean) => void,
+  options: IOptionItem[],
+  handlePropChange: (propName: string, newValue: string | boolean) => void,
 ) => {
-  if (options) {
+  if (options && options.length > 0) {
     return (
       <StyledSelectContainer>
         <Select
           value={value as string}
           options={options.map((option) => ({
+            id: option.id,
             label: option.label,
-            value: option.id,
+            value: option.value,
           }))}
-          onChange={(e) =>
-            handlePropChange(propName, e.target.innerText.toLowerCase())
-          }
+          onChange={(name, newValue) => handlePropChange(name, newValue)}
           size="compact"
           id={`select-${propName}`}
           name={`select-${propName}`}
@@ -39,9 +36,6 @@ const renderInput = (
         onChange={(e) => handlePropChange(propName, e.target.checked)}
         id={`toggle-${propName}`}
         size="large"
-        label={""}
-        margin={""}
-        padding={""}
       />
     );
   } else if (type === "function") {

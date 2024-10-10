@@ -1,6 +1,6 @@
 import { TextareaController } from "./Controller/Textarea.Controller";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { InputTokens } from "@inubekit/input";
 
 const inputTokensConfig = {
   businessUnit: "inube",
@@ -119,7 +119,7 @@ const textarea = {
       type: "number",
     },
   },
-  tokens: buildTokenDescriptions(inube.input, inputTokensConfig),
+  tokens: buildTokenDescriptions(InputTokens, inputTokensConfig),
 };
 
 export { textarea };

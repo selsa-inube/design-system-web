@@ -1,4 +1,4 @@
-import { inube } from "@inubekit/foundations";
+import { ProgressBarTokens } from "@inubekit/progressbar";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { ProgressBarController } from "./Controller/ProgressBar.Controller";
 
@@ -74,7 +74,7 @@ const progressBar = {
       type: "function",
     },
   },
-  tokens: buildTokenDescriptions(inube.progressbar, progressBarTokensConfig),
+  tokens: buildTokenDescriptions(ProgressBarTokens, progressBarTokensConfig),
 };
 
 export { progressBar };

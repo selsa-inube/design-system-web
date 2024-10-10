@@ -1,4 +1,4 @@
-import { inube } from "@inubekit/foundations";
+import { TagTokens } from "@inubekit/tag";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { TagController } from "./Controller/Tag.Controller";
 
@@ -84,7 +84,7 @@ const tag = {
       ],
     },
   },
-  tokens: buildTokenDescriptions(inube.tag, tagTokensConfig),
+  tokens: buildTokenDescriptions(TagTokens, tagTokensConfig),
 };
 
 export { tag };

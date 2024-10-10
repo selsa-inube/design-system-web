@@ -1,6 +1,6 @@
+import { DividerTokens } from "@inubekit/divider";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { DividerController } from "./Controller/Divider.Controller";
-import { inube } from "@inubekit/foundations";
 
 const dividerTokensConfig = {
   businessUnit: "inube",
@@ -45,7 +45,7 @@ const divider = {
       default: false,
     },
   },
-  tokens: buildTokenDescriptions(inube.divider, dividerTokensConfig),
+  tokens: buildTokenDescriptions(DividerTokens, dividerTokensConfig),
 };
 
 export { divider };

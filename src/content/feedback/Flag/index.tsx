@@ -1,21 +1,5 @@
 import { MdWarning } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
-import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { FlagController } from "./Controller/Flag.Controller";
-
-const flagTokensConfig = {
-  businessUnit: "inube",
-  component: "flag",
-  include: [
-    { id: "businessUnit", order: 1 },
-    { id: "component", order: 2 },
-    { id: "appearance", order: 3 },
-    { id: "block", order: 4 },
-    { id: "element", order: 5 },
-    { id: "token", order: 6 },
-    { id: "reference", order: 7 },
-  ],
-};
 
 const flag = {
   description:
@@ -89,7 +73,6 @@ const flag = {
       type: "function",
     },
   },
-  tokens: buildTokenDescriptions(inube.sectionMessage, flagTokensConfig),
 };
 
 export { flag };

@@ -1,6 +1,5 @@
-import { NavLink } from "@inubekit/nav";
+import { NavLink, NavTokens } from "@inubekit/nav";
 import { MdHouse } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const navLinkTokensConfig = {
@@ -56,7 +55,7 @@ const navLink = {
         "shall constitute the content to be displayed within the MenuLink-component and is required",
     },
   },
-  tokens: buildTokenDescriptions(inube.nav.link, navLinkTokensConfig),
+  tokens: buildTokenDescriptions(NavTokens.link, navLinkTokensConfig),
 };
 
 export { navLink };
