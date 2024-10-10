@@ -110,7 +110,7 @@ const icon = {
 
     cursorHover: {
       description:
-        "Determines if the icon visually changes when the user hovers the cursor over it, indicating interactivity. This prop is useful for improving user experience by making it clear which elements are actionable.",
+        "Determines whether the icon changes visually when the cursor hovers directly over it. This indicates interactivity and enhances user experience by making it clear that the element is actionable. When set to `true`, the icon visually responds to the cursor hover, typically by changing color or applying a hover effect. When `false`, the icon remains static.",
       type: "boolean",
       defaultValue: false,
       options: [true, false],
@@ -118,7 +118,7 @@ const icon = {
 
     parentHover: {
       description:
-        "Indicates whether the icon changes appearance when its parent element is hovered over. This is often used in scenarios where the icon is part of a larger clickable region or when hover effects should extend beyond the icon itself.",
+        "Indicates whether the icon changes its appearance when the parent element is hovered over. This prop is useful for scenarios where the icon is part of a larger clickable area or the hover effect is triggered by the parent, not the icon itself. When set to `true`, the icon will visually change as if it is being hovered, even though the hover is on the parent. This controlled behavior can be combined with `cursorHover` for nuanced hover interactions.",
       type: "boolean",
       defaultValue: false,
       options: [true, false],
@@ -140,7 +140,7 @@ const icon = {
 
     spacing: {
       description:
-        "Controls the amount of padding around the icon, allowing you to adjust the space between the icon and surrounding elements. This is useful for aligning the icon within button groups or ensuring consistent spacing across different layouts.",
+        "Controls the padding around the icon, adjusting the space between the icon and surrounding elements. This helps in aligning the icon within button groups or ensuring consistent layout spacing. Available options include:\n- **Narrow**: Minimal padding for compact layouts.\n- **Compact**: Moderate padding for balanced spacing.\n- **Wide**: Maximum padding, typically used for standalone icons.",
       type: "IIconSpacing",
       options: [
         {
@@ -160,7 +160,7 @@ const icon = {
 
     variant: {
       description:
-        "Specifies the visual style of the icon, with options to modify its background or outline. 'Filled' gives the icon a solid background color, 'outlined' applies a border without a background, and 'none' applies no additional styling beyond the icon's inherent shape.",
+        "Defines the visual style of the icon by modifying its background or outline. The available styles include:\n- **Filled**: Solid background for emphasis.\n- **Outlined**: Only a border is applied without a background, offering subtle emphasis.\n- **None**: No additional styling is applied beyond the icon's inherent shape.",
       type: "IIconVariant",
       options: [
         { id: "filled", label: "Filled - Solid background for emphasis" },
@@ -177,7 +177,7 @@ const icon = {
 
     shape: {
       description:
-        "Defines the shape of the icon container. The shape can be set to either 'circle' or 'rectangle', affecting the icon's overall look. A circular icon is often used for profile pictures or actions that need emphasis, while a rectangular icon is used for standard buttons or tooltips.",
+        "Defines the shape of the icon's container. The shape can either be:\n- **Circle**: A rounded shape, often used for emphasis.\n- **Rectangle**: A standard shape, suitable for buttons or inline elements.",
       type: "IIconShape",
       options: [
         { id: "circle", label: "Circle - Rounded, commonly used for emphasis" },
@@ -191,13 +191,13 @@ const icon = {
 
     onClick: {
       description:
-        "Callback function triggered when the icon is clicked. This is useful for handling user interactions, such as opening modals, navigating, or performing specific actions when the icon is clicked.",
+        "Callback function triggered when the icon is clicked. This allows the icon to be interactive, often used for actions such as opening modals, navigating to new views, or performing specific tasks when clicked.",
       type: "(e: React.MouseEvent) => void",
     },
 
     size: {
       description:
-        "Specifies the size of the icon. This prop accepts a string value (typically in pixels) or a number. Adjust the size to match the surrounding elements or to make the icon more prominent.",
+        "Specifies the size of the icon in pixels. This prop accepts a string value (like '24px') or a number. Adjust the size based on the context in which the icon is used, for instance, making it larger in buttons or smaller in toolbar icons.",
       type: "string",
       defaultValue: "24px",
     },
