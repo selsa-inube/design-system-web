@@ -1,6 +1,7 @@
 import { Icon, IconTokens } from "@inubekit/icon";
 import { MdAdd } from "react-icons/md";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { Text } from "@inubekit/text";
 
 const iconTokensConfig = {
   businessUnit: "inube",
@@ -51,8 +52,49 @@ const icon = {
   },
   propTypes: {
     appearance: {
-      description:
-        "Determines the color scheme and overall style of the icon. Choose from predefined themes such as 'primary', 'success', 'warning', 'danger', 'help', 'dark', 'gray', and 'light'.",
+      description: (
+        <>
+          <Text
+            appearance="gray"
+            size="medium"
+            children="Defines the overall style and color theme of the icon. The appearance prop modifies the color scheme of the icon to match common design themes. Available options include:"
+          />
+          <ul>
+            <li>
+              <strong>Primary</strong>: Standard color scheme for general
+              actions.
+            </li>
+            <li>
+              <strong>Success</strong>: Indicates successful operations, often
+              used for confirmation actions.
+            </li>
+            <li>
+              <strong>Warning</strong>: Represents caution or potential issues,
+              usually to grab the user's attention.
+            </li>
+            <li>
+              <strong>Danger</strong>: Highlights critical actions, commonly
+              associated with deletions or errors.
+            </li>
+            <li>
+              <strong>Help</strong>: Provides assistance or additional
+              information to the user.
+            </li>
+            <li>
+              <strong>Dark</strong>: A darker, neutral color scheme for more
+              subdued elements or actions.
+            </li>
+            <li>
+              <strong>Gray</strong>: Used for secondary or inactive elements,
+              implying lower importance.
+            </li>
+            <li>
+              <strong>Light</strong>: For lighter, less prominent icons, often
+              used in background elements.
+            </li>
+          </ul>
+        </>
+      ),
       type: "IIconAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -65,59 +107,99 @@ const icon = {
         { id: "light", label: "Light" },
       ],
     },
+
     cursorHover: {
       description:
-        "Specifies whether the icon's appearance changes when the cursor hovers over it, indicating interactivity.",
+        "Determines if the icon visually changes when the user hovers the cursor over it, indicating interactivity. This prop is useful for improving user experience by making it clear which elements are actionable.",
+      type: "boolean",
+      defaultValue: false,
+      options: [true, false],
     },
+
     parentHover: {
       description:
-        "Determines if the icon's appearance changes when its parent element is hovered over, often used to enhance user experience.",
+        "Indicates whether the icon changes appearance when its parent element is hovered over. This is often used in scenarios where the icon is part of a larger clickable region or when hover effects should extend beyond the icon itself.",
+      type: "boolean",
+      defaultValue: false,
+      options: [true, false],
     },
+
     icon: {
       description:
-        "The graphical element displayed within the Icon component. Typically an SVG or a React icon component like those from 'react-icons'.",
+        "The graphical element to be displayed within the Icon component. This is typically an SVG icon or a React component imported from libraries such as 'react-icons'. It visually represents the action or state associated with the icon.",
+      type: "React.ReactNode",
     },
+
     disabled: {
       description:
-        "Indicates whether the icon is in a disabled state, preventing interaction and applying a dimmed visual style.",
+        "Marks the icon as non-interactive by applying a 'disabled' state. In this state, the icon is visually dimmed and user interactions such as clicking are prevented.",
+      type: "boolean",
+      defaultValue: false,
+      options: [true, false],
     },
+
     spacing: {
       description:
-        "Controls the padding around the icon. Options include 'none', 'compact', and 'wide' to adjust spacing according to design needs.",
+        "Controls the amount of padding around the icon, allowing you to adjust the space between the icon and surrounding elements. This is useful for aligning the icon within button groups or ensuring consistent spacing across different layouts.",
       type: "IIconSpacing",
       options: [
-        { id: "none", label: "None" },
-        { id: "compact", label: "Compact" },
-        { id: "wide", label: "Wide" },
+        {
+          id: "narrow",
+          label: "Narrow - Minimal padding, used when space is limited",
+        },
+        {
+          id: "compact",
+          label: "Compact - Provides a moderate amount of padding",
+        },
+        {
+          id: "wide",
+          label: "Wide - Maximum padding, ideal for standalone icons",
+        },
       ],
     },
+
     variant: {
       description:
-        "Defines the style of the icon. 'Filled' provides a solid background, 'outlined' has a border without a background, and 'none' is minimalistic with no additional styling.",
+        "Specifies the visual style of the icon, with options to modify its background or outline. 'Filled' gives the icon a solid background color, 'outlined' applies a border without a background, and 'none' applies no additional styling beyond the icon's inherent shape.",
       type: "IIconVariant",
       options: [
-        { id: "none", label: "None" },
-        { id: "outlined", label: "Outlined" },
-        { id: "filled", label: "Filled" },
+        { id: "filled", label: "Filled - Solid background for emphasis" },
+        {
+          id: "outlined",
+          label: "Outlined - Border around the icon for subtle emphasis",
+        },
+        {
+          id: "none",
+          label: "None - No background or border, displaying the icon as-is",
+        },
       ],
     },
+
     shape: {
       description:
-        "Sets the shape of the icon, which can be 'circle' or 'rectangle'. This affects the icon's border-radius and overall silhouette.",
+        "Defines the shape of the icon container. The shape can be set to either 'circle' or 'rectangle', affecting the icon's overall look. A circular icon is often used for profile pictures or actions that need emphasis, while a rectangular icon is used for standard buttons or tooltips.",
       type: "IIconShape",
       options: [
-        { id: "circle", label: "Circle" },
-        { id: "rectangle", label: "Rectangle" },
+        { id: "circle", label: "Circle - Rounded, commonly used for emphasis" },
+        {
+          id: "rectangle",
+          label:
+            "Rectangle - Standard shape, suitable for buttons or inline elements",
+        },
       ],
     },
+
     onClick: {
       description:
-        "A function that is called when the icon is clicked. Useful for triggering actions or events.",
+        "Callback function triggered when the icon is clicked. This is useful for handling user interactions, such as opening modals, navigating, or performing specific actions when the icon is clicked.",
+      type: "(e: React.MouseEvent) => void",
     },
+
     size: {
       description:
-        "Specifies the size of the icon in pixels. This can be a number or a string representing the size in pixels, such as '24px'.",
+        "Specifies the size of the icon. This prop accepts a string value (typically in pixels) or a number. Adjust the size to match the surrounding elements or to make the icon more prominent.",
       type: "string",
+      defaultValue: "24px",
     },
   },
   tokens: buildTokenDescriptions(IconTokens, iconTokensConfig),

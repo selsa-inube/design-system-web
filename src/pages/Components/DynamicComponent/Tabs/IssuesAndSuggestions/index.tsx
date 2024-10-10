@@ -21,7 +21,6 @@ function IssuesAndSuggestions() {
   const handleSubmit = async () => {
     const result = await createGithubIssue(form.title, form.value);
     if (result.success) {
-      setForm({ title: "", value: "", status: "success" });
       addFlag({
         title: "Issue submitted successfully",
         description:
@@ -29,6 +28,7 @@ function IssuesAndSuggestions() {
         appearance: "success",
         duration: 5000,
       });
+      setForm({ title: "", value: "", status: "success" });
     } else {
       setForm({ ...form, status: "error" });
       addFlag({

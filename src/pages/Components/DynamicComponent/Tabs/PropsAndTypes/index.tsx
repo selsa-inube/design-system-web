@@ -9,7 +9,6 @@ import {
   StyledTokenInfoContainer,
 } from "./styles";
 import { Accordion } from "@components/feedback/Accordion";
-
 import { Icon } from "@inubekit/icon";
 import { Tag } from "@inubekit/tag";
 import { MdOpenInNew, MdClear } from "react-icons/md";
@@ -41,7 +40,10 @@ function PropsAndTypes({
   const type = propType?.type || typeof defaultValue;
 
   const description = propType?.description || "-";
-  const isDescriptionLong = description.length > 105;
+  const isDescriptionLong =
+    typeof description === "string"
+      ? description.length > 105
+      : description.props?.children?.[0].props?.children?.length > 105;
 
   const handleIconClick = () => {
     setIsBlanketVisible(true);
@@ -49,6 +51,10 @@ function PropsAndTypes({
 
   const handleBlanketClose = () => {
     setIsBlanketVisible(false);
+  };
+
+  const truncateDescription = (desc: string, limit: number) => {
+    return desc.length > limit ? `${desc.slice(0, limit)}...` : desc;
   };
 
   return (
@@ -67,7 +73,14 @@ function PropsAndTypes({
             <Text
               appearance="gray"
               size="medium"
-              children={description.slice(0, 110)}
+              children={
+                typeof description === "string"
+                  ? truncateDescription(description, 148)
+                  : truncateDescription(
+                      description.props.children[0].props.children,
+                      148,
+                    )
+              }
             />
           </StyledTokenInfoContainer>
           <StyledTokenInfoContainer
