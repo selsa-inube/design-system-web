@@ -70,13 +70,15 @@ function PropsAndTypes({
               children={description.slice(0, 110)}
             />
           </StyledTokenInfoContainer>
-          <StyledTokenInfoContainer>
+          <StyledTokenInfoContainer
+            $isDescriptionLong={isDescriptionLong}
+            onClick={isDescriptionLong ? handleIconClick : undefined}
+          >
             <Text type="label" children="Details" weight="bold" />
             <Stack alignItems="center">
               <Icon
                 appearance={isDescriptionLong ? "primary" : "gray"}
                 icon={<MdOpenInNew />}
-                onClick={isDescriptionLong ? handleIconClick : undefined}
               />
               <Tag
                 label="View"

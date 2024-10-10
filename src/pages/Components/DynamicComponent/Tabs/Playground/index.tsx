@@ -32,21 +32,22 @@ function Playground({ component }: IPlayground) {
         <Text type="title" size="medium" children="Playground" />
         {component && component.frame && component.frame}
       </Stack>
-
-      <Stack direction="column" gap="32px">
-        <Text type="title" size="medium" children="Interface" />
-        <Stack direction="column" gap="16px">
-          {propKeys.map((key) => (
-            <PropsAndTypes
-              key={key}
-              component={component}
-              modifiedProps={modifiedProps}
-              title={key}
-              handlePropChange={handlePropChange}
-            />
-          ))}
+      {propKeys && propKeys.length > 0 && (
+        <Stack direction="column" gap="32px">
+          <Text type="title" size="medium" children="Interface" />
+          <Stack direction="column" gap="16px">
+            {propKeys.map((key) => (
+              <PropsAndTypes
+                key={key}
+                component={component}
+                modifiedProps={modifiedProps}
+                title={key}
+                handlePropChange={handlePropChange}
+              />
+            ))}
+          </Stack>
         </Stack>
-      </Stack>
+      )}
     </Grid>
   );
 }

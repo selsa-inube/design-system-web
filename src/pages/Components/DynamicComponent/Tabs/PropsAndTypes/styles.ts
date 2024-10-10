@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { inube } from "@inubekit/foundations";
 
+interface IStyledTokenInfoContainer {
+  $isDescriptionLong?: boolean;
+}
+
 const StyledContainerProperties = styled.div`
   border-radius: 8px;
   border-width: 1px;
@@ -45,7 +49,7 @@ const StyledComponentProperties = styled.div`
   }
 `;
 
-const StyledTokenInfoContainer = styled.div`
+const StyledTokenInfoContainer = styled.div<IStyledTokenInfoContainer>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,6 +61,8 @@ const StyledTokenInfoContainer = styled.div`
   border-radius: 8px;
   max-width: 722px;
   height: 52px;
+  cursor: ${({ $isDescriptionLong }) =>
+    $isDescriptionLong ? "pointer" : "default"};
 `;
 
 const StyledSelectContainer = styled.div`

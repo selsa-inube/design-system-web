@@ -20,12 +20,12 @@ const avatar = {
   ),
   props: {},
   propTypes: {
-    icon: {
+    onClick: {
       description:
-        "Icon to be displayed inside the avatar component, using icons from 'react-icons/md'.",
-      type: "ReactElement",
+        "Function to handle the click event on the avatar component.",
+      type: "function",
       table: {
-        defaultValue: { summary: "MdPersonOutline" },
+        defaultValue: { summary: "() => {}" },
       },
     },
   },

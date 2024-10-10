@@ -22,7 +22,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "typeRoots": ["node_modules/@types"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
   },
   "include": ["src", "api"],
   "references": [{ "path": "./tsconfig.node.json" }]
