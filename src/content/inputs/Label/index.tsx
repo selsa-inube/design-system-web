@@ -1,6 +1,6 @@
 import { LabelController } from "./Controller/Label.Controller";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { LabelTokens } from "@inubekit/label";
 
 const labelTokensConfig = {
   businessUnit: "inube",
@@ -91,7 +91,7 @@ const label = {
       type: "string",
     },
   },
-  tokens: buildTokenDescriptions(inube.label, labelTokensConfig),
+  tokens: buildTokenDescriptions(LabelTokens, labelTokensConfig),
 };
 
 export { label };

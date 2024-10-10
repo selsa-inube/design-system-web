@@ -1,4 +1,4 @@
-import { Header } from "@inubekit/header";
+import { Header, HeaderTokens } from "@inubekit/header";
 
 import {
   MdKey,
@@ -11,7 +11,6 @@ import {
   MdAndroid,
 } from "react-icons/md";
 import { Logo } from "./logo";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const headerTokensConfig = {
@@ -167,7 +166,7 @@ const header = {
       defaultValue: true,
     },
   },
-  tokens: buildTokenDescriptions(inube.header, headerTokensConfig),
+  tokens: buildTokenDescriptions(HeaderTokens, headerTokensConfig),
 };
 
 export { header };

@@ -1,5 +1,4 @@
-import { SkeletonLine } from "@inubekit/skeleton";
-import { inube } from "@inubekit/foundations";
+import { SkeletonLine, SkeletonTokens } from "@inubekit/skeleton";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const skeletonLineTokensConfig = {
@@ -53,7 +52,7 @@ const skeletonLine = {
       defaultValue: false,
     },
   },
-  tokens: buildTokenDescriptions(inube.skeleton, skeletonLineTokensConfig),
+  tokens: buildTokenDescriptions(SkeletonTokens, skeletonLineTokensConfig),
 };
 
 export { skeletonLine };

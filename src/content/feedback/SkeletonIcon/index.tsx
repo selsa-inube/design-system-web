@@ -1,5 +1,4 @@
-import { SkeletonIcon } from "@inubekit/skeleton";
-import { inube } from "@inubekit/foundations";
+import { SkeletonIcon, SkeletonTokens } from "@inubekit/skeleton";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const skeletonIconTokensConfig = {
@@ -53,7 +52,7 @@ const skeletonIcon = {
       defaultValue: false,
     },
   },
-  tokens: buildTokenDescriptions(inube.skeleton, skeletonIconTokensConfig),
+  tokens: buildTokenDescriptions(SkeletonTokens, skeletonIconTokensConfig),
 };
 
 export { skeletonIcon };

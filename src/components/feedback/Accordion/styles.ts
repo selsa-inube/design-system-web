@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { inube } from "@inubekit/foundations";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { NavTokens } from "@inubekit/nav";
 
 const StyledAccordionContainer = styled.div`
   border: 1px solid
@@ -22,7 +23,7 @@ const SeparatorLine = styled.hr`
   height: 1px;
   padding: 0px;
   background-color: ${({ theme }) =>
-    theme?.nav?.divider?.color || inube.nav.divider.color};
+    theme?.nav?.divider?.color || NavTokens.divider.color};
 `;
 
 export { StyledAccordionContainer, StyledRotatingIcon, SeparatorLine };

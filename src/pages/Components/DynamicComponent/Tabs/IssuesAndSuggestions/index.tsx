@@ -7,22 +7,25 @@ import { Stack } from "@inubekit/stack";
 import { useState } from "react";
 import { createGithubIssue } from "@pages/services/createGithubIssue";
 import { StyledTextareaContainer } from "./styles";
+import { Textfield } from "@inubekit/input";
 
 function IssuesAndSuggestions() {
-  const [form, setForm] = useState({ value: "", status: "" });
+  const [form, setForm] = useState({ title: "", value: "", status: "" });
 
-  const onChange = (e: { target: { value: any } }) => {
-    setForm({ value: e.target.value, status: "pending" });
+  const onChange = (e: { target: { name: string; value: any } }) => {
+    setForm({ ...form, [e.target.name]: e.target.value, status: "pending" });
   };
 
   const handleSubmit = async () => {
-    const result = await createGithubIssue("User Feedback", form.value);
+    const result = await createGithubIssue(form.title, form.value);
     if (result.success) {
-      setForm({ value: "", status: "success" });
+      setForm({ title: "", value: "", status: "success" });
     } else {
       setForm({ ...form, status: "error" });
     }
   };
+
+  const isFormValid = form.title.trim() !== "" && form.value.trim() !== "";
 
   return (
     <Grid
@@ -42,19 +45,33 @@ function IssuesAndSuggestions() {
         />
       </Stack>
       <StyledTextareaContainer>
-        <Textarea
-          id="suggestions"
-          label="Additional comments"
-          name="suggestions"
-          placeholder="Write us your issues or suggestions..."
-          maxLength={120}
-          onChange={onChange}
-          value={form.value}
-          fullwidth
-        />
+        <Stack direction="column" gap="16px">
+          <Textfield
+            id="suggestions-title"
+            label="Issue title"
+            name="title"
+            placeholder="Please type a title for your issue"
+            required
+            onChange={onChange}
+            value={form.title}
+          />
+          <Textarea
+            id="suggestions"
+            label="Additional comments"
+            name="value"
+            placeholder="Write us your issues or suggestions..."
+            maxLength={120}
+            onChange={onChange}
+            value={form.value}
+            fullwidth
+            required
+          />
+        </Stack>
       </StyledTextareaContainer>
       <Stack justifyContent="flex-end" margin="-8px 0 0 0">
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button onClick={handleSubmit} disabled={!isFormValid}>
+          Submit
+        </Button>
       </Stack>
     </Grid>
   );

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { inube } from "@inubekit/foundations";
+import { TextTokens } from "@inubekit/text";
 
 const StyledSquare = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const StyledSquare = styled.div`
   padding: 3px;
   height: 50px;
   width: 70px;
-  color: ${inube.text.light.content.color.regular};
+  color: ${TextTokens.light.content.color.regular};
 `;
 
 export { StyledSquare };

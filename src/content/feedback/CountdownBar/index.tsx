@@ -1,4 +1,4 @@
-import { inube } from "@inubekit/foundations";
+import { CountdownBarTokens } from "@inubekit/countdownbar";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { CountdownBarController } from "./Controller/CountdownBar.Controller";
 
@@ -79,7 +79,7 @@ const countdownBar = {
       type: "function",
     },
   },
-  tokens: buildTokenDescriptions(inube.countdownBar, countdownBarTokensConfig),
+  tokens: buildTokenDescriptions(CountdownBarTokens, countdownBarTokensConfig),
 };
 
 export { countdownBar };

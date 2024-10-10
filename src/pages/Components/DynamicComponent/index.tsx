@@ -8,12 +8,11 @@ import { components } from "../../../content";
 import { IssuesAndSuggestions } from "./Tabs/IssuesAndSuggestions";
 import { Theming } from "./Tabs/Theming";
 import { UnderConstruction } from "@pages/Errors/UnderConstruction";
-import { StyledFlagWrapper, StyledTag } from "./styles";
+import { StyledTag } from "./styles";
 import { Tag } from "@inubekit/tag";
 import { Icon } from "@inubekit/icon";
 import { MdContentCopy } from "react-icons/md";
-import { IFlagAppearance, Flag } from "@inubekit/flag";
-import { MdInfo } from "react-icons/md";
+import { useFlag } from "@inubekit/flag";
 
 const tabs = [
   {
@@ -36,11 +35,7 @@ const tabs = [
 function DynamicComponent() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const handleTabChange = (id: string) => setActiveTab(id);
-  const [sectionMessage, setFlag] = useState<{
-    title: string;
-    description: string;
-    appearance: string;
-  } | null>(null);
+  const { addFlag } = useFlag();
   const location = useLocation();
   const component = location.pathname.split("/").pop();
 
@@ -57,17 +52,19 @@ function DynamicComponent() {
   const handleTagClick = () => {
     navigator.clipboard.writeText(installCommand).then(
       () => {
-        setFlag({
+        addFlag({
           title: "Success",
           description: "Text copied to clipboard successfully!",
           appearance: "success",
+          duration: 5000,
         });
       },
       (err) => {
-        setFlag({
+        addFlag({
           title: "Error",
           description: `Could not copy text to clipboard. ${err}`,
-          appearance: "error",
+          appearance: "danger",
+          duration: 5000,
         });
       },
     );
@@ -135,19 +132,6 @@ function DynamicComponent() {
             </>
           )}
         </Stack>
-      )}
-      {sectionMessage && (
-        <StyledFlagWrapper>
-          <Flag
-            icon={<MdInfo />}
-            title={sectionMessage.title}
-            description={sectionMessage.description}
-            appearance={sectionMessage.appearance as IFlagAppearance}
-            duration={5000}
-            closeFlag={() => setFlag(null)}
-            isMessageResponsive={false}
-          />
-        </StyledFlagWrapper>
       )}
     </>
   );

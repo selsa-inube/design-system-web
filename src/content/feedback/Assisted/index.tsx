@@ -1,6 +1,6 @@
 import { AssistedController } from "./Controller/Assisted.Controller";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { AssistedTokens } from "@inubekit/assisted";
 
 const stepsMock = [
   {
@@ -130,7 +130,7 @@ const assisted = {
       default: "large",
     },
   },
-  tokens: buildTokenDescriptions(inube.assisted, assistedTokensConfig),
+  tokens: buildTokenDescriptions(AssistedTokens, assistedTokensConfig),
 };
 
 export { assisted };

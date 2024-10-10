@@ -1,7 +1,7 @@
 import { MdAdd } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { ButtonController } from "./Controller/Button.Controller";
+import { ButtonTokens } from "@inubekit/button";
 
 const buttonTokensConfig = {
   businessUnit: "inube",
@@ -136,7 +136,7 @@ const button = {
         "Indicates whether the button's appearance should change based on its parent's hover state. If parentHover is true, the button will visually respond to the parent's hover state, providing a consistent user experience in group interactions. If false, the button will not react to the parent's hover state",
     },
   },
-  tokens: buildTokenDescriptions(inube.button, buttonTokensConfig),
+  tokens: buildTokenDescriptions(ButtonTokens, buttonTokensConfig),
 };
 
 export { button };

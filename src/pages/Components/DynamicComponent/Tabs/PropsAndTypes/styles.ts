@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { inube } from "@inubekit/foundations";
+import { FieldsetTokens } from "@inubekit/fieldset";
 
 interface IStyledTokenInfoContainer {
   $isDescriptionLong?: boolean;
@@ -10,7 +11,7 @@ const StyledContainerProperties = styled.div`
   border-width: 1px;
   border-style: solid;
   border-color: ${({ theme }) =>
-    theme?.fieldset?.border?.color || inube.fieldset.border.color};
+    theme?.fieldset?.border?.color || FieldsetTokens.border.color};
   width: 100%;
   max-width: 800px;
   padding: 24px 20px;
@@ -33,7 +34,7 @@ const StyledComponentProperties = styled.div`
   & > div {
     border-bottom: dashed 2px
       ${({ theme }) =>
-        theme?.fieldset?.border?.color || inube.fieldset.border.color};
+        theme?.fieldset?.border?.color || FieldsetTokens.border.color};
   }
 
   & > div:first-child {

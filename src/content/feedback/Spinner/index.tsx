@@ -1,6 +1,6 @@
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { SpinnerController } from "./Controller/Spinner.Controller";
+import { SpinnerTokens } from "@inubekit/spinner";
 
 const spinnerTokensConfig = {
   businessUnit: "inube",
@@ -73,7 +73,7 @@ const spinner = {
       type: "boolean",
     },
   },
-  tokens: buildTokenDescriptions(inube.spinner, spinnerTokensConfig),
+  tokens: buildTokenDescriptions(SpinnerTokens, spinnerTokensConfig),
 };
 
 export { spinner };

@@ -1,6 +1,7 @@
-import { inube } from "@inubekit/foundations";
+import { InputTokens } from "@inubekit/input";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { Monthpicker } from "@inubekit/monthpicker";
+
 const monthpickerTokensConfig = {
   businessUnit: "inube",
   component: "monthpicker",
@@ -84,7 +85,7 @@ const monthpicker = {
     },
   },
 
-  tokens: buildTokenDescriptions(inube.input, monthpickerTokensConfig),
+  tokens: buildTokenDescriptions(InputTokens, monthpickerTokensConfig),
 };
 
 export { monthpicker };

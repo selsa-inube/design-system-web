@@ -1,5 +1,4 @@
-import { Fieldset } from "@inubekit/fieldset";
-import { inube } from "@inubekit/foundations";
+import { Fieldset, FieldsetTokens } from "@inubekit/fieldset";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const fieldsetTokensConfig = {
@@ -58,7 +57,7 @@ const fieldset = {
       ],
     },
   },
-  tokens: buildTokenDescriptions(inube.fieldset, fieldsetTokensConfig),
+  tokens: buildTokenDescriptions(FieldsetTokens, fieldsetTokensConfig),
 };
 
 export { fieldset };

@@ -7,9 +7,9 @@ import {
   MdAccountBalance,
   MdAccountBalanceWallet,
 } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { NavController } from "./Controller/Nav.Controller";
+import { NavTokens } from "@inubekit/nav";
 
 const navTokensConfig = {
   businessUnit: "inube",
@@ -134,7 +134,7 @@ const nav = {
       type: "boolean",
     },
   },
-  tokens: buildTokenDescriptions(inube.nav, navTokensConfig),
+  tokens: buildTokenDescriptions(NavTokens, navTokensConfig),
 };
 
 export { nav };

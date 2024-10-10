@@ -1,6 +1,5 @@
 import { MdLogout } from "react-icons/md";
-import { inube } from "@inubekit/foundations";
-import { Menu } from "@inubekit/menu";
+import { Menu, MenuTokens } from "@inubekit/menu";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 
 const menuTokensConfig = {
@@ -76,7 +75,7 @@ const menu = {
       type: "menuItemSpacing",
     },
   },
-  tokens: buildTokenDescriptions(inube.menu, menuTokensConfig),
+  tokens: buildTokenDescriptions(MenuTokens, menuTokensConfig),
 };
 
 export { menu };

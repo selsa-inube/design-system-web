@@ -1,6 +1,6 @@
 import { DatefieldController } from "./Controller/Datefield.Controller";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { InputTokens } from "@inubekit/input";
 
 const inputTokensConfig = {
   businessUnit: "inube",
@@ -122,7 +122,7 @@ const datefield = {
       },
     },
   },
-  tokens: buildTokenDescriptions(inube.input, inputTokensConfig),
+  tokens: buildTokenDescriptions(InputTokens, inputTokensConfig),
 };
 
 export { datefield };

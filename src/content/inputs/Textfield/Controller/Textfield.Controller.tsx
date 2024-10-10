@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { Textfield, ITextfield } from "@inubekit/textfield";
+import { Textfield, IInput } from "@inubekit/input";
 
-const TextfieldController = (props: ITextfield) => {
+const TextfieldController = (props: IInput) => {
   const { value = "", status = "pending" } = props;
   const [form, setForm] = useState({ value, status });
 

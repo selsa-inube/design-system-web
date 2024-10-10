@@ -9,8 +9,8 @@ import {
   StyledTableWrapper,
   StyledTokenInfoContainer,
 } from "./styles";
-import { Flag } from "@inubekit/flag";
-import { MdHelpOutline } from "react-icons/md";
+import { Icon } from "@inubekit/icon";
+import { MdOutlineHelpOutline } from "react-icons/md";
 
 const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -126,15 +126,28 @@ function Theming(props: any) {
         dependencies.map(
           (value: { component: string; description: string }) => (
             <StyledFlagWrapper key={value.component + value.description}>
-              <Flag
-                icon={<MdHelpOutline />}
-                title="Dependencies"
-                description={`${value.component}: ${value.description}`}
-                appearance="help"
-                duration={1}
-                closeFlag={() => {}}
-                isMessageResponsive
-              />
+              <Stack justifyContent="space-between" padding="16px">
+                <Stack alignItems="center" gap="16px" height="fit-content">
+                  <Icon
+                    size="24px"
+                    appearance="help"
+                    icon={<MdOutlineHelpOutline />}
+                  />
+                  <Stack direction="column" gap="6px">
+                    <Text
+                      type="label"
+                      size="large"
+                      textAlign="start"
+                      weight="bold"
+                    >
+                      Dependencies
+                    </Text>
+                    <Text size="medium" appearance="gray" textAlign="start">
+                      {value.component}: {value.description}
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Stack>
             </StyledFlagWrapper>
           ),
         )

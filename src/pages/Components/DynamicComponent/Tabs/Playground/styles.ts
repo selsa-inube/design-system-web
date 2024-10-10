@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { inube } from "@inubekit/foundations";
+import { TagTokens } from "@inubekit/tag";
 
 const StyledTag = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const StyledTag = styled.div`
   border-radius: 8px;
   background-color: ${({ theme }) =>
     theme.tag?.dark?.normal?.background?.color ||
-    inube.tag.dark.normal.background.color};
+    TagTokens.dark.normal.background.color};
   & > figure:hover {
     cursor: pointer;
   }

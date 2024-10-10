@@ -1,6 +1,6 @@
 import { TabsController } from "./Controller/Tabs.Controller";
-import { inube } from "@inubekit/foundations";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
+import { TabsTokens } from "@inubekit/tabs";
 
 const tabsTokensConfig = {
   businessUnit: "inube",
@@ -73,7 +73,7 @@ const tabs = {
       type: "boolean",
     },
   },
-  tokens: buildTokenDescriptions(inube.tabs, tabsTokensConfig),
+  tokens: buildTokenDescriptions(TabsTokens, tabsTokensConfig),
 };
 
 export { tabs };
