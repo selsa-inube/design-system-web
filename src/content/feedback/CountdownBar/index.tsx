@@ -1,6 +1,7 @@
 import { CountdownBarTokens } from "@inubekit/countdownbar";
 import { buildTokenDescriptions } from "../../tokens/buildTokenDescriptions";
 import { CountdownBarController } from "./Controller/CountdownBar.Controller";
+import { Text } from "@inubekit/text";
 
 const countdownBarTokensConfig = {
   businessUnit: "inube",
@@ -45,12 +46,55 @@ const countdownBar = {
   propTypes: {
     height: {
       description:
-        "Specifies the height of the countdown bar. This allows customization of the bar's thickness to fit the design needs.",
+        "Specifies the height (thickness) of the countdown bar. This allows customization of the bar's thickness to fit the design needs. For example, a taller bar may be more noticeable in some designs, while a thinner bar might fit a more subtle visual style.",
       type: "string",
+      table: {
+        defaultValue: { summary: "4px" },
+      },
     },
+
     appearance: {
-      description:
-        "Determines the color theme of the countdown bar, indicating different states like primary, success, warning, etc.",
+      description: (
+        <>
+          <Text
+            appearance="gray"
+            size="medium"
+            children="Determines the color theme of the countdown bar, allowing you to indicate different states like primary, success, warning, and more. Available options include:"
+          />
+          <ul>
+            <li>
+              <strong>Primary</strong>: Standard color scheme for general
+              actions.
+            </li>
+            <li>
+              <strong>Success</strong>: Indicates successful or positive
+              actions.
+            </li>
+            <li>
+              <strong>Warning</strong>: Represents caution or attention needed.
+            </li>
+            <li>
+              <strong>Danger</strong>: Highlights critical or destructive
+              actions.
+            </li>
+            <li>
+              <strong>Help</strong>: Provides guidance or informational
+              feedback.
+            </li>
+            <li>
+              <strong>Dark</strong>: A neutral, darker color for subdued
+              elements.
+            </li>
+            <li>
+              <strong>Gray</strong>: Used for secondary or inactive elements.
+            </li>
+            <li>
+              <strong>Light</strong>: Light, less prominent color for subtle
+              elements.
+            </li>
+          </ul>
+        </>
+      ),
       type: "ICountdownBarAppearance",
       options: [
         { id: "primary", label: "Primary" },
@@ -62,21 +106,40 @@ const countdownBar = {
         { id: "gray", label: "Gray" },
         { id: "light", label: "Light" },
       ],
+      table: {
+        defaultValue: { summary: "primary" },
+      },
     },
+
     duration: {
       description:
-        "Specifies the duration of the countdown in milliseconds. This controls how long the bar takes to complete the countdown.",
+        "Specifies the total duration of the countdown in milliseconds. This controls how long the bar takes to complete the countdown from full to empty. Adjusting this value lets you customize the countdown's speed to match the needs of your application.",
       type: "number",
+      table: {
+        defaultValue: { summary: 3000 },
+      },
     },
+
     paused: {
       description:
-        "Indicates whether the countdown animation is paused. Set to true to pause the animation.",
+        "Indicates whether the countdown animation is paused. When `true`, the animation will stop, and when `false`, the countdown resumes or starts from the beginning. This can be used to temporarily halt the countdown during certain events or user interactions.",
       type: "boolean",
+      options: [
+        { id: "true", label: "True" },
+        { id: "false", label: "False" },
+      ],
+      table: {
+        defaultValue: { summary: false },
+      },
     },
+
     onCountdown: {
       description:
-        "A callback function that is triggered when the countdown reaches zero.",
-      type: "function",
+        "A callback function triggered when the countdown reaches zero. This is useful for executing an action or providing feedback to the user when the countdown is complete, such as progressing to the next step in a workflow.",
+      type: "(e: AnimationEvent<HTMLDivElement>) => void",
+      options: [
+        { id: "callback", label: "(e: AnimationEvent<HTMLDivElement>)=>{ }" },
+      ],
     },
   },
   tokens: buildTokenDescriptions(CountdownBarTokens, countdownBarTokensConfig),

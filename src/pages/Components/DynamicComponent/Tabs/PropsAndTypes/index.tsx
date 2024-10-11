@@ -75,10 +75,10 @@ function PropsAndTypes({
               size="medium"
               children={
                 typeof description === "string"
-                  ? truncateDescription(description, 148)
+                  ? truncateDescription(description, 120)
                   : truncateDescription(
                       description.props.children[0].props.children,
-                      148,
+                      120,
                     )
               }
             />
