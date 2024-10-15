@@ -5,7 +5,7 @@ import { blanket } from "./utils/Blanket";
 import { breadcrumbs } from "./navigation/Breadcrumbs";
 import { button } from "./inputs/Button";
 import { countdownBar } from "./feedback/CountdownBar";
-import { datefield } from "./inputs/Datefield";
+import { date } from "./inputs/Date";
 import { divider } from "./layout/Divider";
 import { fieldset } from "./inputs/Fieldset";
 import { flag } from "./feedback/Flag";
@@ -33,6 +33,9 @@ import { menu } from "./navigation/Menu";
 import { progressBar } from "./feedback/ProgressBar";
 import { monthpicker } from "./inputs/Monthpicker";
 import { input } from "./inputs/Input";
+import { autocomplete } from "./inputs/Autocomplete";
+import { autosuggest } from "./inputs/Autosuggest";
+import { yearpicker } from "./inputs/Yearpicker";
 
 interface Components {
   [key: string]: {
@@ -45,13 +48,15 @@ interface Components {
 }
 
 const components: Components = {
+  autocomplete,
+  autosuggest,
   assisted,
   avatar,
   blanket,
   breadcrumbs,
   button,
   countdownBar,
-  datefield,
+  date,
   divider,
   fieldset,
   flag,
@@ -79,6 +84,7 @@ const components: Components = {
   textarea,
   toggle,
   user,
+  yearpicker,
 };
 
 export { components };

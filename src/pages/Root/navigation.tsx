@@ -79,6 +79,16 @@ const navigation = {
     inputs: {
       name: "INPUTS",
       links: {
+        autosuggest: {
+          id: "Autosuggest",
+          label: "Autosuggest",
+          path: "/component/autosuggest",
+        },
+        autocomplete: {
+          id: "Autocomplete",
+          label: "Autocomplete",
+          path: "/component/autocomplete",
+        },
         button: {
           id: "Button",
           label: "Button",
@@ -104,7 +114,7 @@ const navigation = {
           label: "Textarea",
           path: "/component/textarea",
         },
-        textfield: {
+        input: {
           id: "Input",
           label: "Input",
           path: "/component/input",
@@ -114,15 +124,20 @@ const navigation = {
           label: "Select",
           path: "/component/select",
         },
-        datefield: {
-          id: "Datefield",
-          label: "Datefield",
-          path: "/component/datefield",
+        date: {
+          id: "Date",
+          label: "Date",
+          path: "/component/date",
         },
         monthpicker: {
           id: "Monthpicker",
           label: "Monthpicker",
           path: "/component/monthpicker",
+        },
+        yearpicker: {
+          id: "Yearpicker",
+          label: "Yearpicker",
+          path: "/component/yearpicker",
         },
       },
     },
