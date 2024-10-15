@@ -106,28 +106,33 @@ const fullscreenNav = {
         },
       },
     },
-    logoutPath: "/logout",
-    logoutTitle: "logout",
   },
   propTypes: {
     portalId: {
       description:
-        "The unique identifier for the HTML element used as a portal to render the FullscreenNav component. This is essential for ensuring the navigation component is rendered in the correct location in the DOM.",
+        "The unique identifier of the HTML element used as a portal to render the FullscreenNav component. This ID helps ensure the component is rendered in the appropriate DOM location.",
       type: "string",
+      required: true,
     },
     navigation: {
       description:
-        "An object detailing the structure of the navigation menu. It should contain sections, each with a name and an array of links. Each link object must include an id, label, icon, and path, defining the navigation structure displayed within the FullscreenNav component.",
-      type: "object",
+        "An object that defines the structure of the navigation, including sections, each with a name and a set of links. Each link object must include an id, label, icon, and path to properly set up the navigation menu in the FullscreenNav component.",
+      type: "IFNavigation",
+      required: true,
     },
-    logoutPath: {
+    actions: {
       description:
-        "The URL path that the user will be redirected to upon clicking the logout option. This path should point to the logout functionality of your application.",
+        "An optional array of action objects that define additional functions or links for the navigation. Each action object should include an id, label, icon, and an action function.",
+      type: "INavAction[ ]",
+    },
+    footerLabel: {
+      description:
+        "A string that defines the text displayed at the bottom of the fullscreen navigation. By default, it is '©2024 - Inube', but it can be customized.",
       type: "string",
     },
-    logoutTitle: {
+    footerLogo: {
       description:
-        "The text label for the logout option displayed in the navigation menu. This helps users easily identify the logout function.",
+        "A string representing the path to an image used as the logo in the footer. If provided, this logo will replace the footerLabel text.",
       type: "string",
     },
   },

@@ -107,31 +107,38 @@ const nav = {
         },
       },
     },
-    logoutPath: "/logout",
-    logoutTitle: "logout",
     collapse: true,
   },
   propTypes: {
     navigation: {
       description:
         "An object defining the navigation structure. It contains a title for the navigation and sections, each with a name and a set of links. Each link object should include 'id', 'label', 'icon', and 'path'. This structure organizes the navigation and is essential for the Nav component's functionality.",
+      type: "INavNavigation",
+      required: true,
     },
-    logoutPath: {
+    actions: {
       description:
-        "A string specifying the path to navigate to when the user clicks the logout link. This property is required if logout functionality is provided.",
-      type: "input",
-    },
-    logoutTitle: {
-      description:
-        "A string specifying the title for the logout link displayed in the navigation.",
-
-      type: "input",
+        "An array of objects representing additional actions the user can perform from the navigation. Each action object should include an 'id', 'label', 'icon', and an 'action' function that defines the behavior when the action is triggered. These actions will be displayed at the bottom of the navigation panel.",
+      type: "INavAction[ ]",
     },
     collapse: {
       description:
-        "A boolean indicating whether the navigation sections should be collapsible. If true, sections can expand or collapse based on user interaction.",
-
+        "A boolean indicating whether the navigation sections should be collapsible. If true, sections can expand or collapse based on user interaction. This enhances the user experience by allowing them to manage the visibility of navigation sections.",
       type: "boolean",
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+    footerLabel: {
+      description:
+        "A string that defines the text to be displayed in the footer of the navigation. By default, this is set to `inube - <current year>`, but can be customized as needed.",
+      type: "string",
+      options: [{ id: "currentYear", label: "`inube - <current year>`" }],
+    },
+    footerLogo: {
+      description:
+        "A string representing the path to an image that will be used as the logo in the footer of the navigation. This replaces the footer label text when provided. The image will be displayed centered at the bottom of the navigation.",
+      type: "string",
     },
   },
   tokens: buildTokenDescriptions(NavTokens, navTokensConfig),

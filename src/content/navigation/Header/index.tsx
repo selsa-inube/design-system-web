@@ -125,45 +125,54 @@ const header = {
   propTypes: {
     portalId: {
       description:
-        "The unique identifier for the portal element where the header will be rendered.",
+        "The unique identifier for the portal element where the header will be rendered. It ensures that the Header is mounted correctly in the DOM structure.",
       type: "string",
+      required: true,
     },
     navigation: {
       description:
-        "An object that defines the navigation structure within the header. It includes sections with associated links, each having an id, label, icon, and path. This structure is essential for organizing and navigating the app.",
-      type: "object",
+        "An object defining the navigation structure within the header(the same for fullscreenNav). It includes sections with associated links, each having an id, label, icon, and path. This structure helps organize the navigation within the application.",
+      type: "IFNavigation",
+      required: false,
     },
     logoURL: {
       description:
-        "A component used as the logo in the header, which can be an image, icon, or any other visual representation of the brand. This logo is a key element for brand identity.",
+        "A JSX element representing the logo, which can be an image or any other branding element. This helps reinforce the brand identity of the application.",
       type: "JSX.Element",
+      required: true,
     },
     userName: {
       description:
-        "The name of the user to be displayed in the header. This is typically shown alongside a user avatar and provides a personalized touch.",
+        "The name of the user to be displayed in the header, providing a personalized touch to the navigation. This is often displayed alongside the user's avatar.",
       type: "string",
+      required: false,
     },
     client: {
       description:
-        "The business unit or client name to be displayed, providing context or association with the user or organization.",
+        "The client or organization name that the user belongs to. Displaying the client's name provides context for the user when interacting with the system.",
       type: "string",
+      required: false,
     },
     links: {
       description:
-        "An array of link objects to be displayed in the header. Each link includes a label, path, and icon, offering quick navigation to key areas or actions.",
-      type: "array",
+        "An array of links that provide quick navigation to specific areas within the application. Each link includes a label, path, and an optional icon.",
+      type: "IHeaderLink[ ]",
+      required: false,
     },
     showLinks: {
       description:
-        "A boolean flag to toggle the visibility of navigation links in the header. When set to true, the specified links are displayed.",
+        "A boolean flag that determines whether to display the additional navigation links in the header. If `true`, the links will be visible.",
       type: "boolean",
-      defaultValue: false,
     },
     showUser: {
       description:
-        "A boolean flag to toggle the visibility of the user information (like userName and client) in the header. When set to true, user details are displayed.",
+        "A boolean flag that controls the visibility of the user information in the header (such as userName and client). When set to `true`, user details will be displayed.",
       type: "boolean",
-      defaultValue: true,
+    },
+    userMenu: {
+      description:
+        "An array of objects that define the dropdown menu items available for the user. Each object in the array should have the following structure: `{ id, label, icon, action }`. The `id` is a unique identifier for the menu item, `label` represents the name of the action (e.g., 'Settings'), `icon` is an optional React Node to provide a visual cue, and `action` is a function triggered when the menu item is clicked. This prop allows you to provide a personalized set of actions for the logged-in user, such as 'Settings', 'Profile', or 'Logout'.",
+      type: "IMenuSection[ ]",
     },
   },
   tokens: buildTokenDescriptions(HeaderTokens, headerTokensConfig),

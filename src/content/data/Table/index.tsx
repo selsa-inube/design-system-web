@@ -41,42 +41,158 @@ const table = {
     borderStyle: "solid",
   },
   propTypes: {
-    tableLayout: {
+    "table-tableLayout": {
       description:
-        "Determines the table's layout algorithm. 'fixed' sets a fixed width for all columns, whereas 'auto' adjusts columns based on content.",
+        "(tableLayout) Determines the table's layout algorithm. 'fixed' sets a fixed width for all columns, whereas 'auto' adjusts columns based on content.",
       type: "ITableLayout",
       options: [
         { id: "auto", label: "Auto" },
         { id: "fixed", label: "Fixed" },
       ],
     },
-    borderCollapse: {
+    "table-borderCollapse": {
       description:
-        "Specifies whether the table's borders are collapsed into a single border or separated. 'collapse' merges borders, 'separate' keeps them distinct.",
+        "(borderCollapse) Specifies whether the table's borders are collapsed into a single border or separated.",
       type: "ITableBorderCollapse",
       options: [
         { id: "collapse", label: "Collapse" },
         { id: "separate", label: "Separate" },
       ],
     },
-    borderWidth: {
+    "table-borderWidth": {
       description:
-        "Sets the width of the table's border, defined in pixels or other valid CSS units.",
+        "(borderWidth) Sets the width of the table's border, defined in pixels or other valid CSS units.",
       type: "string",
     },
-    borderStyle: {
-      description:
-        "Defines the style of the table's border. Options include 'solid' for a continuous line or 'dashed' for a dashed line.",
+    "table-borderStyle": {
+      description: "(borderStyle) Defines the style of the table's border.",
       type: "ITableBorderStyle",
       options: [
         { id: "solid", label: "Solid" },
         { id: "dashed", label: "Dashed" },
       ],
     },
-    children: {
+    "table-children": {
       description:
-        "Specifies the content to be displayed within the table. This can include table rows, cells, headers, and more.",
+        "(children) Specifies the content to be displayed within the table.",
       type: "React.ReactNode",
+    },
+    "td-appearance": {
+      description:
+        "(appearance) Controls the appearance of the table cell, like its background and text style.",
+      type: "ITdAppearance",
+      options: ["light", "dark"],
+    },
+    "td-align": {
+      description:
+        "(align) Defines the alignment of the content inside the table cell.",
+      type: "ITdAlignContent",
+      options: ["left", "center", "right"],
+    },
+    "td-checked": {
+      description:
+        "(checked) Used when the table cell contains a toggle or checkbox, indicating if it's checked.",
+      type: "boolean",
+    },
+    "td-type": {
+      description:
+        "(type) Determines the type of content inside the table cell.",
+      type: "ITdType",
+      options: ["text", "icon", "toggle", "custom"],
+    },
+    "tr-border": {
+      description: "(border) Specifies the border style of the row.",
+      type: "IBorder",
+      options: [
+        { id: "none", label: "None" },
+        { id: "top", label: "Top" },
+        { id: "bottom", label: "Bottom" },
+        { id: "complete", label: "Complete" },
+      ],
+    },
+    "tr-borderDashed": {
+      description:
+        "(borderDashed) If true, the border will be rendered as dashed instead of solid.",
+      type: "boolean",
+    },
+    "tr-zebra": {
+      description: "(zebra) Enables zebra striping for the row.",
+      type: "boolean",
+    },
+    "th-action": {
+      description:
+        "(action) Defines if the header cell is intended for action-based content.",
+      type: "boolean",
+    },
+    "th-align": {
+      description: "(align) Controls the alignment of the header cell content.",
+      type: "IThAlignContent",
+      options: ["left", "center", "right"],
+    },
+    "caption-children": {
+      description:
+        "(children) Content to be displayed inside the Caption component, typically text.",
+      type: "React.ReactNode",
+    },
+    "col-span": {
+      description:
+        "(span) Defines the number of columns a column element should span in the table layout.",
+      type: "number",
+    },
+    "colgroup-children": {
+      description:
+        "(children) Defines the child columns that are grouped within the Colgroup component.",
+      type: "React.ReactNode",
+    },
+    "tbody-children": {
+      description:
+        "(children) Defines the rows and cells that are grouped inside the Tbody component.",
+      type: "React.ReactNode",
+    },
+    "tfoot-children": {
+      description:
+        "(children) Defines the footer content that is placed inside the Tfoot component.",
+      type: "React.ReactNode",
+    },
+    "thead-children": {
+      description:
+        "(children) Defines the header row(s) and content that is placed inside the Thead component.",
+      type: "React.ReactNode",
+    },
+    "pagination-firstEntryInPage": {
+      description:
+        "(firstEntryInPage) The first entry number displayed on the current page of the table.",
+      type: "number",
+    },
+    "pagination-lastEntryInPage": {
+      description:
+        "(lastEntryInPage) The last entry number displayed on the current page of the table.",
+      type: "number",
+    },
+    "pagination-totalRecords": {
+      description:
+        "(totalRecords) The total number of records in the dataset being paginated.",
+      type: "number",
+    },
+    "pagination-handleStartPage": {
+      description:
+        "(handleStartPage) Function to handle navigation to the first page of the dataset.",
+      type: "() => void",
+    },
+    "pagination-handlePrevPage": {
+      description:
+        "(handlePrevPage) Function to handle navigation to the previous page of the dataset.",
+      type: "() => void",
+    },
+    "pagination-handleNextPage": {
+      description:
+        "(handleNextPage) Function to handle navigation to the next page of the dataset.",
+      type: "() => void",
+    },
+    "pagination-handleEndPage": {
+      description:
+        "(handleEndPage) Function to handle navigation to the last page of the dataset.",
+      type: "() => void",
     },
   },
   tokens: buildTokenDescriptions(TableTokens, tableTokensConfig),
