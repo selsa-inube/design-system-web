@@ -27,12 +27,12 @@ import { tabs } from "./navigation/Tabs";
 import { tag } from "./data/Tag";
 import { text } from "./data/Text";
 import { textarea } from "./inputs/Textarea";
-import { textfield } from "./inputs/Textfield";
 import { toggle } from "./inputs/Toggle";
 import { user } from "./data/User";
 import { menu } from "./navigation/Menu";
 import { progressBar } from "./feedback/ProgressBar";
 import { monthpicker } from "./inputs/Monthpicker";
+import { input } from "./inputs/Input";
 
 interface Components {
   [key: string]: {
@@ -59,6 +59,7 @@ const components: Components = {
   grid,
   header,
   icon,
+  input,
   label,
   link,
   nav,
@@ -76,7 +77,6 @@ const components: Components = {
   tag,
   text,
   textarea,
-  textfield,
   toggle,
   user,
 };

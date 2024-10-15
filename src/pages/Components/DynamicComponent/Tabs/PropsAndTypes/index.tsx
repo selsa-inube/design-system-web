@@ -43,7 +43,10 @@ function PropsAndTypes({
   const isDescriptionLong =
     typeof description === "string"
       ? description.length > 105
-      : description.props?.children?.[0].props?.children?.length > 105;
+      : description.props?.children?.[0].props?.children?.length +
+          description.props?.children?.[1].props?.children[0].props?.children[1]
+            ?.length >
+        105;
 
   const handleIconClick = () => {
     setIsBlanketVisible(true);

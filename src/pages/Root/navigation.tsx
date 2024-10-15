@@ -105,9 +105,9 @@ const navigation = {
           path: "/component/textarea",
         },
         textfield: {
-          id: "Textfield",
-          label: "Textfield",
-          path: "/component/textfield",
+          id: "Input",
+          label: "Input",
+          path: "/component/input",
         },
         select: {
           id: "Select",
