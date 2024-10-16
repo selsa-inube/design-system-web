@@ -1,5 +1,17 @@
 const cardsData = [
   {
+    path: "/component/autocomplete",
+    title: "Autocomplete",
+    description:
+      "The Autocomplete component provides a user-friendly interface for autocomplete selection.",
+  },
+  {
+    path: "/component/autosuggest",
+    title: "Autosuggest",
+    description:
+      "The Autosuggest component provides a user-friendly interface for autosuggest selection.",
+  },
+  {
     path: "/component/avatar",
     title: "Avatar",
     description:
@@ -104,21 +116,16 @@ const cardsData = [
       "The Textarea component provides a larger input field for multiline text.",
   },
   {
-    path: "/component/textfield",
-    title: "Textfield",
-    description: "The Textfield component allows for single-line text input.",
-  },
-  {
     path: "/component/select",
     title: "Select",
     description:
       "The Select component allows users to choose an option from a dropdown.",
   },
   {
-    path: "/component/datefield",
-    title: "Datefield",
+    path: "/component/date",
+    title: "Date",
     description:
-      "The Datefield component allows users to select a date from a calendar.",
+      "The Date component allows users to select a date from a calendar.",
   },
   {
     path: "/component/monthpicker",
@@ -191,6 +198,34 @@ const cardsData = [
     title: "Blanket",
     description:
       "The Blanket component overlays the screen, often used to block interactions.",
+  },
+  {
+    path: "/component/yearpicker",
+    title: "Yearpicker",
+    description: "The Yearpicker component lets users select a specific year.",
+  },
+  {
+    path: "/component/input",
+    title: "Input",
+    description: "The Input component allows users to enter text.",
+  },
+  {
+    path: "/component/text",
+    title: "Text",
+    description:
+      "The Text component is used to render and style text elements.",
+  },
+  {
+    path: "/component/checkbox",
+    title: "Checkbox",
+    description:
+      "The Checkbox component allows users to select a single option.",
+  },
+  {
+    path: "/component/radio",
+    title: "Radio",
+    description:
+      "The Radio component allows users to select a single option from a list.",
   },
 ];
 
