@@ -139,6 +139,21 @@ const navigation = {
           label: "Yearpicker",
           path: "/component/yearpicker",
         },
+        checkbox: {
+          id: "Checkbox",
+          label: "Checkbox",
+          path: "/component/checkbox",
+        },
+        checkpicker: {
+          id: "Checkpicker",
+          label: "Checkpicker",
+          path: "/component/checkpicker",
+        },
+        radio: {
+          id: "Radio",
+          label: "Radio",
+          path: "/component/radio",
+        },
       },
     },
     layouts: {

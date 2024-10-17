@@ -227,6 +227,12 @@ const cardsData = [
     description:
       "The Radio component allows users to select a single option from a list.",
   },
+  {
+    path: "/component/checkpicker",
+    title: "Checkpicker",
+    description:
+      "The Checkpicker component allows users to select multiple options.",
+  },
 ];
 
 export { cardsData };

@@ -36,6 +36,9 @@ import { input } from "./inputs/Input";
 import { autocomplete } from "./inputs/Autocomplete";
 import { autosuggest } from "./inputs/Autosuggest";
 import { yearpicker } from "./inputs/Yearpicker";
+import { checkbox } from "./inputs/Checkbox";
+import { checkpicker } from "./inputs/Checkpicker";
+import { radio } from "./inputs/Radio";
 
 interface Components {
   [key: string]: {
@@ -56,6 +59,8 @@ const components: Components = {
   breadcrumbs,
   button,
   countdownBar,
+  checkbox,
+  checkpicker,
   date,
   divider,
   fieldset,
@@ -77,6 +82,7 @@ const components: Components = {
   spinner,
   stack,
   progressBar,
+  radio,
   table,
   tabs,
   tag,
